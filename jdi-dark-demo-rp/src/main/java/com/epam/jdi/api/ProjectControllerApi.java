@@ -15,7 +15,15 @@ package com.epam.jdi.api;
 import com.epam.http.annotations.*;
 import com.epam.http.requests.DataMethod;
 import com.epam.http.requests.RestMethod;
-import com.epam.jdi.model.*;
+import com.epam.jdi.model.DeleteBulkRS;
+import com.epam.jdi.model.EntryCreatedRS;
+import com.epam.jdi.model.IterableProjectInfoResource;
+import com.epam.jdi.model.IterableUserResource;
+import com.epam.jdi.model.Iterablestring;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.PreferenceResource;
+import com.epam.jdi.model.ProjectInfoResource;
+import com.epam.jdi.model.ProjectResource;
 
 import java.util.Map;
 

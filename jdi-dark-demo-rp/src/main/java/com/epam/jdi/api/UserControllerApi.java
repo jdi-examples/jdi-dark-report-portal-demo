@@ -21,7 +21,15 @@ import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.DataMethod;
 import com.epam.http.requests.RestMethod;
-import com.epam.jdi.model.*;
+import com.epam.jdi.model.AssignedProject;
+import com.epam.jdi.model.CreateUserBidRS;
+import com.epam.jdi.model.CreateUserRS;
+import com.epam.jdi.model.DeleteBulkRS;
+import com.epam.jdi.model.IterableUserResource;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.UserBidRS;
+import com.epam.jdi.model.UserResource;
+import com.epam.jdi.model.YesNoRS;
 
 import java.util.Map;
 

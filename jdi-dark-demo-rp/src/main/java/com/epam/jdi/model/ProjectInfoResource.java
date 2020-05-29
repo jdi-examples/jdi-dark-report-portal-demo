@@ -10,37 +10,29 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.LaunchesPerUser;
-import java.util.Date;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * ProjectInfoResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProjectInfoResource extends DataClass<ProjectInfoResource>{
+public class ProjectInfoResource extends DataClass<ProjectInfoResource> {
 
-  public Date creationDate;
-  public String entryType;
-  public Long id;
-  public Date lastRun;
-  public String launchesPerWeek;
-  public Integer launchesQuantity;
-  public String organization;
-  public String projectName;
-  public Integer uniqueTickets;
-  public Integer usersQuantity;
+    public Date creationDate;
+    public String entryType;
+    public Long id;
+    public Date lastRun;
+    public String launchesPerWeek;
+    public Integer launchesQuantity;
+    public String organization;
+    public String projectName;
+    public Integer uniqueTickets;
+    public Integer usersQuantity;
 }
 

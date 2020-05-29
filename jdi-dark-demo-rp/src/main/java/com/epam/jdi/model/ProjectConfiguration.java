@@ -10,30 +10,18 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.IssueSubTypeResource;
-import com.epam.jdi.model.PatternTemplateResource;
-import com.epam.jdi.model.ProjectNotificationConfigDTO;
-import java.util.List;
-import java.util.Map;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * ProjectConfiguration
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProjectConfiguration extends DataClass<ProjectConfiguration>{
+public class ProjectConfiguration extends DataClass<ProjectConfiguration> {
 
-  public ProjectNotificationConfigDTO notificationsConfiguration;
+    public ProjectNotificationConfigDTO notificationsConfiguration;
 }
 

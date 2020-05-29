@@ -10,57 +10,50 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ItemAttributesRQ;
-import java.util.Date;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * FinishExecutionRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FinishExecutionRQ extends DataClass<FinishExecutionRQ>{
+public class FinishExecutionRQ extends DataClass<FinishExecutionRQ> {
 
-  public String description;
-  public Date endTime;
-  public StatusEnum status;
-  /**
-   * Gets or Sets status
-   */
-  public enum StatusEnum {
-      PASSED("PASSED"),
-      
-      FAILED("FAILED"),
-      
-      STOPPED("STOPPED"),
-      
-      SKIPPED("SKIPPED"),
-      
-      INTERRUPTED("INTERRUPTED"),
-      
-      CANCELLED("CANCELLED"),
-      
-      INFO("INFO"),
-      
-      WARN("WARN");
+    public String description;
+    public Date endTime;
+    public StatusEnum status;
 
-      private String value;
+    /**
+     * Gets or Sets status
+     */
+    public enum StatusEnum {
+        PASSED("PASSED"),
 
-      StatusEnum(String value) {
-      this.value = value;
-  }
-  }
+        FAILED("FAILED"),
+
+        STOPPED("STOPPED"),
+
+        SKIPPED("SKIPPED"),
+
+        INTERRUPTED("INTERRUPTED"),
+
+        CANCELLED("CANCELLED"),
+
+        INFO("INFO"),
+
+        WARN("WARN");
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+    }
 
 }
 

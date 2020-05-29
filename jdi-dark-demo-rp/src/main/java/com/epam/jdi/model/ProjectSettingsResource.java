@@ -10,28 +10,18 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.IssueSubTypeResource;
-import java.util.List;
-import java.util.Map;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * ProjectSettingsResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProjectSettingsResource extends DataClass<ProjectSettingsResource>{
+public class ProjectSettingsResource extends DataClass<ProjectSettingsResource> {
 
-  public Long project;
+    public Long project;
 }
 

@@ -12,59 +12,51 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
 import com.epam.http.annotations.ContentType;
-import com.epam.jdi.model.FinishExecutionRQ;
-import com.epam.jdi.model.FinishLaunchRS;
-import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.LaunchResource;
-import com.epam.jdi.model.MergeLaunchesRQ;
-import com.epam.jdi.model.StartLaunchRQ;
-import com.epam.jdi.model.StartLaunchRS;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.jdi.model.FinishLaunchRS;
+import com.epam.jdi.model.LaunchResource;
+import com.epam.jdi.model.StartLaunchRS;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class LaunchAsyncControllerApi {
 
-  /**
-   * Finish launch for specified project
-   * 
-   * @param launchId /path/ launchId (required)
-   * @param projectName /path/ projectName (required)
-   * @param finishLaunchRQ(FinishExecutionRQ) /body/ finishLaunchRQ (required)
-   * @return FinishLaunchRS
-  */
-  @ContentType(JSON)
-  @PUT("/v2/{projectName}/launch/{launchId}/finish")
-  public static RestMethod finishLaunchUsingPUTJSON;
+    /**
+     * Finish launch for specified project
+     *
+     * @param launchId /path/ launchId (required)
+     * @param projectName /path/ projectName (required)
+     * @param finishLaunchRQ(FinishExecutionRQ) /body/ finishLaunchRQ (required)
+     * @return FinishLaunchRS
+     */
+    @ContentType(JSON)
+    @PUT("/v2/{projectName}/launch/{launchId}/finish")
+    public static DataMethod<FinishLaunchRS> finishLaunchUsingPUTJSON;
 
-  /**
-   * Merge set of specified launches in common one
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param mergeLaunchesRQ(MergeLaunchesRQ) /body/ Merge launches request body (required)
-   * @return LaunchResource
-  */
-  @ContentType(JSON)
-  @POST("/v2/{projectName}/launch/merge")
-  public static RestMethod mergeLaunchesUsingPOSTJSON;
+    /**
+     * Merge set of specified launches in common one
+     *
+     * @param projectName /path/ projectName (required)
+     * @param mergeLaunchesRQ(MergeLaunchesRQ) /body/ Merge launches request body (required)
+     * @return LaunchResource
+     */
+    @ContentType(JSON)
+    @POST("/v2/{projectName}/launch/merge")
+    public static DataMethod<LaunchResource> mergeLaunchesUsingPOSTJSON;
 
-  /**
-   * Starts launch for specified project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param startLaunchRQ(StartLaunchRQ) /body/ Start launch request body (required)
-   * @return StartLaunchRS
-  */
-  @ContentType(JSON)
-  @POST("/v2/{projectName}/launch")
-  public static RestMethod startLaunchUsingPOSTJSON;
+    /**
+     * Starts launch for specified project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param startLaunchRQ(StartLaunchRQ) /body/ Start launch request body (required)
+     * @return StartLaunchRS
+     */
+    @ContentType(JSON)
+    @POST("/v2/{projectName}/launch")
+    public static DataMethod<StartLaunchRS> startLaunchUsingPOSTJSON;
 }

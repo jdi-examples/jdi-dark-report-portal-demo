@@ -12,143 +12,135 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
-import com.epam.jdi.model.ActivityResource;
-import java.util.Date;
-import com.epam.jdi.model.IterableActivityResource;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.QueryParameters;
 import com.epam.http.annotations.GET;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.epam.http.annotations.QueryParameter;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.jdi.model.ActivityResource;
+import com.epam.jdi.model.IterableActivityResource;
 
 @ServiceDomain("${domain}")
 public class ActivityControllerApi {
 
-  /**
-   * Get activities for project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqAction /query/ Filters by 'action' (optional)
-   * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
-   * @param filterEqEntity /query/ Filters by 'entity' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLogin /query/ Filters by 'login' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqObjectId /query/ Filters by 'objectId' (optional)
-   * @param filterEqObjectName /query/ Filters by 'objectName' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param filterEqUserId /query/ Filters by 'userId' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableActivityResource
-  */
-  @QueryParameter(name = "filterEqAction", value = "filterEqAction_example")
-  @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
-  @QueryParameter(name = "filterEqEntity", value = "filterEqEntity_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLogin", value = "filterEqLogin_example")
-  @QueryParameter(name = "filterEqName", value = "789")
-  @QueryParameter(name = "filterEqObjectId", value = "789")
-  @QueryParameter(name = "filterEqObjectName", value = "filterEqObjectName_example")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "filterEqUserId", value = "789")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/activity")
-  public static RestMethod getActivitiesUsingGET;
+    /**
+     * Get activities for project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqAction /query/ Filters by 'action' (optional)
+     * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
+     * @param filterEqEntity /query/ Filters by 'entity' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLogin /query/ Filters by 'login' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqObjectId /query/ Filters by 'objectId' (optional)
+     * @param filterEqObjectName /query/ Filters by 'objectName' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param filterEqUserId /query/ Filters by 'userId' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableActivityResource
+     */
+    @QueryParameter(name = "filterEqAction", value = "filterEqAction_example")
+    @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
+    @QueryParameter(name = "filterEqEntity", value = "filterEqEntity_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLogin", value = "filterEqLogin_example")
+    @QueryParameter(name = "filterEqName", value = "789")
+    @QueryParameter(name = "filterEqObjectId", value = "789")
+    @QueryParameter(name = "filterEqObjectName", value = "filterEqObjectName_example")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "filterEqUserId", value = "789")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/activity")
+    public static DataMethod<IterableActivityResource> getActivitiesUsingGET;
 
-  /**
-   * Get activities for project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqAction /query/ Filters by 'action' (optional)
-   * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
-   * @param filterEqEntity /query/ Filters by 'entity' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLogin /query/ Filters by 'login' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqObjectId /query/ Filters by 'objectId' (optional)
-   * @param filterEqObjectName /query/ Filters by 'objectName' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param filterEqUserId /query/ Filters by 'userId' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableActivityResource
-  */
-  @QueryParameter(name = "filterEqAction", value = "filterEqAction_example")
-  @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
-  @QueryParameter(name = "filterEqEntity", value = "filterEqEntity_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLogin", value = "filterEqLogin_example")
-  @QueryParameter(name = "filterEqName", value = "789")
-  @QueryParameter(name = "filterEqObjectId", value = "789")
-  @QueryParameter(name = "filterEqObjectName", value = "filterEqObjectName_example")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "filterEqUserId", value = "789")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/activity/")
-  public static RestMethod getActivitiesUsingGET1;
+    /**
+     * Get activities for project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqAction /query/ Filters by 'action' (optional)
+     * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
+     * @param filterEqEntity /query/ Filters by 'entity' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLogin /query/ Filters by 'login' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqObjectId /query/ Filters by 'objectId' (optional)
+     * @param filterEqObjectName /query/ Filters by 'objectName' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param filterEqUserId /query/ Filters by 'userId' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableActivityResource
+     */
+    @QueryParameter(name = "filterEqAction", value = "filterEqAction_example")
+    @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
+    @QueryParameter(name = "filterEqEntity", value = "filterEqEntity_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLogin", value = "filterEqLogin_example")
+    @QueryParameter(name = "filterEqName", value = "789")
+    @QueryParameter(name = "filterEqObjectId", value = "789")
+    @QueryParameter(name = "filterEqObjectName", value = "filterEqObjectName_example")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "filterEqUserId", value = "789")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/activity/")
+    public static DataMethod<IterableActivityResource> getActivitiesUsingGET1;
 
-  /**
-   * getActivity
-   * 
-   * @param activityId /path/ activityId (required)
-   * @param projectName /path/ projectName (required)
-   * @return ActivityResource
-  */
-  @GET("/v1/{projectName}/activity/{activityId}")
-  public static RestMethod getActivityUsingGET;
+    /**
+     * getActivity
+     *
+     * @param activityId /path/ activityId (required)
+     * @param projectName /path/ projectName (required)
+     * @return ActivityResource
+     */
+    @GET("/v1/{projectName}/activity/{activityId}")
+    public static DataMethod<ActivityResource> getActivityUsingGET;
 
-  /**
-   * Get activities for test item
-   * 
-   * @param itemId /path/ itemId (required)
-   * @param projectName /path/ projectName (required)
-   * @param filterEqAction /query/ Filters by 'action' (optional)
-   * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
-   * @param filterEqEntity /query/ Filters by 'entity' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLogin /query/ Filters by 'login' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqObjectId /query/ Filters by 'objectId' (optional)
-   * @param filterEqObjectName /query/ Filters by 'objectName' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param filterEqUserId /query/ Filters by 'userId' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableActivityResource
-  */
-  @QueryParameter(name = "filterEqAction", value = "filterEqAction_example")
-  @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
-  @QueryParameter(name = "filterEqEntity", value = "filterEqEntity_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLogin", value = "filterEqLogin_example")
-  @QueryParameter(name = "filterEqName", value = "789")
-  @QueryParameter(name = "filterEqObjectId", value = "789")
-  @QueryParameter(name = "filterEqObjectName", value = "filterEqObjectName_example")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "filterEqUserId", value = "789")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/activity/item/{itemId}")
-  public static RestMethod getTestItemActivitiesUsingGET;
+    /**
+     * Get activities for test item
+     *
+     * @param itemId /path/ itemId (required)
+     * @param projectName /path/ projectName (required)
+     * @param filterEqAction /query/ Filters by 'action' (optional)
+     * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
+     * @param filterEqEntity /query/ Filters by 'entity' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLogin /query/ Filters by 'login' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqObjectId /query/ Filters by 'objectId' (optional)
+     * @param filterEqObjectName /query/ Filters by 'objectName' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param filterEqUserId /query/ Filters by 'userId' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableActivityResource
+     */
+    @QueryParameter(name = "filterEqAction", value = "filterEqAction_example")
+    @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
+    @QueryParameter(name = "filterEqEntity", value = "filterEqEntity_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLogin", value = "filterEqLogin_example")
+    @QueryParameter(name = "filterEqName", value = "789")
+    @QueryParameter(name = "filterEqObjectId", value = "789")
+    @QueryParameter(name = "filterEqObjectName", value = "filterEqObjectName_example")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "filterEqUserId", value = "789")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/activity/item/{itemId}")
+    public static DataMethod<IterableActivityResource> getTestItemActivitiesUsingGET;
 }

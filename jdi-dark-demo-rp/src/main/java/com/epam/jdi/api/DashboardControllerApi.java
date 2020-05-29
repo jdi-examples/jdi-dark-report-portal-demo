@@ -12,147 +12,128 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
+import com.epam.http.annotations.*;
+import com.epam.http.requests.DataMethod;
+import com.epam.jdi.model.*;
 
-import com.epam.jdi.model.AddWidgetRq;
-import com.epam.http.annotations.ContentType;
-import com.epam.jdi.model.CreateDashboardRQ;
-import com.epam.jdi.model.DashboardResource;
-import com.epam.jdi.model.EntryCreatedRS;
-import com.epam.jdi.model.IterableDashboardResource;
-import com.epam.jdi.model.IterableSharedEntity;
 import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.QueryParameters;
-import com.epam.jdi.model.UpdateDashboardRQ;
-import com.epam.http.annotations.DELETE;
-import com.epam.http.annotations.GET;
-import com.epam.http.annotations.POST;
-import com.epam.http.annotations.PUT;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @ServiceDomain("${domain}")
 public class DashboardControllerApi {
 
-  /**
-   * Add widget to specified dashboard
-   * 
-   * @param dashboardId /path/ dashboardId (required)
-   * @param projectName /path/ projectName (required)
-   * @param addWidgetRq(AddWidgetRq) /body/ addWidgetRq (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/dashboard/{dashboardId}/add")
-  public static RestMethod addWidgetUsingPUTJSON;
+    /**
+     * Add widget to specified dashboard
+     *
+     * @param dashboardId /path/ dashboardId (required)
+     * @param projectName /path/ projectName (required)
+     * @param addWidgetRq(AddWidgetRq) /body/ addWidgetRq (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/dashboard/{dashboardId}/add")
+    public static DataMethod<OperationCompletionRS> addWidgetUsingPUTJSON;
 
-  /**
-   * Create dashboard for specified project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param createRQ(CreateDashboardRQ) /body/ createRQ (required)
-   * @return EntryCreatedRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/{projectName}/dashboard")
-  public static RestMethod createDashboardUsingPOSTJSON;
+    /**
+     * Create dashboard for specified project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param createRQ(CreateDashboardRQ) /body/ createRQ (required)
+     * @return EntryCreatedRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/{projectName}/dashboard")
+    public static DataMethod<EntryCreatedRS> createDashboardUsingPOSTJSON;
 
-  /**
-   * Delete specified dashboard by ID for specified project
-   * 
-   * @param dashboardId /path/ dashboardId (required)
-   * @param projectName /path/ projectName (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/v1/{projectName}/dashboard/{dashboardId}")
-  public static RestMethod deleteDashboardUsingDELETE;
+    /**
+     * Delete specified dashboard by ID for specified project
+     *
+     * @param dashboardId /path/ dashboardId (required)
+     * @param projectName /path/ projectName (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/v1/{projectName}/dashboard/{dashboardId}")
+    public static DataMethod<OperationCompletionRS> deleteDashboardUsingDELETE;
 
-  /**
-   * Get all permitted dashboard resources for specified project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqOwner /query/ Filters by 'owner' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqShared /query/ Filters by 'shared' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableDashboardResource
-  */
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqShared", value = "true")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/dashboard")
-  public static RestMethod getAllDashboardsUsingGET;
+    /**
+     * Get all permitted dashboard resources for specified project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqOwner /query/ Filters by 'owner' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqShared /query/ Filters by 'shared' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableDashboardResource
+     */
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqShared", value = "true")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/dashboard")
+    public static DataMethod<IterableDashboardResource> getAllDashboardsUsingGET;
 
-  /**
-   * Get specified dashboard by ID for specified project
-   * 
-   * @param dashboardId /path/ dashboardId (required)
-   * @param projectName /path/ projectName (required)
-   * @return DashboardResource
-  */
-  @GET("/v1/{projectName}/dashboard/{dashboardId}")
-  public static RestMethod getDashboardUsingGET;
+    /**
+     * Get specified dashboard by ID for specified project
+     *
+     * @param dashboardId /path/ dashboardId (required)
+     * @param projectName /path/ projectName (required)
+     * @return DashboardResource
+     */
+    @GET("/v1/{projectName}/dashboard/{dashboardId}")
+    public static DataMethod<DashboardResource> getDashboardUsingGET;
 
-  /**
-   * Get names of shared dashboards from specified project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqOwner /query/ Filters by 'owner' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqShared /query/ Filters by 'shared' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableSharedEntity
-  */
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqShared", value = "true")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/dashboard/shared")
-  public static RestMethod getSharedDashboardsNamesUsingGET;
+    /**
+     * Get names of shared dashboards from specified project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqOwner /query/ Filters by 'owner' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqShared /query/ Filters by 'shared' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableSharedEntity
+     */
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqShared", value = "true")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/dashboard/shared")
+    public static DataMethod<IterableSharedEntity> getSharedDashboardsNamesUsingGET;
 
-  /**
-   * Remove widget from specified dashboard
-   * 
-   * @param dashboardId /path/ dashboardId (required)
-   * @param projectName /path/ projectName (required)
-   * @param widgetId /path/ widgetId (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/v1/{projectName}/dashboard/{dashboardId}/{widgetId}")
-  public static RestMethod removeWidgetUsingDELETE;
+    /**
+     * Remove widget from specified dashboard
+     *
+     * @param dashboardId /path/ dashboardId (required)
+     * @param projectName /path/ projectName (required)
+     * @param widgetId /path/ widgetId (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/v1/{projectName}/dashboard/{dashboardId}/{widgetId}")
+    public static DataMethod<OperationCompletionRS> removeWidgetUsingDELETE;
 
-  /**
-   * Update specified dashboard for specified project
-   * 
-   * @param dashboardId /path/ dashboardId (required)
-   * @param projectName /path/ projectName (required)
-   * @param updateRQ(UpdateDashboardRQ) /body/ updateRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/dashboard/{dashboardId}")
-  public static RestMethod updateDashboardUsingPUTJSON;
+    /**
+     * Update specified dashboard for specified project
+     *
+     * @param dashboardId /path/ dashboardId (required)
+     * @param projectName /path/ projectName (required)
+     * @param updateRQ(UpdateDashboardRQ) /body/ updateRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/dashboard/{dashboardId}")
+    public static DataMethod<OperationCompletionRS> updateDashboardUsingPUTJSON;
 }

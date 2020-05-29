@@ -10,48 +10,41 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ItemAttributesRQ;
-import java.util.Date;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * StartLaunchRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class StartLaunchRQ extends DataClass<StartLaunchRQ>{
+public class StartLaunchRQ extends DataClass<StartLaunchRQ> {
 
-  public String description;
-  public ModeEnum mode;
-  /**
-   * Gets or Sets mode
-   */
-  public enum ModeEnum {
-      DEFAULT("DEFAULT"),
-      
-      DEBUG("DEBUG");
+    public String description;
+    public ModeEnum mode;
 
-      private String value;
+    /**
+     * Gets or Sets mode
+     */
+    public enum ModeEnum {
+        DEFAULT("DEFAULT"),
 
-      ModeEnum(String value) {
-      this.value = value;
-  }
-  }
+        DEBUG("DEBUG");
 
-  public String name;
-  public Boolean rerun;
-  public String rerunOf;
-  public Date startTime;
+        private String value;
+
+        ModeEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public String name;
+    public Boolean rerun;
+    public String rerunOf;
+    public Date startTime;
 }
 

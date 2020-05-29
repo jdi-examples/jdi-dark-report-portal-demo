@@ -10,29 +10,22 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * UpdateOneIssueSubTypeRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpdateOneIssueSubTypeRQ extends DataClass<UpdateOneIssueSubTypeRQ>{
+public class UpdateOneIssueSubTypeRQ extends DataClass<UpdateOneIssueSubTypeRQ> {
 
-  public String color;
-  public String locator;
-  public String longName;
-  public String shortName;
-  public String typeRef;
+    public String color;
+    public String locator;
+    public String longName;
+    public String shortName;
+    public String typeRef;
 }
 

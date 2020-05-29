@@ -10,79 +10,71 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ItemAttributesRQ;
-import com.epam.jdi.model.ParameterResource;
-import java.util.Date;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * StartTestItemRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class StartTestItemRQ extends DataClass<StartTestItemRQ>{
+public class StartTestItemRQ extends DataClass<StartTestItemRQ> {
 
-  public String codeRef;
-  public String description;
-  public Boolean hasStats;
-  public String launchUuid;
-  public String name;
-  public Boolean retry;
-  public Date startTime;
-  public String testCaseId;
-  public TypeEnum type;
-  /**
-   * Gets or Sets type
-   */
-  public enum TypeEnum {
-      SUITE("SUITE"),
-      
-      STORY("STORY"),
-      
-      TEST("TEST"),
-      
-      SCENARIO("SCENARIO"),
-      
-      STEP("STEP"),
-      
-      BEFORE_CLASS("BEFORE_CLASS"),
-      
-      BEFORE_GROUPS("BEFORE_GROUPS"),
-      
-      BEFORE_METHOD("BEFORE_METHOD"),
-      
-      BEFORE_SUITE("BEFORE_SUITE"),
-      
-      BEFORE_TEST("BEFORE_TEST"),
-      
-      AFTER_CLASS("AFTER_CLASS"),
-      
-      AFTER_GROUPS("AFTER_GROUPS"),
-      
-      AFTER_METHOD("AFTER_METHOD"),
-      
-      AFTER_SUITE("AFTER_SUITE"),
-      
-      AFTER_TEST("AFTER_TEST");
+    public String codeRef;
+    public String description;
+    public Boolean hasStats;
+    public String launchUuid;
+    public String name;
+    public Boolean retry;
+    public Date startTime;
+    public String testCaseId;
+    public TypeEnum type;
 
-      private String value;
+    /**
+     * Gets or Sets type
+     */
+    public enum TypeEnum {
+        SUITE("SUITE"),
 
-      TypeEnum(String value) {
-      this.value = value;
-  }
-  }
+        STORY("STORY"),
 
-  public String uniqueId;
+        TEST("TEST"),
+
+        SCENARIO("SCENARIO"),
+
+        STEP("STEP"),
+
+        BEFORE_CLASS("BEFORE_CLASS"),
+
+        BEFORE_GROUPS("BEFORE_GROUPS"),
+
+        BEFORE_METHOD("BEFORE_METHOD"),
+
+        BEFORE_SUITE("BEFORE_SUITE"),
+
+        BEFORE_TEST("BEFORE_TEST"),
+
+        AFTER_CLASS("AFTER_CLASS"),
+
+        AFTER_GROUPS("AFTER_GROUPS"),
+
+        AFTER_METHOD("AFTER_METHOD"),
+
+        AFTER_SUITE("AFTER_SUITE"),
+
+        AFTER_TEST("AFTER_TEST");
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public String uniqueId;
 }
 

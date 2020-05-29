@@ -12,31 +12,25 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
 import com.epam.http.annotations.ContentType;
-import com.epam.jdi.model.DemoDataRq;
-import com.epam.jdi.model.DemoDataRs;
-import static io.restassured.http.ContentType.JSON;
 import com.epam.http.annotations.POST;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.jdi.model.DemoDataRs;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class DemoDataControllerApi {
 
-  /**
-   * generate
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param demoDataRq(DemoDataRq) /body/ demoDataRq (required)
-   * @return DemoDataRs
-  */
-  @ContentType(JSON)
-  @POST("/v1/demo/{projectName}")
-  public static RestMethod generateUsingPOSTJSON;
+    /**
+     * generate
+     *
+     * @param projectName /path/ projectName (required)
+     * @param demoDataRq(DemoDataRq) /body/ demoDataRq (required)
+     * @return DemoDataRs
+     */
+    @ContentType(JSON)
+    @POST("/v1/demo/{projectName}")
+    public static DataMethod<DemoDataRs> generateUsingPOSTJSON;
 }

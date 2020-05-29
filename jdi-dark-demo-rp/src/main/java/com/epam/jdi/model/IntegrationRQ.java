@@ -10,27 +10,20 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * IntegrationRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class IntegrationRQ extends DataClass<IntegrationRQ>{
+public class IntegrationRQ extends DataClass<IntegrationRQ> {
 
-  public Boolean enabled;
-  public Object integrationParameters;
-  public String name;
+    public Boolean enabled;
+    public Object integrationParameters;
+    public String name;
 }
 

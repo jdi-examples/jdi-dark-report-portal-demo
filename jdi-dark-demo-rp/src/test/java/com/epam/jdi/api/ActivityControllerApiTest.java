@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,26 +23,24 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class ActivityControllerApiTest {
 
-    private ActivityControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(ActivityControllerApi.class); }
+    public void before() {
+        init(ActivityControllerApi.class);
+    }
 
-    
+
     /**
      * Get activities for project
-     * 
      */
     @Test
     public void getActivitiesUsingGETTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ActivityControllerApi.getActivitiesUsingGET.call();
+        RestResponse resp = ActivityControllerApi.getActivitiesUsingGET.callPathParams("Test Project");
         resp.isOk();
     }
-    
+
     /**
      * Get activities for project
-     * 
      */
     @Test
     public void getActivitiesUsingGET1Test() {
@@ -51,10 +48,9 @@ public class ActivityControllerApiTest {
         RestResponse resp = ActivityControllerApi.getActivitiesUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * getActivity
-     * 
      */
     @Test
     public void getActivityUsingGETTest() {
@@ -62,10 +58,9 @@ public class ActivityControllerApiTest {
         RestResponse resp = ActivityControllerApi.getActivityUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get activities for test item
-     * 
      */
     @Test
     public void getTestItemActivitiesUsingGETTest() {
@@ -73,5 +68,5 @@ public class ActivityControllerApiTest {
         RestResponse resp = ActivityControllerApi.getTestItemActivitiesUsingGET.call();
         resp.isOk();
     }
-    
+
 }

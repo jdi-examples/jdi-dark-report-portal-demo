@@ -12,50 +12,42 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
-import com.epam.jdi.model.AnalyticsResource;
-import com.epam.http.annotations.ContentType;
-import static io.restassured.http.ContentType.JSON;
+import com.epam.http.annotations.*;
+import com.epam.http.requests.DataMethod;
 import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.http.annotations.GET;
-import com.epam.http.annotations.POST;
-import com.epam.http.annotations.PUT;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class SettingsControllerApi {
 
-  /**
-   * Get server settings
-   * 
-   * @return Map(String, String);
-  */
-  @GET("/v1/settings")
-  public static RestMethod getServerSettingsUsingGET;
+    /**
+     * Get server settings
+     *
+     * @return Map<String, String>
+     */
+    @GET("/v1/settings")
+    public static DataMethod<Map<String, String>> getServerSettingsUsingGET;
 
-  /**
-   * Update analytics settings
-   * 
-   * @param request(AnalyticsResource) /body/ request (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/settings/analytics")
-  public static RestMethod saveAnalyticsSettingsUsingPOSTJSON;
+    /**
+     * Update analytics settings
+     *
+     * @param request(AnalyticsResource) /body/ request (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/settings/analytics")
+    public static DataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPOSTJSON;
 
-  /**
-   * Update analytics settings
-   * 
-   * @param request(AnalyticsResource) /body/ request (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/settings/analytics")
-  public static RestMethod saveAnalyticsSettingsUsingPUTJSON;
+    /**
+     * Update analytics settings
+     *
+     * @param request(AnalyticsResource) /body/ request (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/settings/analytics")
+    public static DataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPUTJSON;
 }

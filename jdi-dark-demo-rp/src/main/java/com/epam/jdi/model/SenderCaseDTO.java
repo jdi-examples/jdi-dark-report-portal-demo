@@ -10,49 +10,41 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ItemAttributeResource;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * SenderCaseDTO
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SenderCaseDTO extends DataClass<SenderCaseDTO>{
+public class SenderCaseDTO extends DataClass<SenderCaseDTO> {
 
-  public Boolean enabled;
-  public SendCaseEnum sendCase;
-  /**
-   * Gets or Sets sendCase
-   */
-  public enum SendCaseEnum {
-      ALWAYS("ALWAYS"),
-      
-      FAILED("FAILED"),
-      
-      MORE_10("MORE_10"),
-      
-      MORE_20("MORE_20"),
-      
-      MORE_50("MORE_50");
+    public Boolean enabled;
+    public SendCaseEnum sendCase;
 
-      private String value;
+    /**
+     * Gets or Sets sendCase
+     */
+    public enum SendCaseEnum {
+        ALWAYS("ALWAYS"),
 
-      SendCaseEnum(String value) {
-      this.value = value;
-  }
-  }
+        FAILED("FAILED"),
+
+        MORE_10("MORE_10"),
+
+        MORE_20("MORE_20"),
+
+        MORE_50("MORE_50");
+
+        private String value;
+
+        SendCaseEnum(String value) {
+            this.value = value;
+        }
+    }
 
 }
 

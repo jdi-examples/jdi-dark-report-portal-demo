@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class TestItemAsyncControllerApiTest {
 
-    private TestItemAsyncControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(TestItemAsyncControllerApi.class); }
+    public void before() {
+        init(TestItemAsyncControllerApi.class);
+    }
 
-    
+
     /**
      * Finish test item
-     * 
      */
     @Test
     public void finishTestItemUsingPUTJSONTest() {
@@ -40,10 +38,9 @@ public class TestItemAsyncControllerApiTest {
         RestResponse resp = TestItemAsyncControllerApi.finishTestItemUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Start a child test item
-     * 
      */
     @Test
     public void startChildItemUsingPOSTJSONTest() {
@@ -51,10 +48,9 @@ public class TestItemAsyncControllerApiTest {
         RestResponse resp = TestItemAsyncControllerApi.startChildItemUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Start a root test item
-     * 
      */
     @Test
     public void startRootItemUsingPOSTJSONTest() {
@@ -62,5 +58,5 @@ public class TestItemAsyncControllerApiTest {
         RestResponse resp = TestItemAsyncControllerApi.startRootItemUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
 }

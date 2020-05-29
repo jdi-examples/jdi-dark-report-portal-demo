@@ -10,34 +10,27 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Timestamp
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Timestamp extends DataClass<Timestamp>{
+public class Timestamp extends DataClass<Timestamp> {
 
-  public Integer date;
-  public Integer day;
-  public Integer hours;
-  public Integer minutes;
-  public Integer month;
-  public Integer nanos;
-  public Integer seconds;
-  public Long time;
-  public Integer timezoneOffset;
-  public Integer year;
+    public Integer date;
+    public Integer day;
+    public Integer hours;
+    public Integer minutes;
+    public Integer month;
+    public Integer nanos;
+    public Integer seconds;
+    public Long time;
+    public Integer timezoneOffset;
+    public Integer year;
 }
 

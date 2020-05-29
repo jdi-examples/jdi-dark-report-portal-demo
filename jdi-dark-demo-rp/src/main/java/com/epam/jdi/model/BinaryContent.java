@@ -10,27 +10,20 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * BinaryContent
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BinaryContent extends DataClass<BinaryContent>{
+public class BinaryContent extends DataClass<BinaryContent> {
 
-  public String contentType;
-  public String id;
-  public String thumbnailId;
+    public String contentType;
+    public String id;
+    public String thumbnailId;
 }
 

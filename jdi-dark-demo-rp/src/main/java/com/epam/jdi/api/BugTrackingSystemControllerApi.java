@@ -12,92 +12,81 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
-import com.epam.http.annotations.ContentType;
-import static io.restassured.http.ContentType.JSON;
+import com.epam.http.annotations.*;
+import com.epam.http.requests.DataMethod;
 import com.epam.jdi.model.PostFormField;
-import com.epam.jdi.model.PostTicketRQ;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.QueryParameters;
 import com.epam.jdi.model.Ticket;
-import com.epam.http.annotations.GET;
-import com.epam.http.annotations.POST;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class BugTrackingSystemControllerApi {
 
-  /**
-   * Post ticket to the bts integration
-   * 
-   * @param integrationId /path/ integrationId (required)
-   * @param projectName /path/ projectName (required)
-   * @param ticketRQ(PostTicketRQ) /body/ ticketRQ (required)
-   * @return Ticket
-  */
-  @ContentType(JSON)
-  @POST("/v1/bts/{projectName}/{integrationId}/ticket")
-  public static RestMethod createIssueUsingPOSTJSON;
+    /**
+     * Post ticket to the bts integration
+     *
+     * @param integrationId /path/ integrationId (required)
+     * @param projectName /path/ projectName (required)
+     * @param ticketRQ(PostTicketRQ) /body/ ticketRQ (required)
+     * @return Ticket
+     */
+    @ContentType(JSON)
+    @POST("/v1/bts/{projectName}/{integrationId}/ticket")
+    public static DataMethod<Ticket> createIssueUsingPOSTJSON;
 
-  /**
-   * Get list of fields required for posting ticket
-   * 
-   * @param integrationId /path/ integrationId (required)
-   * @return List(String);
-  */
-  @GET("/v1/bts/{integrationId}/issue_types")
-  public static RestMethod getAllowableIssueTypesUsingGET;
+    /**
+     * Get list of fields required for posting ticket
+     *
+     * @param integrationId /path/ integrationId (required)
+     * @return String[]
+     */
+    @GET("/v1/bts/{integrationId}/issue_types")
+    public static DataMethod<String[]> getAllowableIssueTypesUsingGET;
 
-  /**
-   * Get list of allowable issue types for bug tracking system
-   * 
-   * @param integrationId /path/ integrationId (required)
-   * @param projectName /path/ projectName (required)
-   * @return List(String);
-  */
-  @GET("/v1/bts/{projectName}/{integrationId}/issue_types")
-  public static RestMethod getAllowableIssueTypesUsingGET1;
+    /**
+     * Get list of allowable issue types for bug tracking system
+     *
+     * @param integrationId /path/ integrationId (required)
+     * @param projectName /path/ projectName (required)
+     * @return String[]
+     */
+    @GET("/v1/bts/{projectName}/{integrationId}/issue_types")
+    public static DataMethod<String[]> getAllowableIssueTypesUsingGET1;
 
-  /**
-   * Get list of fields required for posting ticket
-   * 
-   * @param integrationId /path/ integrationId (required)
-   * @param issueType /query/ issueType (required)
-   * @return List(PostFormField);
-  */
-  @QueryParameter(name = "issueType", value = "issueType_example")
-  @GET("/v1/bts/{integrationId}/fields-set")
-  public static RestMethod getSetOfIntegrationSystemFieldsUsingGET;
+    /**
+     * Get list of fields required for posting ticket
+     *
+     * @param integrationId /path/ integrationId (required)
+     * @param issueType /query/ issueType (required)
+     * @return PostFormField[]
+     */
+    @QueryParameter(name = "issueType", value = "issueType_example")
+    @GET("/v1/bts/{integrationId}/fields-set")
+    public static DataMethod<PostFormField[]> getSetOfIntegrationSystemFieldsUsingGET;
 
-  /**
-   * Get list of fields required for posting ticket
-   * 
-   * @param integrationId /path/ integrationId (required)
-   * @param projectName /path/ projectName (required)
-   * @param issueType /query/ issueType (required)
-   * @return List(PostFormField);
-  */
-  @QueryParameter(name = "issueType", value = "issueType_example")
-  @GET("/v1/bts/{projectName}/{integrationId}/fields-set")
-  public static RestMethod getSetOfIntegrationSystemFieldsUsingGET1;
+    /**
+     * Get list of fields required for posting ticket
+     *
+     * @param integrationId /path/ integrationId (required)
+     * @param projectName /path/ projectName (required)
+     * @param issueType /query/ issueType (required)
+     * @return PostFormField[]
+     */
+    @QueryParameter(name = "issueType", value = "issueType_example")
+    @GET("/v1/bts/{projectName}/{integrationId}/fields-set")
+    public static DataMethod<PostFormField[]> getSetOfIntegrationSystemFieldsUsingGET1;
 
-  /**
-   * Get ticket from the bts integration
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param ticketId /path/ ticketId (required)
-   * @param btsProject /query/ btsProject (required)
-   * @param btsUrl /query/ btsUrl (required)
-   * @return Ticket
-  */
-  @QueryParameter(name = "btsProject", value = "btsProject_example")
-  @QueryParameter(name = "btsUrl", value = "btsUrl_example")
-  @GET("/v1/bts/{projectName}/ticket/{ticketId}")
-  public static RestMethod getTicketUsingGET;
+    /**
+     * Get ticket from the bts integration
+     *
+     * @param projectName /path/ projectName (required)
+     * @param ticketId /path/ ticketId (required)
+     * @param btsProject /query/ btsProject (required)
+     * @param btsUrl /query/ btsUrl (required)
+     * @return Ticket
+     */
+    @QueryParameter(name = "btsProject", value = "btsProject_example")
+    @QueryParameter(name = "btsUrl", value = "btsUrl_example")
+    @GET("/v1/bts/{projectName}/ticket/{ticketId}")
+    public static DataMethod<Ticket> getTicketUsingGET;
 }

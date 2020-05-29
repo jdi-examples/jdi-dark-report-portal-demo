@@ -10,34 +10,28 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import java.util.Date;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * ActivityResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ActivityResource extends DataClass<ActivityResource>{
+public class ActivityResource extends DataClass<ActivityResource> {
 
-  public String actionType;
-  public Object details;
-  public Long id;
-  public Date lastModified;
-  public Long loggedObjectId;
-  public String objectType;
-  public Long projectId;
-  public String projectName;
-  public String user;
+    public String actionType;
+    public Object details;
+    public Long id;
+    public Date lastModified;
+    public Long loggedObjectId;
+    public String objectType;
+    public Long projectId;
+    public String projectName;
+    public String user;
 }
 

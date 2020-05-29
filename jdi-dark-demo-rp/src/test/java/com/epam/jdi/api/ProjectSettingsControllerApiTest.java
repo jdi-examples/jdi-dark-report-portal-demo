@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class ProjectSettingsControllerApiTest {
 
-    private ProjectSettingsControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(ProjectSettingsControllerApi.class); }
+    public void before() {
+        init(ProjectSettingsControllerApi.class);
+    }
 
-    
+
     /**
      * Create pattern template for items&#39; log messages pattern analysis
-     * 
      */
     @Test
     public void createPatternTemplateUsingPOSTJSONTest() {
@@ -40,10 +38,9 @@ public class ProjectSettingsControllerApiTest {
         RestResponse resp = ProjectSettingsControllerApi.createPatternTemplateUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Creation of custom project specific issue sub-type
-     * 
      */
     @Test
     public void createProjectIssueSubTypeUsingPOSTJSONTest() {
@@ -51,10 +48,9 @@ public class ProjectSettingsControllerApiTest {
         RestResponse resp = ProjectSettingsControllerApi.createProjectIssueSubTypeUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete pattern template for items&#39; log messages pattern analysis
-     * 
      */
     @Test
     public void deletePatternTemplateUsingDELETETest() {
@@ -62,10 +58,9 @@ public class ProjectSettingsControllerApiTest {
         RestResponse resp = ProjectSettingsControllerApi.deletePatternTemplateUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete custom project specific issue sub-type
-     * 
      */
     @Test
     public void deleteProjectIssueSubTypeUsingDELETETest() {
@@ -73,7 +68,7 @@ public class ProjectSettingsControllerApiTest {
         RestResponse resp = ProjectSettingsControllerApi.deleteProjectIssueSubTypeUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Get project specific issue sub-types
      * Only for users that are assigned to the project
@@ -84,10 +79,9 @@ public class ProjectSettingsControllerApiTest {
         RestResponse resp = ProjectSettingsControllerApi.getProjectSettingsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Update pattern template for items&#39; log messages pattern analysis
-     * 
      */
     @Test
     public void updatePatternTemplateUsingPUTJSONTest() {
@@ -95,10 +89,9 @@ public class ProjectSettingsControllerApiTest {
         RestResponse resp = ProjectSettingsControllerApi.updatePatternTemplateUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Update of custom project specific issue sub-type
-     * 
      */
     @Test
     public void updateProjectIssueSubTypeUsingPUTJSONTest() {
@@ -106,5 +99,5 @@ public class ProjectSettingsControllerApiTest {
         RestResponse resp = ProjectSettingsControllerApi.updateProjectIssueSubTypeUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

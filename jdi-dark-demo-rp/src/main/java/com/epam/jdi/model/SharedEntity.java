@@ -10,28 +10,21 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * SharedEntity
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SharedEntity extends DataClass<SharedEntity>{
+public class SharedEntity extends DataClass<SharedEntity> {
 
-  public String description;
-  public String id;
-  public String name;
-  public String owner;
+    public String description;
+    public String id;
+    public String name;
+    public String owner;
 }
 

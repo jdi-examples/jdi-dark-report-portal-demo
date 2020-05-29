@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class PluginControllerApiTest {
 
-    private PluginControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(PluginControllerApi.class); }
+    public void before() {
+        init(PluginControllerApi.class);
+    }
 
-    
+
     /**
      * Delete plugin by id
-     * 
      */
     @Test
     public void deletePluginUsingDELETETest() {
@@ -40,10 +38,9 @@ public class PluginControllerApiTest {
         RestResponse resp = PluginControllerApi.deletePluginUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all available plugins
-     * 
      */
     @Test
     public void getPluginsUsingGETTest() {
@@ -51,10 +48,9 @@ public class PluginControllerApiTest {
         RestResponse resp = PluginControllerApi.getPluginsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Update Report Portal plugin state
-     * 
      */
     @Test
     public void updatePluginStateUsingPUTJSONTest() {
@@ -62,10 +58,9 @@ public class PluginControllerApiTest {
         RestResponse resp = PluginControllerApi.updatePluginStateUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Upload new Report Portal plugin
-     * 
      */
     @Test
     public void uploadPluginUsingPOSTANYTest() {
@@ -73,5 +68,5 @@ public class PluginControllerApiTest {
         RestResponse resp = PluginControllerApi.uploadPluginUsingPOSTANY.call();
         resp.isOk();
     }
-    
+
 }

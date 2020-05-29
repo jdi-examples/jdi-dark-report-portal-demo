@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class BugTrackingSystemControllerApiTest {
 
-    private BugTrackingSystemControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(BugTrackingSystemControllerApi.class); }
+    public void before() {
+        init(BugTrackingSystemControllerApi.class);
+    }
 
-    
+
     /**
      * Post ticket to the bts integration
-     * 
      */
     @Test
     public void createIssueUsingPOSTJSONTest() {
@@ -40,10 +38,9 @@ public class BugTrackingSystemControllerApiTest {
         RestResponse resp = BugTrackingSystemControllerApi.createIssueUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Get list of fields required for posting ticket
-     * 
      */
     @Test
     public void getAllowableIssueTypesUsingGETTest() {
@@ -51,10 +48,9 @@ public class BugTrackingSystemControllerApiTest {
         RestResponse resp = BugTrackingSystemControllerApi.getAllowableIssueTypesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get list of allowable issue types for bug tracking system
-     * 
      */
     @Test
     public void getAllowableIssueTypesUsingGET1Test() {
@@ -62,10 +58,9 @@ public class BugTrackingSystemControllerApiTest {
         RestResponse resp = BugTrackingSystemControllerApi.getAllowableIssueTypesUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Get list of fields required for posting ticket
-     * 
      */
     @Test
     public void getSetOfIntegrationSystemFieldsUsingGETTest() {
@@ -73,10 +68,9 @@ public class BugTrackingSystemControllerApiTest {
         RestResponse resp = BugTrackingSystemControllerApi.getSetOfIntegrationSystemFieldsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get list of fields required for posting ticket
-     * 
      */
     @Test
     public void getSetOfIntegrationSystemFieldsUsingGET1Test() {
@@ -84,10 +78,9 @@ public class BugTrackingSystemControllerApiTest {
         RestResponse resp = BugTrackingSystemControllerApi.getSetOfIntegrationSystemFieldsUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Get ticket from the bts integration
-     * 
      */
     @Test
     public void getTicketUsingGETTest() {
@@ -95,5 +88,5 @@ public class BugTrackingSystemControllerApiTest {
         RestResponse resp = BugTrackingSystemControllerApi.getTicketUsingGET.call();
         resp.isOk();
     }
-    
+
 }

@@ -10,27 +10,20 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * EditUserRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class EditUserRQ extends DataClass<EditUserRQ>{
+public class EditUserRQ extends DataClass<EditUserRQ> {
 
-  public String email;
-  public String fullName;
-  public String role;
+    public String email;
+    public String fullName;
+    public String role;
 }
 

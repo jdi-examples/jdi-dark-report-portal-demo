@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class WidgetControllerApiTest {
 
-    private WidgetControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(WidgetControllerApi.class); }
+    public void before() {
+        init(WidgetControllerApi.class);
+    }
 
-    
+
     /**
      * Create a new widget
-     * 
      */
     @Test
     public void createWidgetUsingPOSTJSONTest() {
@@ -40,10 +38,9 @@ public class WidgetControllerApiTest {
         RestResponse resp = WidgetControllerApi.createWidgetUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Load shared widgets
-     * 
      */
     @Test
     public void getSharedUsingGETTest() {
@@ -51,10 +48,9 @@ public class WidgetControllerApiTest {
         RestResponse resp = WidgetControllerApi.getSharedUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Load all widget names which belong to a user
-     * 
      */
     @Test
     public void getWidgetNamesUsingGETTest() {
@@ -62,10 +58,9 @@ public class WidgetControllerApiTest {
         RestResponse resp = WidgetControllerApi.getWidgetNamesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get widget preview
-     * 
      */
     @Test
     public void getWidgetPreviewUsingPOSTJSONTest() {
@@ -73,10 +68,9 @@ public class WidgetControllerApiTest {
         RestResponse resp = WidgetControllerApi.getWidgetPreviewUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Get multilevel widget by ID
-     * 
      */
     @Test
     public void getWidgetUsingGETTest() {
@@ -84,10 +78,9 @@ public class WidgetControllerApiTest {
         RestResponse resp = WidgetControllerApi.getWidgetUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get widget by ID
-     * 
      */
     @Test
     public void getWidgetUsingGET1Test() {
@@ -95,10 +88,9 @@ public class WidgetControllerApiTest {
         RestResponse resp = WidgetControllerApi.getWidgetUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Search shared widgets by name
-     * 
      */
     @Test
     public void searchSharedUsingGETTest() {
@@ -106,10 +98,9 @@ public class WidgetControllerApiTest {
         RestResponse resp = WidgetControllerApi.searchSharedUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Update specified widget
-     * 
      */
     @Test
     public void updateWidgetUsingPUTJSONTest() {
@@ -117,5 +108,5 @@ public class WidgetControllerApiTest {
         RestResponse resp = WidgetControllerApi.updateWidgetUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

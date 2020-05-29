@@ -10,30 +10,21 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ExternalSystemIssue;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Issue
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Issue extends DataClass<Issue>{
+public class Issue extends DataClass<Issue> {
 
-  public Boolean autoAnalyzed;
-  public String comment;
-  public Boolean ignoreAnalyzer;
-  public String issueType;
+    public Boolean autoAnalyzed;
+    public String comment;
+    public Boolean ignoreAnalyzer;
+    public String issueType;
 }
 

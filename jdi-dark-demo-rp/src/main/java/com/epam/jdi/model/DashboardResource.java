@@ -10,31 +10,22 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.WidgetObjectModel;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * DashboardResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DashboardResource extends DataClass<DashboardResource>{
+public class DashboardResource extends DataClass<DashboardResource> {
 
-  public String description;
-  public Long id;
-  public String name;
-  public String owner;
-  public Boolean share;
+    public String description;
+    public Long id;
+    public String name;
+    public String owner;
+    public Boolean share;
 }
 

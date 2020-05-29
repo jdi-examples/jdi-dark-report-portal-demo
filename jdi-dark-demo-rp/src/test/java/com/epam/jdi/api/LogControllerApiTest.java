@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class LogControllerApiTest {
 
-    private LogControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(LogControllerApi.class); }
+    public void before() {
+        init(LogControllerApi.class);
+    }
 
-    
+
     /**
      * Create log
-     * 
      */
     @Test
     public void createLogUsingPOST3JSONTest() {
@@ -40,10 +38,9 @@ public class LogControllerApiTest {
         RestResponse resp = LogControllerApi.createLogUsingPOST3JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete log
-     * 
      */
     @Test
     public void deleteLogUsingDELETETest() {
@@ -51,10 +48,9 @@ public class LogControllerApiTest {
         RestResponse resp = LogControllerApi.deleteLogUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Get log by UUID
-     * 
      */
     @Test
     public void getLogByUuidUsingGETTest() {
@@ -62,10 +58,9 @@ public class LogControllerApiTest {
         RestResponse resp = LogControllerApi.getLogByUuidUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get log by ID
-     * 
      */
     @Test
     public void getLogUsingGETTest() {
@@ -73,10 +68,9 @@ public class LogControllerApiTest {
         RestResponse resp = LogControllerApi.getLogUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get logs by filter
-     * 
      */
     @Test
     public void getLogsUsingGETTest() {
@@ -84,10 +78,9 @@ public class LogControllerApiTest {
         RestResponse resp = LogControllerApi.getLogsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get nested steps with logs for the parent Test Item
-     * 
      */
     @Test
     public void getNestedItemsUsingGETTest() {
@@ -95,10 +88,9 @@ public class LogControllerApiTest {
         RestResponse resp = LogControllerApi.getNestedItemsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get logs by filter
-     * 
      */
     @Test
     public void getPageNumberUsingGETTest() {
@@ -106,10 +98,9 @@ public class LogControllerApiTest {
         RestResponse resp = LogControllerApi.getPageNumberUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Search test items with similar error logs
-     * 
      */
     @Test
     public void searchLogsUsingPOSTJSONTest() {
@@ -117,5 +108,5 @@ public class LogControllerApiTest {
         RestResponse resp = LogControllerApi.searchLogsUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
 }

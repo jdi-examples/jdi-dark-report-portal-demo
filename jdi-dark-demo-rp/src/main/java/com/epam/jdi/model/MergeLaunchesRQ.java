@@ -10,64 +10,58 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ItemAttributeResource;
-import java.util.Date;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * MergeLaunchesRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MergeLaunchesRQ extends DataClass<MergeLaunchesRQ>{
+public class MergeLaunchesRQ extends DataClass<MergeLaunchesRQ> {
 
-  public String description;
-  public Date endTime;
-  public Boolean extendSuitesDescription;
-  public MergeTypeEnum mergeType;
-  /**
-   * Gets or Sets mergeType
-   */
-  public enum MergeTypeEnum {
-      BASIC("BASIC"),
-      
-      DEEP("DEEP");
+    public String description;
+    public Date endTime;
+    public Boolean extendSuitesDescription;
+    public MergeTypeEnum mergeType;
 
-      private String value;
+    /**
+     * Gets or Sets mergeType
+     */
+    public enum MergeTypeEnum {
+        BASIC("BASIC"),
 
-      MergeTypeEnum(String value) {
-      this.value = value;
-  }
-  }
+        DEEP("DEEP");
 
-  public ModeEnum mode;
-  /**
-   * Gets or Sets mode
-   */
-  public enum ModeEnum {
-      DEFAULT("DEFAULT"),
-      
-      DEBUG("DEBUG");
+        private String value;
 
-      private String value;
+        MergeTypeEnum(String value) {
+            this.value = value;
+        }
+    }
 
-      ModeEnum(String value) {
-      this.value = value;
-  }
-  }
+    public ModeEnum mode;
 
-  public String name;
-  public Date startTime;
+    /**
+     * Gets or Sets mode
+     */
+    public enum ModeEnum {
+        DEFAULT("DEFAULT"),
+
+        DEBUG("DEBUG");
+
+        private String value;
+
+        ModeEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public String name;
+    public Date startTime;
 }
 

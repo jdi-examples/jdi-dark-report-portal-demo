@@ -10,39 +10,33 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * CreateProjectRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CreateProjectRQ extends DataClass<CreateProjectRQ>{
+public class CreateProjectRQ extends DataClass<CreateProjectRQ> {
 
-  public EntryTypeEnum entryType;
-  /**
-   * Gets or Sets entryType
-   */
-  public enum EntryTypeEnum {
-      INTERNAL("INTERNAL");
+    public EntryTypeEnum entryType;
 
-      private String value;
+    /**
+     * Gets or Sets entryType
+     */
+    public enum EntryTypeEnum {
+        INTERNAL("INTERNAL");
 
-      EntryTypeEnum(String value) {
-      this.value = value;
-  }
-  }
+        private String value;
 
-  public String projectName;
+        EntryTypeEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public String projectName;
 }
 

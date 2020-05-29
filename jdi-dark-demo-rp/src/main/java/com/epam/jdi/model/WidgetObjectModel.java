@@ -10,32 +10,23 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.Position;
-import com.epam.jdi.model.Size;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * WidgetObjectModel
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class WidgetObjectModel extends DataClass<WidgetObjectModel>{
+public class WidgetObjectModel extends DataClass<WidgetObjectModel> {
 
-  public Boolean share;
-  public Long widgetId;
-  public String widgetName;
-  public Position widgetPosition;
-  public Size widgetSize;
-  public String widgetType;
+    public Boolean share;
+    public Long widgetId;
+    public String widgetName;
+    public Position widgetPosition;
+    public Size widgetSize;
+    public String widgetType;
 }
 

@@ -10,27 +10,20 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * CreateDashboardRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CreateDashboardRQ extends DataClass<CreateDashboardRQ>{
+public class CreateDashboardRQ extends DataClass<CreateDashboardRQ> {
 
-  public String description;
-  public String name;
-  public Boolean share;
+    public String description;
+    public String name;
+    public Boolean share;
 }
 

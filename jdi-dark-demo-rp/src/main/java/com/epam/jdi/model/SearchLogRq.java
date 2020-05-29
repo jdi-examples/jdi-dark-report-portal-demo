@@ -10,43 +10,37 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * SearchLogRq
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchLogRq extends DataClass<SearchLogRq>{
+public class SearchLogRq extends DataClass<SearchLogRq> {
 
-  public Long filterId;
-  public SearchModeEnum searchMode;
-  /**
-   * Gets or Sets searchMode
-   */
-  public enum SearchModeEnum {
-      CURRENTLAUNCH("currentLaunch"),
-      
-      LAUNCHNAME("launchName"),
-      
-      FILTER("filter");
+    public Long filterId;
+    public SearchModeEnum searchMode;
 
-      private String value;
+    /**
+     * Gets or Sets searchMode
+     */
+    public enum SearchModeEnum {
+        CURRENTLAUNCH("currentLaunch"),
 
-      SearchModeEnum(String value) {
-      this.value = value;
-  }
-  }
+        LAUNCHNAME("launchName"),
+
+        FILTER("filter");
+
+        private String value;
+
+        SearchModeEnum(String value) {
+            this.value = value;
+        }
+    }
 
 }
 

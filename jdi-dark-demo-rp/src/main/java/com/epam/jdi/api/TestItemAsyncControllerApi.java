@@ -12,58 +12,51 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
 import com.epam.http.annotations.ContentType;
-import com.epam.jdi.model.EntryCreatedAsyncRS;
-import com.epam.jdi.model.FinishTestItemRQ;
-import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.jdi.model.StartTestItemRQ;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.jdi.model.EntryCreatedAsyncRS;
+import com.epam.jdi.model.OperationCompletionRS;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class TestItemAsyncControllerApi {
 
-  /**
-   * Finish test item
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param testItemId /path/ testItemId (required)
-   * @param finishExecutionRQ(FinishTestItemRQ) /body/ finishExecutionRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v2/{projectName}/item/{testItemId}")
-  public static RestMethod finishTestItemUsingPUTJSON;
+    /**
+     * Finish test item
+     *
+     * @param projectName /path/ projectName (required)
+     * @param testItemId /path/ testItemId (required)
+     * @param finishExecutionRQ(FinishTestItemRQ) /body/ finishExecutionRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v2/{projectName}/item/{testItemId}")
+    public static DataMethod<OperationCompletionRS> finishTestItemUsingPUTJSON;
 
-  /**
-   * Start a child test item
-   * 
-   * @param parentItem /path/ parentItem (required)
-   * @param projectName /path/ projectName (required)
-   * @param startTestItemRQ(StartTestItemRQ) /body/ startTestItemRQ (required)
-   * @return EntryCreatedAsyncRS
-  */
-  @ContentType(JSON)
-  @POST("/v2/{projectName}/item/{parentItem}")
-  public static RestMethod startChildItemUsingPOSTJSON;
+    /**
+     * Start a child test item
+     *
+     * @param parentItem /path/ parentItem (required)
+     * @param projectName /path/ projectName (required)
+     * @param startTestItemRQ(StartTestItemRQ) /body/ startTestItemRQ (required)
+     * @return EntryCreatedAsyncRS
+     */
+    @ContentType(JSON)
+    @POST("/v2/{projectName}/item/{parentItem}")
+    public static DataMethod<EntryCreatedAsyncRS> startChildItemUsingPOSTJSON;
 
-  /**
-   * Start a root test item
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param startTestItemRQ(StartTestItemRQ) /body/ startTestItemRQ (required)
-   * @return EntryCreatedAsyncRS
-  */
-  @ContentType(JSON)
-  @POST("/v2/{projectName}/item")
-  public static RestMethod startRootItemUsingPOSTJSON;
+    /**
+     * Start a root test item
+     *
+     * @param projectName /path/ projectName (required)
+     * @param startTestItemRQ(StartTestItemRQ) /body/ startTestItemRQ (required)
+     * @return EntryCreatedAsyncRS
+     */
+    @ContentType(JSON)
+    @POST("/v2/{projectName}/item")
+    public static DataMethod<EntryCreatedAsyncRS> startRootItemUsingPOSTJSON;
 }

@@ -22,7 +22,14 @@ import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.DataMethod;
 import com.epam.http.requests.RestMethod;
-import com.epam.jdi.model.*;
+import com.epam.jdi.model.ChartStatisticsContent;
+import com.epam.jdi.model.DeleteBulkRS;
+import com.epam.jdi.model.FinishLaunchRS;
+import com.epam.jdi.model.IterableLaunchResource;
+import com.epam.jdi.model.LaunchResource;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.PageLaunchResource;
+import com.epam.jdi.model.StartLaunchRS;
 
 import java.util.List;
 import java.util.Map;

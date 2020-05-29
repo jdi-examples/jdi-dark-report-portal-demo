@@ -19,7 +19,13 @@ import com.epam.http.annotations.POST;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.DataMethod;
-import com.epam.jdi.model.*;
+import com.epam.jdi.model.EntryCreatedAsyncRS;
+import com.epam.jdi.model.IterableLogResource;
+import com.epam.jdi.model.IterableSearchLogRs;
+import com.epam.jdi.model.Iterableobject;
+import com.epam.jdi.model.LogResource;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.Serializable;
 
 import java.util.Map;
 

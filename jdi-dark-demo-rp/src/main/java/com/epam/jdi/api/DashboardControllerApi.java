@@ -20,7 +20,11 @@ import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.DataMethod;
-import com.epam.jdi.model.*;
+import com.epam.jdi.model.DashboardResource;
+import com.epam.jdi.model.EntryCreatedRS;
+import com.epam.jdi.model.IterableDashboardResource;
+import com.epam.jdi.model.IterableSharedEntity;
+import com.epam.jdi.model.OperationCompletionRS;
 
 import static io.restassured.http.ContentType.JSON;
 

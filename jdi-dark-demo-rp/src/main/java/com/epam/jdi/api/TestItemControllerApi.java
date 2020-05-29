@@ -20,7 +20,12 @@ import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.DataMethod;
-import com.epam.jdi.model.*;
+import com.epam.jdi.model.EntryCreatedAsyncRS;
+import com.epam.jdi.model.Issue;
+import com.epam.jdi.model.IterableTestItemHistoryElement;
+import com.epam.jdi.model.IterableTestItemResource;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.TestItemResource;
 
 import static io.restassured.http.ContentType.JSON;
 

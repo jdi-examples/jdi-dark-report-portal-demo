@@ -12,7 +12,12 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.*;
+import com.epam.http.annotations.ContentType;
+import com.epam.http.annotations.DELETE;
+import com.epam.http.annotations.GET;
+import com.epam.http.annotations.POST;
+import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.DataMethod;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IssueSubTypeCreatedRS;

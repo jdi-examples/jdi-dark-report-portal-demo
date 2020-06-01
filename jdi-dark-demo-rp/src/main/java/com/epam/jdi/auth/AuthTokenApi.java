@@ -17,7 +17,7 @@ import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.RestMethod;
 
 @ServiceDomain("${uat}")
-public class TokenApi {
+public class AuthTokenApi {
 
     /**
      * Get user token

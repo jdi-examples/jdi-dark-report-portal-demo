@@ -12,9 +12,18 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.*;
+import com.epam.http.annotations.ContentType;
+import com.epam.http.annotations.GET;
+import com.epam.http.annotations.POST;
+import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.QueryParameter;
+import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.DataMethod;
-import com.epam.jdi.model.*;
+import com.epam.jdi.model.EntryCreatedRS;
+import com.epam.jdi.model.IterableWidgetResource;
+import com.epam.jdi.model.Iterableobject;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.WidgetResource;
 
 import static io.restassured.http.ContentType.JSON;
 

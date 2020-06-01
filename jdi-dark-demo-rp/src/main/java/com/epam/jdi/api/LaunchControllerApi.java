@@ -12,10 +12,24 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.*;
+import com.epam.http.annotations.ContentType;
+import com.epam.http.annotations.DELETE;
+import com.epam.http.annotations.FormParameter;
+import com.epam.http.annotations.GET;
+import com.epam.http.annotations.POST;
+import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.QueryParameter;
+import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.DataMethod;
 import com.epam.http.requests.RestMethod;
-import com.epam.jdi.model.*;
+import com.epam.jdi.model.ChartStatisticsContent;
+import com.epam.jdi.model.DeleteBulkRS;
+import com.epam.jdi.model.FinishLaunchRS;
+import com.epam.jdi.model.IterableLaunchResource;
+import com.epam.jdi.model.LaunchResource;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.PageLaunchResource;
+import com.epam.jdi.model.StartLaunchRS;
 
 import java.util.List;
 import java.util.Map;

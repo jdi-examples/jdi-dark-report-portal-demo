@@ -13,7 +13,7 @@
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
-import com.epam.jdi.auth.TokenApi;
+import com.epam.jdi.auth.AuthTokenApi;
 import com.epam.jdi.model.ChangePasswordRQ;
 import com.epam.jdi.model.CreateUserRQ;
 import io.restassured.authentication.BasicAuthScheme;
@@ -33,15 +33,13 @@ import static org.hamcrest.Matchers.equalTo;
  */
 public class UserControllerApiTest {
 
-    String token;
-
     @BeforeClass
     public void before() {
-        init(TokenApi.class);
+        init(AuthTokenApi.class);
         BasicAuthScheme basicAuthScheme = new BasicAuthScheme();
         basicAuthScheme.setUserName("ui");
         basicAuthScheme.setPassword("uiman");
-        token = TokenApi.getUserToken.call(
+        String token = AuthTokenApi.getUserToken.call(
                 auth(basicAuthScheme)
                         .addFormParams().addAll(new Object[][]{
                         {"grant_type", "password"},

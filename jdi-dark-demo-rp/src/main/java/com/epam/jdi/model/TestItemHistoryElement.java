@@ -10,27 +10,18 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.TestItemResource;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * TestItemHistoryElement
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TestItemHistoryElement extends DataClass<TestItemHistoryElement>{
+public class TestItemHistoryElement extends DataClass<TestItemHistoryElement> {
 
-  public Integer testCaseHash;
+    public Integer testCaseHash;
 }
 

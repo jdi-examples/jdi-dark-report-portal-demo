@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class TestItemControllerApiTest {
 
-    private TestItemControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(TestItemControllerApi.class); }
+    public void before() {
+        init(TestItemControllerApi.class);
+    }
 
-    
+
     /**
      * Bulk update attributes and description
-     * 
      */
     @Test
     public void bulkUpdateUsingPUT1JSONTest() {
@@ -40,10 +38,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.bulkUpdateUsingPUT1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Update issues of specified test items
-     * 
      */
     @Test
     public void defineTestItemIssueTypeUsingPUTJSONTest() {
@@ -51,10 +48,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.defineTestItemIssueTypeUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete test item
-     * 
      */
     @Test
     public void deleteTestItemUsingDELETETest() {
@@ -62,10 +58,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.deleteTestItemUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete test items by specified ids
-     * 
      */
     @Test
     public void deleteTestItemsUsingDELETETest() {
@@ -73,10 +68,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.deleteTestItemsUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Finish test item
-     * 
      */
     @Test
     public void finishTestItemUsingPUT1JSONTest() {
@@ -84,10 +78,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.finishTestItemUsingPUT1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all unique attribute keys of specified launch
-     * 
      */
     @Test
     public void getAttributeKeysForProjectUsingGETTest() {
@@ -95,10 +88,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.getAttributeKeysForProjectUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all unique attribute keys of specified launch
-     * 
      */
     @Test
     public void getAttributeKeysUsingGET1Test() {
@@ -106,10 +98,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.getAttributeKeysUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all unique attribute values of specified launch
-     * 
      */
     @Test
     public void getAttributeValuesUsingGET1Test() {
@@ -117,10 +108,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.getAttributeValuesUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Load history of test items
-     * 
      */
     @Test
     public void getItemsHistoryUsingGETTest() {
@@ -128,10 +118,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.getItemsHistoryUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Find test item by UUID
-     * 
      */
     @Test
     public void getTestItemByUuidUsingGETTest() {
@@ -139,10 +128,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.getTestItemByUuidUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Find test item by ID
-     * 
      */
     @Test
     public void getTestItemUsingGETTest() {
@@ -150,10 +138,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.getTestItemUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get test items by specified ids
-     * 
      */
     @Test
     public void getTestItemsUsingGETTest() {
@@ -161,10 +148,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.getTestItemsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Find test items by specified filter
-     * 
      */
     @Test
     public void getTestItemsUsingGET1Test() {
@@ -172,10 +158,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.getTestItemsUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Get tickets that contains a term as a part inside for specified launch
-     * 
      */
     @Test
     public void getTicketIdsUsingGETTest() {
@@ -183,10 +168,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.getTicketIdsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Attach external issue for specified test items
-     * 
      */
     @Test
     public void linkExternalIssuesUsingPUTJSONTest() {
@@ -194,10 +178,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.linkExternalIssuesUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Start a child test item
-     * 
      */
     @Test
     public void startChildItemUsingPOST1JSONTest() {
@@ -205,10 +188,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.startChildItemUsingPOST1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Start a root test item
-     * 
      */
     @Test
     public void startRootItemUsingPOST1JSONTest() {
@@ -216,10 +198,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.startRootItemUsingPOST1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Unlink external issue for specified test items
-     * 
      */
     @Test
     public void unlinkExternalIssuesUsingPUTJSONTest() {
@@ -227,10 +208,9 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.unlinkExternalIssuesUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Update test item
-     * 
      */
     @Test
     public void updateTestItemUsingPUTJSONTest() {
@@ -238,5 +218,5 @@ public class TestItemControllerApiTest {
         RestResponse resp = TestItemControllerApi.updateTestItemUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

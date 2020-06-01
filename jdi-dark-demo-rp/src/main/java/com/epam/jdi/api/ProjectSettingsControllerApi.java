@@ -12,103 +12,95 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
 import com.epam.http.annotations.ContentType;
-import com.epam.jdi.model.CreateIssueSubTypeRQ;
-import com.epam.jdi.model.CreatePatternTemplateRQ;
-import com.epam.jdi.model.EntryCreatedRS;
-import com.epam.jdi.model.IssueSubTypeCreatedRS;
-import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.jdi.model.ProjectSettingsResource;
-import com.epam.jdi.model.UpdateIssueSubTypeRQ;
-import com.epam.jdi.model.UpdatePatternTemplateRQ;
 import com.epam.http.annotations.DELETE;
 import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.jdi.model.EntryCreatedRS;
+import com.epam.jdi.model.IssueSubTypeCreatedRS;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.ProjectSettingsResource;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class ProjectSettingsControllerApi {
 
-  /**
-   * Create pattern template for items' log messages pattern analysis
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param createPatternTemplateRQ(CreatePatternTemplateRQ) /body/ createPatternTemplateRQ (required)
-   * @return EntryCreatedRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/{projectName}/settings/pattern")
-  public static RestMethod createPatternTemplateUsingPOSTJSON;
+    /**
+     * Create pattern template for items&#39; log messages pattern analysis
+     *
+     * @param projectName /path/ projectName (required)
+     * @param createPatternTemplateRQ(CreatePatternTemplateRQ) /body/ createPatternTemplateRQ (required)
+     * @return EntryCreatedRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/{projectName}/settings/pattern")
+    public static DataMethod<EntryCreatedRS> createPatternTemplateUsingPOSTJSON;
 
-  /**
-   * Creation of custom project specific issue sub-type
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param request(CreateIssueSubTypeRQ) /body/ request (required)
-   * @return IssueSubTypeCreatedRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/{projectName}/settings/sub-type")
-  public static RestMethod createProjectIssueSubTypeUsingPOSTJSON;
+    /**
+     * Creation of custom project specific issue sub-type
+     *
+     * @param projectName /path/ projectName (required)
+     * @param request(CreateIssueSubTypeRQ) /body/ request (required)
+     * @return IssueSubTypeCreatedRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/{projectName}/settings/sub-type")
+    public static DataMethod<IssueSubTypeCreatedRS> createProjectIssueSubTypeUsingPOSTJSON;
 
-  /**
-   * Delete pattern template for items' log messages pattern analysis
-   * 
-   * @param id /path/ id (required)
-   * @param projectName /path/ projectName (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/v1/{projectName}/settings/pattern/{id}")
-  public static RestMethod deletePatternTemplateUsingDELETE;
+    /**
+     * Delete pattern template for items&#39; log messages pattern analysis
+     *
+     * @param id /path/ id (required)
+     * @param projectName /path/ projectName (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/v1/{projectName}/settings/pattern/{id}")
+    public static DataMethod<OperationCompletionRS> deletePatternTemplateUsingDELETE;
 
-  /**
-   * Delete custom project specific issue sub-type
-   * 
-   * @param id /path/ id (required)
-   * @param projectName /path/ projectName (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/v1/{projectName}/settings/sub-type/{id}")
-  public static RestMethod deleteProjectIssueSubTypeUsingDELETE;
+    /**
+     * Delete custom project specific issue sub-type
+     *
+     * @param id /path/ id (required)
+     * @param projectName /path/ projectName (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/v1/{projectName}/settings/sub-type/{id}")
+    public static DataMethod<OperationCompletionRS> deleteProjectIssueSubTypeUsingDELETE;
 
-  /**
-   * Get project specific issue sub-types
-   * Only for users that are assigned to the project
-   * @param projectName /path/ projectName (required)
-   * @return ProjectSettingsResource
-  */
-  @GET("/v1/{projectName}/settings")
-  public static RestMethod getProjectSettingsUsingGET;
+    /**
+     * Get project specific issue sub-types
+     * Only for users that are assigned to the project
+     *
+     * @param projectName /path/ projectName (required)
+     * @return ProjectSettingsResource
+     */
+    @GET("/v1/{projectName}/settings")
+    public static DataMethod<ProjectSettingsResource> getProjectSettingsUsingGET;
 
-  /**
-   * Update pattern template for items' log messages pattern analysis
-   * 
-   * @param id /path/ id (required)
-   * @param projectName /path/ projectName (required)
-   * @param updatePatternTemplateRQ(UpdatePatternTemplateRQ) /body/ updatePatternTemplateRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/settings/pattern/{id}")
-  public static RestMethod updatePatternTemplateUsingPUTJSON;
+    /**
+     * Update pattern template for items&#39; log messages pattern analysis
+     *
+     * @param id /path/ id (required)
+     * @param projectName /path/ projectName (required)
+     * @param updatePatternTemplateRQ(UpdatePatternTemplateRQ) /body/ updatePatternTemplateRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/settings/pattern/{id}")
+    public static DataMethod<OperationCompletionRS> updatePatternTemplateUsingPUTJSON;
 
-  /**
-   * Update of custom project specific issue sub-type
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param request(UpdateIssueSubTypeRQ) /body/ request (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/settings/sub-type")
-  public static RestMethod updateProjectIssueSubTypeUsingPUTJSON;
+    /**
+     * Update of custom project specific issue sub-type
+     *
+     * @param projectName /path/ projectName (required)
+     * @param request(UpdateIssueSubTypeRQ) /body/ request (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/settings/sub-type")
+    public static DataMethod<OperationCompletionRS> updateProjectIssueSubTypeUsingPUTJSON;
 }

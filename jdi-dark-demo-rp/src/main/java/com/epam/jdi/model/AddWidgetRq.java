@@ -10,26 +10,18 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.WidgetObjectModel;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * AddWidgetRq
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AddWidgetRq extends DataClass<AddWidgetRq>{
+public class AddWidgetRq extends DataClass<AddWidgetRq> {
 
-  public WidgetObjectModel addWidget;
+    public WidgetObjectModel addWidget;
 }
 

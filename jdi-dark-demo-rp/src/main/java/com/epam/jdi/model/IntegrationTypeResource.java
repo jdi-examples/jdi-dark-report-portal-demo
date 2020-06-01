@@ -10,53 +10,48 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import java.util.Date;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * IntegrationTypeResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class IntegrationTypeResource extends DataClass<IntegrationTypeResource>{
+public class IntegrationTypeResource extends DataClass<IntegrationTypeResource> {
 
-  public AuthFlowEnum authFlow;
-  /**
-   * Gets or Sets authFlow
-   */
-  public enum AuthFlowEnum {
-      OAUTH("OAUTH"),
-      
-      BASIC("BASIC"),
-      
-      TOKEN("TOKEN"),
-      
-      FORM("FORM"),
-      
-      LDAP("LDAP");
+    public AuthFlowEnum authFlow;
 
-      private String value;
+    /**
+     * Gets or Sets authFlow
+     */
+    public enum AuthFlowEnum {
+        OAUTH("OAUTH"),
 
-      AuthFlowEnum(String value) {
-      this.value = value;
-  }
-  }
+        BASIC("BASIC"),
 
-  public Date creationDate;
-  public Object details;
-  public Boolean enabled;
-  public String groupType;
-  public String name;
-  public Long type;
+        TOKEN("TOKEN"),
+
+        FORM("FORM"),
+
+        LDAP("LDAP");
+
+        private String value;
+
+        AuthFlowEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public Date creationDate;
+    public Object details;
+    public Boolean enabled;
+    public String groupType;
+    public String name;
+    public Long type;
 }
 

@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class DemoDataControllerApiTest {
 
-    private DemoDataControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(DemoDataControllerApi.class); }
+    public void before() {
+        init(DemoDataControllerApi.class);
+    }
 
-    
+
     /**
      * generate
-     * 
      */
     @Test
     public void generateUsingPOSTJSONTest() {
@@ -40,5 +38,5 @@ public class DemoDataControllerApiTest {
         RestResponse resp = DemoDataControllerApi.generateUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
 }

@@ -12,279 +12,274 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
-import com.epam.jdi.model.AssignedProject;
-import com.epam.jdi.model.ChangePasswordRQ;
 import com.epam.http.annotations.ContentType;
-import com.epam.jdi.model.CreateUserBidRS;
-import com.epam.jdi.model.CreateUserRQ;
-import com.epam.jdi.model.CreateUserRQConfirm;
-import com.epam.jdi.model.CreateUserRQFull;
-import com.epam.jdi.model.CreateUserRS;
-import com.epam.jdi.model.DeleteBulkRQ;
-import com.epam.jdi.model.DeleteBulkRS;
-import com.epam.jdi.model.EditUserRQ;
-import com.epam.jdi.model.IterableUserResource;
-import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.QueryParameters;
-import com.epam.jdi.model.ResetPasswordRQ;
-import com.epam.jdi.model.RestorePasswordRQ;
-import com.epam.jdi.model.UserBidRS;
-import com.epam.jdi.model.UserResource;
-import com.epam.jdi.model.YesNoRS;
 import com.epam.http.annotations.DELETE;
 import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.QueryParameter;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestMethod;
+import com.epam.jdi.model.AssignedProject;
+import com.epam.jdi.model.CreateUserBidRS;
+import com.epam.jdi.model.CreateUserRS;
+import com.epam.jdi.model.DeleteBulkRS;
+import com.epam.jdi.model.IterableUserResource;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.UserBidRS;
+import com.epam.jdi.model.UserResource;
+import com.epam.jdi.model.YesNoRS;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class UserControllerApi {
 
-  /**
-   * Change own password
-   * 
-   * @param changePasswordRQ(ChangePasswordRQ) /body/ changePasswordRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/user/password/change")
-  public static RestMethod changePasswordUsingPOSTJSON;
+    /**
+     * Change own password
+     *
+     * @param changePasswordRQ(ChangePasswordRQ) /body/ changePasswordRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/user/password/change")
+    public static DataMethod<OperationCompletionRS> changePasswordUsingPOSTJSON;
 
-  /**
-   * Register invitation for user who will be created
-   * 
-   * @param createUserRQ(CreateUserRQ) /body/ createUserRQ (required)
-   * @return CreateUserBidRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/user/bid")
-  public static RestMethod createUserBidUsingPOSTJSON;
+    /**
+     * Register invitation for user who will be created
+     *
+     * @param createUserRQ(CreateUserRQ) /body/ createUserRQ (required)
+     * @return CreateUserBidRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/user/bid")
+    public static DataMethod<CreateUserBidRS> createUserBidUsingPOSTJSON;
 
-  /**
-   * Create specified user
-   * Allowable only for users with administrator role
-   * @param rq(CreateUserRQFull) /body/ rq (required)
-   * @return CreateUserRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/user")
-  public static RestMethod createUserByAdminUsingPOSTJSON;
+    /**
+     * Create specified user
+     * Allowable only for users with administrator role
+     *
+     * @param rq(CreateUserRQFull) /body/ rq (required)
+     * @return CreateUserRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/user")
+    public static DataMethod<CreateUserRS> createUserByAdminUsingPOSTJSON;
 
-  /**
-   * Activate invitation and create user in system
-   * 
-   * @param uuid /query/ uuid (required)
-   * @param request(CreateUserRQConfirm) /body/ request (required)
-   * @return CreateUserRS
-  */
-  @ContentType(JSON)
-  @QueryParameter(name = "uuid", value = "uuid_example")
-  @POST("/v1/user/registration")
-  public static RestMethod createUserUsingPOSTJSON;
+    /**
+     * Activate invitation and create user in system
+     *
+     * @param uuid /query/ uuid (required)
+     * @param request(CreateUserRQConfirm) /body/ request (required)
+     * @return CreateUserRS
+     */
+    @ContentType(JSON)
+    @QueryParameter(name = "uuid", value = "uuid_example")
+    @POST("/v1/user/registration")
+    public static DataMethod<CreateUserRS> createUserUsingPOSTJSON;
 
-  /**
-   * Delete specified user
-   * Allowable only for users with administrator role
-   * @param id /path/ id (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/v1/user/{id}")
-  public static RestMethod deleteUserUsingDELETE;
+    /**
+     * Delete specified user
+     * Allowable only for users with administrator role
+     *
+     * @param id /path/ id (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/v1/user/{id}")
+    public static DataMethod<OperationCompletionRS> deleteUserUsingDELETE;
 
-  /**
-   * Delete specified users by ids
-   * 
-   * @param deleteBulkRQ(DeleteBulkRQ) /body/ deleteBulkRQ (required)
-   * @return DeleteBulkRS
-  */
-  @DELETE("/v1/user")
-  public static RestMethod deleteUsersUsingDELETE;
+    /**
+     * Delete specified users by ids
+     *
+     * @param deleteBulkRQ(DeleteBulkRQ) /body/ deleteBulkRQ (required)
+     * @return DeleteBulkRS
+     */
+    @DELETE("/v1/user")
+    public static DataMethod<DeleteBulkRS> deleteUsersUsingDELETE;
 
-  /**
-   * Edit specified user
-   * Only for administrators and profile's owner
-   * @param login /path/ login (required)
-   * @param editUserRQ(EditUserRQ) /body/ editUserRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/user/{login}")
-  public static RestMethod editUserUsingPUTJSON;
+    /**
+     * Edit specified user
+     * Only for administrators and profile&#39;s owner
+     *
+     * @param login /path/ login (required)
+     * @param editUserRQ(EditUserRQ) /body/ editUserRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/user/{login}")
+    public static DataMethod<OperationCompletionRS> editUserUsingPUTJSON;
 
-  /**
-   * Exports information about all users
-   * Allowable only for users with administrator role
-   * @param filterEqEmail /query/ Filters by 'email' (optional)
-   * @param filterEqExpired /query/ Filters by 'expired' (optional)
-   * @param filterEqFullName /query/ Filters by 'fullName' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLastLogin /query/ Filters by 'lastLogin' (optional)
-   * @param filterEqProject /query/ Filters by 'project' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqRole /query/ Filters by 'role' (optional)
-   * @param filterEqSynchronizationDate /query/ Filters by 'synchronizationDate' (optional)
-   * @param filterEqType /query/ Filters by 'type' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param view /query/ view (optional, default to csv)
-  */
-  @QueryParameter(name = "filterEqEmail", value = "filterEqEmail_example")
-  @QueryParameter(name = "filterEqExpired", value = "true")
-  @QueryParameter(name = "filterEqFullName", value = "filterEqFullName_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLastLogin", value = "789")
-  @QueryParameter(name = "filterEqProject", value = "")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqRole", value = "filterEqRole_example")
-  @QueryParameter(name = "filterEqSynchronizationDate", value = "789")
-  @QueryParameter(name = "filterEqType", value = "filterEqType_example")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "view", value = "csv")
-  @GET("/v1/user/export")
-  public static RestMethod exportUsingGET;
+    /**
+     * Exports information about all users
+     * Allowable only for users with administrator role
+     *
+     * @param filterEqEmail /query/ Filters by 'email' (optional)
+     * @param filterEqExpired /query/ Filters by 'expired' (optional)
+     * @param filterEqFullName /query/ Filters by 'fullName' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLastLogin /query/ Filters by 'lastLogin' (optional)
+     * @param filterEqProject /query/ Filters by 'project' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqRole /query/ Filters by 'role' (optional)
+     * @param filterEqSynchronizationDate /query/ Filters by 'synchronizationDate' (optional)
+     * @param filterEqType /query/ Filters by 'type' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param view /query/ view (optional, default to csv)
+     */
+    @QueryParameter(name = "filterEqEmail", value = "filterEqEmail_example")
+    @QueryParameter(name = "filterEqExpired", value = "true")
+    @QueryParameter(name = "filterEqFullName", value = "filterEqFullName_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLastLogin", value = "789")
+    @QueryParameter(name = "filterEqProject", value = "")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqRole", value = "filterEqRole_example")
+    @QueryParameter(name = "filterEqSynchronizationDate", value = "789")
+    @QueryParameter(name = "filterEqType", value = "filterEqType_example")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "view", value = "csv")
+    @GET("/v1/user/export")
+    public static RestMethod exportUsingGET;
 
-  /**
-   * findUsers
-   * 
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @param term /query/ term (required)
-   * @return IterableUserResource
-  */
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @QueryParameter(name = "term", value = "term_example")
-  @GET("/v1/user/search")
-  public static RestMethod findUsersUsingGET;
+    /**
+     * findUsers
+     *
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @param term /query/ term (required)
+     * @return IterableUserResource
+     */
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @QueryParameter(name = "term", value = "term_example")
+    @GET("/v1/user/search")
+    public static DataMethod<IterableUserResource> findUsersUsingGET;
 
-  /**
-   * Return information about current logged-in user
-   * 
-   * @return UserResource
-  */
-  @GET("/v1/user")
-  public static RestMethod getMyselfUsingGET;
+    /**
+     * Return information about current logged-in user
+     *
+     * @return UserResource
+     */
+    @GET("/v1/user")
+    public static DataMethod<UserResource> getMyselfUsingGET;
 
-  /**
-   * Return information about current logged-in user
-   * 
-   * @return UserResource
-  */
-  @GET("/v1/user/")
-  public static RestMethod getMyselfUsingGET1;
+    /**
+     * Return information about current logged-in user
+     *
+     * @return UserResource
+     */
+    @GET("/v1/user/")
+    public static DataMethod<UserResource> getMyselfUsingGET1;
 
-  /**
-   * getUserBidInfo
-   * 
-   * @param uuid /query/ uuid (required)
-   * @return UserBidRS
-  */
-  @QueryParameter(name = "uuid", value = "uuid_example")
-  @GET("/v1/user/registration")
-  public static RestMethod getUserBidInfoUsingGET;
+    /**
+     * getUserBidInfo
+     *
+     * @param uuid /query/ uuid (required)
+     * @return UserBidRS
+     */
+    @QueryParameter(name = "uuid", value = "uuid_example")
+    @GET("/v1/user/registration")
+    public static DataMethod<UserBidRS> getUserBidInfoUsingGET;
 
-  /**
-   * getUserProjects
-   * 
-   * @param userName /path/ userName (required)
-   * @return Map(String, AssignedProject);
-  */
-  @GET("/v1/user/{userName}/projects")
-  public static RestMethod getUserProjectsUsingGET;
+    /**
+     * getUserProjects
+     *
+     * @param userName /path/ userName (required)
+     * @return Map<String, AssignedProject>
+     */
+    @GET("/v1/user/{userName}/projects")
+    public static DataMethod<Map<String, AssignedProject>> getUserProjectsUsingGET;
 
-  /**
-   * Return information about specified user
-   * Only for administrators and profile's owner
-   * @param login /path/ login (required)
-   * @return UserResource
-  */
-  @GET("/v1/user/{login}")
-  public static RestMethod getUserUsingGET;
+    /**
+     * Return information about specified user
+     * Only for administrators and profile&#39;s owner
+     *
+     * @param login /path/ login (required)
+     * @return UserResource
+     */
+    @GET("/v1/user/{login}")
+    public static DataMethod<UserResource> getUserUsingGET;
 
-  /**
-   * Return information about all users
-   * Allowable only for users with administrator role
-   * @param filterEqEmail /query/ Filters by 'email' (optional)
-   * @param filterEqExpired /query/ Filters by 'expired' (optional)
-   * @param filterEqFullName /query/ Filters by 'fullName' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLastLogin /query/ Filters by 'lastLogin' (optional)
-   * @param filterEqProject /query/ Filters by 'project' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqRole /query/ Filters by 'role' (optional)
-   * @param filterEqSynchronizationDate /query/ Filters by 'synchronizationDate' (optional)
-   * @param filterEqType /query/ Filters by 'type' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableUserResource
-  */
-  @QueryParameter(name = "filterEqEmail", value = "filterEqEmail_example")
-  @QueryParameter(name = "filterEqExpired", value = "true")
-  @QueryParameter(name = "filterEqFullName", value = "filterEqFullName_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLastLogin", value = "789")
-  @QueryParameter(name = "filterEqProject", value = "")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqRole", value = "filterEqRole_example")
-  @QueryParameter(name = "filterEqSynchronizationDate", value = "789")
-  @QueryParameter(name = "filterEqType", value = "filterEqType_example")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/user/all")
-  public static RestMethod getUsersUsingGET;
+    /**
+     * Return information about all users
+     * Allowable only for users with administrator role
+     *
+     * @param filterEqEmail /query/ Filters by 'email' (optional)
+     * @param filterEqExpired /query/ Filters by 'expired' (optional)
+     * @param filterEqFullName /query/ Filters by 'fullName' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLastLogin /query/ Filters by 'lastLogin' (optional)
+     * @param filterEqProject /query/ Filters by 'project' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqRole /query/ Filters by 'role' (optional)
+     * @param filterEqSynchronizationDate /query/ Filters by 'synchronizationDate' (optional)
+     * @param filterEqType /query/ Filters by 'type' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableUserResource
+     */
+    @QueryParameter(name = "filterEqEmail", value = "filterEqEmail_example")
+    @QueryParameter(name = "filterEqExpired", value = "true")
+    @QueryParameter(name = "filterEqFullName", value = "filterEqFullName_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLastLogin", value = "789")
+    @QueryParameter(name = "filterEqProject", value = "")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqRole", value = "filterEqRole_example")
+    @QueryParameter(name = "filterEqSynchronizationDate", value = "789")
+    @QueryParameter(name = "filterEqType", value = "filterEqType_example")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/user/all")
+    public static DataMethod<IterableUserResource> getUsersUsingGET;
 
-  /**
-   * Check if a restore password bid exists
-   * 
-   * @param uuid /path/ uuid (required)
-   * @return YesNoRS
-  */
-  @GET("/v1/user/password/reset/{uuid}")
-  public static RestMethod isRestorePasswordBidExistUsingGET;
+    /**
+     * Check if a restore password bid exists
+     *
+     * @param uuid /path/ uuid (required)
+     * @return YesNoRS
+     */
+    @GET("/v1/user/password/reset/{uuid}")
+    public static DataMethod<YesNoRS> isRestorePasswordBidExistUsingGET;
 
-  /**
-   * Reset password
-   * 
-   * @param rq(ResetPasswordRQ) /body/ rq (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/user/password/reset")
-  public static RestMethod resetPasswordUsingPOSTJSON;
+    /**
+     * Reset password
+     *
+     * @param rq(ResetPasswordRQ) /body/ rq (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/user/password/reset")
+    public static DataMethod<OperationCompletionRS> resetPasswordUsingPOSTJSON;
 
-  /**
-   * Create a restore password request
-   * 
-   * @param rq(RestorePasswordRQ) /body/ rq (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/user/password/restore")
-  public static RestMethod restorePasswordUsingPOSTJSON;
+    /**
+     * Create a restore password request
+     *
+     * @param rq(RestorePasswordRQ) /body/ rq (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/user/password/restore")
+    public static DataMethod<OperationCompletionRS> restorePasswordUsingPOSTJSON;
 
-  /**
-   * validateInfo
-   * 
-   * @param email /query/ email (optional)
-   * @param username /query/ username (optional)
-   * @return YesNoRS
-  */
-  @QueryParameter(name = "email", value = "email_example")
-  @QueryParameter(name = "username", value = "username_example")
-  @GET("/v1/user/registration/info")
-  public static RestMethod validateInfoUsingGET;
+    /**
+     * validateInfo
+     *
+     * @param email /query/ email (optional)
+     * @param username /query/ username (optional)
+     * @return YesNoRS
+     */
+    @QueryParameter(name = "email", value = "email_example")
+    @QueryParameter(name = "username", value = "username_example")
+    @GET("/v1/user/registration/info")
+    public static DataMethod<YesNoRS> validateInfoUsingGET;
 }

@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class UserFilterControllerApiTest {
 
-    private UserFilterControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(UserFilterControllerApi.class); }
+    public void before() {
+        init(UserFilterControllerApi.class);
+    }
 
-    
+
     /**
      * Create user filter
-     * 
      */
     @Test
     public void createFilterUsingPOSTJSONTest() {
@@ -40,10 +38,9 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.createFilterUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete specified user filter by id
-     * 
      */
     @Test
     public void deleteFilterUsingDELETETest() {
@@ -51,10 +48,9 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.deleteFilterUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Get available filter names
-     * 
      */
     @Test
     public void getAllFiltersNamesUsingGETTest() {
@@ -62,10 +58,9 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.getAllFiltersNamesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get permitted (own and shared) filters
-     * 
      */
     @Test
     public void getAllFiltersUsingGETTest() {
@@ -73,10 +68,9 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.getAllFiltersUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get specified user filter by id
-     * 
      */
     @Test
     public void getFilterUsingGETTest() {
@@ -84,10 +78,9 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.getFilterUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all filters for specified user who own them
-     * 
      */
     @Test
     public void getOwnFiltersUsingGETTest() {
@@ -95,10 +88,9 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.getOwnFiltersUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all available shared filters (except own shared filters)
-     * 
      */
     @Test
     public void getSharedFiltersUsingGETTest() {
@@ -106,10 +98,9 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.getSharedFiltersUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get list of specified user filters
-     * 
      */
     @Test
     public void getUserFiltersUsingGETTest() {
@@ -117,10 +108,9 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.getUserFiltersUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Update specified user filter
-     * 
      */
     @Test
     public void updateUserFilterUsingPUTJSONTest() {
@@ -128,10 +118,9 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.updateUserFilterUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Update list of user filters
-     * 
      */
     @Test
     public void updateUserFiltersUsingPUTJSONTest() {
@@ -139,5 +128,5 @@ public class UserFilterControllerApiTest {
         RestResponse resp = UserFilterControllerApi.updateUserFiltersUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

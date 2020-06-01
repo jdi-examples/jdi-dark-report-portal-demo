@@ -10,27 +10,19 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * ContentParameters
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContentParameters extends DataClass<ContentParameters>{
+public class ContentParameters extends DataClass<ContentParameters> {
 
-  public Integer itemsCount;
-  public Object widgetOptions;
+    public Integer itemsCount;
+    public Object widgetOptions;
 }
 

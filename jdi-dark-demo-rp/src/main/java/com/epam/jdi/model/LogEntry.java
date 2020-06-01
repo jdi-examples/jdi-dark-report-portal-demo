@@ -10,26 +10,19 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * LogEntry
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LogEntry extends DataClass<LogEntry>{
+public class LogEntry extends DataClass<LogEntry> {
 
-  public String level;
-  public String message;
+    public String level;
+    public String message;
 }
 

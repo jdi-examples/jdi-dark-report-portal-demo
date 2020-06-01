@@ -10,27 +10,19 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.Issue;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * IssueDefinition
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class IssueDefinition extends DataClass<IssueDefinition>{
+public class IssueDefinition extends DataClass<IssueDefinition> {
 
-  public Issue issue;
-  public Long testItemId;
+    public Issue issue;
+    public Long testItemId;
 }
 

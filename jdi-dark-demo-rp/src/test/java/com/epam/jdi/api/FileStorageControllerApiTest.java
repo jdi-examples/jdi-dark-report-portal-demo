@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class FileStorageControllerApiTest {
 
-    private FileStorageControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(FileStorageControllerApi.class); }
+    public void before() {
+        init(FileStorageControllerApi.class);
+    }
 
-    
+
     /**
      * Delete user&#39;s photo
-     * 
      */
     @Test
     public void deletePhotoUsingDELETETest() {
@@ -40,10 +38,9 @@ public class FileStorageControllerApiTest {
         RestResponse resp = FileStorageControllerApi.deletePhotoUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * getFile
-     * 
      */
     @Test
     public void getFileUsingGETTest() {
@@ -51,10 +48,9 @@ public class FileStorageControllerApiTest {
         RestResponse resp = FileStorageControllerApi.getFileUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get photo of current user
-     * 
      */
     @Test
     public void getMyPhotoUsingGETTest() {
@@ -62,10 +58,9 @@ public class FileStorageControllerApiTest {
         RestResponse resp = FileStorageControllerApi.getMyPhotoUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get user&#39;s photo
-     * 
      */
     @Test
     public void getUserPhotoUsingGETTest() {
@@ -73,10 +68,9 @@ public class FileStorageControllerApiTest {
         RestResponse resp = FileStorageControllerApi.getUserPhotoUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Upload user&#39;s photo
-     * 
      */
     @Test
     public void uploadPhotoUsingPOSTANYTest() {
@@ -84,5 +78,5 @@ public class FileStorageControllerApiTest {
         RestResponse resp = FileStorageControllerApi.uploadPhotoUsingPOSTANY.call();
         resp.isOk();
     }
-    
+
 }

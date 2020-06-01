@@ -10,28 +10,21 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Ticket
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Ticket extends DataClass<Ticket>{
+public class Ticket extends DataClass<Ticket> {
 
-  public String id;
-  public String status;
-  public String summary;
-  public String url;
+    public String id;
+    public String status;
+    public String summary;
+    public String url;
 }
 

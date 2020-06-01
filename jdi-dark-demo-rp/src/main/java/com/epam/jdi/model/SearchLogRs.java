@@ -10,36 +10,25 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.Issue;
-import com.epam.jdi.model.LogEntry;
-import java.util.List;
-import java.util.Map;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * SearchLogRs
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchLogRs extends DataClass<SearchLogRs>{
+public class SearchLogRs extends DataClass<SearchLogRs> {
 
-  public Double duration;
-  public Issue issue;
-  public Long itemId;
-  public String itemName;
-  public Long launchId;
-  public String launchName;
-  public String path;
-  public String status;
+    public Double duration;
+    public Issue issue;
+    public Long itemId;
+    public String itemName;
+    public Long launchId;
+    public String launchName;
+    public String path;
+    public String status;
 }
 

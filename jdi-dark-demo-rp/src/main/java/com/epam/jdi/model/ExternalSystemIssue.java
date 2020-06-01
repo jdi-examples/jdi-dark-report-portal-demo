@@ -10,29 +10,22 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * ExternalSystemIssue
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ExternalSystemIssue extends DataClass<ExternalSystemIssue>{
+public class ExternalSystemIssue extends DataClass<ExternalSystemIssue> {
 
-  public String btsProject;
-  public String btsUrl;
-  public Long submitDate;
-  public String ticketId;
-  public String url;
+    public String btsProject;
+    public String btsUrl;
+    public Long submitDate;
+    public String ticketId;
+    public String url;
 }
 

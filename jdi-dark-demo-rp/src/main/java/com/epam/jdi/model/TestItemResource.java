@@ -10,53 +10,40 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.Issue;
-import com.epam.jdi.model.ItemAttributeResource;
-import com.epam.jdi.model.ParameterResource;
-import com.epam.jdi.model.PathNameResource;
-import com.epam.jdi.model.StatisticsResource;
-import com.epam.jdi.model.TestItemResource;
-import java.util.Date;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * TestItemResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TestItemResource extends DataClass<TestItemResource>{
+public class TestItemResource extends DataClass<TestItemResource> {
 
-  public String codeRef;
-  public String description;
-  public Date endTime;
-  public Boolean hasChildren;
-  public Boolean hasStats;
-  public Long id;
-  public Issue issue;
-  public Long launchId;
-  public String launchStatus;
-  public String name;
-  public Long parent;
-  public String path;
-  public PathNameResource pathNames;
-  public Date startTime;
-  public StatisticsResource statistics;
-  public String status;
-  public Integer testCaseHash;
-  public String testCaseId;
-  public String type;
-  public String uniqueId;
-  public String uuid;
+    public String codeRef;
+    public String description;
+    public Date endTime;
+    public Boolean hasChildren;
+    public Boolean hasStats;
+    public Long id;
+    public Issue issue;
+    public Long launchId;
+    public String launchStatus;
+    public String name;
+    public Long parent;
+    public String path;
+    public PathNameResource pathNames;
+    public Date startTime;
+    public StatisticsResource statistics;
+    public String status;
+    public Integer testCaseHash;
+    public String testCaseId;
+    public String type;
+    public String uniqueId;
+    public String uuid;
 }
 

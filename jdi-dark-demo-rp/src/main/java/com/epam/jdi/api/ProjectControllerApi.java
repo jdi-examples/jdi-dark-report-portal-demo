@@ -12,380 +12,377 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
-import com.epam.jdi.model.AssignUsersRQ;
 import com.epam.http.annotations.ContentType;
-import com.epam.jdi.model.CreateProjectRQ;
-import java.util.Date;
-import com.epam.jdi.model.DeleteBulkRQ;
+import com.epam.http.annotations.DELETE;
+import com.epam.http.annotations.GET;
+import com.epam.http.annotations.POST;
+import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.QueryParameter;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestMethod;
 import com.epam.jdi.model.DeleteBulkRS;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IterableProjectInfoResource;
 import com.epam.jdi.model.IterableUserResource;
 import com.epam.jdi.model.Iterablestring;
-import static io.restassured.http.ContentType.JSON;
 import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.jdi.model.PreferenceResource;
 import com.epam.jdi.model.ProjectInfoResource;
-import com.epam.jdi.model.ProjectNotificationConfigDTO;
 import com.epam.jdi.model.ProjectResource;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.QueryParameters;
-import com.epam.jdi.model.UnassignUsersRQ;
-import com.epam.jdi.model.UpdateProjectRQ;
-import com.epam.http.annotations.DELETE;
-import com.epam.http.annotations.GET;
-import com.epam.http.annotations.POST;
-import com.epam.http.annotations.PUT;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class ProjectControllerApi {
 
-  /**
-   * addUserPreference
-   * 
-   * @param filterId /path/ filterId (required)
-   * @param login /path/ login (required)
-   * @param projectName /path/ projectName (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/project/{projectName}/preference/{login}/{filterId}")
-  public static RestMethod addUserPreferenceUsingPUTJSON;
+    /**
+     * addUserPreference
+     *
+     * @param filterId /path/ filterId (required)
+     * @param login /path/ login (required)
+     * @param projectName /path/ projectName (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/project/{projectName}/preference/{login}/{filterId}")
+    public static DataMethod<OperationCompletionRS> addUserPreferenceUsingPUTJSON;
 
-  /**
-   * Assign users
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param assignUsersRQ(AssignUsersRQ) /body/ assignUsersRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/project/{projectName}/assign")
-  public static RestMethod assignProjectUsersUsingPUTJSON;
+    /**
+     * Assign users
+     *
+     * @param projectName /path/ projectName (required)
+     * @param assignUsersRQ(AssignUsersRQ) /body/ assignUsersRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/project/{projectName}/assign")
+    public static DataMethod<OperationCompletionRS> assignProjectUsersUsingPUTJSON;
 
-  /**
-   * Create new project
-   * 
-   * @param createProjectRQ(CreateProjectRQ) /body/ createProjectRQ (required)
-   * @return EntryCreatedRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/project")
-  public static RestMethod createProjectUsingPOSTJSON;
+    /**
+     * Create new project
+     *
+     * @param createProjectRQ(CreateProjectRQ) /body/ createProjectRQ (required)
+     * @return EntryCreatedRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/project")
+    public static DataMethod<EntryCreatedRS> createProjectUsingPOSTJSON;
 
-  /**
-   * Delete project index from ML
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param name /query/  (optional)
-   * @return OperationCompletionRS
-  */
-  @QueryParameter(name = "name", value = "name_example")
-  @DELETE("/v1/project/{projectName}/index")
-  public static RestMethod deleteProjectIndexUsingDELETE;
+    /**
+     * Delete project index from ML
+     *
+     * @param projectName /path/ projectName (required)
+     * @param name /query/  (optional)
+     * @return OperationCompletionRS
+     */
+    @QueryParameter(name = "name", value = "name_example")
+    @DELETE("/v1/project/{projectName}/index")
+    public static DataMethod<OperationCompletionRS> deleteProjectIndexUsingDELETE;
 
-  /**
-   * Delete project
-   * Could be deleted only by users with administrator role
-   * @param projectId /path/ projectId (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/v1/project/{projectId}")
-  public static RestMethod deleteProjectUsingDELETE;
+    /**
+     * Delete project
+     * Could be deleted only by users with administrator role
+     *
+     * @param projectId /path/ projectId (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/v1/project/{projectId}")
+    public static DataMethod<OperationCompletionRS> deleteProjectUsingDELETE;
 
-  /**
-   * Delete multiple projects
-   * Could be deleted only by users with administrator role
-   * @param deleteBulkRQ(DeleteBulkRQ) /body/ deleteBulkRQ (required)
-   * @return DeleteBulkRS
-  */
-  @DELETE("/v1/project")
-  public static RestMethod deleteProjectUsingDELETE1;
+    /**
+     * Delete multiple projects
+     * Could be deleted only by users with administrator role
+     *
+     * @param deleteBulkRQ(DeleteBulkRQ) /body/ deleteBulkRQ (required)
+     * @return DeleteBulkRS
+     */
+    @DELETE("/v1/project")
+    public static DataMethod<DeleteBulkRS> deleteProjectUsingDELETE1;
 
-  /**
-   * Exports information about all projects
-   * Allowable only for users with administrator role
-   * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLastRun /query/ Filters by 'lastRun' (optional)
-   * @param filterEqLaunchesQuantity /query/ Filters by 'launchesQuantity' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqOrganization /query/ Filters by 'organization' (optional)
-   * @param filterEqType /query/ Filters by 'type' (optional)
-   * @param filterEqUsersQuantity /query/ Filters by 'usersQuantity' (optional)
-   * @param view /query/ view (optional, default to csv)
-  */
-  @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLastRun", value = "new Date()")
-  @QueryParameter(name = "filterEqLaunchesQuantity", value = "789")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqOrganization", value = "filterEqOrganization_example")
-  @QueryParameter(name = "filterEqType", value = "filterEqType_example")
-  @QueryParameter(name = "filterEqUsersQuantity", value = "789")
-  @QueryParameter(name = "view", value = "csv")
-  @GET("/v1/project/export")
-  public static RestMethod exportProjectsUsingGET;
+    /**
+     * Exports information about all projects
+     * Allowable only for users with administrator role
+     *
+     * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLastRun /query/ Filters by 'lastRun' (optional)
+     * @param filterEqLaunchesQuantity /query/ Filters by 'launchesQuantity' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqOrganization /query/ Filters by 'organization' (optional)
+     * @param filterEqType /query/ Filters by 'type' (optional)
+     * @param filterEqUsersQuantity /query/ Filters by 'usersQuantity' (optional)
+     * @param view /query/ view (optional, default to csv)
+     */
+    @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLastRun", value = "new Date()")
+    @QueryParameter(name = "filterEqLaunchesQuantity", value = "789")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqOrganization", value = "filterEqOrganization_example")
+    @QueryParameter(name = "filterEqType", value = "filterEqType_example")
+    @QueryParameter(name = "filterEqUsersQuantity", value = "789")
+    @QueryParameter(name = "view", value = "csv")
+    @GET("/v1/project/export")
+    public static RestMethod exportProjectsUsingGET;
 
-  /**
-   * getAllProjectNames
-   * 
-   * @return Iterablestring
-  */
-  @GET("/v1/project/names")
-  public static RestMethod getAllProjectNamesUsingGET;
+    /**
+     * getAllProjectNames
+     *
+     * @return Iterablestring
+     */
+    @GET("/v1/project/names")
+    public static DataMethod<Iterablestring> getAllProjectNamesUsingGET;
 
-  /**
-   * getAllProjectsInfo
-   * 
-   * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLastRun /query/ Filters by 'lastRun' (optional)
-   * @param filterEqLaunchesQuantity /query/ Filters by 'launchesQuantity' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqOrganization /query/ Filters by 'organization' (optional)
-   * @param filterEqType /query/ Filters by 'type' (optional)
-   * @param filterEqUsersQuantity /query/ Filters by 'usersQuantity' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableProjectInfoResource
-  */
-  @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLastRun", value = "new Date()")
-  @QueryParameter(name = "filterEqLaunchesQuantity", value = "789")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqOrganization", value = "filterEqOrganization_example")
-  @QueryParameter(name = "filterEqType", value = "filterEqType_example")
-  @QueryParameter(name = "filterEqUsersQuantity", value = "789")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/project/list")
-  public static RestMethod getAllProjectsInfoUsingGET;
+    /**
+     * getAllProjectsInfo
+     *
+     * @param filterEqCreationDate /query/ Filters by 'creationDate' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLastRun /query/ Filters by 'lastRun' (optional)
+     * @param filterEqLaunchesQuantity /query/ Filters by 'launchesQuantity' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqOrganization /query/ Filters by 'organization' (optional)
+     * @param filterEqType /query/ Filters by 'type' (optional)
+     * @param filterEqUsersQuantity /query/ Filters by 'usersQuantity' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableProjectInfoResource
+     */
+    @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLastRun", value = "new Date()")
+    @QueryParameter(name = "filterEqLaunchesQuantity", value = "789")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqOrganization", value = "filterEqOrganization_example")
+    @QueryParameter(name = "filterEqType", value = "filterEqType_example")
+    @QueryParameter(name = "filterEqUsersQuantity", value = "789")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/project/list")
+    public static DataMethod<IterableProjectInfoResource> getAllProjectsInfoUsingGET;
 
-  /**
-   * getAnalyzerIndexingStatus
-   * 
-   * @return Map(String, Boolean);
-  */
-  @GET("/v1/project/analyzer/status")
-  public static RestMethod getAnalyzerIndexingStatusUsingGET;
+    /**
+     * getAnalyzerIndexingStatus
+     *
+     * @return Map<String, Boolean>
+     */
+    @GET("/v1/project/analyzer/status")
+    public static DataMethod<Map<String, Boolean>> getAnalyzerIndexingStatusUsingGET;
 
-  /**
-   * getProjectInfo
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param interval /query/ interval (optional, default to 3M)
-   * @return ProjectInfoResource
-  */
-  @QueryParameter(name = "interval", value = "3M")
-  @GET("/v1/project/list/{projectName}")
-  public static RestMethod getProjectInfoUsingGET;
+    /**
+     * getProjectInfo
+     *
+     * @param projectName /path/ projectName (required)
+     * @param interval /query/ interval (optional, default to 3M)
+     * @return ProjectInfoResource
+     */
+    @QueryParameter(name = "interval", value = "3M")
+    @GET("/v1/project/list/{projectName}")
+    public static DataMethod<ProjectInfoResource> getProjectInfoUsingGET;
 
-  /**
-   * Load project users by filter
-   * Only for users that are members of the project
-   * @param projectName /path/ projectName (required)
-   * @param filterCntUsers /query/ filter.cnt.users (required)
-   * @return List(String);
-  */
-  @QueryParameter(name = "filterCntUsers", value = "filterCntUsers_example")
-  @GET("/v1/project/{projectName}/usernames")
-  public static RestMethod getProjectUsersUsingGET;
+    /**
+     * Load project users by filter
+     * Only for users that are members of the project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterCntUsers /query/ filter.cnt.users (required)
+     * @return String[]
+     */
+    @QueryParameter(name = "filterCntUsers", value = "filterCntUsers_example")
+    @GET("/v1/project/{projectName}/usernames")
+    public static DataMethod<String[]> getProjectUsersUsingGET;
 
-  /**
-   * Get users assigned on current project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqEmail /query/ Filters by 'email' (optional)
-   * @param filterEqExpired /query/ Filters by 'expired' (optional)
-   * @param filterEqFullName /query/ Filters by 'fullName' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLastLogin /query/ Filters by 'lastLogin' (optional)
-   * @param filterEqProject /query/ Filters by 'project' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqRole /query/ Filters by 'role' (optional)
-   * @param filterEqSynchronizationDate /query/ Filters by 'synchronizationDate' (optional)
-   * @param filterEqType /query/ Filters by 'type' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableUserResource
-  */
-  @QueryParameter(name = "filterEqEmail", value = "filterEqEmail_example")
-  @QueryParameter(name = "filterEqExpired", value = "true")
-  @QueryParameter(name = "filterEqFullName", value = "filterEqFullName_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLastLogin", value = "789")
-  @QueryParameter(name = "filterEqProject", value = "")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqRole", value = "filterEqRole_example")
-  @QueryParameter(name = "filterEqSynchronizationDate", value = "789")
-  @QueryParameter(name = "filterEqType", value = "filterEqType_example")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/project/{projectName}/users")
-  public static RestMethod getProjectUsersUsingGET1;
+    /**
+     * Get users assigned on current project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqEmail /query/ Filters by 'email' (optional)
+     * @param filterEqExpired /query/ Filters by 'expired' (optional)
+     * @param filterEqFullName /query/ Filters by 'fullName' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLastLogin /query/ Filters by 'lastLogin' (optional)
+     * @param filterEqProject /query/ Filters by 'project' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqRole /query/ Filters by 'role' (optional)
+     * @param filterEqSynchronizationDate /query/ Filters by 'synchronizationDate' (optional)
+     * @param filterEqType /query/ Filters by 'type' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableUserResource
+     */
+    @QueryParameter(name = "filterEqEmail", value = "filterEqEmail_example")
+    @QueryParameter(name = "filterEqExpired", value = "true")
+    @QueryParameter(name = "filterEqFullName", value = "filterEqFullName_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLastLogin", value = "789")
+    @QueryParameter(name = "filterEqProject", value = "")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqRole", value = "filterEqRole_example")
+    @QueryParameter(name = "filterEqSynchronizationDate", value = "789")
+    @QueryParameter(name = "filterEqType", value = "filterEqType_example")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/project/{projectName}/users")
+    public static DataMethod<IterableUserResource> getProjectUsersUsingGET1;
 
-  /**
-   * Get information about project
-   * Only for users that are assigned to the project
-   * @param projectName /path/ projectName (required)
-   * @return ProjectResource
-  */
-  @GET("/v1/project/{projectName}")
-  public static RestMethod getProjectUsingGET;
+    /**
+     * Get information about project
+     * Only for users that are assigned to the project
+     *
+     * @param projectName /path/ projectName (required)
+     * @return ProjectResource
+     */
+    @GET("/v1/project/{projectName}")
+    public static DataMethod<ProjectResource> getProjectUsingGET;
 
-  /**
-   * getProjectWidget
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param widgetCode /path/ widgetCode (required)
-   * @param interval /query/ interval (optional, default to 3M)
-   * @return Object
-  */
-  @QueryParameter(name = "interval", value = "3M")
-  @GET("/v1/project/{projectName}/widget/{widgetCode}")
-  public static RestMethod getProjectWidgetUsingGET;
+    /**
+     * getProjectWidget
+     *
+     * @param projectName /path/ projectName (required)
+     * @param widgetCode /path/ widgetCode (required)
+     * @param interval /query/ interval (optional, default to 3M)
+     * @return Object
+     */
+    @QueryParameter(name = "interval", value = "3M")
+    @GET("/v1/project/{projectName}/widget/{widgetCode}")
+    public static DataMethod<Object> getProjectWidgetUsingGET;
 
-  /**
-   * Load user preferences
-   * Only for users that allowed to edit other users
-   * @param login /path/ login (required)
-   * @param projectName /path/ projectName (required)
-   * @return PreferenceResource
-  */
-  @GET("/v1/project/{projectName}/preference/{login}")
-  public static RestMethod getUserPreferenceUsingGET;
+    /**
+     * Load user preferences
+     * Only for users that allowed to edit other users
+     *
+     * @param login /path/ login (required)
+     * @param projectName /path/ projectName (required)
+     * @return PreferenceResource
+     */
+    @GET("/v1/project/{projectName}/preference/{login}")
+    public static DataMethod<PreferenceResource> getUserPreferenceUsingGET;
 
-  /**
-   * Load users which can be assigned to specified project
-   * Only for users with project manager permissions
-   * @param projectName /path/ projectName (required)
-   * @param filterEqEmail /query/ Filters by 'email' (optional)
-   * @param filterEqExpired /query/ Filters by 'expired' (optional)
-   * @param filterEqFullName /query/ Filters by 'fullName' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLastLogin /query/ Filters by 'lastLogin' (optional)
-   * @param filterEqProject /query/ Filters by 'project' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqRole /query/ Filters by 'role' (optional)
-   * @param filterEqSynchronizationDate /query/ Filters by 'synchronizationDate' (optional)
-   * @param filterEqType /query/ Filters by 'type' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableUserResource
-  */
-  @QueryParameter(name = "filterEqEmail", value = "filterEqEmail_example")
-  @QueryParameter(name = "filterEqExpired", value = "true")
-  @QueryParameter(name = "filterEqFullName", value = "filterEqFullName_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLastLogin", value = "789")
-  @QueryParameter(name = "filterEqProject", value = "")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqRole", value = "filterEqRole_example")
-  @QueryParameter(name = "filterEqSynchronizationDate", value = "789")
-  @QueryParameter(name = "filterEqType", value = "filterEqType_example")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/project/{projectName}/assignable")
-  public static RestMethod getUsersForAssignUsingGET;
+    /**
+     * Load users which can be assigned to specified project
+     * Only for users with project manager permissions
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqEmail /query/ Filters by 'email' (optional)
+     * @param filterEqExpired /query/ Filters by 'expired' (optional)
+     * @param filterEqFullName /query/ Filters by 'fullName' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLastLogin /query/ Filters by 'lastLogin' (optional)
+     * @param filterEqProject /query/ Filters by 'project' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqRole /query/ Filters by 'role' (optional)
+     * @param filterEqSynchronizationDate /query/ Filters by 'synchronizationDate' (optional)
+     * @param filterEqType /query/ Filters by 'type' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableUserResource
+     */
+    @QueryParameter(name = "filterEqEmail", value = "filterEqEmail_example")
+    @QueryParameter(name = "filterEqExpired", value = "true")
+    @QueryParameter(name = "filterEqFullName", value = "filterEqFullName_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLastLogin", value = "789")
+    @QueryParameter(name = "filterEqProject", value = "")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqRole", value = "filterEqRole_example")
+    @QueryParameter(name = "filterEqSynchronizationDate", value = "789")
+    @QueryParameter(name = "filterEqType", value = "filterEqType_example")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/project/{projectName}/assignable")
+    public static DataMethod<IterableUserResource> getUsersForAssignUsingGET;
 
-  /**
-   * Starts reindex all project data in ML
-   * 
-   * @param projectName /path/ projectName (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/project/{projectName}/index")
-  public static RestMethod indexProjectDataUsingPUTJSON;
+    /**
+     * Starts reindex all project data in ML
+     *
+     * @param projectName /path/ projectName (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/project/{projectName}/index")
+    public static DataMethod<OperationCompletionRS> indexProjectDataUsingPUTJSON;
 
-  /**
-   * removeUserPreference
-   * 
-   * @param filterId /path/ filterId (required)
-   * @param login /path/ login (required)
-   * @param projectName /path/ projectName (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/v1/project/{projectName}/preference/{login}/{filterId}")
-  public static RestMethod removeUserPreferenceUsingDELETE;
+    /**
+     * removeUserPreference
+     *
+     * @param filterId /path/ filterId (required)
+     * @param login /path/ login (required)
+     * @param projectName /path/ projectName (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/v1/project/{projectName}/preference/{login}/{filterId}")
+    public static DataMethod<OperationCompletionRS> removeUserPreferenceUsingDELETE;
 
-  /**
-   * searchForUser
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @param term /query/ term (required)
-   * @return IterableUserResource
-  */
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @QueryParameter(name = "term", value = "term_example")
-  @GET("/v1/project/{projectName}/usernames/search")
-  public static RestMethod searchForUserUsingGET;
+    /**
+     * searchForUser
+     *
+     * @param projectName /path/ projectName (required)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @param term /query/ term (required)
+     * @return IterableUserResource
+     */
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @QueryParameter(name = "term", value = "term_example")
+    @GET("/v1/project/{projectName}/usernames/search")
+    public static DataMethod<IterableUserResource> searchForUserUsingGET;
 
-  /**
-   * searchProjectNames
-   * 
-   * @param term /query/ term (required)
-   * @return Iterablestring
-  */
-  @QueryParameter(name = "term", value = "term_example")
-  @GET("/v1/project/names/search")
-  public static RestMethod searchProjectNamesUsingGET;
+    /**
+     * searchProjectNames
+     *
+     * @param term /query/ term (required)
+     * @return Iterablestring
+     */
+    @QueryParameter(name = "term", value = "term_example")
+    @GET("/v1/project/names/search")
+    public static DataMethod<Iterablestring> searchProjectNamesUsingGET;
 
-  /**
-   * Un assign users
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param unassignUsersRQ(UnassignUsersRQ) /body/ unassignUsersRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/project/{projectName}/unassign")
-  public static RestMethod unassignProjectUsersUsingPUTJSON;
+    /**
+     * Un assign users
+     *
+     * @param projectName /path/ projectName (required)
+     * @param unassignUsersRQ(UnassignUsersRQ) /body/ unassignUsersRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/project/{projectName}/unassign")
+    public static DataMethod<OperationCompletionRS> unassignProjectUsersUsingPUTJSON;
 
-  /**
-   * Update project notifications configuration
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param updateProjectNotificationConfigRQ(ProjectNotificationConfigDTO) /body/ updateProjectNotificationConfigRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/project/{projectName}/notification")
-  public static RestMethod updateProjectNotificationConfigUsingPUTJSON;
+    /**
+     * Update project notifications configuration
+     *
+     * @param projectName /path/ projectName (required)
+     * @param updateProjectNotificationConfigRQ(ProjectNotificationConfigDTO) /body/ updateProjectNotificationConfigRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/project/{projectName}/notification")
+    public static DataMethod<OperationCompletionRS> updateProjectNotificationConfigUsingPUTJSON;
 
-  /**
-   * Update project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param updateProjectRQ(UpdateProjectRQ) /body/ updateProjectRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/project/{projectName}")
-  public static RestMethod updateProjectUsingPUTJSON;
+    /**
+     * Update project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param updateProjectRQ(UpdateProjectRQ) /body/ updateProjectRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/project/{projectName}")
+    public static DataMethod<OperationCompletionRS> updateProjectUsingPUTJSON;
 }

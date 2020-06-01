@@ -10,36 +10,26 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.PostFormField;
-import java.util.List;
-import java.util.Map;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * PostTicketRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PostTicketRQ extends DataClass<PostTicketRQ>{
+public class PostTicketRQ extends DataClass<PostTicketRQ> {
 
-  public String domain;
-  public Boolean includeComments;
-  public Boolean includeData;
-  public Boolean includeLogs;
-  public Long item;
-  public Integer logQuantity;
-  public String password;
-  public String token;
-  public String username;
+    public String domain;
+    public Boolean includeComments;
+    public Boolean includeData;
+    public Boolean includeLogs;
+    public Long item;
+    public Integer logQuantity;
+    public String password;
+    public String token;
+    public String username;
 }
 

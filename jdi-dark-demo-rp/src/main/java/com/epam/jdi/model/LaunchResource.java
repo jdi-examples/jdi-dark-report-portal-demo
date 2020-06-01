@@ -10,59 +10,51 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ItemAttributeResource;
-import com.epam.jdi.model.StatisticsResource;
-import java.util.Date;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * LaunchResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LaunchResource extends DataClass<LaunchResource>{
+public class LaunchResource extends DataClass<LaunchResource> {
 
-  public Double approximateDuration;
-  public String description;
-  public Date endTime;
-  public Boolean hasRetries;
-  public Long id;
-  public Date lastModified;
-  public ModeEnum mode;
-  /**
-   * Gets or Sets mode
-   */
-  public enum ModeEnum {
-      DEFAULT("DEFAULT"),
-      
-      DEBUG("DEBUG");
+    public Double approximateDuration;
+    public String description;
+    public Date endTime;
+    public Boolean hasRetries;
+    public Long id;
+    public Date lastModified;
+    public ModeEnum mode;
 
-      private String value;
+    /**
+     * Gets or Sets mode
+     */
+    public enum ModeEnum {
+        DEFAULT("DEFAULT"),
 
-      ModeEnum(String value) {
-      this.value = value;
-  }
-  }
+        DEBUG("DEBUG");
 
-  public String name;
-  public Long number;
-  public String owner;
-  public Boolean rerun;
-  public Boolean share;
-  public Date startTime;
-  public StatisticsResource statistics;
-  public String status;
-  public String uuid;
+        private String value;
+
+        ModeEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public String name;
+    public Long number;
+    public String owner;
+    public Boolean rerun;
+    public Boolean share;
+    public Date startTime;
+    public StatisticsResource statistics;
+    public String status;
+    public String uuid;
 }
 

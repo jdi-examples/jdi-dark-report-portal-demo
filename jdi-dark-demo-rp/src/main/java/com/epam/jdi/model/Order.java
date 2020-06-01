@@ -10,26 +10,19 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Order
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Order extends DataClass<Order>{
+public class Order extends DataClass<Order> {
 
-  public Boolean isAsc;
-  public String sortingColumn;
+    public Boolean isAsc;
+    public String sortingColumn;
 }
 

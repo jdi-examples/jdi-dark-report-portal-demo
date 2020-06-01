@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class SettingsControllerApiTest {
 
-    private SettingsControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(SettingsControllerApi.class); }
+    public void before() {
+        init(SettingsControllerApi.class);
+    }
 
-    
+
     /**
      * Get server settings
-     * 
      */
     @Test
     public void getServerSettingsUsingGETTest() {
@@ -40,10 +38,9 @@ public class SettingsControllerApiTest {
         RestResponse resp = SettingsControllerApi.getServerSettingsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Update analytics settings
-     * 
      */
     @Test
     public void saveAnalyticsSettingsUsingPOSTJSONTest() {
@@ -51,10 +48,9 @@ public class SettingsControllerApiTest {
         RestResponse resp = SettingsControllerApi.saveAnalyticsSettingsUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Update analytics settings
-     * 
      */
     @Test
     public void saveAnalyticsSettingsUsingPUTJSONTest() {
@@ -62,5 +58,5 @@ public class SettingsControllerApiTest {
         RestResponse resp = SettingsControllerApi.saveAnalyticsSettingsUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

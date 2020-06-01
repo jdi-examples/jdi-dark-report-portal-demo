@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class LogAsyncControllerApiTest {
 
-    private LogAsyncControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(LogAsyncControllerApi.class); }
+    public void before() {
+        init(LogAsyncControllerApi.class);
+    }
 
-    
+
     /**
      * Create log
-     * 
      */
     @Test
     public void createLogUsingPOSTJSONTest() {
@@ -40,5 +38,5 @@ public class LogAsyncControllerApiTest {
         RestResponse resp = LogAsyncControllerApi.createLogUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
 }

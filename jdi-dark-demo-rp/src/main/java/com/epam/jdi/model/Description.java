@@ -10,43 +10,37 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Description
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Description extends DataClass<Description>{
+public class Description extends DataClass<Description> {
 
-  public ActionEnum action;
-  /**
-   * Gets or Sets action
-   */
-  public enum ActionEnum {
-      DELETE("DELETE"),
-      
-      UPDATE("UPDATE"),
-      
-      CREATE("CREATE");
+    public ActionEnum action;
 
-      private String value;
+    /**
+     * Gets or Sets action
+     */
+    public enum ActionEnum {
+        DELETE("DELETE"),
 
-      ActionEnum(String value) {
-      this.value = value;
-  }
-  }
+        UPDATE("UPDATE"),
 
-  public String comment;
+        CREATE("CREATE");
+
+        private String value;
+
+        ActionEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public String comment;
 }
 

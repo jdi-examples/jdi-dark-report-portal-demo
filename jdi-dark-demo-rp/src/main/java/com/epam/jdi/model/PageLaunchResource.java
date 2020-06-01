@@ -10,28 +10,18 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.LaunchResource;
-import com.epam.jdi.model.PageMetadata;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * PageLaunchResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PageLaunchResource extends DataClass<PageLaunchResource>{
+public class PageLaunchResource extends DataClass<PageLaunchResource> {
 
-  public PageMetadata page;
+    public PageMetadata page;
 }
 

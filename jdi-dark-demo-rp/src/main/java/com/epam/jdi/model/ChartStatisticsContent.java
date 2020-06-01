@@ -10,31 +10,23 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import java.sql.Timestamp;
-import java.util.List;
-import java.util.Map;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.sql.Timestamp;
 
 /**
  * ChartStatisticsContent
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChartStatisticsContent extends DataClass<ChartStatisticsContent>{
+public class ChartStatisticsContent extends DataClass<ChartStatisticsContent> {
 
-  public Long id;
-  public String name;
-  public Integer number;
-  public Timestamp startTime;
+    public Long id;
+    public String name;
+    public Integer number;
+    public Timestamp startTime;
 }
 

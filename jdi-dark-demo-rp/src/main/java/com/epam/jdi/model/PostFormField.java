@@ -10,30 +10,21 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.AllowedValue;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * PostFormField
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PostFormField extends DataClass<PostFormField>{
+public class PostFormField extends DataClass<PostFormField> {
 
-  public String fieldName;
-  public String fieldType;
-  public String id;
-  public Boolean required;
+    public String fieldName;
+    public String fieldType;
+    public String id;
+    public Boolean required;
 }
 

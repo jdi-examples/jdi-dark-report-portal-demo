@@ -10,27 +10,20 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * UserBidRS
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserBidRS extends DataClass<UserBidRS>{
+public class UserBidRS extends DataClass<UserBidRS> {
 
-  public String email;
-  public Boolean isActive;
-  public String uuid;
+    public String email;
+    public Boolean isActive;
+    public String uuid;
 }
 

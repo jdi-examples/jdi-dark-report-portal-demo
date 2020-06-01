@@ -10,26 +10,19 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * ItemPathName
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ItemPathName extends DataClass<ItemPathName>{
+public class ItemPathName extends DataClass<ItemPathName> {
 
-  public Long id;
-  public String name;
+    public Long id;
+    public String name;
 }
 

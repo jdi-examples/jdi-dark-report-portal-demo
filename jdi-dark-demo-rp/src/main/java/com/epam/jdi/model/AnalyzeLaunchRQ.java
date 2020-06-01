@@ -10,60 +10,54 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * AnalyzeLaunchRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AnalyzeLaunchRQ extends DataClass<AnalyzeLaunchRQ>{
+public class AnalyzeLaunchRQ extends DataClass<AnalyzeLaunchRQ> {
 
-  public AnalyzerModeEnum analyzerMode;
-  /**
-   * Gets or Sets analyzerMode
-   */
-  public enum AnalyzerModeEnum {
-      ALL("ALL"),
-      
-      LAUNCH_NAME("LAUNCH_NAME"),
-      
-      CURRENT_LAUNCH("CURRENT_LAUNCH");
+    public AnalyzerModeEnum analyzerMode;
 
-      private String value;
+    /**
+     * Gets or Sets analyzerMode
+     */
+    public enum AnalyzerModeEnum {
+        ALL("ALL"),
 
-      AnalyzerModeEnum(String value) {
-      this.value = value;
-  }
-  }
+        LAUNCH_NAME("LAUNCH_NAME"),
 
-  public AnalyzerTypeNameEnum analyzerTypeName;
-  /**
-   * Gets or Sets analyzerTypeName
-   */
-  public enum AnalyzerTypeNameEnum {
-      AUTOANALYZER("autoAnalyzer"),
-      
-      PATTERNANALYZER("patternAnalyzer");
+        CURRENT_LAUNCH("CURRENT_LAUNCH");
 
-      private String value;
+        private String value;
 
-      AnalyzerTypeNameEnum(String value) {
-      this.value = value;
-  }
-  }
+        AnalyzerModeEnum(String value) {
+            this.value = value;
+        }
+    }
 
-  public Long launchId;
+    public AnalyzerTypeNameEnum analyzerTypeName;
+
+    /**
+     * Gets or Sets analyzerTypeName
+     */
+    public enum AnalyzerTypeNameEnum {
+        AUTOANALYZER("autoAnalyzer"),
+
+        PATTERNANALYZER("patternAnalyzer");
+
+        private String value;
+
+        AnalyzerTypeNameEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public Long launchId;
 }
 

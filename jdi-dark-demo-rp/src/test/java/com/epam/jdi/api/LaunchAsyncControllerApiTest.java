@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class LaunchAsyncControllerApiTest {
 
-    private LaunchAsyncControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(LaunchAsyncControllerApi.class); }
+    public void before() {
+        init(LaunchAsyncControllerApi.class);
+    }
 
-    
+
     /**
      * Finish launch for specified project
-     * 
      */
     @Test
     public void finishLaunchUsingPUTJSONTest() {
@@ -40,10 +38,9 @@ public class LaunchAsyncControllerApiTest {
         RestResponse resp = LaunchAsyncControllerApi.finishLaunchUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Merge set of specified launches in common one
-     * 
      */
     @Test
     public void mergeLaunchesUsingPOSTJSONTest() {
@@ -51,10 +48,9 @@ public class LaunchAsyncControllerApiTest {
         RestResponse resp = LaunchAsyncControllerApi.mergeLaunchesUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Starts launch for specified project
-     * 
      */
     @Test
     public void startLaunchUsingPOSTJSONTest() {
@@ -62,5 +58,5 @@ public class LaunchAsyncControllerApiTest {
         RestResponse resp = LaunchAsyncControllerApi.startLaunchUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
 }

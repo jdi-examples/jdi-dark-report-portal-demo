@@ -10,65 +10,60 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * CreateUserRQFull
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CreateUserRQFull extends DataClass<CreateUserRQFull>{
+public class CreateUserRQFull extends DataClass<CreateUserRQFull> {
 
-  public AccountRoleEnum accountRole;
-  /**
-   * Gets or Sets accountRole
-   */
-  public enum AccountRoleEnum {
-      USER("USER"),
-      
-      ADMINISTRATOR("ADMINISTRATOR");
+    public AccountRoleEnum accountRole;
 
-      private String value;
+    /**
+     * Gets or Sets accountRole
+     */
+    public enum AccountRoleEnum {
+        USER("USER"),
 
-      AccountRoleEnum(String value) {
-      this.value = value;
-  }
-  }
+        ADMINISTRATOR("ADMINISTRATOR");
 
-  public String defaultProject;
-  public String email;
-  public String fullName;
-  public String login;
-  public String password;
-  public ProjectRoleEnum projectRole;
-  /**
-   * Gets or Sets projectRole
-   */
-  public enum ProjectRoleEnum {
-      CUSTOMER("CUSTOMER"),
-      
-      MEMBER("MEMBER"),
-      
-      LEAD("LEAD"),
-      
-      PROJECT_MANAGER("PROJECT_MANAGER");
+        private String value;
 
-      private String value;
+        AccountRoleEnum(String value) {
+            this.value = value;
+        }
+    }
 
-      ProjectRoleEnum(String value) {
-      this.value = value;
-  }
-  }
+    public String defaultProject;
+    public String email;
+    public String fullName;
+    public String login;
+    public String password;
+    public ProjectRoleEnum projectRole;
+
+    /**
+     * Gets or Sets projectRole
+     */
+    public enum ProjectRoleEnum {
+        CUSTOMER("CUSTOMER"),
+
+        MEMBER("MEMBER"),
+
+        LEAD("LEAD"),
+
+        PROJECT_MANAGER("PROJECT_MANAGER");
+
+        private String value;
+
+        ProjectRoleEnum(String value) {
+            this.value = value;
+        }
+    }
 
 }
 

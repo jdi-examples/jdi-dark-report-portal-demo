@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class IntegrationControllerApiTest {
 
-    private IntegrationControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(IntegrationControllerApi.class); }
+    public void before() {
+        init(IntegrationControllerApi.class);
+    }
 
-    
+
     /**
      * Create global Report Portal integration instance
-     * 
      */
     @Test
     public void createGlobalIntegrationUsingPOSTJSONTest() {
@@ -40,10 +38,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.createGlobalIntegrationUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Create project Report Portal integration instance
-     * 
      */
     @Test
     public void createProjectIntegrationUsingPOSTJSONTest() {
@@ -51,10 +48,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.createProjectIntegrationUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete all global integrations by type
-     * 
      */
     @Test
     public void deleteAllIntegrationsUsingDELETETest() {
@@ -62,10 +58,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.deleteAllIntegrationsUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete all integrations assigned to specified project
-     * 
      */
     @Test
     public void deleteAllProjectIntegrationsUsingDELETETest() {
@@ -73,10 +68,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.deleteAllProjectIntegrationsUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete global integration instance
-     * 
      */
     @Test
     public void deleteGlobalIntegrationUsingDELETETest() {
@@ -84,10 +78,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.deleteGlobalIntegrationUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete project integration instance
-     * 
      */
     @Test
     public void deleteProjectIntegrationUsingDELETETest() {
@@ -95,10 +88,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.deleteProjectIntegrationUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Execute command to the integration instance
-     * 
      */
     @Test
     public void executeIntegrationCommandUsingPUTJSONTest() {
@@ -106,10 +98,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.executeIntegrationCommandUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Get global Report Portal integration instance
-     * 
      */
     @Test
     public void getGlobalIntegrationUsingGETTest() {
@@ -117,10 +108,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.getGlobalIntegrationUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get available global integrations for plugin
-     * 
      */
     @Test
     public void getGlobalIntegrationsUsingGETTest() {
@@ -128,10 +118,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.getGlobalIntegrationsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get available global integrations
-     * 
      */
     @Test
     public void getGlobalIntegrationsUsingGET1Test() {
@@ -139,10 +128,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.getGlobalIntegrationsUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Get integration instance
-     * 
      */
     @Test
     public void getProjectIntegrationUsingGETTest() {
@@ -150,10 +138,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.getProjectIntegrationUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get available project integrations for plugin
-     * 
      */
     @Test
     public void getProjectIntegrationsUsingGETTest() {
@@ -161,10 +148,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.getProjectIntegrationsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get available project integrations
-     * 
      */
     @Test
     public void getProjectIntegrationsUsingGET1Test() {
@@ -172,10 +158,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.getProjectIntegrationsUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Test connection to the global integration
-     * 
      */
     @Test
     public void testIntegrationConnectionUsingGETTest() {
@@ -183,10 +168,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.testIntegrationConnectionUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Test connection to the integration through the project config
-     * 
      */
     @Test
     public void testIntegrationConnectionUsingGET1Test() {
@@ -194,10 +178,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.testIntegrationConnectionUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Update global Report Portal integration instance
-     * 
      */
     @Test
     public void updateGlobalIntegrationUsingPUTJSONTest() {
@@ -205,10 +188,9 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.updateGlobalIntegrationUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Update project integration instance
-     * 
      */
     @Test
     public void updateProjectIntegrationUsingPUTJSONTest() {
@@ -216,5 +198,5 @@ public class IntegrationControllerApiTest {
         RestResponse resp = IntegrationControllerApi.updateProjectIntegrationUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

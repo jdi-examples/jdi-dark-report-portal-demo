@@ -10,86 +10,77 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ContentParameters;
-import com.epam.jdi.model.UserFilterResource;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * WidgetResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class WidgetResource extends DataClass<WidgetResource>{
+public class WidgetResource extends DataClass<WidgetResource> {
 
-  public Object content;
-  public ContentParameters contentParameters;
-  public String description;
-  public Long id;
-  public String name;
-  public String owner;
-  public Boolean share;
-  public WidgetTypeEnum widgetType;
-  /**
-   * Gets or Sets widgetType
-   */
-  public enum WidgetTypeEnum {
-      OLDLINECHART("oldLineChart"),
-      
-      INVESTIGATEDTREND("investigatedTrend"),
-      
-      LAUNCHSTATISTICS("launchStatistics"),
-      
-      STATISTICTREND("statisticTrend"),
-      
-      CASESTREND("casesTrend"),
-      
-      NOTPASSED("notPassed"),
-      
-      OVERALLSTATISTICS("overallStatistics"),
-      
-      UNIQUEBUGTABLE("uniqueBugTable"),
-      
-      BUGTREND("bugTrend"),
-      
-      ACTIVITYSTREAM("activityStream"),
-      
-      LAUNCHESCOMPARISONCHART("launchesComparisonChart"),
-      
-      LAUNCHESDURATIONCHART("launchesDurationChart"),
-      
-      LAUNCHESTABLE("launchesTable"),
-      
-      TOPTESTCASES("topTestCases"),
-      
-      FLAKYTESTCASES("flakyTestCases"),
-      
-      PASSINGRATESUMMARY("passingRateSummary"),
-      
-      PASSINGRATEPERLAUNCH("passingRatePerLaunch"),
-      
-      PRODUCTSTATUS("productStatus"),
-      
-      MOSTTIMECONSUMING("mostTimeConsuming"),
-      
-      CUMULATIVE("cumulative");
+    public Object content;
+    public ContentParameters contentParameters;
+    public String description;
+    public Long id;
+    public String name;
+    public String owner;
+    public Boolean share;
+    public WidgetTypeEnum widgetType;
 
-      private String value;
+    /**
+     * Gets or Sets widgetType
+     */
+    public enum WidgetTypeEnum {
+        OLDLINECHART("oldLineChart"),
 
-      WidgetTypeEnum(String value) {
-      this.value = value;
-  }
-  }
+        INVESTIGATEDTREND("investigatedTrend"),
+
+        LAUNCHSTATISTICS("launchStatistics"),
+
+        STATISTICTREND("statisticTrend"),
+
+        CASESTREND("casesTrend"),
+
+        NOTPASSED("notPassed"),
+
+        OVERALLSTATISTICS("overallStatistics"),
+
+        UNIQUEBUGTABLE("uniqueBugTable"),
+
+        BUGTREND("bugTrend"),
+
+        ACTIVITYSTREAM("activityStream"),
+
+        LAUNCHESCOMPARISONCHART("launchesComparisonChart"),
+
+        LAUNCHESDURATIONCHART("launchesDurationChart"),
+
+        LAUNCHESTABLE("launchesTable"),
+
+        TOPTESTCASES("topTestCases"),
+
+        FLAKYTESTCASES("flakyTestCases"),
+
+        PASSINGRATESUMMARY("passingRateSummary"),
+
+        PASSINGRATEPERLAUNCH("passingRatePerLaunch"),
+
+        PRODUCTSTATUS("productStatus"),
+
+        MOSTTIMECONSUMING("mostTimeConsuming"),
+
+        CUMULATIVE("cumulative");
+
+        private String value;
+
+        WidgetTypeEnum(String value) {
+            this.value = value;
+        }
+    }
 
 }
 

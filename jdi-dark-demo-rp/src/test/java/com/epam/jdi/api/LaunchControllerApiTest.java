@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class LaunchControllerApiTest {
 
-    private LaunchControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(LaunchControllerApi.class); }
+    public void before() {
+        init(LaunchControllerApi.class);
+    }
 
-    
+
     /**
      * Force finish launch
-     * 
      */
     @Test
     public void bulkForceFinishUsingPUTJSONTest() {
@@ -40,10 +38,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.bulkForceFinishUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Bulk update attributes and description
-     * 
      */
     @Test
     public void bulkUpdateUsingPUTJSONTest() {
@@ -51,10 +48,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.bulkUpdateUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Compare launches
-     * 
      */
     @Test
     public void compareLaunchesUsingGETTest() {
@@ -62,10 +58,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.compareLaunchesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete specified launch by ID
-     * 
      */
     @Test
     public void deleteLaunchUsingDELETETest() {
@@ -73,10 +68,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.deleteLaunchUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete specified launches by ids
-     * 
      */
     @Test
     public void deleteLaunchesUsingDELETETest() {
@@ -84,10 +78,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.deleteLaunchesUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Finish launch for specified project
-     * 
      */
     @Test
     public void finishLaunchUsingPUT1JSONTest() {
@@ -95,10 +88,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.finishLaunchUsingPUT1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Force finish launch for specified project
-     * 
      */
     @Test
     public void forceFinishLaunchUsingPUTJSONTest() {
@@ -106,10 +98,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.forceFinishLaunchUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Get launch names of project
-     * 
      */
     @Test
     public void getAllLaunchNamesUsingGETTest() {
@@ -117,10 +108,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getAllLaunchNamesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all unique owners of project launches
-     * 
      */
     @Test
     public void getAllOwnersUsingGETTest() {
@@ -128,10 +118,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getAllOwnersUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all unique attribute keys of project launches
-     * 
      */
     @Test
     public void getAttributeKeysUsingGETTest() {
@@ -139,10 +128,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getAttributeKeysUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all unique attribute values of project launches
-     * 
      */
     @Test
     public void getAttributeValuesUsingGETTest() {
@@ -150,10 +138,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getAttributeValuesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get launches of specified project from DEBUG mode
-     * 
      */
     @Test
     public void getDebugLaunchesUsingGETTest() {
@@ -161,10 +148,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getDebugLaunchesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get list of latest project launches by filter
-     * 
      */
     @Test
     public void getLatestLaunchesUsingGETTest() {
@@ -172,10 +158,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getLatestLaunchesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get specified launch by UUID
-     * 
      */
     @Test
     public void getLaunchByUuidUsingGETTest() {
@@ -183,7 +168,7 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getLaunchByUuidUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Export specified launch
      * Only following formats are supported: pdf (by default), xls, html.
@@ -194,10 +179,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getLaunchReportUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get specified launch by ID
-     * 
      */
     @Test
     public void getLaunchUsingGETTest() {
@@ -205,10 +189,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getLaunchUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get list of project launches by filter
-     * 
      */
     @Test
     public void getProjectLaunchesUsingGETTest() {
@@ -216,10 +199,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getProjectLaunchesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * getStatuses
-     * 
      */
     @Test
     public void getStatusesUsingGETTest() {
@@ -227,7 +209,7 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.getStatusesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Import junit xml report
      * Only following formats are supported: zip.
@@ -238,10 +220,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.importLaunchUsingPOSTANY.call();
         resp.isOk();
     }
-    
+
     /**
      * Merge set of specified launches in common one
-     * 
      */
     @Test
     public void mergeLaunchesUsingPOST1JSONTest() {
@@ -249,10 +230,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.mergeLaunchesUsingPOST1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Start launch auto-analyzer on demand
-     * 
      */
     @Test
     public void startLaunchAnalyzerUsingPOSTJSONTest() {
@@ -260,10 +240,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.startLaunchAnalyzerUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Starts launch for specified project
-     * 
      */
     @Test
     public void startLaunchUsingPOST1JSONTest() {
@@ -271,10 +250,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.startLaunchUsingPOST1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Updates launch for specified project
-     * 
      */
     @Test
     public void updateLaunchUsingPUTJSONTest() {
@@ -282,10 +260,9 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.updateLaunchUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Updates launches for specified project
-     * 
      */
     @Test
     public void updateLaunchesUsingPUTJSONTest() {
@@ -293,5 +270,5 @@ public class LaunchControllerApiTest {
         RestResponse resp = LaunchControllerApi.updateLaunchesUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

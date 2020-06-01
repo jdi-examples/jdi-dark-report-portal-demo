@@ -12,170 +12,162 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
 import com.epam.http.annotations.ContentType;
-import com.epam.jdi.model.EntryCreatedRS;
-import com.epam.jdi.model.IterableWidgetResource;
-import com.epam.jdi.model.Iterableobject;
-import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.QueryParameters;
-import com.epam.jdi.model.WidgetPreviewRQ;
-import com.epam.jdi.model.WidgetRQ;
-import com.epam.jdi.model.WidgetResource;
 import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.QueryParameter;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.jdi.model.EntryCreatedRS;
+import com.epam.jdi.model.IterableWidgetResource;
+import com.epam.jdi.model.Iterableobject;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.WidgetResource;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class WidgetControllerApi {
 
-  /**
-   * Create a new widget
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param createWidget(WidgetRQ) /body/ createWidget (required)
-   * @return EntryCreatedRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/{projectName}/widget")
-  public static RestMethod createWidgetUsingPOSTJSON;
+    /**
+     * Create a new widget
+     *
+     * @param projectName /path/ projectName (required)
+     * @param createWidget(WidgetRQ) /body/ createWidget (required)
+     * @return EntryCreatedRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/{projectName}/widget")
+    public static DataMethod<EntryCreatedRS> createWidgetUsingPOSTJSON;
 
-  /**
-   * Load shared widgets
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqDescription /query/ Filters by 'description' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqOwner /query/ Filters by 'owner' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqShared /query/ Filters by 'shared' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableWidgetResource
-  */
-  @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqShared", value = "true")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/widget/shared")
-  public static RestMethod getSharedUsingGET;
+    /**
+     * Load shared widgets
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqDescription /query/ Filters by 'description' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqOwner /query/ Filters by 'owner' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqShared /query/ Filters by 'shared' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableWidgetResource
+     */
+    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqShared", value = "true")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/widget/shared")
+    public static DataMethod<IterableWidgetResource> getSharedUsingGET;
 
-  /**
-   * Load all widget names which belong to a user
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqDescription /query/ Filters by 'description' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqOwner /query/ Filters by 'owner' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqShared /query/ Filters by 'shared' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return Iterableobject
-  */
-  @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqShared", value = "true")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/widget/names/all")
-  public static RestMethod getWidgetNamesUsingGET;
+    /**
+     * Load all widget names which belong to a user
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqDescription /query/ Filters by 'description' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqOwner /query/ Filters by 'owner' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqShared /query/ Filters by 'shared' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return Iterableobject
+     */
+    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqShared", value = "true")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/widget/names/all")
+    public static DataMethod<Iterableobject> getWidgetNamesUsingGET;
 
-  /**
-   * Get widget preview
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param previewRQ(WidgetPreviewRQ) /body/ previewRQ (required)
-   * @return Object
-  */
-  @ContentType(JSON)
-  @POST("/v1/{projectName}/widget/preview")
-  public static RestMethod getWidgetPreviewUsingPOSTJSON;
+    /**
+     * Get widget preview
+     *
+     * @param projectName /path/ projectName (required)
+     * @param previewRQ(WidgetPreviewRQ) /body/ previewRQ (required)
+     * @return Object
+     */
+    @ContentType(JSON)
+    @POST("/v1/{projectName}/widget/preview")
+    public static DataMethod<Object> getWidgetPreviewUsingPOSTJSON;
 
-  /**
-   * Get multilevel widget by ID
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param widgetId /path/ widgetId (required)
-   * @param attributes /query/ attributes (optional)
-   * @param params /query/ params (required)
-   * @return WidgetResource
-  */
-  @QueryParameter(name = "attributes", value = "attributes_example")
-  @QueryParameter(name = "params", value = "")
-  @GET("/v1/{projectName}/widget/multilevel/{widgetId}")
-  public static RestMethod getWidgetUsingGET;
+    /**
+     * Get multilevel widget by ID
+     *
+     * @param projectName /path/ projectName (required)
+     * @param widgetId /path/ widgetId (required)
+     * @param attributes /query/ attributes (optional)
+     * @param params /query/ params (required)
+     * @return WidgetResource
+     */
+    @QueryParameter(name = "attributes", value = "attributes_example")
+    @QueryParameter(name = "params", value = "")
+    @GET("/v1/{projectName}/widget/multilevel/{widgetId}")
+    public static DataMethod<WidgetResource> getWidgetUsingGET;
 
-  /**
-   * Get widget by ID
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param widgetId /path/ widgetId (required)
-   * @return WidgetResource
-  */
-  @GET("/v1/{projectName}/widget/{widgetId}")
-  public static RestMethod getWidgetUsingGET1;
+    /**
+     * Get widget by ID
+     *
+     * @param projectName /path/ projectName (required)
+     * @param widgetId /path/ widgetId (required)
+     * @return WidgetResource
+     */
+    @GET("/v1/{projectName}/widget/{widgetId}")
+    public static DataMethod<WidgetResource> getWidgetUsingGET1;
 
-  /**
-   * Search shared widgets by name
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqDescription /query/ Filters by 'description' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqOwner /query/ Filters by 'owner' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqShared /query/ Filters by 'shared' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @param term /query/ term (required)
-   * @return IterableWidgetResource
-  */
-  @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqShared", value = "true")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @QueryParameter(name = "term", value = "term_example")
-  @GET("/v1/{projectName}/widget/shared/search")
-  public static RestMethod searchSharedUsingGET;
+    /**
+     * Search shared widgets by name
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqDescription /query/ Filters by 'description' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqOwner /query/ Filters by 'owner' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqShared /query/ Filters by 'shared' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @param term /query/ term (required)
+     * @return IterableWidgetResource
+     */
+    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqOwner", value = "filterEqOwner_example")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqShared", value = "true")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @QueryParameter(name = "term", value = "term_example")
+    @GET("/v1/{projectName}/widget/shared/search")
+    public static DataMethod<IterableWidgetResource> searchSharedUsingGET;
 
-  /**
-   * Update specified widget
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param widgetId /path/ widgetId (required)
-   * @param updateRQ(WidgetRQ) /body/ updateRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/widget/{widgetId}")
-  public static RestMethod updateWidgetUsingPUTJSON;
+    /**
+     * Update specified widget
+     *
+     * @param projectName /path/ projectName (required)
+     * @param widgetId /path/ widgetId (required)
+     * @param updateRQ(WidgetRQ) /body/ updateRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/widget/{widgetId}")
+    public static DataMethod<OperationCompletionRS> updateWidgetUsingPUTJSON;
 }

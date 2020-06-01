@@ -10,60 +10,54 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.BinaryContent;
-import java.util.Date;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * LogResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LogResource extends DataClass<LogResource>{
+public class LogResource extends DataClass<LogResource> {
 
-  public BinaryContent binaryContent;
-  public Long id;
-  public Long itemId;
-  public Long launchId;
-  public LevelEnum level;
-  /**
-   * Gets or Sets level
-   */
-  public enum LevelEnum {
-      ERROR("error"),
-      
-      WARN("warn"),
-      
-      INFO("info"),
-      
-      DEBUG("debug"),
-      
-      TRACE("trace"),
-      
-      FATAL("fatal"),
-      
-      UNKNOWN("unknown");
+    public BinaryContent binaryContent;
+    public Long id;
+    public Long itemId;
+    public Long launchId;
+    public LevelEnum level;
 
-      private String value;
+    /**
+     * Gets or Sets level
+     */
+    public enum LevelEnum {
+        ERROR("error"),
 
-      LevelEnum(String value) {
-      this.value = value;
-  }
-  }
+        WARN("warn"),
 
-  public String message;
-  public String thumbnail;
-  public Date time;
-  public String uuid;
+        INFO("info"),
+
+        DEBUG("debug"),
+
+        TRACE("trace"),
+
+        FATAL("fatal"),
+
+        UNKNOWN("unknown");
+
+        private String value;
+
+        LevelEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public String message;
+    public String thumbnail;
+    public Date time;
+    public String uuid;
 }
 

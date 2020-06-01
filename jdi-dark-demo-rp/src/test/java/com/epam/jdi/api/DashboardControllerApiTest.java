@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class DashboardControllerApiTest {
 
-    private DashboardControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(DashboardControllerApi.class); }
+    public void before() {
+        init(DashboardControllerApi.class);
+    }
 
-    
+
     /**
      * Add widget to specified dashboard
-     * 
      */
     @Test
     public void addWidgetUsingPUTJSONTest() {
@@ -40,10 +38,9 @@ public class DashboardControllerApiTest {
         RestResponse resp = DashboardControllerApi.addWidgetUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Create dashboard for specified project
-     * 
      */
     @Test
     public void createDashboardUsingPOSTJSONTest() {
@@ -51,10 +48,9 @@ public class DashboardControllerApiTest {
         RestResponse resp = DashboardControllerApi.createDashboardUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete specified dashboard by ID for specified project
-     * 
      */
     @Test
     public void deleteDashboardUsingDELETETest() {
@@ -62,10 +58,9 @@ public class DashboardControllerApiTest {
         RestResponse resp = DashboardControllerApi.deleteDashboardUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Get all permitted dashboard resources for specified project
-     * 
      */
     @Test
     public void getAllDashboardsUsingGETTest() {
@@ -73,10 +68,9 @@ public class DashboardControllerApiTest {
         RestResponse resp = DashboardControllerApi.getAllDashboardsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get specified dashboard by ID for specified project
-     * 
      */
     @Test
     public void getDashboardUsingGETTest() {
@@ -84,10 +78,9 @@ public class DashboardControllerApiTest {
         RestResponse resp = DashboardControllerApi.getDashboardUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get names of shared dashboards from specified project
-     * 
      */
     @Test
     public void getSharedDashboardsNamesUsingGETTest() {
@@ -95,10 +88,9 @@ public class DashboardControllerApiTest {
         RestResponse resp = DashboardControllerApi.getSharedDashboardsNamesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Remove widget from specified dashboard
-     * 
      */
     @Test
     public void removeWidgetUsingDELETETest() {
@@ -106,10 +98,9 @@ public class DashboardControllerApiTest {
         RestResponse resp = DashboardControllerApi.removeWidgetUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Update specified dashboard for specified project
-     * 
      */
     @Test
     public void updateDashboardUsingPUTJSONTest() {
@@ -117,5 +108,5 @@ public class DashboardControllerApiTest {
         RestResponse resp = DashboardControllerApi.updateDashboardUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

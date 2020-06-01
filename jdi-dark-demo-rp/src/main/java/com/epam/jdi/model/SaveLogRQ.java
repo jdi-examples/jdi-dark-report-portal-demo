@@ -10,58 +10,53 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import java.io.File;
-import java.util.Date;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.File;
+import java.util.Date;
 
 /**
  * SaveLogRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SaveLogRQ extends DataClass<SaveLogRQ>{
+public class SaveLogRQ extends DataClass<SaveLogRQ> {
 
-  public File file;
-  public String itemUuid;
-  public String launchUuid;
-  public LevelEnum level;
-  /**
-   * Gets or Sets level
-   */
-  public enum LevelEnum {
-      ERROR("error"),
-      
-      WARN("warn"),
-      
-      INFO("info"),
-      
-      DEBUG("debug"),
-      
-      TRACE("trace"),
-      
-      FATAL("fatal"),
-      
-      UNKNOWN("unknown");
+    public File file;
+    public String itemUuid;
+    public String launchUuid;
+    public LevelEnum level;
 
-      private String value;
+    /**
+     * Gets or Sets level
+     */
+    public enum LevelEnum {
+        ERROR("error"),
 
-      LevelEnum(String value) {
-      this.value = value;
-  }
-  }
+        WARN("warn"),
 
-  public String message;
-  public Date time;
-  public String uuid;
+        INFO("info"),
+
+        DEBUG("debug"),
+
+        TRACE("trace"),
+
+        FATAL("fatal"),
+
+        UNKNOWN("unknown");
+
+        private String value;
+
+        LevelEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public String message;
+    public Date time;
+    public String uuid;
 }
 

@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class ProjectControllerApiTest {
 
-    private ProjectControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(ProjectControllerApi.class); }
+    public void before() {
+        init(ProjectControllerApi.class);
+    }
 
-    
+
     /**
      * addUserPreference
-     * 
      */
     @Test
     public void addUserPreferenceUsingPUTJSONTest() {
@@ -40,10 +38,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.addUserPreferenceUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Assign users
-     * 
      */
     @Test
     public void assignProjectUsersUsingPUTJSONTest() {
@@ -51,10 +48,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.assignProjectUsersUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Create new project
-     * 
      */
     @Test
     public void createProjectUsingPOSTJSONTest() {
@@ -62,10 +58,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.createProjectUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete project index from ML
-     * 
      */
     @Test
     public void deleteProjectIndexUsingDELETETest() {
@@ -73,7 +68,7 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.deleteProjectIndexUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete project
      * Could be deleted only by users with administrator role
@@ -84,7 +79,7 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.deleteProjectUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete multiple projects
      * Could be deleted only by users with administrator role
@@ -95,7 +90,7 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.deleteProjectUsingDELETE1.call();
         resp.isOk();
     }
-    
+
     /**
      * Exports information about all projects
      * Allowable only for users with administrator role
@@ -106,10 +101,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.exportProjectsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * getAllProjectNames
-     * 
      */
     @Test
     public void getAllProjectNamesUsingGETTest() {
@@ -117,10 +111,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getAllProjectNamesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * getAllProjectsInfo
-     * 
      */
     @Test
     public void getAllProjectsInfoUsingGETTest() {
@@ -128,10 +121,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getAllProjectsInfoUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * getAnalyzerIndexingStatus
-     * 
      */
     @Test
     public void getAnalyzerIndexingStatusUsingGETTest() {
@@ -139,10 +131,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getAnalyzerIndexingStatusUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * getProjectInfo
-     * 
      */
     @Test
     public void getProjectInfoUsingGETTest() {
@@ -150,7 +141,7 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getProjectInfoUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Load project users by filter
      * Only for users that are members of the project
@@ -161,10 +152,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getProjectUsersUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Get users assigned on current project
-     * 
      */
     @Test
     public void getProjectUsersUsingGET1Test() {
@@ -172,7 +162,7 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getProjectUsersUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Get information about project
      * Only for users that are assigned to the project
@@ -183,10 +173,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getProjectUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * getProjectWidget
-     * 
      */
     @Test
     public void getProjectWidgetUsingGETTest() {
@@ -194,7 +183,7 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getProjectWidgetUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Load user preferences
      * Only for users that allowed to edit other users
@@ -205,7 +194,7 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getUserPreferenceUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Load users which can be assigned to specified project
      * Only for users with project manager permissions
@@ -216,10 +205,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.getUsersForAssignUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Starts reindex all project data in ML
-     * 
      */
     @Test
     public void indexProjectDataUsingPUTJSONTest() {
@@ -227,10 +215,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.indexProjectDataUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * removeUserPreference
-     * 
      */
     @Test
     public void removeUserPreferenceUsingDELETETest() {
@@ -238,10 +225,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.removeUserPreferenceUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * searchForUser
-     * 
      */
     @Test
     public void searchForUserUsingGETTest() {
@@ -249,10 +235,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.searchForUserUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * searchProjectNames
-     * 
      */
     @Test
     public void searchProjectNamesUsingGETTest() {
@@ -260,10 +245,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.searchProjectNamesUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Un assign users
-     * 
      */
     @Test
     public void unassignProjectUsersUsingPUTJSONTest() {
@@ -271,10 +255,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.unassignProjectUsersUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Update project notifications configuration
-     * 
      */
     @Test
     public void updateProjectNotificationConfigUsingPUTJSONTest() {
@@ -282,10 +265,9 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.updateProjectNotificationConfigUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Update project
-     * 
      */
     @Test
     public void updateProjectUsingPUTJSONTest() {
@@ -293,5 +275,5 @@ public class ProjectControllerApiTest {
         RestResponse resp = ProjectControllerApi.updateProjectUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

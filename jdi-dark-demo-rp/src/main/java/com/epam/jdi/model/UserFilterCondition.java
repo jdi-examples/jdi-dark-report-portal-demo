@@ -10,27 +10,20 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * UserFilterCondition
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserFilterCondition extends DataClass<UserFilterCondition>{
+public class UserFilterCondition extends DataClass<UserFilterCondition> {
 
-  public String condition;
-  public String filteringField;
-  public String value;
+    public String condition;
+    public String filteringField;
+    public String value;
 }
 

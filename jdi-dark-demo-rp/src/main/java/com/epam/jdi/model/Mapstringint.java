@@ -10,26 +10,17 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Mapstringint
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Mapstringint extends DataClass<Mapstringint>{
+public class Mapstringint extends DataClass<Mapstringint> {
 
 }
 

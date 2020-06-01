@@ -12,473 +12,462 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
-import static io.restassured.http.ContentType.ANY;
-import com.epam.jdi.model.AnalyzeLaunchRQ;
-import com.epam.jdi.model.BulkInfoUpdateRQ;
-import com.epam.jdi.model.BulkRQlongFinishExecutionRQ;
-import com.epam.jdi.model.BulkRQlongUpdateLaunchRQ;
 import com.epam.http.annotations.ContentType;
-import java.util.Date;
-import com.epam.jdi.model.DeleteBulkRQ;
-import com.epam.jdi.model.DeleteBulkRS;
-import java.io.File;
-import com.epam.jdi.model.FinishExecutionRQ;
-import com.epam.jdi.model.FinishLaunchRS;
-import com.epam.http.annotations.FormParameter;
-import com.epam.http.annotations.FormParameters;
-import com.epam.jdi.model.IterableLaunchResource;
-import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.LaunchResource;
-import com.epam.jdi.model.MergeLaunchesRQ;
-import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.jdi.model.PageLaunchResource;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.QueryParameters;
-import com.epam.jdi.model.StartLaunchRQ;
-import com.epam.jdi.model.StartLaunchRS;
-import com.epam.jdi.model.UpdateLaunchRQ;
 import com.epam.http.annotations.DELETE;
+import com.epam.http.annotations.FormParameter;
 import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.QueryParameter;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestMethod;
+import com.epam.jdi.model.ChartStatisticsContent;
+import com.epam.jdi.model.DeleteBulkRS;
+import com.epam.jdi.model.FinishLaunchRS;
+import com.epam.jdi.model.IterableLaunchResource;
+import com.epam.jdi.model.LaunchResource;
+import com.epam.jdi.model.OperationCompletionRS;
+import com.epam.jdi.model.PageLaunchResource;
+import com.epam.jdi.model.StartLaunchRS;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static io.restassured.http.ContentType.ANY;
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class LaunchControllerApi {
 
-  /**
-   * Force finish launch
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param rq(BulkRQlongFinishExecutionRQ) /body/ rq (required)
-   * @return List(OperationCompletionRS);
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/launch/stop")
-  public static RestMethod bulkForceFinishUsingPUTJSON;
+    /**
+     * Force finish launch
+     *
+     * @param projectName /path/ projectName (required)
+     * @param rq(BulkRQlongFinishExecutionRQ) /body/ rq (required)
+     * @return OperationCompletionRS[]
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/launch/stop")
+    public static DataMethod<OperationCompletionRS[]> bulkForceFinishUsingPUTJSON;
 
-  /**
-   * Bulk update attributes and description
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param bulkInfoUpdateRQ(BulkInfoUpdateRQ) /body/ bulkInfoUpdateRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/launch/info")
-  public static RestMethod bulkUpdateUsingPUTJSON;
+    /**
+     * Bulk update attributes and description
+     *
+     * @param projectName /path/ projectName (required)
+     * @param bulkInfoUpdateRQ(BulkInfoUpdateRQ) /body/ bulkInfoUpdateRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/launch/info")
+    public static DataMethod<OperationCompletionRS> bulkUpdateUsingPUTJSON;
 
-  /**
-   * Compare launches
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param ids /query/ ids (required)
-   * @return Map(String, List(ChartStatisticsContent););
-  */
-  @QueryParameter(name = "ids", value = "56")
-  @GET("/v1/{projectName}/launch/compare")
-  public static RestMethod compareLaunchesUsingGET;
+    /**
+     * Compare launches
+     *
+     * @param projectName /path/ projectName (required)
+     * @param ids /query/ ids (required)
+     * @return Map<String, List < ChartStatisticsContent>>
+     */
+    @QueryParameter(name = "ids", value = "56")
+    @GET("/v1/{projectName}/launch/compare")
+    public static DataMethod<Map<String, List<ChartStatisticsContent>>> compareLaunchesUsingGET;
 
-  /**
-   * Delete specified launch by ID
-   * 
-   * @param launchId /path/ launchId (required)
-   * @param projectName /path/ projectName (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/v1/{projectName}/launch/{launchId}")
-  public static RestMethod deleteLaunchUsingDELETE;
+    /**
+     * Delete specified launch by ID
+     *
+     * @param launchId /path/ launchId (required)
+     * @param projectName /path/ projectName (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/v1/{projectName}/launch/{launchId}")
+    public static DataMethod<OperationCompletionRS> deleteLaunchUsingDELETE;
 
-  /**
-   * Delete specified launches by ids
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param deleteBulkRQ(DeleteBulkRQ) /body/ deleteBulkRQ (required)
-   * @return DeleteBulkRS
-  */
-  @DELETE("/v1/{projectName}/launch")
-  public static RestMethod deleteLaunchesUsingDELETE;
+    /**
+     * Delete specified launches by ids
+     *
+     * @param projectName /path/ projectName (required)
+     * @param deleteBulkRQ(DeleteBulkRQ) /body/ deleteBulkRQ (required)
+     * @return DeleteBulkRS
+     */
+    @DELETE("/v1/{projectName}/launch")
+    public static DataMethod<DeleteBulkRS> deleteLaunchesUsingDELETE;
 
-  /**
-   * Finish launch for specified project
-   * 
-   * @param launchId /path/ launchId (required)
-   * @param projectName /path/ projectName (required)
-   * @param finishLaunchRQ(FinishExecutionRQ) /body/ finishLaunchRQ (required)
-   * @return FinishLaunchRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/launch/{launchId}/finish")
-  public static RestMethod finishLaunchUsingPUT1JSON;
+    /**
+     * Finish launch for specified project
+     *
+     * @param launchId /path/ launchId (required)
+     * @param projectName /path/ projectName (required)
+     * @param finishLaunchRQ(FinishExecutionRQ) /body/ finishLaunchRQ (required)
+     * @return FinishLaunchRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/launch/{launchId}/finish")
+    public static DataMethod<FinishLaunchRS> finishLaunchUsingPUT1JSON;
 
-  /**
-   * Force finish launch for specified project
-   * 
-   * @param launchId /path/ launchId (required)
-   * @param projectName /path/ projectName (required)
-   * @param finishExecutionRQ(FinishExecutionRQ) /body/ finishExecutionRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/launch/{launchId}/stop")
-  public static RestMethod forceFinishLaunchUsingPUTJSON;
+    /**
+     * Force finish launch for specified project
+     *
+     * @param launchId /path/ launchId (required)
+     * @param projectName /path/ projectName (required)
+     * @param finishExecutionRQ(FinishExecutionRQ) /body/ finishExecutionRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/launch/{launchId}/stop")
+    public static DataMethod<OperationCompletionRS> forceFinishLaunchUsingPUTJSON;
 
-  /**
-   * Get launch names of project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterCntName /query/ filter.cnt.name (required)
-   * @return List(String);
-  */
-  @QueryParameter(name = "filterCntName", value = "filterCntName_example")
-  @GET("/v1/{projectName}/launch/names")
-  public static RestMethod getAllLaunchNamesUsingGET;
+    /**
+     * Get launch names of project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterCntName /query/ filter.cnt.name (required)
+     * @return String[]
+     */
+    @QueryParameter(name = "filterCntName", value = "filterCntName_example")
+    @GET("/v1/{projectName}/launch/names")
+    public static DataMethod<String[]> getAllLaunchNamesUsingGET;
 
-  /**
-   * Get all unique owners of project launches
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterCntUser /query/ filter.cnt.user (required)
-   * @param mode /query/ mode (optional, default to DEFAULT)
-   * @return List(String);
-  */
-  @QueryParameter(name = "filterCntUser", value = "filterCntUser_example")
-  @QueryParameter(name = "mode", value = "DEFAULT")
-  @GET("/v1/{projectName}/launch/owners")
-  public static RestMethod getAllOwnersUsingGET;
+    /**
+     * Get all unique owners of project launches
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterCntUser /query/ filter.cnt.user (required)
+     * @param mode /query/ mode (optional, default to DEFAULT)
+     * @return String[]
+     */
+    @QueryParameter(name = "filterCntUser", value = "filterCntUser_example")
+    @QueryParameter(name = "mode", value = "DEFAULT")
+    @GET("/v1/{projectName}/launch/owners")
+    public static DataMethod<String[]> getAllOwnersUsingGET;
 
-  /**
-   * Get all unique attribute keys of project launches
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterCntAttributeKey /query/ filter.cnt.attributeKey (required)
-   * @return List(String);
-  */
-  @QueryParameter(name = "filterCntAttributeKey", value = "filterCntAttributeKey_example")
-  @GET("/v1/{projectName}/launch/attribute/keys")
-  public static RestMethod getAttributeKeysUsingGET;
+    /**
+     * Get all unique attribute keys of project launches
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterCntAttributeKey /query/ filter.cnt.attributeKey (required)
+     * @return String[]
+     */
+    @QueryParameter(name = "filterCntAttributeKey", value = "filterCntAttributeKey_example")
+    @GET("/v1/{projectName}/launch/attribute/keys")
+    public static DataMethod<String[]> getAttributeKeysUsingGET;
 
-  /**
-   * Get all unique attribute values of project launches
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterCntAttributeValue /query/ filter.cnt.attributeValue (required)
-   * @param filterEqAttributeKey /query/ filter.eq.attributeKey (optional)
-   * @return List(String);
-  */
-  @QueryParameter(name = "filterCntAttributeValue", value = "filterCntAttributeValue_example")
-  @QueryParameter(name = "filterEqAttributeKey", value = "filterEqAttributeKey_example")
-  @GET("/v1/{projectName}/launch/attribute/values")
-  public static RestMethod getAttributeValuesUsingGET;
+    /**
+     * Get all unique attribute values of project launches
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterCntAttributeValue /query/ filter.cnt.attributeValue (required)
+     * @param filterEqAttributeKey /query/ filter.eq.attributeKey (optional)
+     * @return String[]
+     */
+    @QueryParameter(name = "filterCntAttributeValue", value = "filterCntAttributeValue_example")
+    @QueryParameter(name = "filterEqAttributeKey", value = "filterEqAttributeKey_example")
+    @GET("/v1/{projectName}/launch/attribute/values")
+    public static DataMethod<String[]> getAttributeValuesUsingGET;
 
-  /**
-   * Get launches of specified project from DEBUG mode
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqAttributeKey /query/ Filters by 'attributeKey' (optional)
-   * @param filterEqAttributeValue /query/ Filters by 'attributeValue' (optional)
-   * @param filterEqDescription /query/ Filters by 'description' (optional)
-   * @param filterEqEndTime /query/ Filters by 'endTime' (optional)
-   * @param filterEqHasRetries /query/ Filters by 'hasRetries' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLastModified /query/ Filters by 'lastModified' (optional)
-   * @param filterEqMode /query/ Filters by 'mode' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqNumber /query/ Filters by 'number' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqStartTime /query/ Filters by 'startTime' (optional)
-   * @param filterEqStatisticsdefectsautomationBugab001 /query/ Filters by 'statistics$defects$automation_bug$ab001' (optional)
-   * @param filterEqStatisticsdefectsnoDefectnd001 /query/ Filters by 'statistics$defects$no_defect$nd001' (optional)
-   * @param filterEqStatisticsdefectsproductBugpb001 /query/ Filters by 'statistics$defects$product_bug$pb001' (optional)
-   * @param filterEqStatisticsdefectssystemIssuesi001 /query/ Filters by 'statistics$defects$system_issue$si001' (optional)
-   * @param filterEqStatisticsdefectstoInvestigateti001 /query/ Filters by 'statistics$defects$to_investigate$ti001' (optional)
-   * @param filterEqStatisticsexecutionsfailed /query/ Filters by 'statistics$executions$failed' (optional)
-   * @param filterEqStatisticsexecutionspassed /query/ Filters by 'statistics$executions$passed' (optional)
-   * @param filterEqStatisticsexecutionsskipped /query/ Filters by 'statistics$executions$skipped' (optional)
-   * @param filterEqStatisticsexecutionstotal /query/ Filters by 'statistics$executions$total' (optional)
-   * @param filterEqStatus /query/ Filters by 'status' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param filterEqUserId /query/ Filters by 'userId' (optional)
-   * @param filterEqUuid /query/ Filters by 'uuid' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableLaunchResource
-  */
-  @QueryParameter(name = "filterEqAttributeKey", value = "")
-  @QueryParameter(name = "filterEqAttributeValue", value = "")
-  @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-  @QueryParameter(name = "filterEqEndTime", value = "new Date()")
-  @QueryParameter(name = "filterEqHasRetries", value = "true")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLastModified", value = "new Date()")
-  @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqNumber", value = "56")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqStartTime", value = "new Date()")
-  @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
-  @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "filterEqUserId", value = "789")
-  @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/launch/mode")
-  public static RestMethod getDebugLaunchesUsingGET;
+    /**
+     * Get launches of specified project from DEBUG mode
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqAttributeKey /query/ Filters by 'attributeKey' (optional)
+     * @param filterEqAttributeValue /query/ Filters by 'attributeValue' (optional)
+     * @param filterEqDescription /query/ Filters by 'description' (optional)
+     * @param filterEqEndTime /query/ Filters by 'endTime' (optional)
+     * @param filterEqHasRetries /query/ Filters by 'hasRetries' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLastModified /query/ Filters by 'lastModified' (optional)
+     * @param filterEqMode /query/ Filters by 'mode' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqNumber /query/ Filters by 'number' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqStartTime /query/ Filters by 'startTime' (optional)
+     * @param filterEqStatisticsdefectsautomationBugab001 /query/ Filters by 'statistics$defects$automation_bug$ab001' (optional)
+     * @param filterEqStatisticsdefectsnoDefectnd001 /query/ Filters by 'statistics$defects$no_defect$nd001' (optional)
+     * @param filterEqStatisticsdefectsproductBugpb001 /query/ Filters by 'statistics$defects$product_bug$pb001' (optional)
+     * @param filterEqStatisticsdefectssystemIssuesi001 /query/ Filters by 'statistics$defects$system_issue$si001' (optional)
+     * @param filterEqStatisticsdefectstoInvestigateti001 /query/ Filters by 'statistics$defects$to_investigate$ti001' (optional)
+     * @param filterEqStatisticsexecutionsfailed /query/ Filters by 'statistics$executions$failed' (optional)
+     * @param filterEqStatisticsexecutionspassed /query/ Filters by 'statistics$executions$passed' (optional)
+     * @param filterEqStatisticsexecutionsskipped /query/ Filters by 'statistics$executions$skipped' (optional)
+     * @param filterEqStatisticsexecutionstotal /query/ Filters by 'statistics$executions$total' (optional)
+     * @param filterEqStatus /query/ Filters by 'status' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param filterEqUserId /query/ Filters by 'userId' (optional)
+     * @param filterEqUuid /query/ Filters by 'uuid' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableLaunchResource
+     */
+    @QueryParameter(name = "filterEqAttributeKey", value = "")
+    @QueryParameter(name = "filterEqAttributeValue", value = "")
+    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
+    @QueryParameter(name = "filterEqEndTime", value = "new Date()")
+    @QueryParameter(name = "filterEqHasRetries", value = "true")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLastModified", value = "new Date()")
+    @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqNumber", value = "56")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqStartTime", value = "new Date()")
+    @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
+    @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "filterEqUserId", value = "789")
+    @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/launch/mode")
+    public static DataMethod<IterableLaunchResource> getDebugLaunchesUsingGET;
 
-  /**
-   * Get list of latest project launches by filter
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqAttributeKey /query/ Filters by 'attributeKey' (optional)
-   * @param filterEqAttributeValue /query/ Filters by 'attributeValue' (optional)
-   * @param filterEqDescription /query/ Filters by 'description' (optional)
-   * @param filterEqEndTime /query/ Filters by 'endTime' (optional)
-   * @param filterEqHasRetries /query/ Filters by 'hasRetries' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLastModified /query/ Filters by 'lastModified' (optional)
-   * @param filterEqMode /query/ Filters by 'mode' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqNumber /query/ Filters by 'number' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqStartTime /query/ Filters by 'startTime' (optional)
-   * @param filterEqStatisticsdefectsautomationBugab001 /query/ Filters by 'statistics$defects$automation_bug$ab001' (optional)
-   * @param filterEqStatisticsdefectsnoDefectnd001 /query/ Filters by 'statistics$defects$no_defect$nd001' (optional)
-   * @param filterEqStatisticsdefectsproductBugpb001 /query/ Filters by 'statistics$defects$product_bug$pb001' (optional)
-   * @param filterEqStatisticsdefectssystemIssuesi001 /query/ Filters by 'statistics$defects$system_issue$si001' (optional)
-   * @param filterEqStatisticsdefectstoInvestigateti001 /query/ Filters by 'statistics$defects$to_investigate$ti001' (optional)
-   * @param filterEqStatisticsexecutionsfailed /query/ Filters by 'statistics$executions$failed' (optional)
-   * @param filterEqStatisticsexecutionspassed /query/ Filters by 'statistics$executions$passed' (optional)
-   * @param filterEqStatisticsexecutionsskipped /query/ Filters by 'statistics$executions$skipped' (optional)
-   * @param filterEqStatisticsexecutionstotal /query/ Filters by 'statistics$executions$total' (optional)
-   * @param filterEqStatus /query/ Filters by 'status' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param filterEqUserId /query/ Filters by 'userId' (optional)
-   * @param filterEqUuid /query/ Filters by 'uuid' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return PageLaunchResource
-  */
-  @QueryParameter(name = "filterEqAttributeKey", value = "")
-  @QueryParameter(name = "filterEqAttributeValue", value = "")
-  @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-  @QueryParameter(name = "filterEqEndTime", value = "new Date()")
-  @QueryParameter(name = "filterEqHasRetries", value = "true")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLastModified", value = "new Date()")
-  @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqNumber", value = "56")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqStartTime", value = "new Date()")
-  @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
-  @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "filterEqUserId", value = "789")
-  @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/launch/latest")
-  public static RestMethod getLatestLaunchesUsingGET;
+    /**
+     * Get list of latest project launches by filter
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqAttributeKey /query/ Filters by 'attributeKey' (optional)
+     * @param filterEqAttributeValue /query/ Filters by 'attributeValue' (optional)
+     * @param filterEqDescription /query/ Filters by 'description' (optional)
+     * @param filterEqEndTime /query/ Filters by 'endTime' (optional)
+     * @param filterEqHasRetries /query/ Filters by 'hasRetries' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLastModified /query/ Filters by 'lastModified' (optional)
+     * @param filterEqMode /query/ Filters by 'mode' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqNumber /query/ Filters by 'number' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqStartTime /query/ Filters by 'startTime' (optional)
+     * @param filterEqStatisticsdefectsautomationBugab001 /query/ Filters by 'statistics$defects$automation_bug$ab001' (optional)
+     * @param filterEqStatisticsdefectsnoDefectnd001 /query/ Filters by 'statistics$defects$no_defect$nd001' (optional)
+     * @param filterEqStatisticsdefectsproductBugpb001 /query/ Filters by 'statistics$defects$product_bug$pb001' (optional)
+     * @param filterEqStatisticsdefectssystemIssuesi001 /query/ Filters by 'statistics$defects$system_issue$si001' (optional)
+     * @param filterEqStatisticsdefectstoInvestigateti001 /query/ Filters by 'statistics$defects$to_investigate$ti001' (optional)
+     * @param filterEqStatisticsexecutionsfailed /query/ Filters by 'statistics$executions$failed' (optional)
+     * @param filterEqStatisticsexecutionspassed /query/ Filters by 'statistics$executions$passed' (optional)
+     * @param filterEqStatisticsexecutionsskipped /query/ Filters by 'statistics$executions$skipped' (optional)
+     * @param filterEqStatisticsexecutionstotal /query/ Filters by 'statistics$executions$total' (optional)
+     * @param filterEqStatus /query/ Filters by 'status' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param filterEqUserId /query/ Filters by 'userId' (optional)
+     * @param filterEqUuid /query/ Filters by 'uuid' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return PageLaunchResource
+     */
+    @QueryParameter(name = "filterEqAttributeKey", value = "")
+    @QueryParameter(name = "filterEqAttributeValue", value = "")
+    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
+    @QueryParameter(name = "filterEqEndTime", value = "new Date()")
+    @QueryParameter(name = "filterEqHasRetries", value = "true")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLastModified", value = "new Date()")
+    @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqNumber", value = "56")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqStartTime", value = "new Date()")
+    @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
+    @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "filterEqUserId", value = "789")
+    @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/launch/latest")
+    public static DataMethod<PageLaunchResource> getLatestLaunchesUsingGET;
 
-  /**
-   * Get specified launch by UUID
-   * 
-   * @param launchId /path/ launchId (required)
-   * @param projectName /path/ projectName (required)
-   * @return LaunchResource
-  */
-  @GET("/v1/{projectName}/launch/uuid/{launchId}")
-  public static RestMethod getLaunchByUuidUsingGET;
+    /**
+     * Get specified launch by UUID
+     *
+     * @param launchId /path/ launchId (required)
+     * @param projectName /path/ projectName (required)
+     * @return LaunchResource
+     */
+    @GET("/v1/{projectName}/launch/uuid/{launchId}")
+    public static DataMethod<LaunchResource> getLaunchByUuidUsingGET;
 
-  /**
-   * Export specified launch
-   * Only following formats are supported: pdf (by default), xls, html.
-   * @param launchId /path/ launchId (required)
-   * @param projectName /path/ projectName (required)
-   * @param view /query/ view (optional, default to pdf)
-  */
-  @QueryParameter(name = "view", value = "pdf")
-  @GET("/v1/{projectName}/launch/{launchId}/report")
-  public static RestMethod getLaunchReportUsingGET;
+    /**
+     * Export specified launch
+     * Only following formats are supported: pdf (by default), xls, html.
+     *
+     * @param launchId /path/ launchId (required)
+     * @param projectName /path/ projectName (required)
+     * @param view /query/ view (optional, default to pdf)
+     */
+    @QueryParameter(name = "view", value = "pdf")
+    @GET("/v1/{projectName}/launch/{launchId}/report")
+    public static RestMethod getLaunchReportUsingGET;
 
-  /**
-   * Get specified launch by ID
-   * 
-   * @param launchId /path/ launchId (required)
-   * @param projectName /path/ projectName (required)
-   * @return LaunchResource
-  */
-  @GET("/v1/{projectName}/launch/{launchId}")
-  public static RestMethod getLaunchUsingGET;
+    /**
+     * Get specified launch by ID
+     *
+     * @param launchId /path/ launchId (required)
+     * @param projectName /path/ projectName (required)
+     * @return LaunchResource
+     */
+    @GET("/v1/{projectName}/launch/{launchId}")
+    public static DataMethod<LaunchResource> getLaunchUsingGET;
 
-  /**
-   * Get list of project launches by filter
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param filterEqAttributeKey /query/ Filters by 'attributeKey' (optional)
-   * @param filterEqAttributeValue /query/ Filters by 'attributeValue' (optional)
-   * @param filterEqDescription /query/ Filters by 'description' (optional)
-   * @param filterEqEndTime /query/ Filters by 'endTime' (optional)
-   * @param filterEqHasRetries /query/ Filters by 'hasRetries' (optional)
-   * @param filterEqId /query/ Filters by 'id' (optional)
-   * @param filterEqLastModified /query/ Filters by 'lastModified' (optional)
-   * @param filterEqMode /query/ Filters by 'mode' (optional)
-   * @param filterEqName /query/ Filters by 'name' (optional)
-   * @param filterEqNumber /query/ Filters by 'number' (optional)
-   * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
-   * @param filterEqStartTime /query/ Filters by 'startTime' (optional)
-   * @param filterEqStatisticsdefectsautomationBugab001 /query/ Filters by 'statistics$defects$automation_bug$ab001' (optional)
-   * @param filterEqStatisticsdefectsnoDefectnd001 /query/ Filters by 'statistics$defects$no_defect$nd001' (optional)
-   * @param filterEqStatisticsdefectsproductBugpb001 /query/ Filters by 'statistics$defects$product_bug$pb001' (optional)
-   * @param filterEqStatisticsdefectssystemIssuesi001 /query/ Filters by 'statistics$defects$system_issue$si001' (optional)
-   * @param filterEqStatisticsdefectstoInvestigateti001 /query/ Filters by 'statistics$defects$to_investigate$ti001' (optional)
-   * @param filterEqStatisticsexecutionsfailed /query/ Filters by 'statistics$executions$failed' (optional)
-   * @param filterEqStatisticsexecutionspassed /query/ Filters by 'statistics$executions$passed' (optional)
-   * @param filterEqStatisticsexecutionsskipped /query/ Filters by 'statistics$executions$skipped' (optional)
-   * @param filterEqStatisticsexecutionstotal /query/ Filters by 'statistics$executions$total' (optional)
-   * @param filterEqStatus /query/ Filters by 'status' (optional)
-   * @param filterEqUser /query/ Filters by 'user' (optional)
-   * @param filterEqUserId /query/ Filters by 'userId' (optional)
-   * @param filterEqUuid /query/ Filters by 'uuid' (optional)
-   * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
-   * @param pageSize /query/ Number of records per page (optional)
-   * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
-   * @return IterableLaunchResource
-  */
-  @QueryParameter(name = "filterEqAttributeKey", value = "")
-  @QueryParameter(name = "filterEqAttributeValue", value = "")
-  @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-  @QueryParameter(name = "filterEqEndTime", value = "new Date()")
-  @QueryParameter(name = "filterEqHasRetries", value = "true")
-  @QueryParameter(name = "filterEqId", value = "789")
-  @QueryParameter(name = "filterEqLastModified", value = "new Date()")
-  @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
-  @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-  @QueryParameter(name = "filterEqNumber", value = "56")
-  @QueryParameter(name = "filterEqProjectId", value = "789")
-  @QueryParameter(name = "filterEqStartTime", value = "new Date()")
-  @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
-  @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
-  @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
-  @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-  @QueryParameter(name = "filterEqUserId", value = "789")
-  @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
-  @QueryParameter(name = "pagePage", value = "56")
-  @QueryParameter(name = "pageSize", value = "56")
-  @QueryParameter(name = "pageSort", value = "pageSort_example")
-  @GET("/v1/{projectName}/launch")
-  public static RestMethod getProjectLaunchesUsingGET;
+    /**
+     * Get list of project launches by filter
+     *
+     * @param projectName /path/ projectName (required)
+     * @param filterEqAttributeKey /query/ Filters by 'attributeKey' (optional)
+     * @param filterEqAttributeValue /query/ Filters by 'attributeValue' (optional)
+     * @param filterEqDescription /query/ Filters by 'description' (optional)
+     * @param filterEqEndTime /query/ Filters by 'endTime' (optional)
+     * @param filterEqHasRetries /query/ Filters by 'hasRetries' (optional)
+     * @param filterEqId /query/ Filters by 'id' (optional)
+     * @param filterEqLastModified /query/ Filters by 'lastModified' (optional)
+     * @param filterEqMode /query/ Filters by 'mode' (optional)
+     * @param filterEqName /query/ Filters by 'name' (optional)
+     * @param filterEqNumber /query/ Filters by 'number' (optional)
+     * @param filterEqProjectId /query/ Filters by 'projectId' (optional)
+     * @param filterEqStartTime /query/ Filters by 'startTime' (optional)
+     * @param filterEqStatisticsdefectsautomationBugab001 /query/ Filters by 'statistics$defects$automation_bug$ab001' (optional)
+     * @param filterEqStatisticsdefectsnoDefectnd001 /query/ Filters by 'statistics$defects$no_defect$nd001' (optional)
+     * @param filterEqStatisticsdefectsproductBugpb001 /query/ Filters by 'statistics$defects$product_bug$pb001' (optional)
+     * @param filterEqStatisticsdefectssystemIssuesi001 /query/ Filters by 'statistics$defects$system_issue$si001' (optional)
+     * @param filterEqStatisticsdefectstoInvestigateti001 /query/ Filters by 'statistics$defects$to_investigate$ti001' (optional)
+     * @param filterEqStatisticsexecutionsfailed /query/ Filters by 'statistics$executions$failed' (optional)
+     * @param filterEqStatisticsexecutionspassed /query/ Filters by 'statistics$executions$passed' (optional)
+     * @param filterEqStatisticsexecutionsskipped /query/ Filters by 'statistics$executions$skipped' (optional)
+     * @param filterEqStatisticsexecutionstotal /query/ Filters by 'statistics$executions$total' (optional)
+     * @param filterEqStatus /query/ Filters by 'status' (optional)
+     * @param filterEqUser /query/ Filters by 'user' (optional)
+     * @param filterEqUserId /query/ Filters by 'userId' (optional)
+     * @param filterEqUuid /query/ Filters by 'uuid' (optional)
+     * @param pagePage /query/ Results page you want to retrieve (0..N) (optional)
+     * @param pageSize /query/ Number of records per page (optional)
+     * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
+     * @return IterableLaunchResource
+     */
+    @QueryParameter(name = "filterEqAttributeKey", value = "")
+    @QueryParameter(name = "filterEqAttributeValue", value = "")
+    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
+    @QueryParameter(name = "filterEqEndTime", value = "new Date()")
+    @QueryParameter(name = "filterEqHasRetries", value = "true")
+    @QueryParameter(name = "filterEqId", value = "789")
+    @QueryParameter(name = "filterEqLastModified", value = "new Date()")
+    @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
+    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
+    @QueryParameter(name = "filterEqNumber", value = "56")
+    @QueryParameter(name = "filterEqProjectId", value = "789")
+    @QueryParameter(name = "filterEqStartTime", value = "new Date()")
+    @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
+    @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
+    @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
+    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
+    @QueryParameter(name = "filterEqUserId", value = "789")
+    @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
+    @QueryParameter(name = "pagePage", value = "56")
+    @QueryParameter(name = "pageSize", value = "56")
+    @QueryParameter(name = "pageSort", value = "pageSort_example")
+    @GET("/v1/{projectName}/launch")
+    public static DataMethod<IterableLaunchResource> getProjectLaunchesUsingGET;
 
-  /**
-   * getStatuses
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param ids /query/ ids (required)
-   * @return Map(String, String);
-  */
-  @QueryParameter(name = "ids", value = "56")
-  @GET("/v1/{projectName}/launch/status")
-  public static RestMethod getStatusesUsingGET;
+    /**
+     * getStatuses
+     *
+     * @param projectName /path/ projectName (required)
+     * @param ids /query/ ids (required)
+     * @return Map<String, String>
+     */
+    @QueryParameter(name = "ids", value = "56")
+    @GET("/v1/{projectName}/launch/status")
+    public static DataMethod<Map<String, String>> getStatusesUsingGET;
 
-  /**
-   * Import junit xml report
-   * Only following formats are supported: zip.
-   * @param projectName /path/ projectName (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(ANY)
-  @FormParameter(name = "file", value = "new File(&quot;/path/to/file.txt&quot;)")
-  @POST("/v1/{projectName}/launch/import")
-  public static RestMethod importLaunchUsingPOSTANY;
+    /**
+     * Import junit xml report
+     * Only following formats are supported: zip.
+     *
+     * @param projectName /path/ projectName (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(ANY)
+    @FormParameter(name = "file", value = "new File(&quot;/path/to/file.txt&quot;)")
+    @POST("/v1/{projectName}/launch/import")
+    public static DataMethod<OperationCompletionRS> importLaunchUsingPOSTANY;
 
-  /**
-   * Merge set of specified launches in common one
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param mergeLaunchesRQ(MergeLaunchesRQ) /body/ Merge launches request body (required)
-   * @return LaunchResource
-  */
-  @ContentType(JSON)
-  @POST("/v1/{projectName}/launch/merge")
-  public static RestMethod mergeLaunchesUsingPOST1JSON;
+    /**
+     * Merge set of specified launches in common one
+     *
+     * @param projectName /path/ projectName (required)
+     * @param mergeLaunchesRQ(MergeLaunchesRQ) /body/ Merge launches request body (required)
+     * @return LaunchResource
+     */
+    @ContentType(JSON)
+    @POST("/v1/{projectName}/launch/merge")
+    public static DataMethod<LaunchResource> mergeLaunchesUsingPOST1JSON;
 
-  /**
-   * Start launch auto-analyzer on demand
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param analyzeLaunchRQ(AnalyzeLaunchRQ) /body/ analyzeLaunchRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/{projectName}/launch/analyze")
-  public static RestMethod startLaunchAnalyzerUsingPOSTJSON;
+    /**
+     * Start launch auto-analyzer on demand
+     *
+     * @param projectName /path/ projectName (required)
+     * @param analyzeLaunchRQ(AnalyzeLaunchRQ) /body/ analyzeLaunchRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/{projectName}/launch/analyze")
+    public static DataMethod<OperationCompletionRS> startLaunchAnalyzerUsingPOSTJSON;
 
-  /**
-   * Starts launch for specified project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param startLaunchRQ(StartLaunchRQ) /body/ Start launch request body (required)
-   * @return StartLaunchRS
-  */
-  @ContentType(JSON)
-  @POST("/v1/{projectName}/launch")
-  public static RestMethod startLaunchUsingPOST1JSON;
+    /**
+     * Starts launch for specified project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param startLaunchRQ(StartLaunchRQ) /body/ Start launch request body (required)
+     * @return StartLaunchRS
+     */
+    @ContentType(JSON)
+    @POST("/v1/{projectName}/launch")
+    public static DataMethod<StartLaunchRS> startLaunchUsingPOST1JSON;
 
-  /**
-   * Updates launch for specified project
-   * 
-   * @param launchId /path/ launchId (required)
-   * @param projectName /path/ projectName (required)
-   * @param updateLaunchRQ(UpdateLaunchRQ) /body/ updateLaunchRQ (required)
-   * @return OperationCompletionRS
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/launch/{launchId}/update")
-  public static RestMethod updateLaunchUsingPUTJSON;
+    /**
+     * Updates launch for specified project
+     *
+     * @param launchId /path/ launchId (required)
+     * @param projectName /path/ projectName (required)
+     * @param updateLaunchRQ(UpdateLaunchRQ) /body/ updateLaunchRQ (required)
+     * @return OperationCompletionRS
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/launch/{launchId}/update")
+    public static DataMethod<OperationCompletionRS> updateLaunchUsingPUTJSON;
 
-  /**
-   * Updates launches for specified project
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param rq(BulkRQlongUpdateLaunchRQ) /body/ rq (required)
-   * @return List(OperationCompletionRS);
-  */
-  @ContentType(JSON)
-  @PUT("/v1/{projectName}/launch/update")
-  public static RestMethod updateLaunchesUsingPUTJSON;
+    /**
+     * Updates launches for specified project
+     *
+     * @param projectName /path/ projectName (required)
+     * @param rq(BulkRQlongUpdateLaunchRQ) /body/ rq (required)
+     * @return OperationCompletionRS[]
+     */
+    @ContentType(JSON)
+    @PUT("/v1/{projectName}/launch/update")
+    public static DataMethod<OperationCompletionRS[]> updateLaunchesUsingPUTJSON;
 }

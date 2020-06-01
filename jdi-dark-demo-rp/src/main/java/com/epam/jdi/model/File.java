@@ -10,25 +10,18 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * File
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class File extends DataClass<File>{
+public class File extends DataClass<File> {
 
-  public String name;
+    public String name;
 }
 

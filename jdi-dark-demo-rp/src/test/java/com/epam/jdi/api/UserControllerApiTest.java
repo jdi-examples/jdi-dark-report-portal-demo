@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
@@ -24,15 +23,14 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class UserControllerApiTest {
 
-    private UserControllerApi service;
-
     @BeforeClass
-    public void before() { service = init(UserControllerApi.class); }
+    public void before() {
+        init(UserControllerApi.class);
+    }
 
-    
+
     /**
      * Change own password
-     * 
      */
     @Test
     public void changePasswordUsingPOSTJSONTest() {
@@ -40,10 +38,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.changePasswordUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Register invitation for user who will be created
-     * 
      */
     @Test
     public void createUserBidUsingPOSTJSONTest() {
@@ -51,7 +48,7 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.createUserBidUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Create specified user
      * Allowable only for users with administrator role
@@ -62,10 +59,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.createUserByAdminUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Activate invitation and create user in system
-     * 
      */
     @Test
     public void createUserUsingPOSTJSONTest() {
@@ -73,7 +69,7 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.createUserUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete specified user
      * Allowable only for users with administrator role
@@ -84,10 +80,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.deleteUserUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Delete specified users by ids
-     * 
      */
     @Test
     public void deleteUsersUsingDELETETest() {
@@ -95,7 +90,7 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.deleteUsersUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Edit specified user
      * Only for administrators and profile&#39;s owner
@@ -106,7 +101,7 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.editUserUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Exports information about all users
      * Allowable only for users with administrator role
@@ -117,10 +112,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.exportUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * findUsers
-     * 
      */
     @Test
     public void findUsersUsingGETTest() {
@@ -128,10 +122,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.findUsersUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Return information about current logged-in user
-     * 
      */
     @Test
     public void getMyselfUsingGETTest() {
@@ -139,10 +132,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.getMyselfUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Return information about current logged-in user
-     * 
      */
     @Test
     public void getMyselfUsingGET1Test() {
@@ -150,10 +142,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.getMyselfUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * getUserBidInfo
-     * 
      */
     @Test
     public void getUserBidInfoUsingGETTest() {
@@ -161,10 +152,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.getUserBidInfoUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * getUserProjects
-     * 
      */
     @Test
     public void getUserProjectsUsingGETTest() {
@@ -172,7 +162,7 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.getUserProjectsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Return information about specified user
      * Only for administrators and profile&#39;s owner
@@ -183,7 +173,7 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.getUserUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Return information about all users
      * Allowable only for users with administrator role
@@ -194,10 +184,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.getUsersUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Check if a restore password bid exists
-     * 
      */
     @Test
     public void isRestorePasswordBidExistUsingGETTest() {
@@ -205,10 +194,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.isRestorePasswordBidExistUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Reset password
-     * 
      */
     @Test
     public void resetPasswordUsingPOSTJSONTest() {
@@ -216,10 +204,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.resetPasswordUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Create a restore password request
-     * 
      */
     @Test
     public void restorePasswordUsingPOSTJSONTest() {
@@ -227,10 +214,9 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.restorePasswordUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * validateInfo
-     * 
      */
     @Test
     public void validateInfoUsingGETTest() {
@@ -238,5 +224,5 @@ public class UserControllerApiTest {
         RestResponse resp = UserControllerApi.validateInfoUsingGET.call();
         resp.isOk();
     }
-    
+
 }

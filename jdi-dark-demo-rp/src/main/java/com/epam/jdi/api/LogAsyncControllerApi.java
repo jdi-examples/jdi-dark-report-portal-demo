@@ -12,31 +12,25 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestMethod;
-
 import com.epam.http.annotations.ContentType;
-import com.epam.jdi.model.EntryCreatedAsyncRS;
-import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.SaveLogRQ;
 import com.epam.http.annotations.POST;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.DataMethod;
+import com.epam.jdi.model.EntryCreatedAsyncRS;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${domain}")
 public class LogAsyncControllerApi {
 
-  /**
-   * Create log
-   * 
-   * @param projectName /path/ projectName (required)
-   * @param createLogRQ(SaveLogRQ) /body/ createLogRQ (required)
-   * @return EntryCreatedAsyncRS
-  */
-  @ContentType(JSON)
-  @POST("/v2/{projectName}/log")
-  public static RestMethod createLogUsingPOSTJSON;
+    /**
+     * Create log
+     *
+     * @param projectName /path/ projectName (required)
+     * @param createLogRQ(SaveLogRQ) /body/ createLogRQ (required)
+     * @return EntryCreatedAsyncRS
+     */
+    @ContentType(JSON)
+    @POST("/v2/{projectName}/log")
+    public static DataMethod<EntryCreatedAsyncRS> createLogUsingPOSTJSON;
 }

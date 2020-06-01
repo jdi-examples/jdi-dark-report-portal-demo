@@ -10,45 +10,38 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ItemAttributeResource;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * UpdateItemAttributeRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpdateItemAttributeRQ extends DataClass<UpdateItemAttributeRQ>{
+public class UpdateItemAttributeRQ extends DataClass<UpdateItemAttributeRQ> {
 
-  public ActionEnum action;
-  /**
-   * Gets or Sets action
-   */
-  public enum ActionEnum {
-      DELETE("DELETE"),
-      
-      UPDATE("UPDATE"),
-      
-      CREATE("CREATE");
+    public ActionEnum action;
 
-      private String value;
+    /**
+     * Gets or Sets action
+     */
+    public enum ActionEnum {
+        DELETE("DELETE"),
 
-      ActionEnum(String value) {
-      this.value = value;
-  }
-  }
+        UPDATE("UPDATE"),
 
-  public ItemAttributeResource from;
-  public ItemAttributeResource to;
+        CREATE("CREATE");
+
+        private String value;
+
+        ActionEnum(String value) {
+            this.value = value;
+        }
+    }
+
+    public ItemAttributeResource from;
+    public ItemAttributeResource to;
 }
 

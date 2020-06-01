@@ -10,24 +10,17 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * IterableUserFilterResource
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class IterableUserFilterResource extends DataClass<IterableUserFilterResource>{
+public class IterableUserFilterResource extends DataClass<IterableUserFilterResource> {
 
 }
 

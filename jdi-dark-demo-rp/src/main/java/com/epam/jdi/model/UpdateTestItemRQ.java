@@ -10,28 +10,19 @@
  * Do not edit the class manually.
  */
 
-
 package com.epam.jdi.model;
-
-import com.epam.jdi.model.ItemAttributeResource;
-import java.util.List;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * UpdateTestItemRQ
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpdateTestItemRQ extends DataClass<UpdateTestItemRQ>{
+public class UpdateTestItemRQ extends DataClass<UpdateTestItemRQ> {
 
-  public String description;
-  public String status;
+    public String description;
+    public String status;
 }
 

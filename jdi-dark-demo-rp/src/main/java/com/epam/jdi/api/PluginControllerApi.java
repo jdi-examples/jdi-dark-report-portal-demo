@@ -27,7 +27,7 @@ import com.epam.jdi.model.OperationCompletionRS;
 import static io.restassured.http.ContentType.ANY;
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class PluginControllerApi {
 
     /**

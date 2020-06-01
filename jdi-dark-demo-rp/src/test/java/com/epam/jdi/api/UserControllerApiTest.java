@@ -13,10 +13,20 @@
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
+import com.epam.jdi.auth.AuthTokenApi;
+import com.epam.jdi.model.ChangePasswordRQ;
+import com.epam.jdi.model.CreateUserRQ;
+import io.restassured.authentication.BasicAuthScheme;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
+import static com.epam.http.requests.RequestDataFactory.auth;
 import static com.epam.http.requests.ServiceInit.init;
+import static com.epam.jdi.api.UserControllerApi.changePasswordUsingPOSTJSON;
+import static com.epam.jdi.api.UserControllerApi.createUserBidUsingPOSTJSON;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 /**
  * API tests for UserControllerApi
@@ -25,7 +35,18 @@ public class UserControllerApiTest {
 
     @BeforeClass
     public void before() {
-        init(UserControllerApi.class);
+        init(AuthTokenApi.class);
+        BasicAuthScheme basicAuthScheme = new BasicAuthScheme();
+        basicAuthScheme.setUserName("ui");
+        basicAuthScheme.setPassword("uiman");
+        String token = AuthTokenApi.getUserToken.call(
+                auth(basicAuthScheme)
+                        .addFormParams().addAll(new Object[][]{
+                        {"grant_type", "password"},
+                        {"username", "test-user"},
+                        {"password", "Fqvq1s0S"}}))
+                .getRaResponse().jsonPath().getString("access_token");
+        init(UserControllerApi.class, given().auth().preemptive().oauth2(token));
     }
 
 
@@ -34,9 +55,23 @@ public class UserControllerApiTest {
      */
     @Test
     public void changePasswordUsingPOSTJSONTest() {
-        // TODO: add call parameters and test validations
-        RestResponse resp = UserControllerApi.changePasswordUsingPOSTJSON.call();
-        resp.isOk();
+        changePasswordUsingPOSTJSON
+                .post(new ChangePasswordRQ().setOldPassword("wrong")
+                        .setNewPassword("new"))
+                .assertThat()
+                .statusCode(400)
+                .body("errorCode", equalTo(4001))
+                .body("message",
+                        equalTo("Incorrect Request. [Field 'newPassword' should have size from '4' to '256'.] "));
+
+        changePasswordUsingPOSTJSON
+                .post(new ChangePasswordRQ().setOldPassword("wrong")
+                        .setNewPassword("newPassword"))
+                .assertThat()
+                .statusCode(400)
+                .body("errorCode", equalTo(40010))
+                .body("message",
+                        equalTo("Forbidden operation. Old password not match with stored."));
     }
 
     /**
@@ -44,15 +79,21 @@ public class UserControllerApiTest {
      */
     @Test
     public void createUserBidUsingPOSTJSONTest() {
-        // TODO: add call parameters and test validations
-        RestResponse resp = UserControllerApi.createUserBidUsingPOSTJSON.call();
-        resp.isOk();
+        createUserBidUsingPOSTJSON.post(new CreateUserRQ()
+                .setDefaultProject("wrongProject")
+                .setEmail("test@test.com"))
+                .assertThat()
+                .statusCode(400)
+                .body("errorCode", equalTo(4001))
+                .body("message",
+                        equalTo("Incorrect Request. [Field 'role' should not contain only white spaces and shouldn't be empty.] "));
     }
 
     /**
      * Create specified user
      * Allowable only for users with administrator role
      */
+    @Ignore
     @Test
     public void createUserByAdminUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -63,6 +104,7 @@ public class UserControllerApiTest {
     /**
      * Activate invitation and create user in system
      */
+    @Ignore
     @Test
     public void createUserUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -74,6 +116,7 @@ public class UserControllerApiTest {
      * Delete specified user
      * Allowable only for users with administrator role
      */
+    @Ignore
     @Test
     public void deleteUserUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -84,6 +127,7 @@ public class UserControllerApiTest {
     /**
      * Delete specified users by ids
      */
+    @Ignore
     @Test
     public void deleteUsersUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -95,6 +139,7 @@ public class UserControllerApiTest {
      * Edit specified user
      * Only for administrators and profile&#39;s owner
      */
+    @Ignore
     @Test
     public void editUserUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -106,6 +151,7 @@ public class UserControllerApiTest {
      * Exports information about all users
      * Allowable only for users with administrator role
      */
+    @Ignore
     @Test
     public void exportUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -116,6 +162,7 @@ public class UserControllerApiTest {
     /**
      * findUsers
      */
+    @Ignore
     @Test
     public void findUsersUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -126,6 +173,7 @@ public class UserControllerApiTest {
     /**
      * Return information about current logged-in user
      */
+    @Ignore
     @Test
     public void getMyselfUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -136,6 +184,7 @@ public class UserControllerApiTest {
     /**
      * Return information about current logged-in user
      */
+    @Ignore
     @Test
     public void getMyselfUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -146,6 +195,7 @@ public class UserControllerApiTest {
     /**
      * getUserBidInfo
      */
+    @Ignore
     @Test
     public void getUserBidInfoUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -156,10 +206,11 @@ public class UserControllerApiTest {
     /**
      * getUserProjects
      */
+    @Ignore
     @Test
     public void getUserProjectsUsingGETTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserControllerApi.getUserProjectsUsingGET.call();
+        RestResponse resp = UserControllerApi.getUserProjectsUsingGET.callPathParams("test-user");
         resp.isOk();
     }
 
@@ -167,6 +218,7 @@ public class UserControllerApiTest {
      * Return information about specified user
      * Only for administrators and profile&#39;s owner
      */
+    @Ignore
     @Test
     public void getUserUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -178,6 +230,7 @@ public class UserControllerApiTest {
      * Return information about all users
      * Allowable only for users with administrator role
      */
+    @Ignore
     @Test
     public void getUsersUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -188,6 +241,7 @@ public class UserControllerApiTest {
     /**
      * Check if a restore password bid exists
      */
+    @Ignore
     @Test
     public void isRestorePasswordBidExistUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -198,6 +252,7 @@ public class UserControllerApiTest {
     /**
      * Reset password
      */
+    @Ignore
     @Test
     public void resetPasswordUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -208,6 +263,7 @@ public class UserControllerApiTest {
     /**
      * Create a restore password request
      */
+    @Ignore
     @Test
     public void restorePasswordUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -218,6 +274,7 @@ public class UserControllerApiTest {
     /**
      * validateInfo
      */
+    @Ignore
     @Test
     public void validateInfoUsingGETTest() {
         // TODO: add call parameters and test validations

@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class TestItemAsyncControllerApiTest {
     /**
      * Finish test item
      */
+    @Ignore
     @Test
     public void finishTestItemUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class TestItemAsyncControllerApiTest {
     /**
      * Start a child test item
      */
+    @Ignore
     @Test
     public void startChildItemUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class TestItemAsyncControllerApiTest {
     /**
      * Start a root test item
      */
+    @Ignore
     @Test
     public void startRootItemUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations

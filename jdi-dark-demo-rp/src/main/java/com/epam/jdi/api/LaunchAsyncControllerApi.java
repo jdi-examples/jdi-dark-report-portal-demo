@@ -23,7 +23,7 @@ import com.epam.jdi.model.StartLaunchRS;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class LaunchAsyncControllerApi {
 
     /**

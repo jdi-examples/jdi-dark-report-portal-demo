@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class LaunchControllerApiTest {
     /**
      * Force finish launch
      */
+    @Ignore
     @Test
     public void bulkForceFinishUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class LaunchControllerApiTest {
     /**
      * Bulk update attributes and description
      */
+    @Ignore
     @Test
     public void bulkUpdateUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class LaunchControllerApiTest {
     /**
      * Compare launches
      */
+    @Ignore
     @Test
     public void compareLaunchesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class LaunchControllerApiTest {
     /**
      * Delete specified launch by ID
      */
+    @Ignore
     @Test
     public void deleteLaunchUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -72,6 +77,7 @@ public class LaunchControllerApiTest {
     /**
      * Delete specified launches by ids
      */
+    @Ignore
     @Test
     public void deleteLaunchesUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -82,6 +88,7 @@ public class LaunchControllerApiTest {
     /**
      * Finish launch for specified project
      */
+    @Ignore
     @Test
     public void finishLaunchUsingPUT1JSONTest() {
         // TODO: add call parameters and test validations
@@ -92,6 +99,7 @@ public class LaunchControllerApiTest {
     /**
      * Force finish launch for specified project
      */
+    @Ignore
     @Test
     public void forceFinishLaunchUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -102,6 +110,7 @@ public class LaunchControllerApiTest {
     /**
      * Get launch names of project
      */
+    @Ignore
     @Test
     public void getAllLaunchNamesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -112,6 +121,7 @@ public class LaunchControllerApiTest {
     /**
      * Get all unique owners of project launches
      */
+    @Ignore
     @Test
     public void getAllOwnersUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -122,6 +132,7 @@ public class LaunchControllerApiTest {
     /**
      * Get all unique attribute keys of project launches
      */
+    @Ignore
     @Test
     public void getAttributeKeysUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -132,6 +143,7 @@ public class LaunchControllerApiTest {
     /**
      * Get all unique attribute values of project launches
      */
+    @Ignore
     @Test
     public void getAttributeValuesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -142,6 +154,7 @@ public class LaunchControllerApiTest {
     /**
      * Get launches of specified project from DEBUG mode
      */
+    @Ignore
     @Test
     public void getDebugLaunchesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -152,6 +165,7 @@ public class LaunchControllerApiTest {
     /**
      * Get list of latest project launches by filter
      */
+    @Ignore
     @Test
     public void getLatestLaunchesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -162,6 +176,7 @@ public class LaunchControllerApiTest {
     /**
      * Get specified launch by UUID
      */
+    @Ignore
     @Test
     public void getLaunchByUuidUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -173,6 +188,7 @@ public class LaunchControllerApiTest {
      * Export specified launch
      * Only following formats are supported: pdf (by default), xls, html.
      */
+    @Ignore
     @Test
     public void getLaunchReportUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -183,6 +199,7 @@ public class LaunchControllerApiTest {
     /**
      * Get specified launch by ID
      */
+    @Ignore
     @Test
     public void getLaunchUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -193,6 +210,7 @@ public class LaunchControllerApiTest {
     /**
      * Get list of project launches by filter
      */
+    @Ignore
     @Test
     public void getProjectLaunchesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -203,6 +221,7 @@ public class LaunchControllerApiTest {
     /**
      * getStatuses
      */
+    @Ignore
     @Test
     public void getStatusesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -214,6 +233,7 @@ public class LaunchControllerApiTest {
      * Import junit xml report
      * Only following formats are supported: zip.
      */
+    @Ignore
     @Test
     public void importLaunchUsingPOSTANYTest() {
         // TODO: add call parameters and test validations
@@ -224,6 +244,7 @@ public class LaunchControllerApiTest {
     /**
      * Merge set of specified launches in common one
      */
+    @Ignore
     @Test
     public void mergeLaunchesUsingPOST1JSONTest() {
         // TODO: add call parameters and test validations
@@ -234,6 +255,7 @@ public class LaunchControllerApiTest {
     /**
      * Start launch auto-analyzer on demand
      */
+    @Ignore
     @Test
     public void startLaunchAnalyzerUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -244,6 +266,7 @@ public class LaunchControllerApiTest {
     /**
      * Starts launch for specified project
      */
+    @Ignore
     @Test
     public void startLaunchUsingPOST1JSONTest() {
         // TODO: add call parameters and test validations
@@ -254,6 +277,7 @@ public class LaunchControllerApiTest {
     /**
      * Updates launch for specified project
      */
+    @Ignore
     @Test
     public void updateLaunchUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -264,6 +288,7 @@ public class LaunchControllerApiTest {
     /**
      * Updates launches for specified project
      */
+    @Ignore
     @Test
     public void updateLaunchesUsingPUTJSONTest() {
         // TODO: add call parameters and test validations

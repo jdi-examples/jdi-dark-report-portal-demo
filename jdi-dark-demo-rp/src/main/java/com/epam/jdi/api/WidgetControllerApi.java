@@ -27,7 +27,7 @@ import com.epam.jdi.model.WidgetResource;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class WidgetControllerApi {
 
     /**

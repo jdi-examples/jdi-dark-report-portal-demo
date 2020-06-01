@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class ProjectSettingsControllerApiTest {
     /**
      * Create pattern template for items&#39; log messages pattern analysis
      */
+    @Ignore
     @Test
     public void createPatternTemplateUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class ProjectSettingsControllerApiTest {
     /**
      * Creation of custom project specific issue sub-type
      */
+    @Ignore
     @Test
     public void createProjectIssueSubTypeUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class ProjectSettingsControllerApiTest {
     /**
      * Delete pattern template for items&#39; log messages pattern analysis
      */
+    @Ignore
     @Test
     public void deletePatternTemplateUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class ProjectSettingsControllerApiTest {
     /**
      * Delete custom project specific issue sub-type
      */
+    @Ignore
     @Test
     public void deleteProjectIssueSubTypeUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -73,6 +78,7 @@ public class ProjectSettingsControllerApiTest {
      * Get project specific issue sub-types
      * Only for users that are assigned to the project
      */
+    @Ignore
     @Test
     public void getProjectSettingsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -83,6 +89,7 @@ public class ProjectSettingsControllerApiTest {
     /**
      * Update pattern template for items&#39; log messages pattern analysis
      */
+    @Ignore
     @Test
     public void updatePatternTemplateUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -93,6 +100,7 @@ public class ProjectSettingsControllerApiTest {
     /**
      * Update of custom project specific issue sub-type
      */
+    @Ignore
     @Test
     public void updateProjectIssueSubTypeUsingPUTJSONTest() {
         // TODO: add call parameters and test validations

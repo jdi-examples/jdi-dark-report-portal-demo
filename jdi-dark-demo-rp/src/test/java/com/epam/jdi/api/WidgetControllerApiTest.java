@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class WidgetControllerApiTest {
     /**
      * Create a new widget
      */
+    @Ignore
     @Test
     public void createWidgetUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class WidgetControllerApiTest {
     /**
      * Load shared widgets
      */
+    @Ignore
     @Test
     public void getSharedUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class WidgetControllerApiTest {
     /**
      * Load all widget names which belong to a user
      */
+    @Ignore
     @Test
     public void getWidgetNamesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class WidgetControllerApiTest {
     /**
      * Get widget preview
      */
+    @Ignore
     @Test
     public void getWidgetPreviewUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -72,6 +77,7 @@ public class WidgetControllerApiTest {
     /**
      * Get multilevel widget by ID
      */
+    @Ignore
     @Test
     public void getWidgetUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -82,6 +88,7 @@ public class WidgetControllerApiTest {
     /**
      * Get widget by ID
      */
+    @Ignore
     @Test
     public void getWidgetUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -92,6 +99,7 @@ public class WidgetControllerApiTest {
     /**
      * Search shared widgets by name
      */
+    @Ignore
     @Test
     public void searchSharedUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -102,6 +110,7 @@ public class WidgetControllerApiTest {
     /**
      * Update specified widget
      */
+    @Ignore
     @Test
     public void updateWidgetUsingPUTJSONTest() {
         // TODO: add call parameters and test validations

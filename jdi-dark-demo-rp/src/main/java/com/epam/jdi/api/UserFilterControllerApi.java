@@ -28,7 +28,7 @@ import com.epam.jdi.model.UserFilterResource;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class UserFilterControllerApi {
 
     /**

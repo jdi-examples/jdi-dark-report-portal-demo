@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class LogControllerApiTest {
     /**
      * Create log
      */
+    @Ignore
     @Test
     public void createLogUsingPOST3JSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class LogControllerApiTest {
     /**
      * Delete log
      */
+    @Ignore
     @Test
     public void deleteLogUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class LogControllerApiTest {
     /**
      * Get log by UUID
      */
+    @Ignore
     @Test
     public void getLogByUuidUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class LogControllerApiTest {
     /**
      * Get log by ID
      */
+    @Ignore
     @Test
     public void getLogUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -72,6 +77,7 @@ public class LogControllerApiTest {
     /**
      * Get logs by filter
      */
+    @Ignore
     @Test
     public void getLogsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -82,6 +88,7 @@ public class LogControllerApiTest {
     /**
      * Get nested steps with logs for the parent Test Item
      */
+    @Ignore
     @Test
     public void getNestedItemsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -92,6 +99,7 @@ public class LogControllerApiTest {
     /**
      * Get logs by filter
      */
+    @Ignore
     @Test
     public void getPageNumberUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -102,6 +110,7 @@ public class LogControllerApiTest {
     /**
      * Search test items with similar error logs
      */
+    @Ignore
     @Test
     public void searchLogsUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations

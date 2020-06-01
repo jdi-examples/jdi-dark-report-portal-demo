@@ -29,7 +29,7 @@ import com.epam.jdi.model.TestItemResource;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class TestItemControllerApi {
 
     /**

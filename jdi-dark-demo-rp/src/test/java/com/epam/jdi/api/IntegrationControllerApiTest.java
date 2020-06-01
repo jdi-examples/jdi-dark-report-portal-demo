@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class IntegrationControllerApiTest {
     /**
      * Create global Report Portal integration instance
      */
+    @Ignore
     @Test
     public void createGlobalIntegrationUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class IntegrationControllerApiTest {
     /**
      * Create project Report Portal integration instance
      */
+    @Ignore
     @Test
     public void createProjectIntegrationUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class IntegrationControllerApiTest {
     /**
      * Delete all global integrations by type
      */
+    @Ignore
     @Test
     public void deleteAllIntegrationsUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class IntegrationControllerApiTest {
     /**
      * Delete all integrations assigned to specified project
      */
+    @Ignore
     @Test
     public void deleteAllProjectIntegrationsUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -72,6 +77,7 @@ public class IntegrationControllerApiTest {
     /**
      * Delete global integration instance
      */
+    @Ignore
     @Test
     public void deleteGlobalIntegrationUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -82,6 +88,7 @@ public class IntegrationControllerApiTest {
     /**
      * Delete project integration instance
      */
+    @Ignore
     @Test
     public void deleteProjectIntegrationUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -92,6 +99,7 @@ public class IntegrationControllerApiTest {
     /**
      * Execute command to the integration instance
      */
+    @Ignore
     @Test
     public void executeIntegrationCommandUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -102,6 +110,7 @@ public class IntegrationControllerApiTest {
     /**
      * Get global Report Portal integration instance
      */
+    @Ignore
     @Test
     public void getGlobalIntegrationUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -112,6 +121,7 @@ public class IntegrationControllerApiTest {
     /**
      * Get available global integrations for plugin
      */
+    @Ignore
     @Test
     public void getGlobalIntegrationsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -122,6 +132,7 @@ public class IntegrationControllerApiTest {
     /**
      * Get available global integrations
      */
+    @Ignore
     @Test
     public void getGlobalIntegrationsUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -132,6 +143,7 @@ public class IntegrationControllerApiTest {
     /**
      * Get integration instance
      */
+    @Ignore
     @Test
     public void getProjectIntegrationUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -142,6 +154,7 @@ public class IntegrationControllerApiTest {
     /**
      * Get available project integrations for plugin
      */
+    @Ignore
     @Test
     public void getProjectIntegrationsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -152,6 +165,7 @@ public class IntegrationControllerApiTest {
     /**
      * Get available project integrations
      */
+    @Ignore
     @Test
     public void getProjectIntegrationsUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -162,6 +176,7 @@ public class IntegrationControllerApiTest {
     /**
      * Test connection to the global integration
      */
+    @Ignore
     @Test
     public void testIntegrationConnectionUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -172,6 +187,7 @@ public class IntegrationControllerApiTest {
     /**
      * Test connection to the integration through the project config
      */
+    @Ignore
     @Test
     public void testIntegrationConnectionUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -182,6 +198,7 @@ public class IntegrationControllerApiTest {
     /**
      * Update global Report Portal integration instance
      */
+    @Ignore
     @Test
     public void updateGlobalIntegrationUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -192,6 +209,7 @@ public class IntegrationControllerApiTest {
     /**
      * Update project integration instance
      */
+    @Ignore
     @Test
     public void updateProjectIntegrationUsingPUTJSONTest() {
         // TODO: add call parameters and test validations

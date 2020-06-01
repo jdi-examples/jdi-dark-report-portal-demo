@@ -26,7 +26,7 @@ import com.epam.jdi.model.ProjectSettingsResource;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class ProjectSettingsControllerApi {
 
     /**

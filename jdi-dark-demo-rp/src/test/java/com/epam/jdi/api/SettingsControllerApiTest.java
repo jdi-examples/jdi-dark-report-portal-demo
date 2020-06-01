@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class SettingsControllerApiTest {
     /**
      * Get server settings
      */
+    @Ignore
     @Test
     public void getServerSettingsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class SettingsControllerApiTest {
     /**
      * Update analytics settings
      */
+    @Ignore
     @Test
     public void saveAnalyticsSettingsUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class SettingsControllerApiTest {
     /**
      * Update analytics settings
      */
+    @Ignore
     @Test
     public void saveAnalyticsSettingsUsingPUTJSONTest() {
         // TODO: add call parameters and test validations

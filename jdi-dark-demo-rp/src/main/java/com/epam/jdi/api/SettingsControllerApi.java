@@ -24,7 +24,7 @@ import java.util.Map;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class SettingsControllerApi {
 
     /**

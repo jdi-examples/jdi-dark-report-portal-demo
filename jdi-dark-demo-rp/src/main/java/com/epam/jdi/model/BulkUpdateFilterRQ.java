@@ -14,11 +14,15 @@ package com.epam.jdi.model;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * BulkUpdateFilterRQ
  */
 
+@Data
+@Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BulkUpdateFilterRQ extends DataClass<BulkUpdateFilterRQ> {
 

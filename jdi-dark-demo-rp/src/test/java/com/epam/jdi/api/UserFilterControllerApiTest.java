@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class UserFilterControllerApiTest {
     /**
      * Create user filter
      */
+    @Ignore
     @Test
     public void createFilterUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class UserFilterControllerApiTest {
     /**
      * Delete specified user filter by id
      */
+    @Ignore
     @Test
     public void deleteFilterUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class UserFilterControllerApiTest {
     /**
      * Get available filter names
      */
+    @Ignore
     @Test
     public void getAllFiltersNamesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class UserFilterControllerApiTest {
     /**
      * Get permitted (own and shared) filters
      */
+    @Ignore
     @Test
     public void getAllFiltersUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -72,6 +77,7 @@ public class UserFilterControllerApiTest {
     /**
      * Get specified user filter by id
      */
+    @Ignore
     @Test
     public void getFilterUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -82,6 +88,7 @@ public class UserFilterControllerApiTest {
     /**
      * Get all filters for specified user who own them
      */
+    @Ignore
     @Test
     public void getOwnFiltersUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -92,6 +99,7 @@ public class UserFilterControllerApiTest {
     /**
      * Get all available shared filters (except own shared filters)
      */
+    @Ignore
     @Test
     public void getSharedFiltersUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -102,6 +110,7 @@ public class UserFilterControllerApiTest {
     /**
      * Get list of specified user filters
      */
+    @Ignore
     @Test
     public void getUserFiltersUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -112,6 +121,7 @@ public class UserFilterControllerApiTest {
     /**
      * Update specified user filter
      */
+    @Ignore
     @Test
     public void updateUserFilterUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -122,6 +132,7 @@ public class UserFilterControllerApiTest {
     /**
      * Update list of user filters
      */
+    @Ignore
     @Test
     public void updateUserFiltersUsingPUTJSONTest() {
         // TODO: add call parameters and test validations

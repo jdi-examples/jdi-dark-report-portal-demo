@@ -25,7 +25,7 @@ import com.epam.jdi.model.OperationCompletionRS;
 
 import static io.restassured.http.ContentType.ANY;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class FileStorageControllerApi {
 
     /**

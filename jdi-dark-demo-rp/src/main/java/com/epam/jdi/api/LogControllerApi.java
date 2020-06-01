@@ -12,26 +12,15 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ContentType;
-import com.epam.http.annotations.DELETE;
-import com.epam.http.annotations.GET;
-import com.epam.http.annotations.POST;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.annotations.*;
 import com.epam.http.requests.DataMethod;
-import com.epam.jdi.model.EntryCreatedAsyncRS;
-import com.epam.jdi.model.IterableLogResource;
-import com.epam.jdi.model.IterableSearchLogRs;
-import com.epam.jdi.model.Iterableobject;
-import com.epam.jdi.model.LogResource;
-import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.jdi.model.Serializable;
+import com.epam.jdi.model.*;
 
 import java.util.Map;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class LogControllerApi {
 
     /**

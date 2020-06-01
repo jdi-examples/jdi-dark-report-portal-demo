@@ -12,30 +12,16 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ContentType;
-import com.epam.http.annotations.DELETE;
-import com.epam.http.annotations.GET;
-import com.epam.http.annotations.POST;
-import com.epam.http.annotations.PUT;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.annotations.*;
 import com.epam.http.requests.DataMethod;
 import com.epam.http.requests.RestMethod;
-import com.epam.jdi.model.AssignedProject;
-import com.epam.jdi.model.CreateUserBidRS;
-import com.epam.jdi.model.CreateUserRS;
-import com.epam.jdi.model.DeleteBulkRS;
-import com.epam.jdi.model.IterableUserResource;
-import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.jdi.model.UserBidRS;
-import com.epam.jdi.model.UserResource;
-import com.epam.jdi.model.YesNoRS;
+import com.epam.jdi.model.*;
 
 import java.util.Map;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class UserControllerApi {
 
     /**

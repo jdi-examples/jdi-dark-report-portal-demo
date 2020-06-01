@@ -19,7 +19,7 @@ import com.epam.http.requests.DataMethod;
 import com.epam.jdi.model.ActivityResource;
 import com.epam.jdi.model.IterableActivityResource;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class ActivityControllerApi {
 
     /**

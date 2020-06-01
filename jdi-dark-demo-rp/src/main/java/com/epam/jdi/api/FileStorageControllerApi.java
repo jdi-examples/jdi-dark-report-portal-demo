@@ -12,20 +12,14 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ContentType;
-import com.epam.http.annotations.DELETE;
-import com.epam.http.annotations.FormParameter;
-import com.epam.http.annotations.GET;
-import com.epam.http.annotations.POST;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.annotations.*;
 import com.epam.http.requests.DataMethod;
 import com.epam.http.requests.RestMethod;
 import com.epam.jdi.model.OperationCompletionRS;
 
 import static io.restassured.http.ContentType.ANY;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class FileStorageControllerApi {
 
     /**

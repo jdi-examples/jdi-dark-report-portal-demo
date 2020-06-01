@@ -20,7 +20,7 @@ import com.epam.jdi.model.DemoDataRs;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class DemoDataControllerApi {
 
     /**

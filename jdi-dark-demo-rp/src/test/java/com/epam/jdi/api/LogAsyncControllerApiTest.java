@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class LogAsyncControllerApiTest {
     /**
      * Create log
      */
+    @Ignore
     @Test
     public void createLogUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations

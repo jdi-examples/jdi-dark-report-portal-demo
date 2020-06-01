@@ -12,24 +12,13 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ContentType;
-import com.epam.http.annotations.DELETE;
-import com.epam.http.annotations.GET;
-import com.epam.http.annotations.POST;
-import com.epam.http.annotations.PUT;
-import com.epam.http.annotations.QueryParameter;
-import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.annotations.*;
 import com.epam.http.requests.DataMethod;
-import com.epam.jdi.model.EntryCreatedAsyncRS;
-import com.epam.jdi.model.Issue;
-import com.epam.jdi.model.IterableTestItemHistoryElement;
-import com.epam.jdi.model.IterableTestItemResource;
-import com.epam.jdi.model.OperationCompletionRS;
-import com.epam.jdi.model.TestItemResource;
+import com.epam.jdi.model.*;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class TestItemControllerApi {
 
     /**

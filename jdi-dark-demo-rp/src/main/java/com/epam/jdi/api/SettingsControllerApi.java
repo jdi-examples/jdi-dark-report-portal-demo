@@ -12,11 +12,7 @@
 
 package com.epam.jdi.api;
 
-import com.epam.http.annotations.ContentType;
-import com.epam.http.annotations.GET;
-import com.epam.http.annotations.POST;
-import com.epam.http.annotations.PUT;
-import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.annotations.*;
 import com.epam.http.requests.DataMethod;
 import com.epam.jdi.model.OperationCompletionRS;
 
@@ -24,7 +20,7 @@ import java.util.Map;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("${domain}")
+@ServiceDomain("${api}")
 public class SettingsControllerApi {
 
     /**

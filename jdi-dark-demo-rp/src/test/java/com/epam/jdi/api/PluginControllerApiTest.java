@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class PluginControllerApiTest {
     /**
      * Delete plugin by id
      */
+    @Ignore
     @Test
     public void deletePluginUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class PluginControllerApiTest {
     /**
      * Get all available plugins
      */
+    @Ignore
     @Test
     public void getPluginsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class PluginControllerApiTest {
     /**
      * Update Report Portal plugin state
      */
+    @Ignore
     @Test
     public void updatePluginStateUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class PluginControllerApiTest {
     /**
      * Upload new Report Portal plugin
      */
+    @Ignore
     @Test
     public void uploadPluginUsingPOSTANYTest() {
         // TODO: add call parameters and test validations

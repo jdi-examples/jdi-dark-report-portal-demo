@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class DashboardControllerApiTest {
     /**
      * Add widget to specified dashboard
      */
+    @Ignore
     @Test
     public void addWidgetUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class DashboardControllerApiTest {
     /**
      * Create dashboard for specified project
      */
+    @Ignore
     @Test
     public void createDashboardUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class DashboardControllerApiTest {
     /**
      * Delete specified dashboard by ID for specified project
      */
+    @Ignore
     @Test
     public void deleteDashboardUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class DashboardControllerApiTest {
     /**
      * Get all permitted dashboard resources for specified project
      */
+    @Ignore
     @Test
     public void getAllDashboardsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -72,6 +77,7 @@ public class DashboardControllerApiTest {
     /**
      * Get specified dashboard by ID for specified project
      */
+    @Ignore
     @Test
     public void getDashboardUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -82,6 +88,7 @@ public class DashboardControllerApiTest {
     /**
      * Get names of shared dashboards from specified project
      */
+    @Ignore
     @Test
     public void getSharedDashboardsNamesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -92,6 +99,7 @@ public class DashboardControllerApiTest {
     /**
      * Remove widget from specified dashboard
      */
+    @Ignore
     @Test
     public void removeWidgetUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -102,6 +110,7 @@ public class DashboardControllerApiTest {
     /**
      * Update specified dashboard for specified project
      */
+    @Ignore
     @Test
     public void updateDashboardUsingPUTJSONTest() {
         // TODO: add call parameters and test validations

@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class ProjectControllerApiTest {
     /**
      * addUserPreference
      */
+    @Ignore
     @Test
     public void addUserPreferenceUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class ProjectControllerApiTest {
     /**
      * Assign users
      */
+    @Ignore
     @Test
     public void assignProjectUsersUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class ProjectControllerApiTest {
     /**
      * Create new project
      */
+    @Ignore
     @Test
     public void createProjectUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class ProjectControllerApiTest {
     /**
      * Delete project index from ML
      */
+    @Ignore
     @Test
     public void deleteProjectIndexUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -73,6 +78,7 @@ public class ProjectControllerApiTest {
      * Delete project
      * Could be deleted only by users with administrator role
      */
+    @Ignore
     @Test
     public void deleteProjectUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -84,6 +90,7 @@ public class ProjectControllerApiTest {
      * Delete multiple projects
      * Could be deleted only by users with administrator role
      */
+    @Ignore
     @Test
     public void deleteProjectUsingDELETE1Test() {
         // TODO: add call parameters and test validations
@@ -95,6 +102,7 @@ public class ProjectControllerApiTest {
      * Exports information about all projects
      * Allowable only for users with administrator role
      */
+    @Ignore
     @Test
     public void exportProjectsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -105,6 +113,7 @@ public class ProjectControllerApiTest {
     /**
      * getAllProjectNames
      */
+    @Ignore
     @Test
     public void getAllProjectNamesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -115,6 +124,7 @@ public class ProjectControllerApiTest {
     /**
      * getAllProjectsInfo
      */
+    @Ignore
     @Test
     public void getAllProjectsInfoUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -125,6 +135,7 @@ public class ProjectControllerApiTest {
     /**
      * getAnalyzerIndexingStatus
      */
+    @Ignore
     @Test
     public void getAnalyzerIndexingStatusUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -135,6 +146,7 @@ public class ProjectControllerApiTest {
     /**
      * getProjectInfo
      */
+    @Ignore
     @Test
     public void getProjectInfoUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -146,6 +158,7 @@ public class ProjectControllerApiTest {
      * Load project users by filter
      * Only for users that are members of the project
      */
+    @Ignore
     @Test
     public void getProjectUsersUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -156,6 +169,7 @@ public class ProjectControllerApiTest {
     /**
      * Get users assigned on current project
      */
+    @Ignore
     @Test
     public void getProjectUsersUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -167,6 +181,7 @@ public class ProjectControllerApiTest {
      * Get information about project
      * Only for users that are assigned to the project
      */
+    @Ignore
     @Test
     public void getProjectUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -177,6 +192,7 @@ public class ProjectControllerApiTest {
     /**
      * getProjectWidget
      */
+    @Ignore
     @Test
     public void getProjectWidgetUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -188,6 +204,7 @@ public class ProjectControllerApiTest {
      * Load user preferences
      * Only for users that allowed to edit other users
      */
+    @Ignore
     @Test
     public void getUserPreferenceUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -199,6 +216,7 @@ public class ProjectControllerApiTest {
      * Load users which can be assigned to specified project
      * Only for users with project manager permissions
      */
+    @Ignore
     @Test
     public void getUsersForAssignUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -209,6 +227,7 @@ public class ProjectControllerApiTest {
     /**
      * Starts reindex all project data in ML
      */
+    @Ignore
     @Test
     public void indexProjectDataUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -219,6 +238,7 @@ public class ProjectControllerApiTest {
     /**
      * removeUserPreference
      */
+    @Ignore
     @Test
     public void removeUserPreferenceUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -229,6 +249,7 @@ public class ProjectControllerApiTest {
     /**
      * searchForUser
      */
+    @Ignore
     @Test
     public void searchForUserUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -239,6 +260,7 @@ public class ProjectControllerApiTest {
     /**
      * searchProjectNames
      */
+    @Ignore
     @Test
     public void searchProjectNamesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -249,6 +271,7 @@ public class ProjectControllerApiTest {
     /**
      * Un assign users
      */
+    @Ignore
     @Test
     public void unassignProjectUsersUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -259,6 +282,7 @@ public class ProjectControllerApiTest {
     /**
      * Update project notifications configuration
      */
+    @Ignore
     @Test
     public void updateProjectNotificationConfigUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -269,6 +293,7 @@ public class ProjectControllerApiTest {
     /**
      * Update project
      */
+    @Ignore
     @Test
     public void updateProjectUsingPUTJSONTest() {
         // TODO: add call parameters and test validations

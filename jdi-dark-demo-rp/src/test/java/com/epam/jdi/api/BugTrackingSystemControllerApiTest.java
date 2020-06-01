@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class BugTrackingSystemControllerApiTest {
     /**
      * Post ticket to the bts integration
      */
+    @Ignore
     @Test
     public void createIssueUsingPOSTJSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class BugTrackingSystemControllerApiTest {
     /**
      * Get list of fields required for posting ticket
      */
+    @Ignore
     @Test
     public void getAllowableIssueTypesUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class BugTrackingSystemControllerApiTest {
     /**
      * Get list of allowable issue types for bug tracking system
      */
+    @Ignore
     @Test
     public void getAllowableIssueTypesUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class BugTrackingSystemControllerApiTest {
     /**
      * Get list of fields required for posting ticket
      */
+    @Ignore
     @Test
     public void getSetOfIntegrationSystemFieldsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -72,6 +77,7 @@ public class BugTrackingSystemControllerApiTest {
     /**
      * Get list of fields required for posting ticket
      */
+    @Ignore
     @Test
     public void getSetOfIntegrationSystemFieldsUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -82,6 +88,7 @@ public class BugTrackingSystemControllerApiTest {
     /**
      * Get ticket from the bts integration
      */
+    @Ignore
     @Test
     public void getTicketUsingGETTest() {
         // TODO: add call parameters and test validations

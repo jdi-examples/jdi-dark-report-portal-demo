@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class TestItemControllerApiTest {
     /**
      * Bulk update attributes and description
      */
+    @Ignore
     @Test
     public void bulkUpdateUsingPUT1JSONTest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class TestItemControllerApiTest {
     /**
      * Update issues of specified test items
      */
+    @Ignore
     @Test
     public void defineTestItemIssueTypeUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class TestItemControllerApiTest {
     /**
      * Delete test item
      */
+    @Ignore
     @Test
     public void deleteTestItemUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class TestItemControllerApiTest {
     /**
      * Delete test items by specified ids
      */
+    @Ignore
     @Test
     public void deleteTestItemsUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -72,6 +77,7 @@ public class TestItemControllerApiTest {
     /**
      * Finish test item
      */
+    @Ignore
     @Test
     public void finishTestItemUsingPUT1JSONTest() {
         // TODO: add call parameters and test validations
@@ -82,6 +88,7 @@ public class TestItemControllerApiTest {
     /**
      * Get all unique attribute keys of specified launch
      */
+    @Ignore
     @Test
     public void getAttributeKeysForProjectUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -92,6 +99,7 @@ public class TestItemControllerApiTest {
     /**
      * Get all unique attribute keys of specified launch
      */
+    @Ignore
     @Test
     public void getAttributeKeysUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -102,6 +110,7 @@ public class TestItemControllerApiTest {
     /**
      * Get all unique attribute values of specified launch
      */
+    @Ignore
     @Test
     public void getAttributeValuesUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -112,6 +121,7 @@ public class TestItemControllerApiTest {
     /**
      * Load history of test items
      */
+    @Ignore
     @Test
     public void getItemsHistoryUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -122,6 +132,7 @@ public class TestItemControllerApiTest {
     /**
      * Find test item by UUID
      */
+    @Ignore
     @Test
     public void getTestItemByUuidUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -132,6 +143,7 @@ public class TestItemControllerApiTest {
     /**
      * Find test item by ID
      */
+    @Ignore
     @Test
     public void getTestItemUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -142,6 +154,7 @@ public class TestItemControllerApiTest {
     /**
      * Get test items by specified ids
      */
+    @Ignore
     @Test
     public void getTestItemsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -152,6 +165,7 @@ public class TestItemControllerApiTest {
     /**
      * Find test items by specified filter
      */
+    @Ignore
     @Test
     public void getTestItemsUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -162,6 +176,7 @@ public class TestItemControllerApiTest {
     /**
      * Get tickets that contains a term as a part inside for specified launch
      */
+    @Ignore
     @Test
     public void getTicketIdsUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -172,6 +187,7 @@ public class TestItemControllerApiTest {
     /**
      * Attach external issue for specified test items
      */
+    @Ignore
     @Test
     public void linkExternalIssuesUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -182,6 +198,7 @@ public class TestItemControllerApiTest {
     /**
      * Start a child test item
      */
+    @Ignore
     @Test
     public void startChildItemUsingPOST1JSONTest() {
         // TODO: add call parameters and test validations
@@ -192,6 +209,7 @@ public class TestItemControllerApiTest {
     /**
      * Start a root test item
      */
+    @Ignore
     @Test
     public void startRootItemUsingPOST1JSONTest() {
         // TODO: add call parameters and test validations
@@ -202,6 +220,7 @@ public class TestItemControllerApiTest {
     /**
      * Unlink external issue for specified test items
      */
+    @Ignore
     @Test
     public void unlinkExternalIssuesUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
@@ -212,6 +231,7 @@ public class TestItemControllerApiTest {
     /**
      * Update test item
      */
+    @Ignore
     @Test
     public void updateTestItemUsingPUTJSONTest() {
         // TODO: add call parameters and test validations

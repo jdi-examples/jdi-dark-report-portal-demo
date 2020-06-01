@@ -14,7 +14,9 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
+import org.testng.xml.dom.Tag;
 
 import static com.epam.http.requests.ServiceInit.init;
 
@@ -32,7 +34,9 @@ public class ActivityControllerApiTest {
     /**
      * Get activities for project
      */
+    @Ignore
     @Test
+    @Tag(name = "smoke")
     public void getActivitiesUsingGETTest() {
         // TODO: add call parameters and test validations
         RestResponse resp = ActivityControllerApi.getActivitiesUsingGET.callPathParams("Test Project");
@@ -42,6 +46,7 @@ public class ActivityControllerApiTest {
     /**
      * Get activities for project
      */
+    @Ignore
     @Test
     public void getActivitiesUsingGET1Test() {
         // TODO: add call parameters and test validations
@@ -52,6 +57,7 @@ public class ActivityControllerApiTest {
     /**
      * getActivity
      */
+    @Ignore
     @Test
     public void getActivityUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -62,6 +68,7 @@ public class ActivityControllerApiTest {
     /**
      * Get activities for test item
      */
+    @Ignore
     @Test
     public void getTestItemActivitiesUsingGETTest() {
         // TODO: add call parameters and test validations

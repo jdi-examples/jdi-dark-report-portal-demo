@@ -14,11 +14,15 @@ package com.epam.jdi.model;
 
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * IterableTestItemResource
  */
 
+@Data
+@Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IterableTestItemResource extends DataClass<IterableTestItemResource> {
 

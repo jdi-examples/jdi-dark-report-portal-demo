@@ -14,6 +14,7 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
@@ -32,6 +33,7 @@ public class FileStorageControllerApiTest {
     /**
      * Delete user&#39;s photo
      */
+    @Ignore
     @Test
     public void deletePhotoUsingDELETETest() {
         // TODO: add call parameters and test validations
@@ -42,6 +44,7 @@ public class FileStorageControllerApiTest {
     /**
      * getFile
      */
+    @Ignore
     @Test
     public void getFileUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -52,6 +55,7 @@ public class FileStorageControllerApiTest {
     /**
      * Get photo of current user
      */
+    @Ignore
     @Test
     public void getMyPhotoUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -62,6 +66,7 @@ public class FileStorageControllerApiTest {
     /**
      * Get user&#39;s photo
      */
+    @Ignore
     @Test
     public void getUserPhotoUsingGETTest() {
         // TODO: add call parameters and test validations
@@ -72,6 +77,7 @@ public class FileStorageControllerApiTest {
     /**
      * Upload user&#39;s photo
      */
+    @Ignore
     @Test
     public void uploadPhotoUsingPOSTANYTest() {
         // TODO: add call parameters and test validations

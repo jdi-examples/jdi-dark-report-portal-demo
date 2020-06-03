@@ -18,7 +18,7 @@ import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedAsyncRS;
 import com.epam.jdi.model.IterableLogResource;
 import com.epam.jdi.model.IterableSearchLogRs;
@@ -43,7 +43,7 @@ public class LogControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/log")
-    public static DataMethod<EntryCreatedAsyncRS> createLogUsingPOST3JSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> createLogUsingPOST3JSON;
 
     /**
      * Delete log
@@ -53,7 +53,7 @@ public class LogControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/{projectName}/log/{logId}")
-    public static DataMethod<OperationCompletionRS> deleteLogUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteLogUsingDELETE;
 
     /**
      * Get log by UUID
@@ -63,7 +63,7 @@ public class LogControllerApi {
      * @return LogResource
      */
     @GET("/v1/{projectName}/log/uuid/{logId}")
-    public static DataMethod<LogResource> getLogByUuidUsingGET;
+    public static RestDataMethod<LogResource> getLogByUuidUsingGET;
 
     /**
      * Get log by ID
@@ -73,7 +73,7 @@ public class LogControllerApi {
      * @return LogResource
      */
     @GET("/v1/{projectName}/log/{logId}")
-    public static DataMethod<LogResource> getLogUsingGET;
+    public static RestDataMethod<LogResource> getLogUsingGET;
 
     /**
      * Get logs by filter
@@ -116,7 +116,7 @@ public class LogControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/log")
-    public static DataMethod<IterableLogResource> getLogsUsingGET;
+    public static RestDataMethod<IterableLogResource> getLogsUsingGET;
 
     /**
      * Get nested steps with logs for the parent Test Item
@@ -162,7 +162,7 @@ public class LogControllerApi {
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @QueryParameter(name = "params", value = "")
     @GET("/v1/{projectName}/log/nested/{parentId}")
-    public static DataMethod<Iterableobject> getNestedItemsUsingGET;
+    public static RestDataMethod<Iterableobject> getNestedItemsUsingGET;
 
     /**
      * Get logs by filter
@@ -206,7 +206,7 @@ public class LogControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/log/{logId}/page")
-    public static DataMethod<Map<String, Serializable>> getPageNumberUsingGET;
+    public static RestDataMethod<Map<String, Serializable>> getPageNumberUsingGET;
 
     /**
      * Search test items with similar error logs
@@ -218,5 +218,5 @@ public class LogControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/log/search/{itemId}")
-    public static DataMethod<IterableSearchLogRs> searchLogsUsingPOSTJSON;
+    public static RestDataMethod<IterableSearchLogRs> searchLogsUsingPOSTJSON;
 }

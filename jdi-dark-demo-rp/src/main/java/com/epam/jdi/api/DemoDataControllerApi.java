@@ -15,7 +15,7 @@ package com.epam.jdi.api;
 import com.epam.http.annotations.ContentType;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.DemoDataRs;
 
 import static io.restassured.http.ContentType.JSON;
@@ -32,5 +32,5 @@ public class DemoDataControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/demo/{projectName}")
-    public static DataMethod<DemoDataRs> generateUsingPOSTJSON;
+    public static RestDataMethod<DemoDataRs> generateUsingPOSTJSON;
 }

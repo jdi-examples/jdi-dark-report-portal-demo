@@ -16,7 +16,7 @@ import com.epam.http.annotations.ContentType;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.FinishLaunchRS;
 import com.epam.jdi.model.LaunchResource;
 import com.epam.jdi.model.StartLaunchRS;
@@ -36,7 +36,7 @@ public class LaunchAsyncControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v2/{projectName}/launch/{launchId}/finish")
-    public static DataMethod<FinishLaunchRS> finishLaunchUsingPUTJSON;
+    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUTJSON;
 
     /**
      * Merge set of specified launches in common one
@@ -47,7 +47,7 @@ public class LaunchAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/launch/merge")
-    public static DataMethod<LaunchResource> mergeLaunchesUsingPOSTJSON;
+    public static RestDataMethod<LaunchResource> mergeLaunchesUsingPOSTJSON;
 
     /**
      * Starts launch for specified project
@@ -58,5 +58,5 @@ public class LaunchAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/launch")
-    public static DataMethod<StartLaunchRS> startLaunchUsingPOSTJSON;
+    public static RestDataMethod<StartLaunchRS> startLaunchUsingPOSTJSON;
 }

@@ -19,7 +19,7 @@ import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.http.requests.RestMethod;
 import com.epam.jdi.model.OperationCompletionRS;
 
@@ -34,7 +34,7 @@ public class FileStorageControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/data/photo")
-    public static DataMethod<OperationCompletionRS> deletePhotoUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deletePhotoUsingDELETE;
 
     /**
      * getFile
@@ -74,5 +74,5 @@ public class FileStorageControllerApi {
     @ContentType(ANY)
     @FormParameter(name = "file", value = "new File(&quot;/path/to/file.txt&quot;)")
     @POST("/v1/data/photo")
-    public static DataMethod<OperationCompletionRS> uploadPhotoUsingPOSTANY;
+    public static RestDataMethod<OperationCompletionRS> uploadPhotoUsingPOSTANY;
 }

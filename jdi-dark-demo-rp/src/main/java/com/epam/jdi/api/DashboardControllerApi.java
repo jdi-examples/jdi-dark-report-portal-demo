@@ -19,7 +19,7 @@ import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.DashboardResource;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IterableDashboardResource;
@@ -41,7 +41,7 @@ public class DashboardControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/dashboard/{dashboardId}/add")
-    public static DataMethod<OperationCompletionRS> addWidgetUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> addWidgetUsingPUTJSON;
 
     /**
      * Create dashboard for specified project
@@ -52,7 +52,7 @@ public class DashboardControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/dashboard")
-    public static DataMethod<EntryCreatedRS> createDashboardUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createDashboardUsingPOSTJSON;
 
     /**
      * Delete specified dashboard by ID for specified project
@@ -62,7 +62,7 @@ public class DashboardControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/{projectName}/dashboard/{dashboardId}")
-    public static DataMethod<OperationCompletionRS> deleteDashboardUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteDashboardUsingDELETE;
 
     /**
      * Get all permitted dashboard resources for specified project
@@ -87,7 +87,7 @@ public class DashboardControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/dashboard")
-    public static DataMethod<IterableDashboardResource> getAllDashboardsUsingGET;
+    public static RestDataMethod<IterableDashboardResource> getAllDashboardsUsingGET;
 
     /**
      * Get specified dashboard by ID for specified project
@@ -97,7 +97,7 @@ public class DashboardControllerApi {
      * @return DashboardResource
      */
     @GET("/v1/{projectName}/dashboard/{dashboardId}")
-    public static DataMethod<DashboardResource> getDashboardUsingGET;
+    public static RestDataMethod<DashboardResource> getDashboardUsingGET;
 
     /**
      * Get names of shared dashboards from specified project
@@ -122,7 +122,7 @@ public class DashboardControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/dashboard/shared")
-    public static DataMethod<IterableSharedEntity> getSharedDashboardsNamesUsingGET;
+    public static RestDataMethod<IterableSharedEntity> getSharedDashboardsNamesUsingGET;
 
     /**
      * Remove widget from specified dashboard
@@ -133,7 +133,7 @@ public class DashboardControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/{projectName}/dashboard/{dashboardId}/{widgetId}")
-    public static DataMethod<OperationCompletionRS> removeWidgetUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> removeWidgetUsingDELETE;
 
     /**
      * Update specified dashboard for specified project
@@ -145,5 +145,5 @@ public class DashboardControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/dashboard/{dashboardId}")
-    public static DataMethod<OperationCompletionRS> updateDashboardUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateDashboardUsingPUTJSON;
 }

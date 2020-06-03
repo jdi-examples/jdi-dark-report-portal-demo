@@ -18,7 +18,7 @@ import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IterableWidgetResource;
 import com.epam.jdi.model.Iterableobject;
@@ -39,7 +39,7 @@ public class WidgetControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/widget")
-    public static DataMethod<EntryCreatedRS> createWidgetUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createWidgetUsingPOSTJSON;
 
     /**
      * Load shared widgets
@@ -66,7 +66,7 @@ public class WidgetControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/widget/shared")
-    public static DataMethod<IterableWidgetResource> getSharedUsingGET;
+    public static RestDataMethod<IterableWidgetResource> getSharedUsingGET;
 
     /**
      * Load all widget names which belong to a user
@@ -93,7 +93,7 @@ public class WidgetControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/widget/names/all")
-    public static DataMethod<Iterableobject> getWidgetNamesUsingGET;
+    public static RestDataMethod<Iterableobject> getWidgetNamesUsingGET;
 
     /**
      * Get widget preview
@@ -104,7 +104,7 @@ public class WidgetControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/widget/preview")
-    public static DataMethod<Object> getWidgetPreviewUsingPOSTJSON;
+    public static RestDataMethod<Object> getWidgetPreviewUsingPOSTJSON;
 
     /**
      * Get multilevel widget by ID
@@ -118,7 +118,7 @@ public class WidgetControllerApi {
     @QueryParameter(name = "attributes", value = "attributes_example")
     @QueryParameter(name = "params", value = "")
     @GET("/v1/{projectName}/widget/multilevel/{widgetId}")
-    public static DataMethod<WidgetResource> getWidgetUsingGET;
+    public static RestDataMethod<WidgetResource> getWidgetUsingGET;
 
     /**
      * Get widget by ID
@@ -128,7 +128,7 @@ public class WidgetControllerApi {
      * @return WidgetResource
      */
     @GET("/v1/{projectName}/widget/{widgetId}")
-    public static DataMethod<WidgetResource> getWidgetUsingGET1;
+    public static RestDataMethod<WidgetResource> getWidgetUsingGET1;
 
     /**
      * Search shared widgets by name
@@ -157,7 +157,7 @@ public class WidgetControllerApi {
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @QueryParameter(name = "term", value = "term_example")
     @GET("/v1/{projectName}/widget/shared/search")
-    public static DataMethod<IterableWidgetResource> searchSharedUsingGET;
+    public static RestDataMethod<IterableWidgetResource> searchSharedUsingGET;
 
     /**
      * Update specified widget
@@ -169,5 +169,5 @@ public class WidgetControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/widget/{widgetId}")
-    public static DataMethod<OperationCompletionRS> updateWidgetUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateWidgetUsingPUTJSON;
 }

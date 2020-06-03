@@ -13,6 +13,7 @@
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
+import com.epam.jdi.InitTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -23,23 +24,22 @@ import static com.epam.http.requests.ServiceInit.init;
 /**
  * API tests for ActivityControllerApi
  */
-public class ActivityControllerApiTest {
+public class ActivityControllerApiTest extends InitTests {
 
     @BeforeClass
     public void before() {
-        init(ActivityControllerApi.class);
+        init(ActivityControllerApi.class, spec);
     }
 
 
     /**
      * Get activities for project
      */
-    @Ignore
     @Test
     @Tag(name = "smoke")
     public void getActivitiesUsingGETTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ActivityControllerApi.getActivitiesUsingGET.callPathParams("Test Project");
+        RestResponse resp = ActivityControllerApi.getActivitiesUsingGET.pathParams("Test Project").call();
         resp.isOk();
     }
 

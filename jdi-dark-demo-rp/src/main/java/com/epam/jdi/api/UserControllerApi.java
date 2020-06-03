@@ -19,7 +19,7 @@ import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.http.requests.RestMethod;
 import com.epam.jdi.model.AssignedProject;
 import com.epam.jdi.model.CreateUserBidRS;
@@ -46,7 +46,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user/password/change")
-    public static DataMethod<OperationCompletionRS> changePasswordUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> changePasswordUsingPOSTJSON;
 
     /**
      * Register invitation for user who will be created
@@ -56,7 +56,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user/bid")
-    public static DataMethod<CreateUserBidRS> createUserBidUsingPOSTJSON;
+    public static RestDataMethod<CreateUserBidRS> createUserBidUsingPOSTJSON;
 
     /**
      * Create specified user
@@ -67,7 +67,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user")
-    public static DataMethod<CreateUserRS> createUserByAdminUsingPOSTJSON;
+    public static RestDataMethod<CreateUserRS> createUserByAdminUsingPOSTJSON;
 
     /**
      * Activate invitation and create user in system
@@ -79,7 +79,7 @@ public class UserControllerApi {
     @ContentType(JSON)
     @QueryParameter(name = "uuid", value = "uuid_example")
     @POST("/v1/user/registration")
-    public static DataMethod<CreateUserRS> createUserUsingPOSTJSON;
+    public static RestDataMethod<CreateUserRS> createUserUsingPOSTJSON;
 
     /**
      * Delete specified user
@@ -89,7 +89,7 @@ public class UserControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/user/{id}")
-    public static DataMethod<OperationCompletionRS> deleteUserUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteUserUsingDELETE;
 
     /**
      * Delete specified users by ids
@@ -98,7 +98,7 @@ public class UserControllerApi {
      * @return DeleteBulkRS
      */
     @DELETE("/v1/user")
-    public static DataMethod<DeleteBulkRS> deleteUsersUsingDELETE;
+    public static RestDataMethod<DeleteBulkRS> deleteUsersUsingDELETE;
 
     /**
      * Edit specified user
@@ -110,7 +110,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/user/{login}")
-    public static DataMethod<OperationCompletionRS> editUserUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> editUserUsingPUTJSON;
 
     /**
      * Exports information about all users
@@ -158,7 +158,7 @@ public class UserControllerApi {
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @QueryParameter(name = "term", value = "term_example")
     @GET("/v1/user/search")
-    public static DataMethod<IterableUserResource> findUsersUsingGET;
+    public static RestDataMethod<IterableUserResource> findUsersUsingGET;
 
     /**
      * Return information about current logged-in user
@@ -166,7 +166,7 @@ public class UserControllerApi {
      * @return UserResource
      */
     @GET("/v1/user")
-    public static DataMethod<UserResource> getMyselfUsingGET;
+    public static RestDataMethod<UserResource> getMyselfUsingGET;
 
     /**
      * Return information about current logged-in user
@@ -174,7 +174,7 @@ public class UserControllerApi {
      * @return UserResource
      */
     @GET("/v1/user/")
-    public static DataMethod<UserResource> getMyselfUsingGET1;
+    public static RestDataMethod<UserResource> getMyselfUsingGET1;
 
     /**
      * getUserBidInfo
@@ -184,7 +184,7 @@ public class UserControllerApi {
      */
     @QueryParameter(name = "uuid", value = "uuid_example")
     @GET("/v1/user/registration")
-    public static DataMethod<UserBidRS> getUserBidInfoUsingGET;
+    public static RestDataMethod<UserBidRS> getUserBidInfoUsingGET;
 
     /**
      * getUserProjects
@@ -193,7 +193,7 @@ public class UserControllerApi {
      * @return Map<String, AssignedProject>
      */
     @GET("/v1/user/{userName}/projects")
-    public static DataMethod<Map<String, AssignedProject>> getUserProjectsUsingGET;
+    public static RestDataMethod<Map<String, AssignedProject>> getUserProjectsUsingGET;
 
     /**
      * Return information about specified user
@@ -203,7 +203,7 @@ public class UserControllerApi {
      * @return UserResource
      */
     @GET("/v1/user/{login}")
-    public static DataMethod<UserResource> getUserUsingGET;
+    public static RestDataMethod<UserResource> getUserUsingGET;
 
     /**
      * Return information about all users
@@ -240,7 +240,7 @@ public class UserControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/user/all")
-    public static DataMethod<IterableUserResource> getUsersUsingGET;
+    public static RestDataMethod<IterableUserResource> getUsersUsingGET;
 
     /**
      * Check if a restore password bid exists
@@ -249,7 +249,7 @@ public class UserControllerApi {
      * @return YesNoRS
      */
     @GET("/v1/user/password/reset/{uuid}")
-    public static DataMethod<YesNoRS> isRestorePasswordBidExistUsingGET;
+    public static RestDataMethod<YesNoRS> isRestorePasswordBidExistUsingGET;
 
     /**
      * Reset password
@@ -259,7 +259,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user/password/reset")
-    public static DataMethod<OperationCompletionRS> resetPasswordUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> resetPasswordUsingPOSTJSON;
 
     /**
      * Create a restore password request
@@ -269,7 +269,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user/password/restore")
-    public static DataMethod<OperationCompletionRS> restorePasswordUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> restorePasswordUsingPOSTJSON;
 
     /**
      * validateInfo
@@ -281,5 +281,5 @@ public class UserControllerApi {
     @QueryParameter(name = "email", value = "email_example")
     @QueryParameter(name = "username", value = "username_example")
     @GET("/v1/user/registration/info")
-    public static DataMethod<YesNoRS> validateInfoUsingGET;
+    public static RestDataMethod<YesNoRS> validateInfoUsingGET;
 }

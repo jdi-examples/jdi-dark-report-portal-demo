@@ -19,7 +19,7 @@ import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IterableSharedEntity;
 import com.epam.jdi.model.IterableUserFilterResource;
@@ -40,7 +40,7 @@ public class UserFilterControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/filter")
-    public static DataMethod<EntryCreatedRS> createFilterUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createFilterUsingPOSTJSON;
 
     /**
      * Delete specified user filter by id
@@ -50,7 +50,7 @@ public class UserFilterControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/{projectName}/filter/{filterId}")
-    public static DataMethod<OperationCompletionRS> deleteFilterUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteFilterUsingDELETE;
 
     /**
      * Get available filter names
@@ -77,7 +77,7 @@ public class UserFilterControllerApi {
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @QueryParameter(name = "share", value = "false")
     @GET("/v1/{projectName}/filter/names")
-    public static DataMethod<IterableSharedEntity> getAllFiltersNamesUsingGET;
+    public static RestDataMethod<IterableSharedEntity> getAllFiltersNamesUsingGET;
 
     /**
      * Get permitted (own and shared) filters
@@ -102,7 +102,7 @@ public class UserFilterControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/filter")
-    public static DataMethod<IterableUserFilterResource> getAllFiltersUsingGET;
+    public static RestDataMethod<IterableUserFilterResource> getAllFiltersUsingGET;
 
     /**
      * Get specified user filter by id
@@ -112,7 +112,7 @@ public class UserFilterControllerApi {
      * @return UserFilterResource
      */
     @GET("/v1/{projectName}/filter/{filterId}")
-    public static DataMethod<UserFilterResource> getFilterUsingGET;
+    public static RestDataMethod<UserFilterResource> getFilterUsingGET;
 
     /**
      * Get all filters for specified user who own them
@@ -137,7 +137,7 @@ public class UserFilterControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/filter/own")
-    public static DataMethod<IterableUserFilterResource> getOwnFiltersUsingGET;
+    public static RestDataMethod<IterableUserFilterResource> getOwnFiltersUsingGET;
 
     /**
      * Get all available shared filters (except own shared filters)
@@ -162,7 +162,7 @@ public class UserFilterControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/filter/shared")
-    public static DataMethod<IterableUserFilterResource> getSharedFiltersUsingGET;
+    public static RestDataMethod<IterableUserFilterResource> getSharedFiltersUsingGET;
 
     /**
      * Get list of specified user filters
@@ -173,7 +173,7 @@ public class UserFilterControllerApi {
      */
     @QueryParameter(name = "ids", value = "56")
     @GET("/v1/{projectName}/filter/filters")
-    public static DataMethod<UserFilterResource[]> getUserFiltersUsingGET;
+    public static RestDataMethod<UserFilterResource[]> getUserFiltersUsingGET;
 
     /**
      * Update specified user filter
@@ -185,7 +185,7 @@ public class UserFilterControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/filter/{filterId}")
-    public static DataMethod<OperationCompletionRS> updateUserFilterUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateUserFilterUsingPUTJSON;
 
     /**
      * Update list of user filters
@@ -196,5 +196,5 @@ public class UserFilterControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/filter")
-    public static DataMethod<OperationCompletionRS[]> updateUserFiltersUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> updateUserFiltersUsingPUTJSON;
 }

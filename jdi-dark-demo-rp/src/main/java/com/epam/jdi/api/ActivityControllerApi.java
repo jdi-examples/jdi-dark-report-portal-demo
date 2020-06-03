@@ -15,7 +15,7 @@ package com.epam.jdi.api;
 import com.epam.http.annotations.GET;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.ActivityResource;
 import com.epam.jdi.model.IterableActivityResource;
 
@@ -57,7 +57,7 @@ public class ActivityControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/activity")
-    public static DataMethod<IterableActivityResource> getActivitiesUsingGET;
+    public static RestDataMethod<IterableActivityResource> getActivitiesUsingGET;
 
     /**
      * Get activities for project
@@ -94,7 +94,7 @@ public class ActivityControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/activity/")
-    public static DataMethod<IterableActivityResource> getActivitiesUsingGET1;
+    public static RestDataMethod<IterableActivityResource> getActivitiesUsingGET1;
 
     /**
      * getActivity
@@ -104,7 +104,7 @@ public class ActivityControllerApi {
      * @return ActivityResource
      */
     @GET("/v1/{projectName}/activity/{activityId}")
-    public static DataMethod<ActivityResource> getActivityUsingGET;
+    public static RestDataMethod<ActivityResource> getActivityUsingGET;
 
     /**
      * Get activities for test item
@@ -142,5 +142,5 @@ public class ActivityControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/activity/item/{itemId}")
-    public static DataMethod<IterableActivityResource> getTestItemActivitiesUsingGET;
+    public static RestDataMethod<IterableActivityResource> getTestItemActivitiesUsingGET;
 }

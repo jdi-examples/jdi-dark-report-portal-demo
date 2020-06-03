@@ -16,7 +16,7 @@ import com.epam.http.annotations.ContentType;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedAsyncRS;
 import com.epam.jdi.model.OperationCompletionRS;
 
@@ -35,7 +35,7 @@ public class TestItemAsyncControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v2/{projectName}/item/{testItemId}")
-    public static DataMethod<OperationCompletionRS> finishTestItemUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> finishTestItemUsingPUTJSON;
 
     /**
      * Start a child test item
@@ -47,7 +47,7 @@ public class TestItemAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/item/{parentItem}")
-    public static DataMethod<EntryCreatedAsyncRS> startChildItemUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> startChildItemUsingPOSTJSON;
 
     /**
      * Start a root test item
@@ -58,5 +58,5 @@ public class TestItemAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/item")
-    public static DataMethod<EntryCreatedAsyncRS> startRootItemUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> startRootItemUsingPOSTJSON;
 }

@@ -13,40 +13,26 @@
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
-import com.epam.jdi.auth.AuthTokenApi;
+import com.epam.jdi.InitTests;
 import com.epam.jdi.model.ChangePasswordRQ;
 import com.epam.jdi.model.CreateUserRQ;
-import io.restassured.authentication.BasicAuthScheme;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-import static com.epam.http.requests.RequestDataFactory.auth;
 import static com.epam.http.requests.ServiceInit.init;
 import static com.epam.jdi.api.UserControllerApi.changePasswordUsingPOSTJSON;
 import static com.epam.jdi.api.UserControllerApi.createUserBidUsingPOSTJSON;
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 /**
  * API tests for UserControllerApi
  */
-public class UserControllerApiTest {
+public class UserControllerApiTest extends InitTests {
 
     @BeforeClass
     public void before() {
-        init(AuthTokenApi.class);
-        BasicAuthScheme basicAuthScheme = new BasicAuthScheme();
-        basicAuthScheme.setUserName("ui");
-        basicAuthScheme.setPassword("uiman");
-        String token = AuthTokenApi.getUserToken.call(
-                auth(basicAuthScheme)
-                        .addFormParams().addAll(new Object[][]{
-                        {"grant_type", "password"},
-                        {"username", "test-user"},
-                        {"password", "Fqvq1s0S"}}))
-                .getRaResponse().jsonPath().getString("access_token");
-        init(UserControllerApi.class, given().auth().preemptive().oauth2(token));
+        init(UserControllerApi.class, spec);
     }
 
 
@@ -210,7 +196,7 @@ public class UserControllerApiTest {
     @Test
     public void getUserProjectsUsingGETTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserControllerApi.getUserProjectsUsingGET.callPathParams("test-user");
+        RestResponse resp = UserControllerApi.getUserProjectsUsingGET.pathParams("test-user").call();
         resp.isOk();
     }
 

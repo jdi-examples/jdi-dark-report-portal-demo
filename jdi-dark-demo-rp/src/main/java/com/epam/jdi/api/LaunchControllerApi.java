@@ -20,7 +20,7 @@ import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.http.requests.RestMethod;
 import com.epam.jdi.model.ChartStatisticsContent;
 import com.epam.jdi.model.DeleteBulkRS;
@@ -49,7 +49,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/stop")
-    public static DataMethod<OperationCompletionRS[]> bulkForceFinishUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> bulkForceFinishUsingPUTJSON;
 
     /**
      * Bulk update attributes and description
@@ -60,7 +60,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/info")
-    public static DataMethod<OperationCompletionRS> bulkUpdateUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> bulkUpdateUsingPUTJSON;
 
     /**
      * Compare launches
@@ -71,7 +71,7 @@ public class LaunchControllerApi {
      */
     @QueryParameter(name = "ids", value = "56")
     @GET("/v1/{projectName}/launch/compare")
-    public static DataMethod<Map<String, List<ChartStatisticsContent>>> compareLaunchesUsingGET;
+    public static RestDataMethod<Map<String, List<ChartStatisticsContent>>> compareLaunchesUsingGET;
 
     /**
      * Delete specified launch by ID
@@ -81,7 +81,7 @@ public class LaunchControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/{projectName}/launch/{launchId}")
-    public static DataMethod<OperationCompletionRS> deleteLaunchUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteLaunchUsingDELETE;
 
     /**
      * Delete specified launches by ids
@@ -91,7 +91,7 @@ public class LaunchControllerApi {
      * @return DeleteBulkRS
      */
     @DELETE("/v1/{projectName}/launch")
-    public static DataMethod<DeleteBulkRS> deleteLaunchesUsingDELETE;
+    public static RestDataMethod<DeleteBulkRS> deleteLaunchesUsingDELETE;
 
     /**
      * Finish launch for specified project
@@ -103,7 +103,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/{launchId}/finish")
-    public static DataMethod<FinishLaunchRS> finishLaunchUsingPUT1JSON;
+    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUT1JSON;
 
     /**
      * Force finish launch for specified project
@@ -115,7 +115,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/{launchId}/stop")
-    public static DataMethod<OperationCompletionRS> forceFinishLaunchUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> forceFinishLaunchUsingPUTJSON;
 
     /**
      * Get launch names of project
@@ -126,7 +126,7 @@ public class LaunchControllerApi {
      */
     @QueryParameter(name = "filterCntName", value = "filterCntName_example")
     @GET("/v1/{projectName}/launch/names")
-    public static DataMethod<String[]> getAllLaunchNamesUsingGET;
+    public static RestDataMethod<String[]> getAllLaunchNamesUsingGET;
 
     /**
      * Get all unique owners of project launches
@@ -139,7 +139,7 @@ public class LaunchControllerApi {
     @QueryParameter(name = "filterCntUser", value = "filterCntUser_example")
     @QueryParameter(name = "mode", value = "DEFAULT")
     @GET("/v1/{projectName}/launch/owners")
-    public static DataMethod<String[]> getAllOwnersUsingGET;
+    public static RestDataMethod<String[]> getAllOwnersUsingGET;
 
     /**
      * Get all unique attribute keys of project launches
@@ -150,7 +150,7 @@ public class LaunchControllerApi {
      */
     @QueryParameter(name = "filterCntAttributeKey", value = "filterCntAttributeKey_example")
     @GET("/v1/{projectName}/launch/attribute/keys")
-    public static DataMethod<String[]> getAttributeKeysUsingGET;
+    public static RestDataMethod<String[]> getAttributeKeysUsingGET;
 
     /**
      * Get all unique attribute values of project launches
@@ -163,7 +163,7 @@ public class LaunchControllerApi {
     @QueryParameter(name = "filterCntAttributeValue", value = "filterCntAttributeValue_example")
     @QueryParameter(name = "filterEqAttributeKey", value = "filterEqAttributeKey_example")
     @GET("/v1/{projectName}/launch/attribute/values")
-    public static DataMethod<String[]> getAttributeValuesUsingGET;
+    public static RestDataMethod<String[]> getAttributeValuesUsingGET;
 
     /**
      * Get launches of specified project from DEBUG mode
@@ -228,7 +228,7 @@ public class LaunchControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/launch/mode")
-    public static DataMethod<IterableLaunchResource> getDebugLaunchesUsingGET;
+    public static RestDataMethod<IterableLaunchResource> getDebugLaunchesUsingGET;
 
     /**
      * Get list of latest project launches by filter
@@ -293,7 +293,7 @@ public class LaunchControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/launch/latest")
-    public static DataMethod<PageLaunchResource> getLatestLaunchesUsingGET;
+    public static RestDataMethod<PageLaunchResource> getLatestLaunchesUsingGET;
 
     /**
      * Get specified launch by UUID
@@ -303,7 +303,7 @@ public class LaunchControllerApi {
      * @return LaunchResource
      */
     @GET("/v1/{projectName}/launch/uuid/{launchId}")
-    public static DataMethod<LaunchResource> getLaunchByUuidUsingGET;
+    public static RestDataMethod<LaunchResource> getLaunchByUuidUsingGET;
 
     /**
      * Export specified launch
@@ -325,7 +325,7 @@ public class LaunchControllerApi {
      * @return LaunchResource
      */
     @GET("/v1/{projectName}/launch/{launchId}")
-    public static DataMethod<LaunchResource> getLaunchUsingGET;
+    public static RestDataMethod<LaunchResource> getLaunchUsingGET;
 
     /**
      * Get list of project launches by filter
@@ -390,7 +390,7 @@ public class LaunchControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/launch")
-    public static DataMethod<IterableLaunchResource> getProjectLaunchesUsingGET;
+    public static RestDataMethod<IterableLaunchResource> getProjectLaunchesUsingGET;
 
     /**
      * getStatuses
@@ -401,7 +401,7 @@ public class LaunchControllerApi {
      */
     @QueryParameter(name = "ids", value = "56")
     @GET("/v1/{projectName}/launch/status")
-    public static DataMethod<Map<String, String>> getStatusesUsingGET;
+    public static RestDataMethod<Map<String, String>> getStatusesUsingGET;
 
     /**
      * Import junit xml report
@@ -413,7 +413,7 @@ public class LaunchControllerApi {
     @ContentType(ANY)
     @FormParameter(name = "file", value = "new File(&quot;/path/to/file.txt&quot;)")
     @POST("/v1/{projectName}/launch/import")
-    public static DataMethod<OperationCompletionRS> importLaunchUsingPOSTANY;
+    public static RestDataMethod<OperationCompletionRS> importLaunchUsingPOSTANY;
 
     /**
      * Merge set of specified launches in common one
@@ -424,7 +424,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/launch/merge")
-    public static DataMethod<LaunchResource> mergeLaunchesUsingPOST1JSON;
+    public static RestDataMethod<LaunchResource> mergeLaunchesUsingPOST1JSON;
 
     /**
      * Start launch auto-analyzer on demand
@@ -435,7 +435,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/launch/analyze")
-    public static DataMethod<OperationCompletionRS> startLaunchAnalyzerUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> startLaunchAnalyzerUsingPOSTJSON;
 
     /**
      * Starts launch for specified project
@@ -446,7 +446,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/launch")
-    public static DataMethod<StartLaunchRS> startLaunchUsingPOST1JSON;
+    public static RestDataMethod<StartLaunchRS> startLaunch;
 
     /**
      * Updates launch for specified project
@@ -458,7 +458,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/{launchId}/update")
-    public static DataMethod<OperationCompletionRS> updateLaunchUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateLaunchUsingPUTJSON;
 
     /**
      * Updates launches for specified project
@@ -469,5 +469,5 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/update")
-    public static DataMethod<OperationCompletionRS[]> updateLaunchesUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> updateLaunchesUsingPUTJSON;
 }

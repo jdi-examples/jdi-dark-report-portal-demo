@@ -13,6 +13,7 @@
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
+import com.epam.jdi.InitTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -22,11 +23,11 @@ import static com.epam.http.requests.ServiceInit.init;
 /**
  * API tests for LogAsyncControllerApi
  */
-public class LogAsyncControllerApiTest {
+public class LogAsyncControllerApiTest extends InitTests {
 
     @BeforeClass
     public void before() {
-        init(LogAsyncControllerApi.class);
+        init(LogAsyncControllerApi.class, spec);
     }
 
 

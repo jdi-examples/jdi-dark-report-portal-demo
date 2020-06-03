@@ -19,7 +19,7 @@ import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IntegrationTypeResource;
 import com.epam.jdi.model.OperationCompletionRS;
@@ -37,7 +37,7 @@ public class PluginControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/plugin/{pluginId}")
-    public static DataMethod<OperationCompletionRS> deletePluginUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deletePluginUsingDELETE;
 
     /**
      * Get all available plugins
@@ -45,7 +45,7 @@ public class PluginControllerApi {
      * @return IntegrationTypeResource[]
      */
     @GET("/v1/plugin")
-    public static DataMethod<IntegrationTypeResource[]> getPluginsUsingGET;
+    public static RestDataMethod<IntegrationTypeResource[]> getPluginsUsingGET;
 
     /**
      * Update Report Portal plugin state
@@ -56,7 +56,7 @@ public class PluginControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/plugin/{pluginId}")
-    public static DataMethod<OperationCompletionRS> updatePluginStateUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updatePluginStateUsingPUTJSON;
 
     /**
      * Upload new Report Portal plugin
@@ -66,5 +66,5 @@ public class PluginControllerApi {
     @ContentType(ANY)
     @FormParameter(name = "file", value = "new File(&quot;/path/to/file.txt&quot;)")
     @POST("/v1/plugin")
-    public static DataMethod<EntryCreatedRS> uploadPluginUsingPOSTANY;
+    public static RestDataMethod<EntryCreatedRS> uploadPluginUsingPOSTANY;
 }

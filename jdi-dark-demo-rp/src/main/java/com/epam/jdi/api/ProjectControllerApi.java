@@ -19,7 +19,7 @@ import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.http.requests.RestMethod;
 import com.epam.jdi.model.DeleteBulkRS;
 import com.epam.jdi.model.EntryCreatedRS;
@@ -48,7 +48,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/preference/{login}/{filterId}")
-    public static DataMethod<OperationCompletionRS> addUserPreferenceUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> addUserPreferenceUsingPUTJSON;
 
     /**
      * Assign users
@@ -59,7 +59,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/assign")
-    public static DataMethod<OperationCompletionRS> assignProjectUsersUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> assignProjectUsersUsingPUTJSON;
 
     /**
      * Create new project
@@ -69,7 +69,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/project")
-    public static DataMethod<EntryCreatedRS> createProjectUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createProjectUsingPOSTJSON;
 
     /**
      * Delete project index from ML
@@ -80,7 +80,7 @@ public class ProjectControllerApi {
      */
     @QueryParameter(name = "name", value = "name_example")
     @DELETE("/v1/project/{projectName}/index")
-    public static DataMethod<OperationCompletionRS> deleteProjectIndexUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteProjectIndexUsingDELETE;
 
     /**
      * Delete project
@@ -90,7 +90,7 @@ public class ProjectControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/project/{projectId}")
-    public static DataMethod<OperationCompletionRS> deleteProjectUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteProjectUsingDELETE;
 
     /**
      * Delete multiple projects
@@ -100,7 +100,7 @@ public class ProjectControllerApi {
      * @return DeleteBulkRS
      */
     @DELETE("/v1/project")
-    public static DataMethod<DeleteBulkRS> deleteProjectUsingDELETE1;
+    public static RestDataMethod<DeleteBulkRS> deleteProjectUsingDELETE1;
 
     /**
      * Exports information about all projects
@@ -134,7 +134,7 @@ public class ProjectControllerApi {
      * @return Iterablestring
      */
     @GET("/v1/project/names")
-    public static DataMethod<Iterablestring> getAllProjectNamesUsingGET;
+    public static RestDataMethod<Iterablestring> getAllProjectNamesUsingGET;
 
     /**
      * getAllProjectsInfo
@@ -164,7 +164,7 @@ public class ProjectControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/project/list")
-    public static DataMethod<IterableProjectInfoResource> getAllProjectsInfoUsingGET;
+    public static RestDataMethod<IterableProjectInfoResource> getAllProjectsInfoUsingGET;
 
     /**
      * getAnalyzerIndexingStatus
@@ -172,7 +172,7 @@ public class ProjectControllerApi {
      * @return Map<String, Boolean>
      */
     @GET("/v1/project/analyzer/status")
-    public static DataMethod<Map<String, Boolean>> getAnalyzerIndexingStatusUsingGET;
+    public static RestDataMethod<Map<String, Boolean>> getAnalyzerIndexingStatusUsingGET;
 
     /**
      * getProjectInfo
@@ -183,7 +183,7 @@ public class ProjectControllerApi {
      */
     @QueryParameter(name = "interval", value = "3M")
     @GET("/v1/project/list/{projectName}")
-    public static DataMethod<ProjectInfoResource> getProjectInfoUsingGET;
+    public static RestDataMethod<ProjectInfoResource> getProjectInfoUsingGET;
 
     /**
      * Load project users by filter
@@ -195,7 +195,7 @@ public class ProjectControllerApi {
      */
     @QueryParameter(name = "filterCntUsers", value = "filterCntUsers_example")
     @GET("/v1/project/{projectName}/usernames")
-    public static DataMethod<String[]> getProjectUsersUsingGET;
+    public static RestDataMethod<String[]> getProjectUsersUsingGET;
 
     /**
      * Get users assigned on current project
@@ -232,7 +232,7 @@ public class ProjectControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/project/{projectName}/users")
-    public static DataMethod<IterableUserResource> getProjectUsersUsingGET1;
+    public static RestDataMethod<IterableUserResource> getProjectUsersUsingGET1;
 
     /**
      * Get information about project
@@ -242,7 +242,7 @@ public class ProjectControllerApi {
      * @return ProjectResource
      */
     @GET("/v1/project/{projectName}")
-    public static DataMethod<ProjectResource> getProjectUsingGET;
+    public static RestDataMethod<ProjectResource> getProjectUsingGET;
 
     /**
      * getProjectWidget
@@ -254,7 +254,7 @@ public class ProjectControllerApi {
      */
     @QueryParameter(name = "interval", value = "3M")
     @GET("/v1/project/{projectName}/widget/{widgetCode}")
-    public static DataMethod<Object> getProjectWidgetUsingGET;
+    public static RestDataMethod<Object> getProjectWidgetUsingGET;
 
     /**
      * Load user preferences
@@ -265,7 +265,7 @@ public class ProjectControllerApi {
      * @return PreferenceResource
      */
     @GET("/v1/project/{projectName}/preference/{login}")
-    public static DataMethod<PreferenceResource> getUserPreferenceUsingGET;
+    public static RestDataMethod<PreferenceResource> getUserPreferenceUsingGET;
 
     /**
      * Load users which can be assigned to specified project
@@ -303,7 +303,7 @@ public class ProjectControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/project/{projectName}/assignable")
-    public static DataMethod<IterableUserResource> getUsersForAssignUsingGET;
+    public static RestDataMethod<IterableUserResource> getUsersForAssignUsingGET;
 
     /**
      * Starts reindex all project data in ML
@@ -313,7 +313,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/index")
-    public static DataMethod<OperationCompletionRS> indexProjectDataUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> indexProjectDataUsingPUTJSON;
 
     /**
      * removeUserPreference
@@ -324,7 +324,7 @@ public class ProjectControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/project/{projectName}/preference/{login}/{filterId}")
-    public static DataMethod<OperationCompletionRS> removeUserPreferenceUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> removeUserPreferenceUsingDELETE;
 
     /**
      * searchForUser
@@ -341,7 +341,7 @@ public class ProjectControllerApi {
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @QueryParameter(name = "term", value = "term_example")
     @GET("/v1/project/{projectName}/usernames/search")
-    public static DataMethod<IterableUserResource> searchForUserUsingGET;
+    public static RestDataMethod<IterableUserResource> searchForUserUsingGET;
 
     /**
      * searchProjectNames
@@ -351,7 +351,7 @@ public class ProjectControllerApi {
      */
     @QueryParameter(name = "term", value = "term_example")
     @GET("/v1/project/names/search")
-    public static DataMethod<Iterablestring> searchProjectNamesUsingGET;
+    public static RestDataMethod<Iterablestring> searchProjectNamesUsingGET;
 
     /**
      * Un assign users
@@ -362,7 +362,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/unassign")
-    public static DataMethod<OperationCompletionRS> unassignProjectUsersUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> unassignProjectUsersUsingPUTJSON;
 
     /**
      * Update project notifications configuration
@@ -373,7 +373,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/notification")
-    public static DataMethod<OperationCompletionRS> updateProjectNotificationConfigUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectNotificationConfigUsingPUTJSON;
 
     /**
      * Update project
@@ -384,5 +384,5 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}")
-    public static DataMethod<OperationCompletionRS> updateProjectUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectUsingPUTJSON;
 }

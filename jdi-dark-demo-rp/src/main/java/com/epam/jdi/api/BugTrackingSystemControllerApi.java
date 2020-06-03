@@ -17,7 +17,7 @@ import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.PostFormField;
 import com.epam.jdi.model.Ticket;
 
@@ -36,7 +36,7 @@ public class BugTrackingSystemControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/bts/{projectName}/{integrationId}/ticket")
-    public static DataMethod<Ticket> createIssueUsingPOSTJSON;
+    public static RestDataMethod<Ticket> createIssueUsingPOSTJSON;
 
     /**
      * Get list of fields required for posting ticket
@@ -45,7 +45,7 @@ public class BugTrackingSystemControllerApi {
      * @return String[]
      */
     @GET("/v1/bts/{integrationId}/issue_types")
-    public static DataMethod<String[]> getAllowableIssueTypesUsingGET;
+    public static RestDataMethod<String[]> getAllowableIssueTypesUsingGET;
 
     /**
      * Get list of allowable issue types for bug tracking system
@@ -55,7 +55,7 @@ public class BugTrackingSystemControllerApi {
      * @return String[]
      */
     @GET("/v1/bts/{projectName}/{integrationId}/issue_types")
-    public static DataMethod<String[]> getAllowableIssueTypesUsingGET1;
+    public static RestDataMethod<String[]> getAllowableIssueTypesUsingGET1;
 
     /**
      * Get list of fields required for posting ticket
@@ -66,7 +66,7 @@ public class BugTrackingSystemControllerApi {
      */
     @QueryParameter(name = "issueType", value = "issueType_example")
     @GET("/v1/bts/{integrationId}/fields-set")
-    public static DataMethod<PostFormField[]> getSetOfIntegrationSystemFieldsUsingGET;
+    public static RestDataMethod<PostFormField[]> getSetOfIntegrationSystemFieldsUsingGET;
 
     /**
      * Get list of fields required for posting ticket
@@ -78,7 +78,7 @@ public class BugTrackingSystemControllerApi {
      */
     @QueryParameter(name = "issueType", value = "issueType_example")
     @GET("/v1/bts/{projectName}/{integrationId}/fields-set")
-    public static DataMethod<PostFormField[]> getSetOfIntegrationSystemFieldsUsingGET1;
+    public static RestDataMethod<PostFormField[]> getSetOfIntegrationSystemFieldsUsingGET1;
 
     /**
      * Get ticket from the bts integration
@@ -92,5 +92,5 @@ public class BugTrackingSystemControllerApi {
     @QueryParameter(name = "btsProject", value = "btsProject_example")
     @QueryParameter(name = "btsUrl", value = "btsUrl_example")
     @GET("/v1/bts/{projectName}/ticket/{ticketId}")
-    public static DataMethod<Ticket> getTicketUsingGET;
+    public static RestDataMethod<Ticket> getTicketUsingGET;
 }

@@ -15,7 +15,7 @@ package com.epam.jdi.api;
 import com.epam.http.annotations.ContentType;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedAsyncRS;
 
 import static io.restassured.http.ContentType.JSON;
@@ -32,5 +32,5 @@ public class LogAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/log")
-    public static DataMethod<EntryCreatedAsyncRS> createLogUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> createLogUsingPOSTJSON;
 }

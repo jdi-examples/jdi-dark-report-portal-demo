@@ -13,6 +13,7 @@
 package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
+import com.epam.jdi.InitTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -22,11 +23,11 @@ import static com.epam.http.requests.ServiceInit.init;
 /**
  * API tests for LaunchControllerApi
  */
-public class LaunchControllerApiTest {
+public class LaunchControllerApiTest extends InitTests {
 
     @BeforeClass
     public void before() {
-        init(LaunchControllerApi.class);
+        init(LaunchControllerApi.class, spec);
     }
 
 
@@ -270,7 +271,7 @@ public class LaunchControllerApiTest {
     @Test
     public void startLaunchUsingPOST1JSONTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LaunchControllerApi.startLaunchUsingPOST1JSON.call();
+        RestResponse resp = LaunchControllerApi.startLaunch.call();
         resp.isOk();
     }
 

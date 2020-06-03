@@ -17,7 +17,7 @@ import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.OperationCompletionRS;
 
 import java.util.Map;
@@ -33,7 +33,7 @@ public class SettingsControllerApi {
      * @return Map<String, String>
      */
     @GET("/v1/settings")
-    public static DataMethod<Map<String, String>> getServerSettingsUsingGET;
+    public static RestDataMethod<Map<String, String>> getServerSettingsUsingGET;
 
     /**
      * Update analytics settings
@@ -43,7 +43,7 @@ public class SettingsControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/settings/analytics")
-    public static DataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPOSTJSON;
 
     /**
      * Update analytics settings
@@ -53,5 +53,5 @@ public class SettingsControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/settings/analytics")
-    public static DataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPUTJSON;
 }

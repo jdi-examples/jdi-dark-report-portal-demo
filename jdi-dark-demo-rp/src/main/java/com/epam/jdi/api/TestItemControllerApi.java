@@ -19,7 +19,7 @@ import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.QueryParameter;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedAsyncRS;
 import com.epam.jdi.model.Issue;
 import com.epam.jdi.model.IterableTestItemHistoryElement;
@@ -41,7 +41,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/info")
-    public static DataMethod<OperationCompletionRS> bulkUpdateUsingPUT1JSON;
+    public static RestDataMethod<OperationCompletionRS> bulkUpdateUsingPUT1JSON;
 
     /**
      * Update issues of specified test items
@@ -52,7 +52,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item")
-    public static DataMethod<Issue[]> defineTestItemIssueTypeUsingPUTJSON;
+    public static RestDataMethod<Issue[]> defineTestItemIssueTypeUsingPUTJSON;
 
     /**
      * Delete test item
@@ -62,7 +62,7 @@ public class TestItemControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/{projectName}/item/{itemId}")
-    public static DataMethod<OperationCompletionRS> deleteTestItemUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteTestItemUsingDELETE;
 
     /**
      * Delete test items by specified ids
@@ -73,7 +73,7 @@ public class TestItemControllerApi {
      */
     @QueryParameter(name = "ids", value = "56")
     @DELETE("/v1/{projectName}/item")
-    public static DataMethod<OperationCompletionRS[]> deleteTestItemsUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS[]> deleteTestItemsUsingDELETE;
 
     /**
      * Finish test item
@@ -85,7 +85,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/{testItemId}")
-    public static DataMethod<OperationCompletionRS> finishTestItemUsingPUT1JSON;
+    public static RestDataMethod<OperationCompletionRS> finishTestItemUsingPUT1JSON;
 
     /**
      * Get all unique attribute keys of specified launch
@@ -102,7 +102,7 @@ public class TestItemControllerApi {
     @QueryParameter(name = "isLatest", value = "false")
     @QueryParameter(name = "launchesLimit", value = "0")
     @GET("/v1/{projectName}/item/attribute/keys/all")
-    public static DataMethod<String[]> getAttributeKeysForProjectUsingGET;
+    public static RestDataMethod<String[]> getAttributeKeysForProjectUsingGET;
 
     /**
      * Get all unique attribute keys of specified launch
@@ -115,7 +115,7 @@ public class TestItemControllerApi {
     @QueryParameter(name = "filterCntAttributeKey", value = "filterCntAttributeKey_example")
     @QueryParameter(name = "launch", value = "789")
     @GET("/v1/{projectName}/item/attribute/keys")
-    public static DataMethod<String[]> getAttributeKeysUsingGET1;
+    public static RestDataMethod<String[]> getAttributeKeysUsingGET1;
 
     /**
      * Get all unique attribute values of specified launch
@@ -130,7 +130,7 @@ public class TestItemControllerApi {
     @QueryParameter(name = "filterEqAttributeKey", value = "filterEqAttributeKey_example")
     @QueryParameter(name = "launch", value = "789")
     @GET("/v1/{projectName}/item/attribute/values")
-    public static DataMethod<String[]> getAttributeValuesUsingGET1;
+    public static RestDataMethod<String[]> getAttributeValuesUsingGET1;
 
     /**
      * Load history of test items
@@ -245,7 +245,7 @@ public class TestItemControllerApi {
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @QueryParameter(name = "type", value = "type_example")
     @GET("/v1/{projectName}/item/history")
-    public static DataMethod<IterableTestItemHistoryElement> getItemsHistoryUsingGET;
+    public static RestDataMethod<IterableTestItemHistoryElement> getItemsHistoryUsingGET;
 
     /**
      * Find test item by UUID
@@ -255,7 +255,7 @@ public class TestItemControllerApi {
      * @return TestItemResource
      */
     @GET("/v1/{projectName}/item/uuid/{itemId}")
-    public static DataMethod<TestItemResource> getTestItemByUuidUsingGET;
+    public static RestDataMethod<TestItemResource> getTestItemByUuidUsingGET;
 
     /**
      * Find test item by ID
@@ -265,7 +265,7 @@ public class TestItemControllerApi {
      * @return TestItemResource
      */
     @GET("/v1/{projectName}/item/{itemId}")
-    public static DataMethod<TestItemResource> getTestItemUsingGET;
+    public static RestDataMethod<TestItemResource> getTestItemUsingGET;
 
     /**
      * Get test items by specified ids
@@ -276,7 +276,7 @@ public class TestItemControllerApi {
      */
     @QueryParameter(name = "ids", value = "56")
     @GET("/v1/{projectName}/item/items")
-    public static DataMethod<TestItemResource[]> getTestItemsUsingGET;
+    public static RestDataMethod<TestItemResource[]> getTestItemsUsingGET;
 
     /**
      * Find test items by specified filter
@@ -387,7 +387,7 @@ public class TestItemControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/item")
-    public static DataMethod<IterableTestItemResource> getTestItemsUsingGET1;
+    public static RestDataMethod<IterableTestItemResource> getTestItemsUsingGET1;
 
     /**
      * Get tickets that contains a term as a part inside for specified launch
@@ -400,7 +400,7 @@ public class TestItemControllerApi {
     @QueryParameter(name = "launch", value = "789")
     @QueryParameter(name = "term", value = "term_example")
     @GET("/v1/{projectName}/item/ticket/ids")
-    public static DataMethod<String[]> getTicketIdsUsingGET;
+    public static RestDataMethod<String[]> getTicketIdsUsingGET;
 
     /**
      * Attach external issue for specified test items
@@ -411,7 +411,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/issue/link")
-    public static DataMethod<OperationCompletionRS[]> linkExternalIssuesUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> linkExternalIssuesUsingPUTJSON;
 
     /**
      * Start a child test item
@@ -423,7 +423,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/item/{parentItem}")
-    public static DataMethod<EntryCreatedAsyncRS> startChildItemUsingPOST1JSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> startChildItemUsingPOST1JSON;
 
     /**
      * Start a root test item
@@ -434,7 +434,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/item")
-    public static DataMethod<EntryCreatedAsyncRS> startRootItemUsingPOST1JSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> startRootItemUsingPOST1JSON;
 
     /**
      * Unlink external issue for specified test items
@@ -445,7 +445,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/issue/unlink")
-    public static DataMethod<OperationCompletionRS[]> unlinkExternalIssuesUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> unlinkExternalIssuesUsingPUTJSON;
 
     /**
      * Update test item
@@ -457,5 +457,5 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/{itemId}/update")
-    public static DataMethod<OperationCompletionRS> updateTestItemUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateTestItemUsingPUTJSON;
 }

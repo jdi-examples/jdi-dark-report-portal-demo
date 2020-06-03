@@ -18,7 +18,7 @@ import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IssueSubTypeCreatedRS;
 import com.epam.jdi.model.OperationCompletionRS;
@@ -38,7 +38,7 @@ public class ProjectSettingsControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/settings/pattern")
-    public static DataMethod<EntryCreatedRS> createPatternTemplateUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createPatternTemplateUsingPOSTJSON;
 
     /**
      * Creation of custom project specific issue sub-type
@@ -49,7 +49,7 @@ public class ProjectSettingsControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/settings/sub-type")
-    public static DataMethod<IssueSubTypeCreatedRS> createProjectIssueSubTypeUsingPOSTJSON;
+    public static RestDataMethod<IssueSubTypeCreatedRS> createProjectIssueSubTypeUsingPOSTJSON;
 
     /**
      * Delete pattern template for items&#39; log messages pattern analysis
@@ -59,7 +59,7 @@ public class ProjectSettingsControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/{projectName}/settings/pattern/{id}")
-    public static DataMethod<OperationCompletionRS> deletePatternTemplateUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deletePatternTemplateUsingDELETE;
 
     /**
      * Delete custom project specific issue sub-type
@@ -69,7 +69,7 @@ public class ProjectSettingsControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/{projectName}/settings/sub-type/{id}")
-    public static DataMethod<OperationCompletionRS> deleteProjectIssueSubTypeUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteProjectIssueSubTypeUsingDELETE;
 
     /**
      * Get project specific issue sub-types
@@ -79,7 +79,7 @@ public class ProjectSettingsControllerApi {
      * @return ProjectSettingsResource
      */
     @GET("/v1/{projectName}/settings")
-    public static DataMethod<ProjectSettingsResource> getProjectSettingsUsingGET;
+    public static RestDataMethod<ProjectSettingsResource> getProjectSettingsUsingGET;
 
     /**
      * Update pattern template for items&#39; log messages pattern analysis
@@ -91,7 +91,7 @@ public class ProjectSettingsControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/settings/pattern/{id}")
-    public static DataMethod<OperationCompletionRS> updatePatternTemplateUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updatePatternTemplateUsingPUTJSON;
 
     /**
      * Update of custom project specific issue sub-type
@@ -102,5 +102,5 @@ public class ProjectSettingsControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/settings/sub-type")
-    public static DataMethod<OperationCompletionRS> updateProjectIssueSubTypeUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectIssueSubTypeUsingPUTJSON;
 }

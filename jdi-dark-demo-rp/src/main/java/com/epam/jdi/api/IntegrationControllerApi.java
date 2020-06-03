@@ -18,7 +18,7 @@ import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
 import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.DataMethod;
+import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IntegrationResource;
 import com.epam.jdi.model.OperationCompletionRS;
@@ -37,7 +37,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/integration/{pluginName}")
-    public static DataMethod<EntryCreatedRS> createGlobalIntegrationUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createGlobalIntegrationUsingPOSTJSON;
 
     /**
      * Create project Report Portal integration instance
@@ -49,7 +49,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/integration/{projectName}/{pluginName}")
-    public static DataMethod<EntryCreatedRS> createProjectIntegrationUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createProjectIntegrationUsingPOSTJSON;
 
     /**
      * Delete all global integrations by type
@@ -58,7 +58,7 @@ public class IntegrationControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/integration/all/{type}")
-    public static DataMethod<OperationCompletionRS> deleteAllIntegrationsUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteAllIntegrationsUsingDELETE;
 
     /**
      * Delete all integrations assigned to specified project
@@ -68,7 +68,7 @@ public class IntegrationControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/integration/{projectName}/all/{type}")
-    public static DataMethod<OperationCompletionRS> deleteAllProjectIntegrationsUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteAllProjectIntegrationsUsingDELETE;
 
     /**
      * Delete global integration instance
@@ -77,7 +77,7 @@ public class IntegrationControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/integration/{integrationId}")
-    public static DataMethod<OperationCompletionRS> deleteGlobalIntegrationUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteGlobalIntegrationUsingDELETE;
 
     /**
      * Delete project integration instance
@@ -87,7 +87,7 @@ public class IntegrationControllerApi {
      * @return OperationCompletionRS
      */
     @DELETE("/v1/integration/{projectName}/{integrationId}")
-    public static DataMethod<OperationCompletionRS> deleteProjectIntegrationUsingDELETE;
+    public static RestDataMethod<OperationCompletionRS> deleteProjectIntegrationUsingDELETE;
 
     /**
      * Execute command to the integration instance
@@ -100,7 +100,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/integration/{projectName}/{integrationId}/{command}")
-    public static DataMethod<Object> executeIntegrationCommandUsingPUTJSON;
+    public static RestDataMethod<Object> executeIntegrationCommandUsingPUTJSON;
 
     /**
      * Get global Report Portal integration instance
@@ -109,7 +109,7 @@ public class IntegrationControllerApi {
      * @return IntegrationResource
      */
     @GET("/v1/integration/{integrationId}")
-    public static DataMethod<IntegrationResource> getGlobalIntegrationUsingGET;
+    public static RestDataMethod<IntegrationResource> getGlobalIntegrationUsingGET;
 
     /**
      * Get available global integrations for plugin
@@ -118,7 +118,7 @@ public class IntegrationControllerApi {
      * @return IntegrationResource[]
      */
     @GET("/v1/integration/global/all/{pluginName}")
-    public static DataMethod<IntegrationResource[]> getGlobalIntegrationsUsingGET;
+    public static RestDataMethod<IntegrationResource[]> getGlobalIntegrationsUsingGET;
 
     /**
      * Get available global integrations
@@ -126,7 +126,7 @@ public class IntegrationControllerApi {
      * @return IntegrationResource[]
      */
     @GET("/v1/integration/global/all")
-    public static DataMethod<IntegrationResource[]> getGlobalIntegrationsUsingGET1;
+    public static RestDataMethod<IntegrationResource[]> getGlobalIntegrationsUsingGET1;
 
     /**
      * Get integration instance
@@ -136,7 +136,7 @@ public class IntegrationControllerApi {
      * @return IntegrationResource
      */
     @GET("/v1/integration/{projectName}/{integrationId}")
-    public static DataMethod<IntegrationResource> getProjectIntegrationUsingGET;
+    public static RestDataMethod<IntegrationResource> getProjectIntegrationUsingGET;
 
     /**
      * Get available project integrations for plugin
@@ -146,7 +146,7 @@ public class IntegrationControllerApi {
      * @return IntegrationResource[]
      */
     @GET("/v1/integration/project/{projectName}/all/{pluginName}")
-    public static DataMethod<IntegrationResource[]> getProjectIntegrationsUsingGET;
+    public static RestDataMethod<IntegrationResource[]> getProjectIntegrationsUsingGET;
 
     /**
      * Get available project integrations
@@ -155,7 +155,7 @@ public class IntegrationControllerApi {
      * @return IntegrationResource[]
      */
     @GET("/v1/integration/project/{projectName}/all")
-    public static DataMethod<IntegrationResource[]> getProjectIntegrationsUsingGET1;
+    public static RestDataMethod<IntegrationResource[]> getProjectIntegrationsUsingGET1;
 
     /**
      * Test connection to the global integration
@@ -164,7 +164,7 @@ public class IntegrationControllerApi {
      * @return Boolean
      */
     @GET("/v1/integration/{integrationId}/connection/test")
-    public static DataMethod<Boolean> testIntegrationConnectionUsingGET;
+    public static RestDataMethod<Boolean> testIntegrationConnectionUsingGET;
 
     /**
      * Test connection to the integration through the project config
@@ -174,7 +174,7 @@ public class IntegrationControllerApi {
      * @return Boolean
      */
     @GET("/v1/integration/{projectName}/{integrationId}/connection/test")
-    public static DataMethod<Boolean> testIntegrationConnectionUsingGET1;
+    public static RestDataMethod<Boolean> testIntegrationConnectionUsingGET1;
 
     /**
      * Update global Report Portal integration instance
@@ -185,7 +185,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/integration/{integrationId}")
-    public static DataMethod<OperationCompletionRS> updateGlobalIntegrationUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateGlobalIntegrationUsingPUTJSON;
 
     /**
      * Update project integration instance
@@ -197,5 +197,5 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/integration/{projectName}/{integrationId}")
-    public static DataMethod<OperationCompletionRS> updateProjectIntegrationUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectIntegrationUsingPUTJSON;
 }

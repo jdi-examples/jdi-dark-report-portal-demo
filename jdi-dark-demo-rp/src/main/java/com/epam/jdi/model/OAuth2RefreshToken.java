@@ -17,11 +17,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * OAuth2RefreshToken
  */
@@ -29,7 +24,7 @@ import java.util.Map;
 @Data
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OAuth2RefreshToken extends DataClass<OAuth2RefreshToken>{
+public class OAuth2RefreshToken extends DataClass<OAuth2RefreshToken> {
 
 }
 

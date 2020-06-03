@@ -14,7 +14,6 @@ package com.epam.jdi.uat;
 
 import com.epam.http.response.RestResponse;
 import com.epam.jdi.InitTests;
-import com.epam.jdi.uat.SsoEndpointApi;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -27,12 +26,13 @@ import static com.epam.http.requests.ServiceInit.init;
 public class SsoEndpointApiTest extends InitTests {
 
     @BeforeClass
-    public void before() { init(SsoEndpointApi.class, spec); }
+    public void before() {
+        init(SsoEndpointApi.class, spec);
+    }
 
-    
+
     /**
      * Create api token
-     * 
      */
     @Ignore
     @Test
@@ -41,10 +41,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.createApiTokenUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Get api token
-     * 
      */
     @Test
     public void getApiTokenUsingGETTest() {
@@ -52,10 +51,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.getApiTokenUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingDELETETest() {
@@ -63,10 +61,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingDELETE1Test() {
@@ -74,10 +71,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingDELETE1.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingGETTest() {
@@ -85,10 +81,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingGET1Test() {
@@ -96,10 +91,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingHEADJSONTest() {
@@ -107,10 +101,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingHEADJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingHEAD1JSONTest() {
@@ -118,10 +111,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingHEAD1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingOPTIONSJSONTest() {
@@ -129,10 +121,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingOPTIONSJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingOPTIONS1JSONTest() {
@@ -140,10 +131,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingOPTIONS1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingPATCHJSONTest() {
@@ -151,10 +141,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingPATCHJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingPATCH1JSONTest() {
@@ -162,10 +151,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingPATCH1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingPOSTJSONTest() {
@@ -173,10 +161,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingPOST1JSONTest() {
@@ -184,10 +171,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingPOST1JSON.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingPUTJSONTest() {
@@ -195,10 +181,9 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * user
-     * 
      */
     @Test
     public void userUsingPUT1JSONTest() {
@@ -206,5 +191,5 @@ public class SsoEndpointApiTest extends InitTests {
         RestResponse resp = SsoEndpointApi.userUsingPUT1JSON.call();
         resp.isOk();
     }
-    
+
 }

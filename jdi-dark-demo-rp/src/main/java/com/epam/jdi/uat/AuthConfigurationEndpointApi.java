@@ -12,57 +12,58 @@
 
 package com.epam.jdi.uat;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestDataMethod;
-import com.epam.jdi.model.AbstractAuthResource;
 import com.epam.http.annotations.ContentType;
-import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.http.annotations.DELETE;
 import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.RestDataMethod;
+import com.epam.jdi.model.AbstractAuthResource;
+import com.epam.jdi.model.OperationCompletionRS;
+
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${uat}")
 public class AuthConfigurationEndpointApi {
 
-  /**
-   * Retrieves auth settings
-   * 
-   * @param integrationId /path/ integrationId (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/settings/auth/{integrationId}")
-  public static RestDataMethod<OperationCompletionRS> deleteSettingsUsingDELETE;
+    /**
+     * Retrieves auth settings
+     *
+     * @param integrationId /path/ integrationId (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/settings/auth/{integrationId}")
+    public static RestDataMethod<OperationCompletionRS> deleteSettingsUsingDELETE;
 
-  /**
-   * Retrieves auth settings
-   * 
-   * @param authType /path/ authType (required)
-   * @return AbstractAuthResource
-  */
-  @GET("/settings/auth/{authType}")
-  public static RestDataMethod<AbstractAuthResource> getSettingsUsingGET;
+    /**
+     * Retrieves auth settings
+     *
+     * @param authType /path/ authType (required)
+     * @return AbstractAuthResource
+     */
+    @GET("/settings/auth/{authType}")
+    public static RestDataMethod<AbstractAuthResource> getSettingsUsingGET;
 
-  /**
-   * Updates LDAP auth settings
-   * 
-   * @param authType /path/ authType (required)
-   * @param request(UpdateAuthRQ) /body/ request (required)
-   * @return AbstractAuthResource
-  */
-  @ContentType(JSON)
-  @POST("/settings/auth/{authType}")
-  public static RestDataMethod<AbstractAuthResource> updateLdapSettingsUsingPOSTJSON;
+    /**
+     * Updates LDAP auth settings
+     *
+     * @param authType /path/ authType (required)
+     * @param request(UpdateAuthRQ) /body/ request (required)
+     * @return AbstractAuthResource
+     */
+    @ContentType(JSON)
+    @POST("/settings/auth/{authType}")
+    public static RestDataMethod<AbstractAuthResource> updateLdapSettingsUsingPOSTJSON;
 
-  /**
-   * Updates LDAP auth settings
-   * 
-   * @param authType /path/ authType (required)
-   * @param request(UpdateAuthRQ) /body/ request (required)
-   * @return AbstractAuthResource
-  */
-  @ContentType(JSON)
-  @PUT("/settings/auth/{authType}")
-  public static RestDataMethod<AbstractAuthResource> updateLdapSettingsUsingPUTJSON;
+    /**
+     * Updates LDAP auth settings
+     *
+     * @param authType /path/ authType (required)
+     * @param request(UpdateAuthRQ) /body/ request (required)
+     * @return AbstractAuthResource
+     */
+    @ContentType(JSON)
+    @PUT("/settings/auth/{authType}")
+    public static RestDataMethod<AbstractAuthResource> updateLdapSettingsUsingPUTJSON;
 }

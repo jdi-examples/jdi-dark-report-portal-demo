@@ -12,67 +12,68 @@
 
 package com.epam.jdi.uat;
 
-import com.epam.http.annotations.ServiceDomain;
-import com.epam.http.requests.RestDataMethod;
 import com.epam.http.annotations.ContentType;
-import static io.restassured.http.ContentType.JSON;
-import com.epam.jdi.model.OAuthRegistrationResource;
-import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.http.annotations.DELETE;
 import com.epam.http.annotations.GET;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.PUT;
+import com.epam.http.annotations.ServiceDomain;
+import com.epam.http.requests.RestDataMethod;
+import com.epam.jdi.model.OAuthRegistrationResource;
+import com.epam.jdi.model.OperationCompletionRS;
 
 import java.util.Map;
+
+import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("${uat}")
 public class OAuthConfigurationEndpointApi {
 
-  /**
-   * Deletes OAuth Integration Settings
-   * 
-   * @param authId /path/ authId (required)
-   * @return OperationCompletionRS
-  */
-  @DELETE("/settings/oauth/{authId}")
-  public static RestDataMethod<OperationCompletionRS> deleteOAuthSettingUsingDELETE;
+    /**
+     * Deletes OAuth Integration Settings
+     *
+     * @param authId /path/ authId (required)
+     * @return OperationCompletionRS
+     */
+    @DELETE("/settings/oauth/{authId}")
+    public static RestDataMethod<OperationCompletionRS> deleteOAuthSettingUsingDELETE;
 
-  /**
-   * Returns OAuth Server Settings
-   * 
-   * @param authId /path/ authId (required)
-   * @return OAuthRegistrationResource
-  */
-  @GET("/settings/oauth/{authId}")
-  public static RestDataMethod<OAuthRegistrationResource> getOAuthSettingsUsingGET;
+    /**
+     * Returns OAuth Server Settings
+     *
+     * @param authId /path/ authId (required)
+     * @return OAuthRegistrationResource
+     */
+    @GET("/settings/oauth/{authId}")
+    public static RestDataMethod<OAuthRegistrationResource> getOAuthSettingsUsingGET;
 
-  /**
-   * Returns OAuth Server Settings
-   * 
-   * @return Map<String, OAuthRegistrationResource>
-  */
-  @GET("/settings/oauth")
-  public static RestDataMethod<Map<String, OAuthRegistrationResource>> getOAuthSettingsUsingGET1;
+    /**
+     * Returns OAuth Server Settings
+     *
+     * @return Map<String, OAuthRegistrationResource>
+     */
+    @GET("/settings/oauth")
+    public static RestDataMethod<Map<String, OAuthRegistrationResource>> getOAuthSettingsUsingGET1;
 
-  /**
-   * Creates/Updates OAuth Integration Settings
-   * 
-   * @param authId /path/ authId (required)
-   * @param clientRegistrationResource(OAuthRegistrationResource) /body/ clientRegistrationResource (required)
-   * @return OAuthRegistrationResource
-  */
-  @ContentType(JSON)
-  @POST("/settings/oauth/{authId}")
-  public static RestDataMethod<OAuthRegistrationResource> updateOAuthSettingsUsingPOSTJSON;
+    /**
+     * Creates/Updates OAuth Integration Settings
+     *
+     * @param authId /path/ authId (required)
+     * @param clientRegistrationResource(OAuthRegistrationResource) /body/ clientRegistrationResource (required)
+     * @return OAuthRegistrationResource
+     */
+    @ContentType(JSON)
+    @POST("/settings/oauth/{authId}")
+    public static RestDataMethod<OAuthRegistrationResource> updateOAuthSettingsUsingPOSTJSON;
 
-  /**
-   * Creates/Updates OAuth Integration Settings
-   * 
-   * @param authId /path/ authId (required)
-   * @param clientRegistrationResource(OAuthRegistrationResource) /body/ clientRegistrationResource (required)
-   * @return OAuthRegistrationResource
-  */
-  @ContentType(JSON)
-  @PUT("/settings/oauth/{authId}")
-  public static RestDataMethod<OAuthRegistrationResource> updateOAuthSettingsUsingPUTJSON;
+    /**
+     * Creates/Updates OAuth Integration Settings
+     *
+     * @param authId /path/ authId (required)
+     * @param clientRegistrationResource(OAuthRegistrationResource) /body/ clientRegistrationResource (required)
+     * @return OAuthRegistrationResource
+     */
+    @ContentType(JSON)
+    @PUT("/settings/oauth/{authId}")
+    public static RestDataMethod<OAuthRegistrationResource> updateOAuthSettingsUsingPUTJSON;
 }

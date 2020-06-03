@@ -14,7 +14,6 @@ package com.epam.jdi.uat;
 
 import com.epam.http.response.RestResponse;
 import com.epam.jdi.InitTests;
-import com.epam.jdi.uat.AuthConfigurationEndpointApi;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -27,12 +26,13 @@ import static com.epam.http.requests.ServiceInit.init;
 public class AuthConfigurationEndpointApiTest extends InitTests {
 
     @BeforeClass
-    public void before() { init(AuthConfigurationEndpointApi.class, spec); }
+    public void before() {
+        init(AuthConfigurationEndpointApi.class, spec);
+    }
 
-    
+
     /**
      * Retrieves auth settings
-     * 
      */
     @Ignore
     @Test
@@ -41,10 +41,9 @@ public class AuthConfigurationEndpointApiTest extends InitTests {
         RestResponse resp = AuthConfigurationEndpointApi.deleteSettingsUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Retrieves auth settings
-     * 
      */
     @Test
     public void getSettingsUsingGETTest() {
@@ -52,10 +51,9 @@ public class AuthConfigurationEndpointApiTest extends InitTests {
         RestResponse resp = AuthConfigurationEndpointApi.getSettingsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Updates LDAP auth settings
-     * 
      */
     @Test
     public void updateLdapSettingsUsingPOSTJSONTest() {
@@ -63,10 +61,9 @@ public class AuthConfigurationEndpointApiTest extends InitTests {
         RestResponse resp = AuthConfigurationEndpointApi.updateLdapSettingsUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Updates LDAP auth settings
-     * 
      */
     @Test
     public void updateLdapSettingsUsingPUTJSONTest() {
@@ -74,5 +71,5 @@ public class AuthConfigurationEndpointApiTest extends InitTests {
         RestResponse resp = AuthConfigurationEndpointApi.updateLdapSettingsUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

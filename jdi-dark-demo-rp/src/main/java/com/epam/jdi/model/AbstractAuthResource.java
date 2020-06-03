@@ -17,11 +17,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * AbstractAuthResource
  */
@@ -29,8 +24,8 @@ import java.util.Map;
 @Data
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AbstractAuthResource extends DataClass<AbstractAuthResource>{
+public class AbstractAuthResource extends DataClass<AbstractAuthResource> {
 
-  public String type;
+    public String type;
 }
 

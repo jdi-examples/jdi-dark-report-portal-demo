@@ -14,7 +14,6 @@ package com.epam.jdi.uat;
 
 import com.epam.http.response.RestResponse;
 import com.epam.jdi.InitTests;
-import com.epam.jdi.uat.OAuthConfigurationEndpointApi;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -27,12 +26,13 @@ import static com.epam.http.requests.ServiceInit.init;
 public class OAuthConfigurationEndpointApiTest extends InitTests {
 
     @BeforeClass
-    public void before() { init(OAuthConfigurationEndpointApi.class, spec); }
+    public void before() {
+        init(OAuthConfigurationEndpointApi.class, spec);
+    }
 
-    
+
     /**
      * Deletes OAuth Integration Settings
-     * 
      */
     @Ignore
     @Test
@@ -41,10 +41,9 @@ public class OAuthConfigurationEndpointApiTest extends InitTests {
         RestResponse resp = OAuthConfigurationEndpointApi.deleteOAuthSettingUsingDELETE.call();
         resp.isOk();
     }
-    
+
     /**
      * Returns OAuth Server Settings
-     * 
      */
     @Test
     public void getOAuthSettingsUsingGETTest() {
@@ -52,10 +51,9 @@ public class OAuthConfigurationEndpointApiTest extends InitTests {
         RestResponse resp = OAuthConfigurationEndpointApi.getOAuthSettingsUsingGET.call();
         resp.isOk();
     }
-    
+
     /**
      * Returns OAuth Server Settings
-     * 
      */
     @Test
     public void getOAuthSettingsUsingGET1Test() {
@@ -63,10 +61,9 @@ public class OAuthConfigurationEndpointApiTest extends InitTests {
         RestResponse resp = OAuthConfigurationEndpointApi.getOAuthSettingsUsingGET1.call();
         resp.isOk();
     }
-    
+
     /**
      * Creates/Updates OAuth Integration Settings
-     * 
      */
     @Test
     public void updateOAuthSettingsUsingPOSTJSONTest() {
@@ -74,10 +71,9 @@ public class OAuthConfigurationEndpointApiTest extends InitTests {
         RestResponse resp = OAuthConfigurationEndpointApi.updateOAuthSettingsUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
     /**
      * Creates/Updates OAuth Integration Settings
-     * 
      */
     @Test
     public void updateOAuthSettingsUsingPUTJSONTest() {
@@ -85,5 +81,5 @@ public class OAuthConfigurationEndpointApiTest extends InitTests {
         RestResponse resp = OAuthConfigurationEndpointApi.updateOAuthSettingsUsingPUTJSON.call();
         resp.isOk();
     }
-    
+
 }

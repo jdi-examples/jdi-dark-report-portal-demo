@@ -17,11 +17,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * UpdateAuthRQ
  */
@@ -29,9 +24,9 @@ import java.util.Map;
 @Data
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UpdateAuthRQ extends DataClass<UpdateAuthRQ>{
+public class UpdateAuthRQ extends DataClass<UpdateAuthRQ> {
 
-  public Boolean enabled;
-  public Object integrationParameters;
+    public Boolean enabled;
+    public Object integrationParameters;
 }
 

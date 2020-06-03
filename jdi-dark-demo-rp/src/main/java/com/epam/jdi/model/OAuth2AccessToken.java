@@ -12,18 +12,12 @@
 
 package com.epam.jdi.model;
 
-import com.epam.jdi.model.OAuth2RefreshToken;
-import java.util.Date;
-import java.util.List;
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * OAuth2AccessToken
@@ -32,14 +26,14 @@ import java.util.Map;
 @Data
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OAuth2AccessToken extends DataClass<OAuth2AccessToken>{
+public class OAuth2AccessToken extends DataClass<OAuth2AccessToken> {
 
-  public Object additionalInformation;
-  public Date expiration;
-  public Boolean expired;
-  public Integer expiresIn;
-  public OAuth2RefreshToken refreshToken;
-  public String tokenType;
-  public String value;
+    public Object additionalInformation;
+    public Date expiration;
+    public Boolean expired;
+    public Integer expiresIn;
+    public OAuth2RefreshToken refreshToken;
+    public String tokenType;
+    public String value;
 }
 

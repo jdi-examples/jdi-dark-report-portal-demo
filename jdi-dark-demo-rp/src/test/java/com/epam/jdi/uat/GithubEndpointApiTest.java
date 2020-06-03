@@ -14,7 +14,6 @@ package com.epam.jdi.uat;
 
 import com.epam.http.response.RestResponse;
 import com.epam.jdi.InitTests;
-import com.epam.jdi.uat.GithubEndpointApi;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -27,12 +26,13 @@ import static com.epam.http.requests.ServiceInit.init;
 public class GithubEndpointApiTest extends InitTests {
 
     @BeforeClass
-    public void before() { init(GithubEndpointApi.class, spec); }
+    public void before() {
+        init(GithubEndpointApi.class, spec);
+    }
 
-    
+
     /**
      * Synchronizes logged-in GitHub user
-     * 
      */
     @Ignore
     @Test
@@ -41,5 +41,5 @@ public class GithubEndpointApiTest extends InitTests {
         RestResponse resp = GithubEndpointApi.synchronizeUsingPOSTJSON.call();
         resp.isOk();
     }
-    
+
 }

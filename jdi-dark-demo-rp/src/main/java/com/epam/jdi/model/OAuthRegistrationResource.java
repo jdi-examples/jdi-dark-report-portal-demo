@@ -12,17 +12,10 @@
 
 package com.epam.jdi.model;
 
-import java.util.List;
-import java.util.Map;
 import com.epam.jdi.tools.DataClass;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.experimental.Accessors;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * OAuthRegistrationResource
@@ -31,19 +24,19 @@ import java.util.Map;
 @Data
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OAuthRegistrationResource extends DataClass<OAuthRegistrationResource>{
+public class OAuthRegistrationResource extends DataClass<OAuthRegistrationResource> {
 
-  public String authGrantType;
-  public String authorizationUri;
-  public String clientAuthMethod;
-  public String clientId;
-  public String clientName;
-  public String clientSecret;
-  public String id;
-  public String jwkSetUri;
-  public String redirectUrlTemplate;
-  public String tokenUri;
-  public String userInfoEndpointNameAttribute;
-  public String userInfoEndpointUri;
+    public String authGrantType;
+    public String authorizationUri;
+    public String clientAuthMethod;
+    public String clientId;
+    public String clientName;
+    public String clientSecret;
+    public String id;
+    public String jwkSetUri;
+    public String redirectUrlTemplate;
+    public String tokenUri;
+    public String userInfoEndpointNameAttribute;
+    public String userInfoEndpointUri;
 }
 

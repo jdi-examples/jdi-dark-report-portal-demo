@@ -1,13 +1,12 @@
 package com.epam.jdi;
 
-import com.epam.jdi.tools.PropertyReader;
 import com.epam.jdi.auth.AuthTokenApi;
+import com.epam.jdi.tools.PropertyReader;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.restassured.authentication.BasicAuthScheme;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeClass;
-
 
 import java.util.Date;
 

@@ -3,7 +3,7 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.jdi.dark</groupId>
+    <groupId>com.epam.jdi.dark</groupId>
     <artifactId>jdi-dark-demo-rp</artifactId>
     <name>JDI Dark Demo Testing Report Portal</name>
     <version>1.0.0</version>

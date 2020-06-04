@@ -15,7 +15,7 @@ env:
   global:
     - JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
     - PATH="$JAVA_HOME/bin:$PATH"
-    - HTTP_TESTS="com.epam.jdi:jdi-dark-demo-rp"
+    - HTTP_TESTS="com.epam.jdi.dark:jdi-dark-demo-rp"
     - SUT_LOGIN="test-user"
     - SUT_PASSWORD="Fqvq1s0S"
     - WITH_TESTS_PARAMS="-Dsut_username=SUT_LOGIN -Dsut_password=SUT_PASSWORD"

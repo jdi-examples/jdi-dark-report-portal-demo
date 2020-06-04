@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="WINDOWS-1251"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="JDI Dark Demo Tests" parallel="methods" thread-count="1">
-    <test name="Tests">
+    <test name="Api Tests">
         <classes>
             <class name="com.epam.jdi.api.ActivityControllerApiTest"/>
-            <class name="com.epam.jdi.api.BugTrackingSystemControllerApiTest"/>
-            <class name="com.epam.jdi.api.DashboardControllerApiTest"/>
-            <class name="com.epam.jdi.api.DemoDataControllerApiTest"/>
-            <class name="com.epam.jdi.api.FileStorageControllerApiTest"/>
-            <class name="com.epam.jdi.api.IntegrationControllerApiTest"/>
-            <class name="com.epam.jdi.api.LaunchAsyncControllerApiTest"/>
-            <class name="com.epam.jdi.api.LaunchControllerApiTest"/>
-            <class name="com.epam.jdi.api.LogAsyncControllerApiTest"/>
-            <class name="com.epam.jdi.api.LogControllerApiTest"/>
-            <class name="com.epam.jdi.api.PluginControllerApiTest"/>
-            <class name="com.epam.jdi.api.ProjectControllerApiTest"/>
-            <class name="com.epam.jdi.api.ProjectSettingsControllerApiTest"/>
-            <class name="com.epam.jdi.api.SettingsControllerApiTest"/>
-            <class name="com.epam.jdi.api.TestItemAsyncControllerApiTest"/>
-            <class name="com.epam.jdi.api.TestItemControllerApiTest"/>
             <class name="com.epam.jdi.api.UserControllerApiTest"/>
-            <class name="com.epam.jdi.api.UserFilterControllerApiTest"/>
-            <class name="com.epam.jdi.api.WidgetControllerApiTest"/>
+        </classes>
+    </test>
+    <test name="Smoke Tests">
+        <classes>
+            <class name="com.epam.jdi.smoke.LaunchApiTest"/>
         </classes>
     </test>
 </suite>

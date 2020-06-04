@@ -38,7 +38,6 @@ public class demo extends InitTests {
     private int launchId;
     private String launchUUId;
     private int debugLaunchId;
-    private String debugLaunchUUId;
     private final String launchName = "Dark_Test";
 
     public void checkLaunchStatus(String project, int launchId, LaunchStatus expectedStatus) {
@@ -81,7 +80,7 @@ public class demo extends InitTests {
                 .describedAs("Launch id is empty").isNotEmpty();
         Assertions.assertThat(startLaunchRS.getNumber())
                 .describedAs("Launch number is empty").isGreaterThan(0);
-        debugLaunchUUId = startLaunchRS.getId();
+        String debugLaunchUUId = startLaunchRS.getId();
         debugLaunchId = getLaunchId(testProject, debugLaunchUUId);
         checkLaunchStatus(testProject, debugLaunchId, LaunchStatus.IN_PROGRESS);
     }

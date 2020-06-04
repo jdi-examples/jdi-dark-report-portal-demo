@@ -106,11 +106,27 @@
             <properties>
                 <sut>api=https://dev.reportportal.io/api, uat=https://dev.reportportal.io/uat</sut>
                 <project>jdi-tests</project>
-                <rp.endpoint>https://dev.reportportal.io</rp.endpoint>
+            </properties>
+        </profile>
+        <profile>
+            <id>report_debug</id>
+            <properties>
+                <rp.endpoint>https://rp.epam.com</rp.endpoint>
+                <rp.project>epm-jdi</rp.project>
                 <rp.launch>JDI Dark Demo</rp.launch>
-                <rp.project>jdi-tests</rp.project>
-                <rp.description>local run</rp.description>
+                <rp.description>Debug launch</rp.description>
                 <rp.mode>DEBUG</rp.mode>
+                <rp.enable>true</rp.enable>
+            </properties>
+        </profile>
+        <profile>
+            <id>report</id>
+            <properties>
+                <rp.endpoint>https://rp.epam.com</rp.endpoint>
+                <rp.project>epm-jdi</rp.project>
+                <rp.launch>JDI Dark Demo</rp.launch>
+                <rp.description>Demo tests launch</rp.description>
+                <rp.mode>DEFAULT</rp.mode>
                 <rp.enable>true</rp.enable>
             </properties>
         </profile>

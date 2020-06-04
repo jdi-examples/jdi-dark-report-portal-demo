@@ -36,10 +36,9 @@ public class ActivityControllerApiTest extends InitTests {
      * Get activities for project
      */
     @Test
-    @Tag(name = "smoke")
     public void getActivitiesUsingGETTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ActivityControllerApi.getActivitiesUsingGET.pathParams("Test Project").call();
+        RestResponse resp = ActivityControllerApi.getActivitiesUsingGET.pathParams(testProject).call();
         resp.isOk();
     }
 

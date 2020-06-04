@@ -12,7 +12,6 @@
 
 package com.epam.jdi.smoke;
 
-import com.epam.http.response.RestResponse;
 import com.epam.jdi.InitTests;
 import com.epam.jdi.api.LaunchControllerApi;
 import com.epam.jdi.model.IterableLaunchResource;
@@ -30,8 +29,9 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class demo extends InitTests {
 
-    long launchId, debugLaunchId;
-    String launchName = "Dark_Test";
+    private long launchId;
+    private long debugLaunchId;
+    private final String launchName = "Dark_Test";
 
     @BeforeClass
     public void initServices() {

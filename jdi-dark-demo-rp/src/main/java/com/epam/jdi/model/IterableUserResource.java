@@ -25,6 +25,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IterableUserResource extends DataClass<IterableUserResource> {
-
+    public UserResource[] content;
 }
 

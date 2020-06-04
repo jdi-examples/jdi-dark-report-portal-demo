@@ -36,9 +36,9 @@ public class SsoEndpointApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createApiTokenUsingPOSTJSONTest() {
+    public void createApiTokenUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.createApiTokenUsingPOSTJSON.call();
+        RestResponse resp = SsoEndpointApi.createApiTokenUsingPOST.call();
         resp.isOk();
     }
 
@@ -156,9 +156,9 @@ public class SsoEndpointApiTest extends InitTests {
      * user
      */
     @Test
-    public void userUsingPOSTJSONTest() {
+    public void userUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.userUsingPOSTJSON.call();
+        RestResponse resp = SsoEndpointApi.userUsingPOST.call();
         resp.isOk();
     }
 

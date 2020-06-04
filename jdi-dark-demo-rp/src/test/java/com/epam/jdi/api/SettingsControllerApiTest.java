@@ -47,9 +47,9 @@ public class SettingsControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void saveAnalyticsSettingsUsingPOSTJSONTest() {
+    public void saveAnalyticsSettingsUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SettingsControllerApi.saveAnalyticsSettingsUsingPOSTJSON.call();
+        RestResponse resp = SettingsControllerApi.saveAnalyticsSettingsUsingPOST.call();
         resp.isOk();
     }
 

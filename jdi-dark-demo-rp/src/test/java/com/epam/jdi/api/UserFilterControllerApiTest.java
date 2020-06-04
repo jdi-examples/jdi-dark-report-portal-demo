@@ -36,9 +36,9 @@ public class UserFilterControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createFilterUsingPOSTJSONTest() {
+    public void createFilterUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserFilterControllerApi.createFilterUsingPOSTJSON.call();
+        RestResponse resp = UserFilterControllerApi.createFilterUsingPOST.call();
         resp.isOk();
     }
 

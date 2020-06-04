@@ -46,7 +46,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user/password/change")
-    public static RestDataMethod<OperationCompletionRS> changePasswordUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> changePasswordUsingPOST;
 
     /**
      * Register invitation for user who will be created
@@ -56,7 +56,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user/bid")
-    public static RestDataMethod<CreateUserBidRS> createUserBidUsingPOSTJSON;
+    public static RestDataMethod<CreateUserBidRS> createUserBidUsingPOST;
 
     /**
      * Create specified user
@@ -67,7 +67,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user")
-    public static RestDataMethod<CreateUserRS> createUserByAdminUsingPOSTJSON;
+    public static RestDataMethod<CreateUserRS> createUserByAdminUsingPOST;
 
     /**
      * Activate invitation and create user in system
@@ -79,7 +79,7 @@ public class UserControllerApi {
     @ContentType(JSON)
     @QueryParameter(name = "uuid", value = "uuid_example")
     @POST("/v1/user/registration")
-    public static RestDataMethod<CreateUserRS> createUserUsingPOSTJSON;
+    public static RestDataMethod<CreateUserRS> createUserUsingPOST;
 
     /**
      * Delete specified user
@@ -259,7 +259,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user/password/reset")
-    public static RestDataMethod<OperationCompletionRS> resetPasswordUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> resetPasswordUsingPOST;
 
     /**
      * Create a restore password request
@@ -269,7 +269,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/user/password/restore")
-    public static RestDataMethod<OperationCompletionRS> restorePasswordUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> restorePasswordUsingPOST;
 
     /**
      * validateInfo

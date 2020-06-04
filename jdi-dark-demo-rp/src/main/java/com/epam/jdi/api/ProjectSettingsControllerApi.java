@@ -38,7 +38,7 @@ public class ProjectSettingsControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/settings/pattern")
-    public static RestDataMethod<EntryCreatedRS> createPatternTemplateUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createPatternTemplateUsingPOST;
 
     /**
      * Creation of custom project specific issue sub-type
@@ -49,7 +49,7 @@ public class ProjectSettingsControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/settings/sub-type")
-    public static RestDataMethod<IssueSubTypeCreatedRS> createProjectIssueSubTypeUsingPOSTJSON;
+    public static RestDataMethod<IssueSubTypeCreatedRS> createProjectIssueSubTypeUsingPOST;
 
     /**
      * Delete pattern template for items&#39; log messages pattern analysis

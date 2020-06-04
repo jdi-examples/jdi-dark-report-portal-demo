@@ -58,9 +58,9 @@ public class ProjectControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createProjectUsingPOSTJSONTest() {
+    public void createProjectUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ProjectControllerApi.createProjectUsingPOSTJSON.call();
+        RestResponse resp = ProjectControllerApi.createProjectUsingPOST.call();
         resp.isOk();
     }
 

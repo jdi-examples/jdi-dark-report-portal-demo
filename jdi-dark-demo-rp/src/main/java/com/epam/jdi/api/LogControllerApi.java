@@ -22,7 +22,7 @@ import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedAsyncRS;
 import com.epam.jdi.model.IterableLogResource;
 import com.epam.jdi.model.IterableSearchLogRs;
-import com.epam.jdi.model.Iterableobject;
+import com.epam.jdi.model.IterableObject;
 import com.epam.jdi.model.LogResource;
 import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.jdi.model.Serializable;
@@ -162,7 +162,7 @@ public class LogControllerApi {
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @QueryParameter(name = "params", value = "")
     @GET("/v1/{projectName}/log/nested/{parentId}")
-    public static RestDataMethod<Iterableobject> getNestedItemsUsingGET;
+    public static RestDataMethod<IterableObject> getNestedItemsUsingGET;
 
     /**
      * Get logs by filter
@@ -218,5 +218,5 @@ public class LogControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/log/search/{itemId}")
-    public static RestDataMethod<IterableSearchLogRs> searchLogsUsingPOSTJSON;
+    public static RestDataMethod<IterableSearchLogRs> searchLogsUsingPOST;
 }

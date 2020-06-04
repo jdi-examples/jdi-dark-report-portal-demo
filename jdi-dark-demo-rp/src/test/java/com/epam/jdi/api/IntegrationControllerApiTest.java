@@ -36,9 +36,9 @@ public class IntegrationControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createGlobalIntegrationUsingPOSTJSONTest() {
+    public void createGlobalIntegrationUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = IntegrationControllerApi.createGlobalIntegrationUsingPOSTJSON.call();
+        RestResponse resp = IntegrationControllerApi.createGlobalIntegrationUsingPOST.call();
         resp.isOk();
     }
 
@@ -47,9 +47,9 @@ public class IntegrationControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createProjectIntegrationUsingPOSTJSONTest() {
+    public void createProjectIntegrationUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = IntegrationControllerApi.createProjectIntegrationUsingPOSTJSON.call();
+        RestResponse resp = IntegrationControllerApi.createProjectIntegrationUsingPOST.call();
         resp.isOk();
     }
 

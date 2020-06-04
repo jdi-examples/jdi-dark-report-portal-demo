@@ -52,7 +52,7 @@ public class DashboardControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/dashboard")
-    public static RestDataMethod<EntryCreatedRS> createDashboardUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createDashboardUsingPOST;
 
     /**
      * Delete specified dashboard by ID for specified project

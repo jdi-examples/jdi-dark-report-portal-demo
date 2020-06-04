@@ -37,7 +37,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/integration/{pluginName}")
-    public static RestDataMethod<EntryCreatedRS> createGlobalIntegrationUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createGlobalIntegrationUsingPOST;
 
     /**
      * Create project Report Portal integration instance
@@ -49,7 +49,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/integration/{projectName}/{pluginName}")
-    public static RestDataMethod<EntryCreatedRS> createProjectIntegrationUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createProjectIntegrationUsingPOST;
 
     /**
      * Delete all global integrations by type

@@ -38,7 +38,7 @@ public class LaunchControllerApiTest extends InitTests {
     @Test
     public void bulkForceFinishUsingPUTJSONTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LaunchControllerApi.bulkForceFinishUsingPUTJSON.call();
+        RestResponse resp = LaunchControllerApi.forceFinishLaunch.call();
         resp.isOk();
     }
 
@@ -115,7 +115,7 @@ public class LaunchControllerApiTest extends InitTests {
     @Test
     public void getAllLaunchNamesUsingGETTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LaunchControllerApi.getAllLaunchNamesUsingGET.call();
+        RestResponse resp = LaunchControllerApi.getAllLaunchNames.call();
         resp.isOk();
     }
 
@@ -159,7 +159,7 @@ public class LaunchControllerApiTest extends InitTests {
     @Test
     public void getDebugLaunchesUsingGETTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LaunchControllerApi.getDebugLaunchesUsingGET.call();
+        RestResponse resp = LaunchControllerApi.getDebugLaunches.call();
         resp.isOk();
     }
 
@@ -258,9 +258,9 @@ public class LaunchControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void startLaunchAnalyzerUsingPOSTJSONTest() {
+    public void startLaunchAnalyzerUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LaunchControllerApi.startLaunchAnalyzerUsingPOSTJSON.call();
+        RestResponse resp = LaunchControllerApi.startLaunchAnalyzerUsingPOST.call();
         resp.isOk();
     }
 

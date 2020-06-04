@@ -113,9 +113,9 @@ public class LogControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void searchLogsUsingPOSTJSONTest() {
+    public void searchLogsUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LogControllerApi.searchLogsUsingPOSTJSON.call();
+        RestResponse resp = LogControllerApi.searchLogsUsingPOST.call();
         resp.isOk();
     }
 

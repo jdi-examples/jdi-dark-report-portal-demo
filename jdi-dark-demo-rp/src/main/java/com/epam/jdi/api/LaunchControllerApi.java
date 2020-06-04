@@ -49,7 +49,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/stop")
-    public static RestDataMethod<OperationCompletionRS[]> bulkForceFinishUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> forceFinishLaunch;
 
     /**
      * Bulk update attributes and description
@@ -126,7 +126,7 @@ public class LaunchControllerApi {
      */
     @QueryParameter(name = "filterCntName", value = "filterCntName_example")
     @GET("/v1/{projectName}/launch/names")
-    public static RestDataMethod<String[]> getAllLaunchNamesUsingGET;
+    public static RestDataMethod<String[]> getAllLaunchNames;
 
     /**
      * Get all unique owners of project launches
@@ -199,36 +199,8 @@ public class LaunchControllerApi {
      * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
      * @return IterableLaunchResource
      */
-    @QueryParameter(name = "filterEqAttributeKey", value = "")
-    @QueryParameter(name = "filterEqAttributeValue", value = "")
-    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-    @QueryParameter(name = "filterEqEndTime", value = "new Date()")
-    @QueryParameter(name = "filterEqHasRetries", value = "true")
-    @QueryParameter(name = "filterEqId", value = "789")
-    @QueryParameter(name = "filterEqLastModified", value = "new Date()")
-    @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
-    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-    @QueryParameter(name = "filterEqNumber", value = "56")
-    @QueryParameter(name = "filterEqProjectId", value = "789")
-    @QueryParameter(name = "filterEqStartTime", value = "new Date()")
-    @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
-    @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
-    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-    @QueryParameter(name = "filterEqUserId", value = "789")
-    @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
-    @QueryParameter(name = "pagePage", value = "56")
-    @QueryParameter(name = "pageSize", value = "56")
-    @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/launch/mode")
-    public static RestDataMethod<IterableLaunchResource> getDebugLaunchesUsingGET;
+    public static RestDataMethod<IterableLaunchResource> getDebugLaunches;
 
     /**
      * Get list of latest project launches by filter
@@ -435,7 +407,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/launch/analyze")
-    public static RestDataMethod<OperationCompletionRS> startLaunchAnalyzerUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> startLaunchAnalyzerUsingPOST;
 
     /**
      * Starts launch for specified project

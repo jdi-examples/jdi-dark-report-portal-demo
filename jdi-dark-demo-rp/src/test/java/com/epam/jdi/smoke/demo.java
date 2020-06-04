@@ -12,8 +12,11 @@
 
 package com.epam.jdi.smoke;
 
+import com.epam.http.response.RestResponse;
 import com.epam.jdi.InitTests;
 import com.epam.jdi.api.LaunchControllerApi;
+import com.epam.jdi.model.IterableLaunchResource;
+import com.epam.jdi.model.LaunchResource;
 import com.epam.jdi.model.StartLaunchRQ;
 import com.epam.jdi.model.StartLaunchRS;
 import org.assertj.core.api.Assertions;
@@ -21,14 +24,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
-import static com.epam.jdi.api.LaunchControllerApi.startLaunch;
 
 /**
  * API tests for UserControllerApi
  */
 public class demo extends InitTests {
 
-    StartLaunchRS startLaunchRS;
+    long launchId, debugLaunchId;
+    String launchName = "Dark_Test";
 
     @BeforeClass
     public void initServices() {
@@ -37,12 +40,44 @@ public class demo extends InitTests {
 
     @Test
     public void startLaunchTest() {
-        StartLaunchRQ startLaunchRQ = new StartLaunchRQ().setName("Launch_Test").setStartTime(now());
+        StartLaunchRQ startLaunchRQ = new StartLaunchRQ().setName(launchName).setStartTime(now());
         String json = gson.toJson(startLaunchRQ);
-        startLaunchRS = startLaunch.pathParams(testProject).body(json).callAsData();
-        Assertions.assertThat(startLaunchRS.getId()).describedAs("Launch id is empty").isNotEmpty();
-        Assertions.assertThat(startLaunchRS.getNumber()).describedAs("Launch number is empty").isGreaterThan(0);
+        StartLaunchRS startLaunchRS = LaunchControllerApi.startLaunch.pathParams(testProject).body(json).callAsData();
+        launchId = startLaunchRS.getNumber();
+        Assertions.assertThat(startLaunchRS.getId())
+                .describedAs("Launch id is empty").isNotEmpty();
+        Assertions.assertThat(startLaunchRS.getNumber())
+                .describedAs("Launch number is empty").isGreaterThan(0);
     }
+
+    @Test
+    public void startDebugLaunchTest() {
+        StartLaunchRQ startLaunchRQ = new StartLaunchRQ()
+                .setName(launchName).setMode(StartLaunchRQ.ModeEnum.DEBUG).setStartTime(now());
+        String json = gson.toJson(startLaunchRQ);
+        StartLaunchRS startLaunchRS = LaunchControllerApi.startLaunch.pathParams(testProject).body(json).callAsData();
+        debugLaunchId = startLaunchRS.getNumber();
+        Assertions.assertThat(startLaunchRS.getId())
+                .describedAs("Launch id is empty").isNotEmpty();
+        Assertions.assertThat(startLaunchRS.getNumber())
+                .describedAs("Launch number is empty").isGreaterThan(0);
+    }
+
+    @Test
+    public void getAllLaunchNamesTest() {
+        String[] names = LaunchControllerApi.getAllLaunchNames.pathParams(testProject)
+                .queryParams("filter.cnt.name="+launchName).callAsData();
+        Assertions.assertThat(names).describedAs("Wrong launch name").contains(launchName);
+    }
+
+    @Test
+    public void getDebugLaunchesTest() {
+        IterableLaunchResource resource = LaunchControllerApi.getDebugLaunches.pathParams(testProject).callAsData();
+        Assertions.assertThat(resource.getContent()).describedAs("Wrong debug launch mode").allMatch(l -> l.getMode().equals(LaunchResource.ModeEnum.DEBUG));
+    }
+
+
+
 
 
 }

@@ -25,7 +25,7 @@ import com.epam.jdi.model.DeleteBulkRS;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IterableProjectInfoResource;
 import com.epam.jdi.model.IterableUserResource;
-import com.epam.jdi.model.Iterablestring;
+import com.epam.jdi.model.IterableString;
 import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.jdi.model.PreferenceResource;
 import com.epam.jdi.model.ProjectInfoResource;
@@ -69,7 +69,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/project")
-    public static RestDataMethod<EntryCreatedRS> createProjectUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createProjectUsingPOST;
 
     /**
      * Delete project index from ML
@@ -134,7 +134,7 @@ public class ProjectControllerApi {
      * @return Iterablestring
      */
     @GET("/v1/project/names")
-    public static RestDataMethod<Iterablestring> getAllProjectNamesUsingGET;
+    public static RestDataMethod<IterableString> getAllProjectNamesUsingGET;
 
     /**
      * getAllProjectsInfo
@@ -351,7 +351,7 @@ public class ProjectControllerApi {
      */
     @QueryParameter(name = "term", value = "term_example")
     @GET("/v1/project/names/search")
-    public static RestDataMethod<Iterablestring> searchProjectNamesUsingGET;
+    public static RestDataMethod<IterableString> searchProjectNamesUsingGET;
 
     /**
      * Un assign users

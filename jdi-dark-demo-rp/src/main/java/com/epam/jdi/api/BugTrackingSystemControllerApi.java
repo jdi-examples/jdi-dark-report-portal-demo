@@ -36,7 +36,7 @@ public class BugTrackingSystemControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/bts/{projectName}/{integrationId}/ticket")
-    public static RestDataMethod<Ticket> createIssueUsingPOSTJSON;
+    public static RestDataMethod<Ticket> createIssueUsingPOST;
 
     /**
      * Get list of fields required for posting ticket

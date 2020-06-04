@@ -21,8 +21,8 @@ import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
-import static com.epam.jdi.api.UserControllerApi.changePasswordUsingPOSTJSON;
-import static com.epam.jdi.api.UserControllerApi.createUserBidUsingPOSTJSON;
+import static com.epam.jdi.api.UserControllerApi.changePasswordUsingPOST;
+import static com.epam.jdi.api.UserControllerApi.createUserBidUsingPOST;
 import static org.hamcrest.Matchers.equalTo;
 
 /**
@@ -40,8 +40,8 @@ public class UserControllerApiTest extends InitTests {
      * Change own password
      */
     @Test
-    public void changePasswordUsingPOSTJSONTest() {
-        changePasswordUsingPOSTJSON
+    public void changePasswordUsingPOSTTest() {
+        changePasswordUsingPOST
                 .post(new ChangePasswordRQ().setOldPassword("wrong")
                         .setNewPassword("new"))
                 .assertThat()
@@ -50,7 +50,7 @@ public class UserControllerApiTest extends InitTests {
                 .body("message",
                         equalTo("Incorrect Request. [Field 'newPassword' should have size from '4' to '256'.] "));
 
-        changePasswordUsingPOSTJSON
+        changePasswordUsingPOST
                 .post(new ChangePasswordRQ().setOldPassword("wrong")
                         .setNewPassword("newPassword"))
                 .assertThat()
@@ -64,8 +64,8 @@ public class UserControllerApiTest extends InitTests {
      * Register invitation for user who will be created
      */
     @Test
-    public void createUserBidUsingPOSTJSONTest() {
-        createUserBidUsingPOSTJSON.post(new CreateUserRQ()
+    public void createUserBidUsingPOSTTest() {
+        createUserBidUsingPOST.post(new CreateUserRQ()
                 .setDefaultProject("wrongProject")
                 .setEmail("test@test.com"))
                 .assertThat()
@@ -81,9 +81,9 @@ public class UserControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createUserByAdminUsingPOSTJSONTest() {
+    public void createUserByAdminUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserControllerApi.createUserByAdminUsingPOSTJSON.call();
+        RestResponse resp = UserControllerApi.createUserByAdminUsingPOST.call();
         resp.isOk();
     }
 
@@ -92,9 +92,9 @@ public class UserControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createUserUsingPOSTJSONTest() {
+    public void createUserUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserControllerApi.createUserUsingPOSTJSON.call();
+        RestResponse resp = UserControllerApi.createUserUsingPOST.call();
         resp.isOk();
     }
 
@@ -240,9 +240,9 @@ public class UserControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void resetPasswordUsingPOSTJSONTest() {
+    public void resetPasswordUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserControllerApi.resetPasswordUsingPOSTJSON.call();
+        RestResponse resp = UserControllerApi.resetPasswordUsingPOST.call();
         resp.isOk();
     }
 
@@ -251,9 +251,9 @@ public class UserControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void restorePasswordUsingPOSTJSONTest() {
+    public void restorePasswordUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserControllerApi.restorePasswordUsingPOSTJSON.call();
+        RestResponse resp = UserControllerApi.restorePasswordUsingPOST.call();
         resp.isOk();
     }
 

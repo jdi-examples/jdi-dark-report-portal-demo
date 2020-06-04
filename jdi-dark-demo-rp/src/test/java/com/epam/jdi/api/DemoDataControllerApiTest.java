@@ -36,9 +36,9 @@ public class DemoDataControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void generateUsingPOSTJSONTest() {
+    public void generateUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = DemoDataControllerApi.generateUsingPOSTJSON.call();
+        RestResponse resp = DemoDataControllerApi.generateUsingPOST.call();
         resp.isOk();
     }
 

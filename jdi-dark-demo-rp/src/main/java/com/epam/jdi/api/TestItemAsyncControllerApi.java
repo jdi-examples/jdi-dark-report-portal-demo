@@ -47,7 +47,7 @@ public class TestItemAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/item/{parentItem}")
-    public static RestDataMethod<EntryCreatedAsyncRS> startChildItemUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> startChildItemUsingPOST;
 
     /**
      * Start a root test item
@@ -58,5 +58,5 @@ public class TestItemAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/item")
-    public static RestDataMethod<EntryCreatedAsyncRS> startRootItemUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> startRootItemUsingPOST;
 }

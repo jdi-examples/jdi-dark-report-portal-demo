@@ -40,7 +40,7 @@ public class UserFilterControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/filter")
-    public static RestDataMethod<EntryCreatedRS> createFilterUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createFilterUsingPOST;
 
     /**
      * Delete specified user filter by id

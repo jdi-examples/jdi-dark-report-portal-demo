@@ -77,7 +77,7 @@ public class SsoEndpointApi {
     @QueryParameter(name = "userAuthenticationDetails", value = "userAuthenticationDetails_example")
     @QueryParameter(name = "userAuthenticationPrincipal", value = "userAuthenticationPrincipal_example")
     @POST("/sso/me/apitoken")
-    public static RestDataMethod<OAuth2AccessToken> createApiTokenUsingPOSTJSON;
+    public static RestDataMethod<OAuth2AccessToken> createApiTokenUsingPOST;
 
     /**
      * Get api token
@@ -292,7 +292,7 @@ public class SsoEndpointApi {
     @QueryParameter(name = "details", value = "details_example")
     @QueryParameter(name = "principal", value = "principal_example")
     @POST("/sso/me")
-    public static RestDataMethod<Object> userUsingPOSTJSON;
+    public static RestDataMethod<Object> userUsingPOST;
 
     /**
      * user

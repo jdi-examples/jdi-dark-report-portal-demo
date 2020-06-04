@@ -54,7 +54,7 @@ public class AuthConfigurationEndpointApi {
      */
     @ContentType(JSON)
     @POST("/settings/auth/{authType}")
-    public static RestDataMethod<AbstractAuthResource> updateLdapSettingsUsingPOSTJSON;
+    public static RestDataMethod<AbstractAuthResource> updateLdapSettingsUsingPOST;
 
     /**
      * Updates LDAP auth settings

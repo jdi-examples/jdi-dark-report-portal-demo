@@ -47,9 +47,9 @@ public class DashboardControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createDashboardUsingPOSTJSONTest() {
+    public void createDashboardUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = DashboardControllerApi.createDashboardUsingPOSTJSON.call();
+        RestResponse resp = DashboardControllerApi.createDashboardUsingPOST.call();
         resp.isOk();
     }
 

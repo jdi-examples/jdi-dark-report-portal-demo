@@ -35,10 +35,10 @@ import static com.epam.http.requests.ServiceInit.init;
  */
 public class demo extends InitTests {
 
-    int launchId;
-    String launchUUId;
-    int debugLaunchId;
-    String debugLaunchUUId;
+    private int launchId;
+    private String launchUUId;
+    private int debugLaunchId;
+    private String debugLaunchUUId;
     private final String launchName = "Dark_Test";
 
     public void checkLaunchStatus(String project, int launchId, LaunchStatus expectedStatus) {

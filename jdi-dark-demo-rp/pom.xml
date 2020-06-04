@@ -18,6 +18,7 @@
         <rp.project>epm-jdi</rp.project>
         <rp.launch>JDI Dark Demo</rp.launch>
         <rp.enable>false</rp.enable>
+        <log.level>INFO</log.level>
     </properties>
 
     <dependencies>
@@ -107,17 +108,12 @@
     <profiles>
         <profile>
             <id>dev_env</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <sut>api=https://dev.reportportal.io/api, uat=https://dev.reportportal.io/uat</sut>
                 <project>jdi-tests</project>
-            </properties>
-        </profile>
-        <profile>
-            <id>report_debug</id>
-            <properties>
-                <rp.description>Debug launch</rp.description>
-                <rp.mode>DEBUG</rp.mode>
-                <rp.enable>true</rp.enable>
             </properties>
         </profile>
         <profile>
@@ -125,6 +121,14 @@
             <properties>
                 <rp.description>Demo tests launch</rp.description>
                 <rp.mode>DEFAULT</rp.mode>
+                <rp.enable>true</rp.enable>
+            </properties>
+        </profile>
+        <profile>
+            <id>report_debug</id>
+            <properties>
+                <rp.description>Debug launch</rp.description>
+                <rp.mode>DEBUG</rp.mode>
                 <rp.enable>true</rp.enable>
             </properties>
         </profile>

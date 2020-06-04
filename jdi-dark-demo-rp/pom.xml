@@ -3,7 +3,7 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.jdi.dark</groupId>
+    <groupId>com.epam.jdi.dark</groupId>
     <artifactId>jdi-dark-demo-rp</artifactId>
     <name>JDI Dark Demo Testing Report Portal</name>
     <version>1.0.0</version>
@@ -14,6 +14,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testng.version>7.0.0</testng.version>
         <suiteXML.file>general.xml</suiteXML.file>
+        <rp.endpoint>https://rp.epam.com</rp.endpoint>
+        <rp.project>epm-jdi</rp.project>
+        <rp.launch>JDI Dark Demo</rp.launch>
+        <rp.enable>false</rp.enable>
+        <log.level>INFO</log.level>
     </properties>
 
     <dependencies>
@@ -102,31 +107,28 @@
 
     <profiles>
         <profile>
-            <id>dev</id>
+            <id>dev_env</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <sut>api=https://dev.reportportal.io/api, uat=https://dev.reportportal.io/uat</sut>
                 <project>jdi-tests</project>
             </properties>
         </profile>
         <profile>
-            <id>report_debug</id>
+            <id>report</id>
             <properties>
-                <rp.endpoint>https://rp.epam.com</rp.endpoint>
-                <rp.project>epm-jdi</rp.project>
-                <rp.launch>JDI Dark Demo</rp.launch>
-                <rp.description>Debug launch</rp.description>
-                <rp.mode>DEBUG</rp.mode>
+                <rp.description>Demo tests launch</rp.description>
+                <rp.mode>DEFAULT</rp.mode>
                 <rp.enable>true</rp.enable>
             </properties>
         </profile>
         <profile>
-            <id>report</id>
+            <id>report_debug</id>
             <properties>
-                <rp.endpoint>https://rp.epam.com</rp.endpoint>
-                <rp.project>epm-jdi</rp.project>
-                <rp.launch>JDI Dark Demo</rp.launch>
-                <rp.description>Demo tests launch</rp.description>
-                <rp.mode>DEFAULT</rp.mode>
+                <rp.description>Debug launch</rp.description>
+                <rp.mode>DEBUG</rp.mode>
                 <rp.enable>true</rp.enable>
             </properties>
         </profile>

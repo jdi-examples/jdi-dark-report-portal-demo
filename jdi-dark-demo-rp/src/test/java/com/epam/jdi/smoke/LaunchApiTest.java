@@ -17,6 +17,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 /**
  * API tests for UserControllerApi
@@ -29,10 +30,17 @@ public class LaunchApiTest extends InitTests {
     private final String launchName = "Dark_Test";
 
     public void checkLaunchStatus(String project, int launchId, LaunchStatus expectedStatus) {
+        if (expectedStatus.equals(LaunchStatus.DELETED)) {
+            LaunchControllerApi.getLaunchUsingGET.pathParams(project, launchId).call()
+                    .assertThat().statusCode(404)
+                    .assertThat().body("message", equalTo(
+                            String.format("Launch '%d' not found. Did you use correct Launch ID?", launchId)));
+            return;
+        }
         LaunchResource launchResource = LaunchControllerApi.getLaunchUsingGET.pathParams(project, launchId).callAsData();
         Assertions.assertThat(launchResource.getStatus())
                 .describedAs("Wrong launch status")
-                .isEqualTo(expectedStatus.equals(LaunchStatus.DELETED) ? null : expectedStatus.name());
+                .isEqualTo(expectedStatus.name());
     }
 
     public int getLaunchId(String project, String uuid) {

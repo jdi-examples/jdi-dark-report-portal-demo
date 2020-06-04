@@ -9,6 +9,7 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeClass;
 
 import java.util.Date;
+import java.util.Properties;
 
 import static com.epam.http.requests.RequestDataFactory.auth;
 import static com.epam.http.requests.ServiceInit.init;
@@ -23,7 +24,10 @@ public class InitTests {
 
     @BeforeClass(alwaysRun = true)
     public void authentication() {
-        testProject = PropertyReader.getProperties("test.properties").getProperty("project");
+        Properties properties = PropertyReader.getProperties("test.properties");
+        testProject = properties.getProperty("project");
+        String sutUserName = properties.getProperty("sut_username");
+        String sutPassword = properties.getProperty("sut_password");
         init(AuthTokenApi.class);
         BasicAuthScheme basicAuthScheme = new BasicAuthScheme();
         basicAuthScheme.setUserName("ui");
@@ -32,8 +36,8 @@ public class InitTests {
                 auth(basicAuthScheme)
                         .formParamsUpdater().addAll(new Object[][]{
                         {"grant_type", "password"},
-                        {"username", "test-user"},
-                        {"password", "Fqvq1s0S"}}))
+                        {"username", sutUserName},
+                        {"password", sutPassword}}))
                 .getRaResponse().jsonPath().getString("access_token");
         spec = given().auth().preemptive().oauth2(token);
     }

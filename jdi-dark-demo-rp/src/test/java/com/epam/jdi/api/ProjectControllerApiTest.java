@@ -36,9 +36,9 @@ public class ProjectControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void addUserPreferenceUsingPUTJSONTest() {
+    public void addUserPreferenceUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ProjectControllerApi.addUserPreferenceUsingPUTJSON.call();
+        RestResponse resp = ProjectControllerApi.addUserPreferenceUsingPUT.call();
         resp.isOk();
     }
 
@@ -47,9 +47,9 @@ public class ProjectControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void assignProjectUsersUsingPUTJSONTest() {
+    public void assignProjectUsersUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ProjectControllerApi.assignProjectUsersUsingPUTJSON.call();
+        RestResponse resp = ProjectControllerApi.assignProjectUsersUsingPUT.call();
         resp.isOk();
     }
 
@@ -230,9 +230,9 @@ public class ProjectControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void indexProjectDataUsingPUTJSONTest() {
+    public void indexProjectDataUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ProjectControllerApi.indexProjectDataUsingPUTJSON.call();
+        RestResponse resp = ProjectControllerApi.indexProjectDataUsingPUT.call();
         resp.isOk();
     }
 
@@ -274,9 +274,9 @@ public class ProjectControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void unassignProjectUsersUsingPUTJSONTest() {
+    public void unassignProjectUsersUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ProjectControllerApi.unassignProjectUsersUsingPUTJSON.call();
+        RestResponse resp = ProjectControllerApi.unassignProjectUsersUsingPUT.call();
         resp.isOk();
     }
 
@@ -285,9 +285,9 @@ public class ProjectControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateProjectNotificationConfigUsingPUTJSONTest() {
+    public void updateProjectNotificationConfigUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ProjectControllerApi.updateProjectNotificationConfigUsingPUTJSON.call();
+        RestResponse resp = ProjectControllerApi.updateProjectNotificationConfigUsingPUT.call();
         resp.isOk();
     }
 
@@ -296,9 +296,9 @@ public class ProjectControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateProjectUsingPUTJSONTest() {
+    public void updateProjectUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ProjectControllerApi.updateProjectUsingPUTJSON.call();
+        RestResponse resp = ProjectControllerApi.updateProjectUsingPUT.call();
         resp.isOk();
     }
 

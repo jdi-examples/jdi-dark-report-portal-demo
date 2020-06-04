@@ -60,7 +60,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/info")
-    public static RestDataMethod<OperationCompletionRS> bulkUpdateUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> bulkUpdateUsingPUT;
 
     /**
      * Compare launches
@@ -91,6 +91,7 @@ public class LaunchControllerApi {
      * @return DeleteBulkRS
      */
     @DELETE("/v1/{projectName}/launch")
+    @ContentType(JSON)
     public static RestDataMethod<DeleteBulkRS> deleteLaunchesUsingDELETE;
 
     /**
@@ -103,7 +104,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/{launchId}/finish")
-    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUT1JSON;
+    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUT1;
 
     /**
      * Force finish launch for specified project
@@ -115,16 +116,15 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/{launchId}/stop")
-    public static RestDataMethod<OperationCompletionRS> forceFinishLaunchUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> forceFinishLaunchUsingPUT;
 
     /**
      * Get launch names of project
      *
      * @param projectName /path/ projectName (required)
-     * @param filterCntName /query/ filter.cnt.name (required)
+     * @param filter.cnt.name /query/ filter.cnt.name (required)
      * @return String[]
      */
-    @QueryParameter(name = "filterCntName", value = "filterCntName_example")
     @GET("/v1/{projectName}/launch/names")
     public static RestDataMethod<String[]> getAllLaunchNames;
 
@@ -396,7 +396,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/launch/merge")
-    public static RestDataMethod<LaunchResource> mergeLaunchesUsingPOST1JSON;
+    public static RestDataMethod<LaunchResource> mergeLaunchesUsingPOST1;
 
     /**
      * Start launch auto-analyzer on demand
@@ -430,7 +430,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/{launchId}/update")
-    public static RestDataMethod<OperationCompletionRS> updateLaunchUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateLaunchUsingPUT;
 
     /**
      * Updates launches for specified project
@@ -441,5 +441,5 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/update")
-    public static RestDataMethod<OperationCompletionRS[]> updateLaunchesUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> updateLaunchesUsingPUT;
 }

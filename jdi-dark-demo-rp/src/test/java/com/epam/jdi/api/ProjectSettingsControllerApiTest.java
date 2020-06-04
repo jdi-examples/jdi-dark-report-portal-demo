@@ -92,9 +92,9 @@ public class ProjectSettingsControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updatePatternTemplateUsingPUTJSONTest() {
+    public void updatePatternTemplateUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ProjectSettingsControllerApi.updatePatternTemplateUsingPUTJSON.call();
+        RestResponse resp = ProjectSettingsControllerApi.updatePatternTemplateUsingPUT.call();
         resp.isOk();
     }
 
@@ -103,9 +103,9 @@ public class ProjectSettingsControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateProjectIssueSubTypeUsingPUTJSONTest() {
+    public void updateProjectIssueSubTypeUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = ProjectSettingsControllerApi.updateProjectIssueSubTypeUsingPUTJSON.call();
+        RestResponse resp = ProjectSettingsControllerApi.updateProjectIssueSubTypeUsingPUT.call();
         resp.isOk();
     }
 

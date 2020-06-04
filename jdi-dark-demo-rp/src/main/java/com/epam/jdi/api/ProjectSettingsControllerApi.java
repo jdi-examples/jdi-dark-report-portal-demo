@@ -91,7 +91,7 @@ public class ProjectSettingsControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/settings/pattern/{id}")
-    public static RestDataMethod<OperationCompletionRS> updatePatternTemplateUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updatePatternTemplateUsingPUT;
 
     /**
      * Update of custom project specific issue sub-type
@@ -102,5 +102,5 @@ public class ProjectSettingsControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/settings/sub-type")
-    public static RestDataMethod<OperationCompletionRS> updateProjectIssueSubTypeUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectIssueSubTypeUsingPUT;
 }

@@ -58,9 +58,9 @@ public class PluginControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updatePluginStateUsingPUTJSONTest() {
+    public void updatePluginStateUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = PluginControllerApi.updatePluginStateUsingPUTJSON.call();
+        RestResponse resp = PluginControllerApi.updatePluginStateUsingPUT.call();
         resp.isOk();
     }
 

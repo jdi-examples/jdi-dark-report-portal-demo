@@ -36,9 +36,9 @@ public class DashboardControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void addWidgetUsingPUTJSONTest() {
+    public void addWidgetUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = DashboardControllerApi.addWidgetUsingPUTJSON.call();
+        RestResponse resp = DashboardControllerApi.addWidgetUsingPUT.call();
         resp.isOk();
     }
 
@@ -113,9 +113,9 @@ public class DashboardControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateDashboardUsingPUTJSONTest() {
+    public void updateDashboardUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = DashboardControllerApi.updateDashboardUsingPUTJSON.call();
+        RestResponse resp = DashboardControllerApi.updateDashboardUsingPUT.call();
         resp.isOk();
     }
 

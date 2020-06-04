@@ -113,9 +113,9 @@ public class WidgetControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateWidgetUsingPUTJSONTest() {
+    public void updateWidgetUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = WidgetControllerApi.updateWidgetUsingPUTJSON.call();
+        RestResponse resp = WidgetControllerApi.updateWidgetUsingPUT.call();
         resp.isOk();
     }
 

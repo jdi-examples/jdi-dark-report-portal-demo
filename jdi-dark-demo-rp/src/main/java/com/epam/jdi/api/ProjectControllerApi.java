@@ -48,7 +48,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/preference/{login}/{filterId}")
-    public static RestDataMethod<OperationCompletionRS> addUserPreferenceUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> addUserPreferenceUsingPUT;
 
     /**
      * Assign users
@@ -59,7 +59,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/assign")
-    public static RestDataMethod<OperationCompletionRS> assignProjectUsersUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> assignProjectUsersUsingPUT;
 
     /**
      * Create new project
@@ -313,7 +313,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/index")
-    public static RestDataMethod<OperationCompletionRS> indexProjectDataUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> indexProjectDataUsingPUT;
 
     /**
      * removeUserPreference
@@ -362,7 +362,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/unassign")
-    public static RestDataMethod<OperationCompletionRS> unassignProjectUsersUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> unassignProjectUsersUsingPUT;
 
     /**
      * Update project notifications configuration
@@ -373,7 +373,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/notification")
-    public static RestDataMethod<OperationCompletionRS> updateProjectNotificationConfigUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectNotificationConfigUsingPUT;
 
     /**
      * Update project
@@ -384,5 +384,5 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}")
-    public static RestDataMethod<OperationCompletionRS> updateProjectUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectUsingPUT;
 }

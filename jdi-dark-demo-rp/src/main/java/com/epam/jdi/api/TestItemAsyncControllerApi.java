@@ -35,7 +35,7 @@ public class TestItemAsyncControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v2/{projectName}/item/{testItemId}")
-    public static RestDataMethod<OperationCompletionRS> finishTestItemUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> finishTestItemUsingPUT;
 
     /**
      * Start a child test item

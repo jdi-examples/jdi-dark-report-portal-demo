@@ -169,5 +169,5 @@ public class WidgetControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/widget/{widgetId}")
-    public static RestDataMethod<OperationCompletionRS> updateWidgetUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateWidgetUsingPUT;
 }

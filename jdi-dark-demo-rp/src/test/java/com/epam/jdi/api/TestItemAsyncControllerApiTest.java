@@ -36,9 +36,9 @@ public class TestItemAsyncControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void finishTestItemUsingPUTJSONTest() {
+    public void finishTestItemUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemAsyncControllerApi.finishTestItemUsingPUTJSON.call();
+        RestResponse resp = TestItemAsyncControllerApi.finishTestItemUsingPUT.call();
         resp.isOk();
     }
 

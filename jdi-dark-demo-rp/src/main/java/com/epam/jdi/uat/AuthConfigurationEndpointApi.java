@@ -65,5 +65,5 @@ public class AuthConfigurationEndpointApi {
      */
     @ContentType(JSON)
     @PUT("/settings/auth/{authType}")
-    public static RestDataMethod<AbstractAuthResource> updateLdapSettingsUsingPUTJSON;
+    public static RestDataMethod<AbstractAuthResource> updateLdapSettingsUsingPUT;
 }

@@ -36,7 +36,7 @@ public class LaunchAsyncControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v2/{projectName}/launch/{launchId}/finish")
-    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUTJSON;
+    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUT;
 
     /**
      * Merge set of specified launches in common one

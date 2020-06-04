@@ -127,9 +127,9 @@ public class UserControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void editUserUsingPUTJSONTest() {
+    public void editUserUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserControllerApi.editUserUsingPUTJSON.call();
+        RestResponse resp = UserControllerApi.editUserUsingPUT.call();
         resp.isOk();
     }
 

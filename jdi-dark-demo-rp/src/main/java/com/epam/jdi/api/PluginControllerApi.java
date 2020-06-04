@@ -56,7 +56,7 @@ public class PluginControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/plugin/{pluginId}")
-    public static RestDataMethod<OperationCompletionRS> updatePluginStateUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updatePluginStateUsingPUT;
 
     /**
      * Upload new Report Portal plugin

@@ -41,7 +41,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/info")
-    public static RestDataMethod<OperationCompletionRS> bulkUpdateUsingPUT1JSON;
+    public static RestDataMethod<OperationCompletionRS> bulkUpdateUsingPUT1;
 
     /**
      * Update issues of specified test items
@@ -52,7 +52,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item")
-    public static RestDataMethod<Issue[]> defineTestItemIssueTypeUsingPUTJSON;
+    public static RestDataMethod<Issue[]> defineTestItemIssueTypeUsingPUT;
 
     /**
      * Delete test item
@@ -85,7 +85,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/{testItemId}")
-    public static RestDataMethod<OperationCompletionRS> finishTestItemUsingPUT1JSON;
+    public static RestDataMethod<OperationCompletionRS> finishTestItemUsingPUT1;
 
     /**
      * Get all unique attribute keys of specified launch
@@ -411,7 +411,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/issue/link")
-    public static RestDataMethod<OperationCompletionRS[]> linkExternalIssuesUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> linkExternalIssuesUsingPUT;
 
     /**
      * Start a child test item
@@ -423,7 +423,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/item/{parentItem}")
-    public static RestDataMethod<EntryCreatedAsyncRS> startChildItemUsingPOST1JSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> startChildItemUsingPOST1;
 
     /**
      * Start a root test item
@@ -434,7 +434,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/item")
-    public static RestDataMethod<EntryCreatedAsyncRS> startRootItemUsingPOST1JSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> startRootItemUsingPOST1;
 
     /**
      * Unlink external issue for specified test items
@@ -445,7 +445,7 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/issue/unlink")
-    public static RestDataMethod<OperationCompletionRS[]> unlinkExternalIssuesUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> unlinkExternalIssuesUsingPUT;
 
     /**
      * Update test item
@@ -457,5 +457,5 @@ public class TestItemControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/item/{itemId}/update")
-    public static RestDataMethod<OperationCompletionRS> updateTestItemUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateTestItemUsingPUT;
 }

@@ -102,9 +102,9 @@ public class IntegrationControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void executeIntegrationCommandUsingPUTJSONTest() {
+    public void executeIntegrationCommandUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = IntegrationControllerApi.executeIntegrationCommandUsingPUTJSON.call();
+        RestResponse resp = IntegrationControllerApi.executeIntegrationCommandUsingPUT.call();
         resp.isOk();
     }
 
@@ -201,9 +201,9 @@ public class IntegrationControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateGlobalIntegrationUsingPUTJSONTest() {
+    public void updateGlobalIntegrationUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = IntegrationControllerApi.updateGlobalIntegrationUsingPUTJSON.call();
+        RestResponse resp = IntegrationControllerApi.updateGlobalIntegrationUsingPUT.call();
         resp.isOk();
     }
 
@@ -212,9 +212,9 @@ public class IntegrationControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateProjectIntegrationUsingPUTJSONTest() {
+    public void updateProjectIntegrationUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = IntegrationControllerApi.updateProjectIntegrationUsingPUTJSON.call();
+        RestResponse resp = IntegrationControllerApi.updateProjectIntegrationUsingPUT.call();
         resp.isOk();
     }
 

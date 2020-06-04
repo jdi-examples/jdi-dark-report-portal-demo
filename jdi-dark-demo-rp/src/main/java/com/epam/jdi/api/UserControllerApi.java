@@ -110,7 +110,7 @@ public class UserControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/user/{login}")
-    public static RestDataMethod<OperationCompletionRS> editUserUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> editUserUsingPUT;
 
     /**
      * Exports information about all users

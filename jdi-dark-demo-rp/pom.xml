@@ -14,6 +14,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testng.version>7.0.0</testng.version>
         <suiteXML.file>general.xml</suiteXML.file>
+        <rp.endpoint>https://rp.epam.com</rp.endpoint>
+        <rp.project>epm-jdi</rp.project>
+        <rp.launch>JDI Dark Demo</rp.launch>
+        <rp.enable>false</rp.enable>
     </properties>
 
     <dependencies>
@@ -102,7 +106,7 @@
 
     <profiles>
         <profile>
-            <id>dev</id>
+            <id>dev_env</id>
             <properties>
                 <sut>api=https://dev.reportportal.io/api, uat=https://dev.reportportal.io/uat</sut>
                 <project>jdi-tests</project>
@@ -111,9 +115,6 @@
         <profile>
             <id>report_debug</id>
             <properties>
-                <rp.endpoint>https://rp.epam.com</rp.endpoint>
-                <rp.project>epm-jdi</rp.project>
-                <rp.launch>JDI Dark Demo</rp.launch>
                 <rp.description>Debug launch</rp.description>
                 <rp.mode>DEBUG</rp.mode>
                 <rp.enable>true</rp.enable>
@@ -122,9 +123,6 @@
         <profile>
             <id>report</id>
             <properties>
-                <rp.endpoint>https://rp.epam.com</rp.endpoint>
-                <rp.project>epm-jdi</rp.project>
-                <rp.launch>JDI Dark Demo</rp.launch>
                 <rp.description>Demo tests launch</rp.description>
                 <rp.mode>DEFAULT</rp.mode>
                 <rp.enable>true</rp.enable>

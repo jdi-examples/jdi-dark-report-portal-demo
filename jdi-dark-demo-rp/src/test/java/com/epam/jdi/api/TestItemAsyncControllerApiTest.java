@@ -36,9 +36,9 @@ public class TestItemAsyncControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void finishTestItemUsingPUTJSONTest() {
+    public void finishTestItemUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemAsyncControllerApi.finishTestItemUsingPUTJSON.call();
+        RestResponse resp = TestItemAsyncControllerApi.finishTestItemUsingPUT.call();
         resp.isOk();
     }
 
@@ -47,9 +47,9 @@ public class TestItemAsyncControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void startChildItemUsingPOSTJSONTest() {
+    public void startChildItemUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemAsyncControllerApi.startChildItemUsingPOSTJSON.call();
+        RestResponse resp = TestItemAsyncControllerApi.startChildItemUsingPOST.call();
         resp.isOk();
     }
 
@@ -58,9 +58,9 @@ public class TestItemAsyncControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void startRootItemUsingPOSTJSONTest() {
+    public void startRootItemUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemAsyncControllerApi.startRootItemUsingPOSTJSON.call();
+        RestResponse resp = TestItemAsyncControllerApi.startRootItemUsingPOST.call();
         resp.isOk();
     }
 

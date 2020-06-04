@@ -37,7 +37,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/integration/{pluginName}")
-    public static RestDataMethod<EntryCreatedRS> createGlobalIntegrationUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createGlobalIntegrationUsingPOST;
 
     /**
      * Create project Report Portal integration instance
@@ -49,7 +49,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/integration/{projectName}/{pluginName}")
-    public static RestDataMethod<EntryCreatedRS> createProjectIntegrationUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createProjectIntegrationUsingPOST;
 
     /**
      * Delete all global integrations by type
@@ -100,7 +100,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/integration/{projectName}/{integrationId}/{command}")
-    public static RestDataMethod<Object> executeIntegrationCommandUsingPUTJSON;
+    public static RestDataMethod<Object> executeIntegrationCommandUsingPUT;
 
     /**
      * Get global Report Portal integration instance
@@ -185,7 +185,7 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/integration/{integrationId}")
-    public static RestDataMethod<OperationCompletionRS> updateGlobalIntegrationUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateGlobalIntegrationUsingPUT;
 
     /**
      * Update project integration instance
@@ -197,5 +197,5 @@ public class IntegrationControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/integration/{projectName}/{integrationId}")
-    public static RestDataMethod<OperationCompletionRS> updateProjectIntegrationUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectIntegrationUsingPUT;
 }

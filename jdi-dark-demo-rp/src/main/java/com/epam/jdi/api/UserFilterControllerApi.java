@@ -40,7 +40,7 @@ public class UserFilterControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/filter")
-    public static RestDataMethod<EntryCreatedRS> createFilterUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createFilterUsingPOST;
 
     /**
      * Delete specified user filter by id
@@ -185,7 +185,7 @@ public class UserFilterControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/filter/{filterId}")
-    public static RestDataMethod<OperationCompletionRS> updateUserFilterUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateUserFilterUsingPUT;
 
     /**
      * Update list of user filters
@@ -196,5 +196,5 @@ public class UserFilterControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/filter")
-    public static RestDataMethod<OperationCompletionRS[]> updateUserFiltersUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> updateUserFiltersUsingPUT;
 }

@@ -36,9 +36,9 @@ public class TestItemControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void bulkUpdateUsingPUT1JSONTest() {
+    public void bulkUpdateUsingPUT1Test() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemControllerApi.bulkUpdateUsingPUT1JSON.call();
+        RestResponse resp = TestItemControllerApi.bulkUpdateUsingPUT1.call();
         resp.isOk();
     }
 
@@ -47,9 +47,9 @@ public class TestItemControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void defineTestItemIssueTypeUsingPUTJSONTest() {
+    public void defineTestItemIssueTypeUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemControllerApi.defineTestItemIssueTypeUsingPUTJSON.call();
+        RestResponse resp = TestItemControllerApi.defineTestItemIssueTypeUsingPUT.call();
         resp.isOk();
     }
 
@@ -80,9 +80,9 @@ public class TestItemControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void finishTestItemUsingPUT1JSONTest() {
+    public void finishTestItemUsingPUT1Test() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemControllerApi.finishTestItemUsingPUT1JSON.call();
+        RestResponse resp = TestItemControllerApi.finishTestItemUsingPUT1.call();
         resp.isOk();
     }
 
@@ -190,9 +190,9 @@ public class TestItemControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void linkExternalIssuesUsingPUTJSONTest() {
+    public void linkExternalIssuesUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemControllerApi.linkExternalIssuesUsingPUTJSON.call();
+        RestResponse resp = TestItemControllerApi.linkExternalIssuesUsingPUT.call();
         resp.isOk();
     }
 
@@ -201,9 +201,9 @@ public class TestItemControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void startChildItemUsingPOST1JSONTest() {
+    public void startChildItemUsingPOST1Test() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemControllerApi.startChildItemUsingPOST1JSON.call();
+        RestResponse resp = TestItemControllerApi.startChildItemUsingPOST1.call();
         resp.isOk();
     }
 
@@ -212,9 +212,9 @@ public class TestItemControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void startRootItemUsingPOST1JSONTest() {
+    public void startRootItemUsingPOST1Test() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemControllerApi.startRootItemUsingPOST1JSON.call();
+        RestResponse resp = TestItemControllerApi.startRootItemUsingPOST1.call();
         resp.isOk();
     }
 
@@ -223,9 +223,9 @@ public class TestItemControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void unlinkExternalIssuesUsingPUTJSONTest() {
+    public void unlinkExternalIssuesUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemControllerApi.unlinkExternalIssuesUsingPUTJSON.call();
+        RestResponse resp = TestItemControllerApi.unlinkExternalIssuesUsingPUT.call();
         resp.isOk();
     }
 
@@ -234,9 +234,9 @@ public class TestItemControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateTestItemUsingPUTJSONTest() {
+    public void updateTestItemUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = TestItemControllerApi.updateTestItemUsingPUTJSON.call();
+        RestResponse resp = TestItemControllerApi.updateTestItemUsingPUT.call();
         resp.isOk();
     }
 

@@ -32,5 +32,5 @@ public class LogAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/log")
-    public static RestDataMethod<EntryCreatedAsyncRS> createLogUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedAsyncRS> createLogUsingPOST;
 }

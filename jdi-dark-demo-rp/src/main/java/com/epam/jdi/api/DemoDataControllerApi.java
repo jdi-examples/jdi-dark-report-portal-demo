@@ -32,5 +32,5 @@ public class DemoDataControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/demo/{projectName}")
-    public static RestDataMethod<DemoDataRs> generateUsingPOSTJSON;
+    public static RestDataMethod<DemoDataRs> generateUsingPOST;
 }

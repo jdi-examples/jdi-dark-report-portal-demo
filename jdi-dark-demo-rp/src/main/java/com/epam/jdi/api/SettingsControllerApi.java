@@ -43,7 +43,7 @@ public class SettingsControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/settings/analytics")
-    public static RestDataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPOST;
 
     /**
      * Update analytics settings
@@ -53,5 +53,5 @@ public class SettingsControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/settings/analytics")
-    public static RestDataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> saveAnalyticsSettingsUsingPUT;
 }

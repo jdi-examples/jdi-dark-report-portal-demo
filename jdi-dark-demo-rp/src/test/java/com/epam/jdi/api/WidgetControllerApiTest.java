@@ -36,9 +36,9 @@ public class WidgetControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createWidgetUsingPOSTJSONTest() {
+    public void createWidgetUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = WidgetControllerApi.createWidgetUsingPOSTJSON.call();
+        RestResponse resp = WidgetControllerApi.createWidgetUsingPOST.call();
         resp.isOk();
     }
 
@@ -69,9 +69,9 @@ public class WidgetControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void getWidgetPreviewUsingPOSTJSONTest() {
+    public void getWidgetPreviewUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = WidgetControllerApi.getWidgetPreviewUsingPOSTJSON.call();
+        RestResponse resp = WidgetControllerApi.getWidgetPreviewUsingPOST.call();
         resp.isOk();
     }
 
@@ -113,9 +113,9 @@ public class WidgetControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateWidgetUsingPUTJSONTest() {
+    public void updateWidgetUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = WidgetControllerApi.updateWidgetUsingPUTJSON.call();
+        RestResponse resp = WidgetControllerApi.updateWidgetUsingPUT.call();
         resp.isOk();
     }
 

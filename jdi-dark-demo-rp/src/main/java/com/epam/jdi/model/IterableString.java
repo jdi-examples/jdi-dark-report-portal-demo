@@ -24,7 +24,7 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Iterablestring extends DataClass<Iterablestring> {
-
+public class IterableString extends DataClass<IterableString> {
+    public String[] content;
 }
 

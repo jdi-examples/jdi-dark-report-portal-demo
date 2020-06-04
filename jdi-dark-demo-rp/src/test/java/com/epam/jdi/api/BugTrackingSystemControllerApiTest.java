@@ -36,9 +36,9 @@ public class BugTrackingSystemControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createIssueUsingPOSTJSONTest() {
+    public void createIssueUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = BugTrackingSystemControllerApi.createIssueUsingPOSTJSON.call();
+        RestResponse resp = BugTrackingSystemControllerApi.createIssueUsingPOST.call();
         resp.isOk();
     }
 

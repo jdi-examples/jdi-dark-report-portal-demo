@@ -36,9 +36,9 @@ public class UserFilterControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createFilterUsingPOSTJSONTest() {
+    public void createFilterUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserFilterControllerApi.createFilterUsingPOSTJSON.call();
+        RestResponse resp = UserFilterControllerApi.createFilterUsingPOST.call();
         resp.isOk();
     }
 
@@ -124,9 +124,9 @@ public class UserFilterControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateUserFilterUsingPUTJSONTest() {
+    public void updateUserFilterUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserFilterControllerApi.updateUserFilterUsingPUTJSON.call();
+        RestResponse resp = UserFilterControllerApi.updateUserFilterUsingPUT.call();
         resp.isOk();
     }
 
@@ -135,9 +135,9 @@ public class UserFilterControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void updateUserFiltersUsingPUTJSONTest() {
+    public void updateUserFiltersUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = UserFilterControllerApi.updateUserFiltersUsingPUTJSON.call();
+        RestResponse resp = UserFilterControllerApi.updateUserFiltersUsingPUT.call();
         resp.isOk();
     }
 

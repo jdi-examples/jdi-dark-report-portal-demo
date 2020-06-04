@@ -41,7 +41,7 @@ public class DashboardControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/dashboard/{dashboardId}/add")
-    public static RestDataMethod<OperationCompletionRS> addWidgetUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> addWidgetUsingPUT;
 
     /**
      * Create dashboard for specified project
@@ -52,7 +52,7 @@ public class DashboardControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/dashboard")
-    public static RestDataMethod<EntryCreatedRS> createDashboardUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createDashboardUsingPOST;
 
     /**
      * Delete specified dashboard by ID for specified project
@@ -145,5 +145,5 @@ public class DashboardControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/dashboard/{dashboardId}")
-    public static RestDataMethod<OperationCompletionRS> updateDashboardUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateDashboardUsingPUT;
 }

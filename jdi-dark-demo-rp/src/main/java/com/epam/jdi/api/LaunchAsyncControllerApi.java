@@ -36,7 +36,7 @@ public class LaunchAsyncControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v2/{projectName}/launch/{launchId}/finish")
-    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUTJSON;
+    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUT;
 
     /**
      * Merge set of specified launches in common one
@@ -47,7 +47,7 @@ public class LaunchAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/launch/merge")
-    public static RestDataMethod<LaunchResource> mergeLaunchesUsingPOSTJSON;
+    public static RestDataMethod<LaunchResource> mergeLaunchesUsingPOST;
 
     /**
      * Starts launch for specified project
@@ -58,5 +58,5 @@ public class LaunchAsyncControllerApi {
      */
     @ContentType(JSON)
     @POST("/v2/{projectName}/launch")
-    public static RestDataMethod<StartLaunchRS> startLaunchUsingPOSTJSON;
+    public static RestDataMethod<StartLaunchRS> startLaunchUsingPOST;
 }

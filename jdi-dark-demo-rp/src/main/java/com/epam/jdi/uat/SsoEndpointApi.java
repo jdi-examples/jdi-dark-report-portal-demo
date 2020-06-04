@@ -77,7 +77,7 @@ public class SsoEndpointApi {
     @QueryParameter(name = "userAuthenticationDetails", value = "userAuthenticationDetails_example")
     @QueryParameter(name = "userAuthenticationPrincipal", value = "userAuthenticationPrincipal_example")
     @POST("/sso/me/apitoken")
-    public static RestDataMethod<OAuth2AccessToken> createApiTokenUsingPOSTJSON;
+    public static RestDataMethod<OAuth2AccessToken> createApiTokenUsingPOST;
 
     /**
      * Get api token
@@ -197,7 +197,7 @@ public class SsoEndpointApi {
     @QueryParameter(name = "details", value = "details_example")
     @QueryParameter(name = "principal", value = "principal_example")
     @HEAD("/sso/user")
-    public static RestDataMethod<Object> userUsingHEAD1JSON;
+    public static RestDataMethod<Object> userUsingHEAD1;
 
     /**
      * user
@@ -235,7 +235,7 @@ public class SsoEndpointApi {
     @QueryParameter(name = "details", value = "details_example")
     @QueryParameter(name = "principal", value = "principal_example")
     @OPTIONS("/sso/user")
-    public static RestDataMethod<Object> userUsingOPTIONS1JSON;
+    public static RestDataMethod<Object> userUsingOPTIONS1;
 
     /**
      * user
@@ -273,7 +273,7 @@ public class SsoEndpointApi {
     @QueryParameter(name = "details", value = "details_example")
     @QueryParameter(name = "principal", value = "principal_example")
     @PATCH("/sso/user")
-    public static RestDataMethod<Object> userUsingPATCH1JSON;
+    public static RestDataMethod<Object> userUsingPATCH1;
 
     /**
      * user
@@ -292,7 +292,7 @@ public class SsoEndpointApi {
     @QueryParameter(name = "details", value = "details_example")
     @QueryParameter(name = "principal", value = "principal_example")
     @POST("/sso/me")
-    public static RestDataMethod<Object> userUsingPOSTJSON;
+    public static RestDataMethod<Object> userUsingPOST;
 
     /**
      * user
@@ -311,7 +311,7 @@ public class SsoEndpointApi {
     @QueryParameter(name = "details", value = "details_example")
     @QueryParameter(name = "principal", value = "principal_example")
     @POST("/sso/user")
-    public static RestDataMethod<Object> userUsingPOST1JSON;
+    public static RestDataMethod<Object> userUsingPOST1;
 
     /**
      * user
@@ -330,7 +330,7 @@ public class SsoEndpointApi {
     @QueryParameter(name = "details", value = "details_example")
     @QueryParameter(name = "principal", value = "principal_example")
     @PUT("/sso/me")
-    public static RestDataMethod<Object> userUsingPUTJSON;
+    public static RestDataMethod<Object> userUsingPUT;
 
     /**
      * user
@@ -349,5 +349,5 @@ public class SsoEndpointApi {
     @QueryParameter(name = "details", value = "details_example")
     @QueryParameter(name = "principal", value = "principal_example")
     @PUT("/sso/user")
-    public static RestDataMethod<Object> userUsingPUT1JSON;
+    public static RestDataMethod<Object> userUsingPUT1;
 }

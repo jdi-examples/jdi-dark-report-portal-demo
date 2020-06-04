@@ -36,9 +36,9 @@ public class LogAsyncControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createLogUsingPOSTJSONTest() {
+    public void createLogUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LogAsyncControllerApi.createLogUsingPOSTJSON.call();
+        RestResponse resp = LogAsyncControllerApi.createLogUsingPOST.call();
         resp.isOk();
     }
 

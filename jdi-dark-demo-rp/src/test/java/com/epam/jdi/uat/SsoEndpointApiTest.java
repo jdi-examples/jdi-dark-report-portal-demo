@@ -36,9 +36,9 @@ public class SsoEndpointApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void createApiTokenUsingPOSTJSONTest() {
+    public void createApiTokenUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.createApiTokenUsingPOSTJSON.call();
+        RestResponse resp = SsoEndpointApi.createApiTokenUsingPOST.call();
         resp.isOk();
     }
 
@@ -106,9 +106,9 @@ public class SsoEndpointApiTest extends InitTests {
      * user
      */
     @Test
-    public void userUsingHEAD1JSONTest() {
+    public void userUsingHEAD1Test() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.userUsingHEAD1JSON.call();
+        RestResponse resp = SsoEndpointApi.userUsingHEAD1.call();
         resp.isOk();
     }
 
@@ -126,9 +126,9 @@ public class SsoEndpointApiTest extends InitTests {
      * user
      */
     @Test
-    public void userUsingOPTIONS1JSONTest() {
+    public void userUsingOPTIONS1Test() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.userUsingOPTIONS1JSON.call();
+        RestResponse resp = SsoEndpointApi.userUsingOPTIONS1.call();
         resp.isOk();
     }
 
@@ -146,9 +146,9 @@ public class SsoEndpointApiTest extends InitTests {
      * user
      */
     @Test
-    public void userUsingPATCH1JSONTest() {
+    public void userUsingPATCH1Test() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.userUsingPATCH1JSON.call();
+        RestResponse resp = SsoEndpointApi.userUsingPATCH1.call();
         resp.isOk();
     }
 
@@ -156,9 +156,9 @@ public class SsoEndpointApiTest extends InitTests {
      * user
      */
     @Test
-    public void userUsingPOSTJSONTest() {
+    public void userUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.userUsingPOSTJSON.call();
+        RestResponse resp = SsoEndpointApi.userUsingPOST.call();
         resp.isOk();
     }
 
@@ -166,9 +166,9 @@ public class SsoEndpointApiTest extends InitTests {
      * user
      */
     @Test
-    public void userUsingPOST1JSONTest() {
+    public void userUsingPOST1Test() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.userUsingPOST1JSON.call();
+        RestResponse resp = SsoEndpointApi.userUsingPOST1.call();
         resp.isOk();
     }
 
@@ -176,9 +176,9 @@ public class SsoEndpointApiTest extends InitTests {
      * user
      */
     @Test
-    public void userUsingPUTJSONTest() {
+    public void userUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.userUsingPUTJSON.call();
+        RestResponse resp = SsoEndpointApi.userUsingPUT.call();
         resp.isOk();
     }
 
@@ -186,9 +186,9 @@ public class SsoEndpointApiTest extends InitTests {
      * user
      */
     @Test
-    public void userUsingPUT1JSONTest() {
+    public void userUsingPUT1Test() {
         // TODO: add call parameters and test validations
-        RestResponse resp = SsoEndpointApi.userUsingPUT1JSON.call();
+        RestResponse resp = SsoEndpointApi.userUsingPUT1.call();
         resp.isOk();
     }
 

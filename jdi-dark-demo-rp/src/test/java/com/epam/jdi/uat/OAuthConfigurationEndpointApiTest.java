@@ -66,9 +66,9 @@ public class OAuthConfigurationEndpointApiTest extends InitTests {
      * Creates/Updates OAuth Integration Settings
      */
     @Test
-    public void updateOAuthSettingsUsingPOSTJSONTest() {
+    public void updateOAuthSettingsUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = OAuthConfigurationEndpointApi.updateOAuthSettingsUsingPOSTJSON.call();
+        RestResponse resp = OAuthConfigurationEndpointApi.updateOAuthSettingsUsingPOST.call();
         resp.isOk();
     }
 
@@ -76,9 +76,9 @@ public class OAuthConfigurationEndpointApiTest extends InitTests {
      * Creates/Updates OAuth Integration Settings
      */
     @Test
-    public void updateOAuthSettingsUsingPUTJSONTest() {
+    public void updateOAuthSettingsUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = OAuthConfigurationEndpointApi.updateOAuthSettingsUsingPUTJSON.call();
+        RestResponse resp = OAuthConfigurationEndpointApi.updateOAuthSettingsUsingPUT.call();
         resp.isOk();
     }
 

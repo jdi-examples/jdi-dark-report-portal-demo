@@ -25,6 +25,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IterableProjectInfoResource extends DataClass<IterableProjectInfoResource> {
-
+    public ProjectInfoResource[] content;
 }
 

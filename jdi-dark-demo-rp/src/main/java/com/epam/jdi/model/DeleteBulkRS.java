@@ -25,6 +25,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DeleteBulkRS extends DataClass<DeleteBulkRS> {
-
+    public ErrorRS[] errorRS;
+    public int[] notFound;
+    public int[] successfullyDeleted;
 }
 

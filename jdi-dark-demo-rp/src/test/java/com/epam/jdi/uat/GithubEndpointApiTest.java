@@ -36,9 +36,9 @@ public class GithubEndpointApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void synchronizeUsingPOSTJSONTest() {
+    public void synchronizeUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = GithubEndpointApi.synchronizeUsingPOSTJSON.call();
+        RestResponse resp = GithubEndpointApi.synchronizeUsingPOST.call();
         resp.isOk();
     }
 

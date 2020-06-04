@@ -64,7 +64,7 @@ public class OAuthConfigurationEndpointApi {
      */
     @ContentType(JSON)
     @POST("/settings/oauth/{authId}")
-    public static RestDataMethod<OAuthRegistrationResource> updateOAuthSettingsUsingPOSTJSON;
+    public static RestDataMethod<OAuthRegistrationResource> updateOAuthSettingsUsingPOST;
 
     /**
      * Creates/Updates OAuth Integration Settings
@@ -75,5 +75,5 @@ public class OAuthConfigurationEndpointApi {
      */
     @ContentType(JSON)
     @PUT("/settings/oauth/{authId}")
-    public static RestDataMethod<OAuthRegistrationResource> updateOAuthSettingsUsingPUTJSON;
+    public static RestDataMethod<OAuthRegistrationResource> updateOAuthSettingsUsingPUT;
 }

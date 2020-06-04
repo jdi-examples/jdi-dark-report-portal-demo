@@ -36,9 +36,9 @@ public class LaunchAsyncControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void finishLaunchUsingPUTJSONTest() {
+    public void finishLaunchUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LaunchAsyncControllerApi.finishLaunchUsingPUTJSON.call();
+        RestResponse resp = LaunchAsyncControllerApi.finishLaunchUsingPUT.call();
         resp.isOk();
     }
 
@@ -47,9 +47,9 @@ public class LaunchAsyncControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void mergeLaunchesUsingPOSTJSONTest() {
+    public void mergeLaunchesUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LaunchAsyncControllerApi.mergeLaunchesUsingPOSTJSON.call();
+        RestResponse resp = LaunchAsyncControllerApi.mergeLaunchesUsingPOST.call();
         resp.isOk();
     }
 
@@ -58,9 +58,9 @@ public class LaunchAsyncControllerApiTest extends InitTests {
      */
     @Ignore
     @Test
-    public void startLaunchUsingPOSTJSONTest() {
+    public void startLaunchUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = LaunchAsyncControllerApi.startLaunchUsingPOSTJSON.call();
+        RestResponse resp = LaunchAsyncControllerApi.startLaunchUsingPOST.call();
         resp.isOk();
     }
 

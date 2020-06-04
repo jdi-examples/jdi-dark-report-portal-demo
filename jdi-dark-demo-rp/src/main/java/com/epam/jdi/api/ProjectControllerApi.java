@@ -25,7 +25,7 @@ import com.epam.jdi.model.DeleteBulkRS;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IterableProjectInfoResource;
 import com.epam.jdi.model.IterableUserResource;
-import com.epam.jdi.model.Iterablestring;
+import com.epam.jdi.model.IterableString;
 import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.jdi.model.PreferenceResource;
 import com.epam.jdi.model.ProjectInfoResource;
@@ -48,7 +48,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/preference/{login}/{filterId}")
-    public static RestDataMethod<OperationCompletionRS> addUserPreferenceUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> addUserPreferenceUsingPUT;
 
     /**
      * Assign users
@@ -59,7 +59,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/assign")
-    public static RestDataMethod<OperationCompletionRS> assignProjectUsersUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> assignProjectUsersUsingPUT;
 
     /**
      * Create new project
@@ -69,7 +69,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/project")
-    public static RestDataMethod<EntryCreatedRS> createProjectUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createProjectUsingPOST;
 
     /**
      * Delete project index from ML
@@ -134,7 +134,7 @@ public class ProjectControllerApi {
      * @return Iterablestring
      */
     @GET("/v1/project/names")
-    public static RestDataMethod<Iterablestring> getAllProjectNamesUsingGET;
+    public static RestDataMethod<IterableString> getAllProjectNamesUsingGET;
 
     /**
      * getAllProjectsInfo
@@ -313,7 +313,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/index")
-    public static RestDataMethod<OperationCompletionRS> indexProjectDataUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> indexProjectDataUsingPUT;
 
     /**
      * removeUserPreference
@@ -351,7 +351,7 @@ public class ProjectControllerApi {
      */
     @QueryParameter(name = "term", value = "term_example")
     @GET("/v1/project/names/search")
-    public static RestDataMethod<Iterablestring> searchProjectNamesUsingGET;
+    public static RestDataMethod<IterableString> searchProjectNamesUsingGET;
 
     /**
      * Un assign users
@@ -362,7 +362,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/unassign")
-    public static RestDataMethod<OperationCompletionRS> unassignProjectUsersUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> unassignProjectUsersUsingPUT;
 
     /**
      * Update project notifications configuration
@@ -373,7 +373,7 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}/notification")
-    public static RestDataMethod<OperationCompletionRS> updateProjectNotificationConfigUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectNotificationConfigUsingPUT;
 
     /**
      * Update project
@@ -384,5 +384,5 @@ public class ProjectControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/project/{projectName}")
-    public static RestDataMethod<OperationCompletionRS> updateProjectUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateProjectUsingPUT;
 }

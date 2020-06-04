@@ -21,7 +21,7 @@ import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.RestDataMethod;
 import com.epam.jdi.model.EntryCreatedRS;
 import com.epam.jdi.model.IterableWidgetResource;
-import com.epam.jdi.model.Iterableobject;
+import com.epam.jdi.model.IterableObject;
 import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.jdi.model.WidgetResource;
 
@@ -39,7 +39,7 @@ public class WidgetControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/widget")
-    public static RestDataMethod<EntryCreatedRS> createWidgetUsingPOSTJSON;
+    public static RestDataMethod<EntryCreatedRS> createWidgetUsingPOST;
 
     /**
      * Load shared widgets
@@ -93,7 +93,7 @@ public class WidgetControllerApi {
     @QueryParameter(name = "pageSize", value = "56")
     @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/widget/names/all")
-    public static RestDataMethod<Iterableobject> getWidgetNamesUsingGET;
+    public static RestDataMethod<IterableObject> getWidgetNamesUsingGET;
 
     /**
      * Get widget preview
@@ -104,7 +104,7 @@ public class WidgetControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/widget/preview")
-    public static RestDataMethod<Object> getWidgetPreviewUsingPOSTJSON;
+    public static RestDataMethod<Object> getWidgetPreviewUsingPOST;
 
     /**
      * Get multilevel widget by ID
@@ -169,5 +169,5 @@ public class WidgetControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/widget/{widgetId}")
-    public static RestDataMethod<OperationCompletionRS> updateWidgetUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateWidgetUsingPUT;
 }

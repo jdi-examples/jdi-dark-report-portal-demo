@@ -56,9 +56,9 @@ public class AuthConfigurationEndpointApiTest extends InitTests {
      * Updates LDAP auth settings
      */
     @Test
-    public void updateLdapSettingsUsingPOSTJSONTest() {
+    public void updateLdapSettingsUsingPOSTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = AuthConfigurationEndpointApi.updateLdapSettingsUsingPOSTJSON.call();
+        RestResponse resp = AuthConfigurationEndpointApi.updateLdapSettingsUsingPOST.call();
         resp.isOk();
     }
 
@@ -66,9 +66,9 @@ public class AuthConfigurationEndpointApiTest extends InitTests {
      * Updates LDAP auth settings
      */
     @Test
-    public void updateLdapSettingsUsingPUTJSONTest() {
+    public void updateLdapSettingsUsingPUTTest() {
         // TODO: add call parameters and test validations
-        RestResponse resp = AuthConfigurationEndpointApi.updateLdapSettingsUsingPUTJSON.call();
+        RestResponse resp = AuthConfigurationEndpointApi.updateLdapSettingsUsingPUT.call();
         resp.isOk();
     }
 

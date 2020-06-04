@@ -71,5 +71,5 @@ public class GithubEndpointApi {
     @QueryParameter(name = "userAuthenticationDetails", value = "userAuthenticationDetails_example")
     @QueryParameter(name = "userAuthenticationPrincipal", value = "userAuthenticationPrincipal_example")
     @POST("/sso/me/github/synchronize")
-    public static RestDataMethod<OperationCompletionRS> synchronizeUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> synchronizeUsingPOST;
 }

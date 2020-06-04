@@ -49,7 +49,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/stop")
-    public static RestDataMethod<OperationCompletionRS[]> bulkForceFinishUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> forceFinishLaunch;
 
     /**
      * Bulk update attributes and description
@@ -60,7 +60,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/info")
-    public static RestDataMethod<OperationCompletionRS> bulkUpdateUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> bulkUpdateUsingPUT;
 
     /**
      * Compare launches
@@ -91,6 +91,7 @@ public class LaunchControllerApi {
      * @return DeleteBulkRS
      */
     @DELETE("/v1/{projectName}/launch")
+    @ContentType(JSON)
     public static RestDataMethod<DeleteBulkRS> deleteLaunchesUsingDELETE;
 
     /**
@@ -103,7 +104,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/{launchId}/finish")
-    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUT1JSON;
+    public static RestDataMethod<FinishLaunchRS> finishLaunchUsingPUT1;
 
     /**
      * Force finish launch for specified project
@@ -115,18 +116,17 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/{launchId}/stop")
-    public static RestDataMethod<OperationCompletionRS> forceFinishLaunchUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> forceFinishLaunchUsingPUT;
 
     /**
      * Get launch names of project
      *
      * @param projectName /path/ projectName (required)
-     * @param filterCntName /query/ filter.cnt.name (required)
+     * @param filter.cnt.name /query/ filter.cnt.name (required)
      * @return String[]
      */
-    @QueryParameter(name = "filterCntName", value = "filterCntName_example")
     @GET("/v1/{projectName}/launch/names")
-    public static RestDataMethod<String[]> getAllLaunchNamesUsingGET;
+    public static RestDataMethod<String[]> getAllLaunchNames;
 
     /**
      * Get all unique owners of project launches
@@ -199,36 +199,8 @@ public class LaunchControllerApi {
      * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
      * @return IterableLaunchResource
      */
-    @QueryParameter(name = "filterEqAttributeKey", value = "")
-    @QueryParameter(name = "filterEqAttributeValue", value = "")
-    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-    @QueryParameter(name = "filterEqEndTime", value = "new Date()")
-    @QueryParameter(name = "filterEqHasRetries", value = "true")
-    @QueryParameter(name = "filterEqId", value = "789")
-    @QueryParameter(name = "filterEqLastModified", value = "new Date()")
-    @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
-    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-    @QueryParameter(name = "filterEqNumber", value = "56")
-    @QueryParameter(name = "filterEqProjectId", value = "789")
-    @QueryParameter(name = "filterEqStartTime", value = "new Date()")
-    @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
-    @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
-    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-    @QueryParameter(name = "filterEqUserId", value = "789")
-    @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
-    @QueryParameter(name = "pagePage", value = "56")
-    @QueryParameter(name = "pageSize", value = "56")
-    @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/launch/mode")
-    public static RestDataMethod<IterableLaunchResource> getDebugLaunchesUsingGET;
+    public static RestDataMethod<IterableLaunchResource> getDebugLaunches;
 
     /**
      * Get list of latest project launches by filter
@@ -424,7 +396,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/launch/merge")
-    public static RestDataMethod<LaunchResource> mergeLaunchesUsingPOST1JSON;
+    public static RestDataMethod<LaunchResource> mergeLaunchesUsingPOST1;
 
     /**
      * Start launch auto-analyzer on demand
@@ -435,7 +407,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @POST("/v1/{projectName}/launch/analyze")
-    public static RestDataMethod<OperationCompletionRS> startLaunchAnalyzerUsingPOSTJSON;
+    public static RestDataMethod<OperationCompletionRS> startLaunchAnalyzerUsingPOST;
 
     /**
      * Starts launch for specified project
@@ -458,7 +430,7 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/{launchId}/update")
-    public static RestDataMethod<OperationCompletionRS> updateLaunchUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS> updateLaunchUsingPUT;
 
     /**
      * Updates launches for specified project
@@ -469,5 +441,5 @@ public class LaunchControllerApi {
      */
     @ContentType(JSON)
     @PUT("/v1/{projectName}/launch/update")
-    public static RestDataMethod<OperationCompletionRS[]> updateLaunchesUsingPUTJSON;
+    public static RestDataMethod<OperationCompletionRS[]> updateLaunchesUsingPUT;
 }

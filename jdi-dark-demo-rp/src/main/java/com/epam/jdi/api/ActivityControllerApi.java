@@ -42,20 +42,6 @@ public class ActivityControllerApi {
      * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
      * @return IterableActivityResource
      */
-    @QueryParameter(name = "filterEqAction", value = "filterEqAction_example")
-    @QueryParameter(name = "filterEqCreationDate", value = "new Date()")
-    @QueryParameter(name = "filterEqEntity", value = "filterEqEntity_example")
-    @QueryParameter(name = "filterEqId", value = "789")
-    @QueryParameter(name = "filterEqLogin", value = "filterEqLogin_example")
-    @QueryParameter(name = "filterEqName", value = "789")
-    @QueryParameter(name = "filterEqObjectId", value = "789")
-    @QueryParameter(name = "filterEqObjectName", value = "filterEqObjectName_example")
-    @QueryParameter(name = "filterEqProjectId", value = "789")
-    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-    @QueryParameter(name = "filterEqUserId", value = "789")
-    @QueryParameter(name = "pagePage", value = "56")
-    @QueryParameter(name = "pageSize", value = "56")
-    @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/activity")
     public static RestDataMethod<IterableActivityResource> getActivitiesUsingGET;
 

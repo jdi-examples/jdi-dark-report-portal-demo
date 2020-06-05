@@ -10,23 +10,22 @@
  * Do not edit the class manually.
  */
 
-package com.epam.jdi.tests.stepdefs;
+package com.epam.jdi.tests.steps;
 
+import com.epam.jdi.api.UserControllerApi;
 import com.epam.jdi.model.ChangePasswordRQ;
 import io.cucumber.java.en.When;
 
-import static com.epam.jdi.api.UserControllerApi.changePasswordUsingPOST;
 import static com.epam.jdi.http.Utils.restResponse;
 
 /**
  * Steps for UserControllerApi
  */
-public class UserControllerSteps extends InitTests {
+public class UserControllerSteps extends Global {
 
-
-    @When("change password from '{string}' to 'string}")
+    @When("change password from {string} to {string}")
     public void changePasswordUsingPOSTTest(String oldPassword, String newPassword) {
-        restResponse.set(changePasswordUsingPOST
+        restResponse.set(UserControllerApi.changePasswordUsingPOST
                 .post(new ChangePasswordRQ().setOldPassword(oldPassword)
                         .setNewPassword(newPassword)));
     }

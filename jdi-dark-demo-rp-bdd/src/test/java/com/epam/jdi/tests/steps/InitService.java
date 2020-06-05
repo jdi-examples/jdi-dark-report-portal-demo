@@ -1,4 +1,4 @@
-package com.epam.jdi.tests.stepdefs;
+package com.epam.jdi.tests.steps;
 
 import com.epam.jdi.api.ActivityControllerApi;
 import com.epam.jdi.api.LaunchControllerApi;
@@ -8,9 +8,9 @@ import io.cucumber.java.en.Given;
 import static com.epam.http.requests.ServiceInit.init;
 import static com.epam.jdi.http.Utils.service;
 
-public class InitService extends InitTests {
+public class InitService extends Global {
 
-    @Given("init '{string}' service")
+    @Given("init {string} service")
     public void initService(String serviceName) throws Exception {
         switch (serviceName) {
             case "ActivityControllerApi":
@@ -25,6 +25,6 @@ public class InitService extends InitTests {
             default:
                 throw new Exception(String.format("There is no '%s' service found", serviceName));
         }
-
     }
+
 }

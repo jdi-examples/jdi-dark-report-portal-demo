@@ -1,4 +1,4 @@
-package com.epam.jdi.tests.stepdefs;
+package com.epam.jdi.tests.steps;
 
 import com.epam.http.requests.ServiceInit;
 import com.epam.jdi.api.LaunchControllerApi;
@@ -21,7 +21,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 /**
  * Steps for UserControllerApi
  */
-public class LaunchSteps extends InitTests {
+public class LaunchSteps extends Global {
 
     private int launchId;
     private String launchUUId;

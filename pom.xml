@@ -51,5 +51,6 @@
 
     <modules>
         <module>jdi-dark-demo-rp</module>
+        <module>jdi-dark-demo-rp-bdd</module>
     </modules>
 </project>

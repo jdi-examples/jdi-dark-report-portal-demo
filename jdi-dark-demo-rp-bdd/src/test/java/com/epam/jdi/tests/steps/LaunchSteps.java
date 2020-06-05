@@ -1,6 +1,5 @@
 package com.epam.jdi.tests.steps;
 
-import com.epam.http.requests.ServiceInit;
 import com.epam.jdi.api.LaunchControllerApi;
 import com.epam.jdi.enums.LaunchStatus;
 import com.epam.jdi.model.DeleteBulkRQ;
@@ -12,8 +11,10 @@ import com.epam.jdi.model.LaunchResource;
 import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.jdi.model.StartLaunchRQ;
 import com.epam.jdi.model.StartLaunchRS;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.assertj.core.api.Assertions;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -25,14 +26,13 @@ public class LaunchSteps extends GlobalVariables {
 
     private int launchId;
     private String launchUUId;
-    private int debugLaunchId;
 
     public void checkLaunchStatus(String project, int launchId, LaunchStatus expectedStatus) {
         if (expectedStatus.equals(LaunchStatus.DELETED)) {
             LaunchControllerApi.getLaunchUsingGET.pathParams(project, launchId).call()
                     .assertThat().statusCode(404)
                     .assertThat().body("message", equalTo(
-                            String.format("Launch '%d' not found. Did you use correct Launch ID?", launchId)));
+                    String.format("Launch '%d' not found. Did you use correct Launch ID?", launchId)));
             return;
         }
         LaunchResource launchResource = LaunchControllerApi.getLaunchUsingGET.pathParams(project, launchId).callAsData();
@@ -46,14 +46,10 @@ public class LaunchSteps extends GlobalVariables {
                 .getRaResponse().jsonPath().getInt("id");
     }
 
-    @BeforeClass
-    public void initServices() {
-        ServiceInit.init(LaunchControllerApi.class, spec);
-    }
-
-    @Test(priority = 0)
-    public void startLaunchTest() {
-        StartLaunchRQ startLaunchRQ = new StartLaunchRQ().setName(launchName).setStartTime(now());
+    @When("start launch {string} in mode {}")
+    public void startLaunchTest(String launchName, StartLaunchRQ.ModeEnum mode) {
+        StartLaunchRQ startLaunchRQ = new StartLaunchRQ().setName(launchName)
+                .setMode(mode).setStartTime(now());
         String json = gson.toJson(startLaunchRQ);
         StartLaunchRS startLaunchRS = LaunchControllerApi.startLaunch.pathParams(testProject).body(json).callAsData();
         Assertions.assertThat(startLaunchRS.getId())
@@ -62,28 +58,21 @@ public class LaunchSteps extends GlobalVariables {
                 .describedAs("Launch number is empty").isGreaterThan(0);
         launchUUId = startLaunchRS.getId();
         launchId = getLaunchId(testProject, launchUUId);
+    }
+
+    @Then("launch is successfully started")
+    public void launchIsSuccessfullyStarted() {
         checkLaunchStatus(testProject, launchId, LaunchStatus.IN_PROGRESS);
     }
 
-    @Test(priority = 10)
-    public void startDebugLaunchTest() {
-        StartLaunchRQ startLaunchRQ = new StartLaunchRQ()
-                .setName(launchName).setMode(StartLaunchRQ.ModeEnum.DEBUG).setStartTime(now());
-        String json = gson.toJson(startLaunchRQ);
-        StartLaunchRS startLaunchRS = LaunchControllerApi.startLaunch.pathParams(testProject).body(json).callAsData();
-        Assertions.assertThat(startLaunchRS.getId())
-                .describedAs("Launch id is empty").isNotEmpty();
-        Assertions.assertThat(startLaunchRS.getNumber())
-                .describedAs("Launch number is empty").isGreaterThan(0);
-        String debugLaunchUUId = startLaunchRS.getId();
-        debugLaunchId = getLaunchId(testProject, debugLaunchUUId);
-        checkLaunchStatus(testProject, debugLaunchId, LaunchStatus.IN_PROGRESS);
+    @When("get all launch named using filter:")
+    public void getAllLaunchNamesTest(DataTable table) {
+        String[] names = LaunchControllerApi.getAllLaunchNames.pathParams(testProject)
+                .queryParams(String.join("&", table.asList())).callAsData();
     }
 
-    @Test(priority = 20)
-    public void getAllLaunchNamesTest() {
-        String[] names = LaunchControllerApi.getAllLaunchNames.pathParams(testProject)
-                .queryParams("filter.cnt.name=" + launchName).callAsData();
+    @Then("all launch names contain {string}")
+    public void allLaunchNamesContain(String launchName) {
         Assertions.assertThat(names).describedAs("There is no launches found").isNotEmpty();
         Assertions.assertThat(names).describedAs("Wrong launch name").allMatch(n -> n.contains(launchName));
     }

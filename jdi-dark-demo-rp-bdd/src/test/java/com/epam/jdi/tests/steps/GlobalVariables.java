@@ -11,10 +11,10 @@ import static com.epam.http.logger.HTTPLogger.instance;
 
 public class GlobalVariables {
 
+    public static String[] names;
     public static int launchId;
     public static String launchUUId;
     public static int debugLaunchId;
-    public static final String launchName = "Dark_Test";
 
     public static ILogger logger = instance("JDI_DEMO_TESTS");
     public static RequestSpecification spec;

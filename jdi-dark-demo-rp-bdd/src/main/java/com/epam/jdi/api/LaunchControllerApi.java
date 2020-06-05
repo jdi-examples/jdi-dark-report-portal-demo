@@ -69,7 +69,6 @@ public class LaunchControllerApi {
      * @param ids /query/ ids (required)
      * @return Map<String, List < ChartStatisticsContent>>
      */
-    @QueryParameter(name = "ids", value = "56")
     @GET("/v1/{projectName}/launch/compare")
     public static RestDataMethod<Map<String, List<ChartStatisticsContent>>> compareLaunchesUsingGET;
 
@@ -136,8 +135,6 @@ public class LaunchControllerApi {
      * @param mode /query/ mode (optional, default to DEFAULT)
      * @return String[]
      */
-    @QueryParameter(name = "filterCntUser", value = "filterCntUser_example")
-    @QueryParameter(name = "mode", value = "DEFAULT")
     @GET("/v1/{projectName}/launch/owners")
     public static RestDataMethod<String[]> getAllOwnersUsingGET;
 
@@ -148,7 +145,6 @@ public class LaunchControllerApi {
      * @param filterCntAttributeKey /query/ filter.cnt.attributeKey (required)
      * @return String[]
      */
-    @QueryParameter(name = "filterCntAttributeKey", value = "filterCntAttributeKey_example")
     @GET("/v1/{projectName}/launch/attribute/keys")
     public static RestDataMethod<String[]> getAttributeKeysUsingGET;
 
@@ -160,8 +156,6 @@ public class LaunchControllerApi {
      * @param filterEqAttributeKey /query/ filter.eq.attributeKey (optional)
      * @return String[]
      */
-    @QueryParameter(name = "filterCntAttributeValue", value = "filterCntAttributeValue_example")
-    @QueryParameter(name = "filterEqAttributeKey", value = "filterEqAttributeKey_example")
     @GET("/v1/{projectName}/launch/attribute/values")
     public static RestDataMethod<String[]> getAttributeValuesUsingGET;
 
@@ -236,34 +230,6 @@ public class LaunchControllerApi {
      * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
      * @return PageLaunchResource
      */
-    @QueryParameter(name = "filterEqAttributeKey", value = "")
-    @QueryParameter(name = "filterEqAttributeValue", value = "")
-    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-    @QueryParameter(name = "filterEqEndTime", value = "new Date()")
-    @QueryParameter(name = "filterEqHasRetries", value = "true")
-    @QueryParameter(name = "filterEqId", value = "789")
-    @QueryParameter(name = "filterEqLastModified", value = "new Date()")
-    @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
-    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-    @QueryParameter(name = "filterEqNumber", value = "56")
-    @QueryParameter(name = "filterEqProjectId", value = "789")
-    @QueryParameter(name = "filterEqStartTime", value = "new Date()")
-    @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
-    @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
-    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-    @QueryParameter(name = "filterEqUserId", value = "789")
-    @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
-    @QueryParameter(name = "pagePage", value = "56")
-    @QueryParameter(name = "pageSize", value = "56")
-    @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/launch/latest")
     public static RestDataMethod<PageLaunchResource> getLatestLaunchesUsingGET;
 
@@ -285,7 +251,6 @@ public class LaunchControllerApi {
      * @param projectName /path/ projectName (required)
      * @param view /query/ view (optional, default to pdf)
      */
-    @QueryParameter(name = "view", value = "pdf")
     @GET("/v1/{projectName}/launch/{launchId}/report")
     public static RestMethod getLaunchReportUsingGET;
 
@@ -333,34 +298,6 @@ public class LaunchControllerApi {
      * @param pageSort /query/ Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. Multiple sort criteria are supported. (optional)
      * @return IterableLaunchResource
      */
-    @QueryParameter(name = "filterEqAttributeKey", value = "")
-    @QueryParameter(name = "filterEqAttributeValue", value = "")
-    @QueryParameter(name = "filterEqDescription", value = "filterEqDescription_example")
-    @QueryParameter(name = "filterEqEndTime", value = "new Date()")
-    @QueryParameter(name = "filterEqHasRetries", value = "true")
-    @QueryParameter(name = "filterEqId", value = "789")
-    @QueryParameter(name = "filterEqLastModified", value = "new Date()")
-    @QueryParameter(name = "filterEqMode", value = "filterEqMode_example")
-    @QueryParameter(name = "filterEqName", value = "filterEqName_example")
-    @QueryParameter(name = "filterEqNumber", value = "56")
-    @QueryParameter(name = "filterEqProjectId", value = "789")
-    @QueryParameter(name = "filterEqStartTime", value = "new Date()")
-    @QueryParameter(name = "filterEqStatisticsdefectsautomationBugab001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectsnoDefectnd001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectsproductBugpb001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectssystemIssuesi001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsdefectstoInvestigateti001", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionsfailed", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionspassed", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionsskipped", value = "789")
-    @QueryParameter(name = "filterEqStatisticsexecutionstotal", value = "789")
-    @QueryParameter(name = "filterEqStatus", value = "filterEqStatus_example")
-    @QueryParameter(name = "filterEqUser", value = "filterEqUser_example")
-    @QueryParameter(name = "filterEqUserId", value = "789")
-    @QueryParameter(name = "filterEqUuid", value = "filterEqUuid_example")
-    @QueryParameter(name = "pagePage", value = "56")
-    @QueryParameter(name = "pageSize", value = "56")
-    @QueryParameter(name = "pageSort", value = "pageSort_example")
     @GET("/v1/{projectName}/launch")
     public static RestDataMethod<IterableLaunchResource> getProjectLaunchesUsingGET;
 
@@ -371,7 +308,6 @@ public class LaunchControllerApi {
      * @param ids /query/ ids (required)
      * @return Map<String, String>
      */
-    @QueryParameter(name = "ids", value = "56")
     @GET("/v1/{projectName}/launch/status")
     public static RestDataMethod<Map<String, String>> getStatusesUsingGET;
 
@@ -383,7 +319,6 @@ public class LaunchControllerApi {
      * @return OperationCompletionRS
      */
     @ContentType(ANY)
-    @FormParameter(name = "file", value = "new File(&quot;/path/to/file.txt&quot;)")
     @POST("/v1/{projectName}/launch/import")
     public static RestDataMethod<OperationCompletionRS> importLaunchUsingPOSTANY;
 

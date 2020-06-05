@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import static com.epam.http.requests.ServiceInit.init;
 import static com.epam.jdi.http.Utils.service;
 
-public class InitService extends Global {
+public class InitService extends GlobalVariables {
 
     @Given("init {string} service")
     public void initService(String serviceName) throws Exception {
@@ -23,7 +23,7 @@ public class InitService extends Global {
                 service.set(init(UserControllerApi.class, spec));
                 break;
             default:
-                throw new Exception(String.format("There is no '%s' service found", serviceName));
+                throw new NoSuchFieldException(String.format("There is no '%s' service found", serviceName));
         }
     }
 

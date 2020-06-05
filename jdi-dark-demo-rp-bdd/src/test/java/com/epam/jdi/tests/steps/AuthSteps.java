@@ -11,7 +11,7 @@ import static com.epam.http.requests.RequestDataFactory.auth;
 import static com.epam.http.requests.ServiceInit.init;
 import static io.restassured.RestAssured.given;
 
-public class AuthSteps extends Global {
+public class AuthSteps extends GlobalVariables {
 
     @Given("get sut access token")
     public void authentication() {

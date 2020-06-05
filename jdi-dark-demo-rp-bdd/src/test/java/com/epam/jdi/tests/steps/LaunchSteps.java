@@ -21,7 +21,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 /**
  * Steps for UserControllerApi
  */
-public class LaunchSteps extends Global {
+public class LaunchSteps extends GlobalVariables {
 
     private int launchId;
     private String launchUUId;

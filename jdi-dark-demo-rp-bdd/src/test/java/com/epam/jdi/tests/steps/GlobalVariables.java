@@ -9,7 +9,7 @@ import java.util.Date;
 
 import static com.epam.http.logger.HTTPLogger.instance;
 
-public class Global {
+public class GlobalVariables {
 
     public static int launchId;
     public static String launchUUId;

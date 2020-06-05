@@ -21,7 +21,7 @@ import static com.epam.jdi.http.Utils.restResponse;
 /**
  * Steps for UserControllerApi
  */
-public class UserControllerSteps extends Global {
+public class UserControllerSteps extends GlobalVariables {
 
     @When("change password from {string} to {string}")
     public void changePasswordUsingPOSTTest(String oldPassword, String newPassword) {

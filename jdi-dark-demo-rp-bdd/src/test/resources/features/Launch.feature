@@ -1,4 +1,4 @@
-@smoke
+@smoke @launch
 Feature: Launch controller checks
 
   Background: Authentication

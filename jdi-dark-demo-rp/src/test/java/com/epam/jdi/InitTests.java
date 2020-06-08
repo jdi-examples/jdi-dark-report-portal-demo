@@ -26,8 +26,8 @@ public class InitTests {
     public void authentication() {
         Properties properties = PropertyReader.getProperties("test.properties");
         testProject = properties.getProperty("project");
-        String sutUserName = properties.getProperty("sut_username");
-        String sutPassword = properties.getProperty("sut_password");
+        String sutUserName = properties.getProperty("sut.username");
+        String sutPassword = properties.getProperty("sut.password");
         init(AuthTokenApi.class);
         BasicAuthScheme basicAuthScheme = new BasicAuthScheme();
         basicAuthScheme.setUserName("ui");

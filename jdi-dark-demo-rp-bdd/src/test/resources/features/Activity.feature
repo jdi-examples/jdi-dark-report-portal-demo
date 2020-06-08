@@ -6,6 +6,6 @@ Feature: Activity controller checks
 
   Scenario: Get Activities Using GET
     Given init 'ActivityControllerApi' service
-    When perform 'getActivitiesUsingGET' request with named path parameters 'Dark_Test'
+    When perform 'getActivitiesUsingGET' request with named path parameters 'jdi-tests'
     Then response status type is OK
 

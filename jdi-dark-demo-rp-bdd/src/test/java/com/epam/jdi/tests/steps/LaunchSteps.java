@@ -6,16 +6,13 @@ import com.epam.jdi.model.DeleteBulkRQ;
 import com.epam.jdi.model.DeleteBulkRS;
 import com.epam.jdi.model.FinishExecutionRQ;
 import com.epam.jdi.model.FinishLaunchRS;
-import com.epam.jdi.model.IterableLaunchResource;
 import com.epam.jdi.model.LaunchResource;
-import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.jdi.model.StartLaunchRQ;
 import com.epam.jdi.model.StartLaunchRS;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.assertj.core.api.Assertions;
-import org.testng.annotations.Test;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 
@@ -23,9 +20,6 @@ import static org.hamcrest.core.IsEqual.equalTo;
  * Steps for UserControllerApi
  */
 public class LaunchSteps extends GlobalVariables {
-
-    private int launchId;
-    private String launchUUId;
 
     public void checkLaunchStatus(String project, int launchId, LaunchStatus expectedStatus) {
         if (expectedStatus.equals(LaunchStatus.DELETED)) {
@@ -56,18 +50,22 @@ public class LaunchSteps extends GlobalVariables {
                 .describedAs("Launch id is empty").isNotEmpty();
         Assertions.assertThat(startLaunchRS.getNumber())
                 .describedAs("Launch number is empty").isGreaterThan(0);
-        launchUUId = startLaunchRS.getId();
-        launchId = getLaunchId(testProject, launchUUId);
+        if (mode.equals(StartLaunchRQ.ModeEnum.DEBUG)) {
+            debugLaunchId = getLaunchId(testProject, startLaunchRS.getId());
+        } else {
+            launchUUId = startLaunchRS.getId();
+            launchId = getLaunchId(testProject, launchUUId);
+        }
     }
 
-    @Then("launch is successfully started")
-    public void launchIsSuccessfullyStarted() {
-        checkLaunchStatus(testProject, launchId, LaunchStatus.IN_PROGRESS);
+    @Then("{} launch status is {}")
+    public void launchStatusIs(String launchType, LaunchStatus launchStatus) {
+        checkLaunchStatus(testProject, launchType.equalsIgnoreCase("debug") ? debugLaunchId : launchId, launchStatus);
     }
 
-    @When("get all launch named using filter:")
+    @When("get all launch names using filter:")
     public void getAllLaunchNamesTest(DataTable table) {
-        String[] names = LaunchControllerApi.getAllLaunchNames.pathParams(testProject)
+        names = LaunchControllerApi.getAllLaunchNames.pathParams(testProject)
                 .queryParams(String.join("&", table.asList())).callAsData();
     }
 
@@ -77,55 +75,56 @@ public class LaunchSteps extends GlobalVariables {
         Assertions.assertThat(names).describedAs("Wrong launch name").allMatch(n -> n.contains(launchName));
     }
 
-    @Test(priority = 30)
-    public void getDebugLaunchesTest() {
-        IterableLaunchResource resource = LaunchControllerApi.getDebugLaunches.pathParams(testProject).callAsData();
-        Assertions.assertThat(resource.getContent()).describedAs("Wrong debug launch mode")
-                .allMatch(l -> l.getMode().equals(LaunchResource.ModeEnum.DEBUG));
+    @When("get all debug launches")
+    public void getDebugLaunches() {
+        resources = LaunchControllerApi.getDebugLaunches.pathParams(testProject).callAsData();
     }
 
-    @Test(priority = 40)
-    public void finishLaunchUsingPUT1Test() {
+    @Then("all debug launches has mode {}")
+    public void checkDebugLaunches(LaunchResource.ModeEnum modeEnum) {
+        Assertions.assertThat(resources.getContent()).describedAs("Wrong debug launch mode")
+                .allMatch(l -> l.getMode().equals(modeEnum));
+    }
+
+    @When("finish launch by launch UUId")
+    public void finishLaunch() {
         FinishExecutionRQ finishExecutionRQ = new FinishExecutionRQ().setEndTime(now());
         String json = gson.toJson(finishExecutionRQ);
         FinishLaunchRS finishLaunchRS = LaunchControllerApi.finishLaunchUsingPUT1.pathParams(testProject, launchUUId)
                 .body(json).callAsData();
         Assertions.assertThat(finishLaunchRS.getId())
                 .describedAs("Wrong launch id").isEqualTo(launchUUId);
-        checkLaunchStatus(testProject, launchId, LaunchStatus.PASSED);
     }
 
-    @Test(priority = 50)
-    public void forceFinishLaunchUsingPUTTest() {
+    @When("force finish debug launch by Id")
+    public void forceFinishLaunch() {
         FinishExecutionRQ finishExecutionRQ = new FinishExecutionRQ().setEndTime(now());
         String json = gson.toJson(finishExecutionRQ);
-        OperationCompletionRS operationCompletionRS = LaunchControllerApi.forceFinishLaunchUsingPUT
+        operationCompletionRS = LaunchControllerApi.forceFinishLaunchUsingPUT
                 .pathParams(testProject, debugLaunchId).body(json).callAsData();
-        Assertions.assertThat(operationCompletionRS.getMessage())
-                .describedAs("Wrong completion message")
-                .isEqualTo(String.format("Launch with ID = '%s' successfully stopped.", debugLaunchId));
-        checkLaunchStatus(testProject, debugLaunchId, LaunchStatus.STOPPED);
     }
 
-    @Test(priority = 60)
-    public void deleteLaunchUsingDELETETest() {
-        OperationCompletionRS operationCompletionRS = LaunchControllerApi.deleteLaunchUsingDELETE
+    @Then("check completion message for {} launch:")
+    public void checkCompletionMessage(String launchType, String msg) {
+        Assertions.assertThat(operationCompletionRS.getMessage())
+                .describedAs("Wrong completion message")
+                .isEqualTo(String.format(msg, launchType.equals("debug") ? debugLaunchId : launchId));
+    }
+
+    @When("delete launch by Id")
+    public void deleteLaunch() {
+        operationCompletionRS = LaunchControllerApi.deleteLaunchUsingDELETE
                 .pathParams(testProject, launchId).callAsData();
-        Assertions.assertThat(operationCompletionRS.getMessage())
-                .describedAs("Wrong completion message")
-                .isEqualTo(String.format("Launch with ID = '%s' successfully deleted.", launchId));
-        checkLaunchStatus(testProject, launchId, LaunchStatus.DELETED);
     }
 
-    @Test(priority = 70)
-    public void deleteLaunchesUsingDELETETest() {
+    @When("delete launches by Ids")
+    public void deleteLaunches() {
         int[] toDeleteIds = new int[]{debugLaunchId};
         DeleteBulkRQ deleteBulkRQ = new DeleteBulkRQ().setIds(toDeleteIds);
         DeleteBulkRS deleteBulkRS = LaunchControllerApi.deleteLaunchesUsingDELETE
                 .pathParams(testProject).body(deleteBulkRQ).callAsData();
         Assertions.assertThat(deleteBulkRS.getSuccessfullyDeleted())
                 .describedAs("Ids not deleted").contains(toDeleteIds);
-        checkLaunchStatus(testProject, debugLaunchId, LaunchStatus.DELETED);
     }
 
 }

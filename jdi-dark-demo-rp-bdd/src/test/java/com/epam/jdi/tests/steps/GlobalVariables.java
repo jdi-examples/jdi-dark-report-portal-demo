@@ -1,6 +1,8 @@
 package com.epam.jdi.tests.steps;
 
 import com.epam.http.logger.ILogger;
+import com.epam.jdi.model.IterableLaunchResource;
+import com.epam.jdi.model.OperationCompletionRS;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.restassured.specification.RequestSpecification;
@@ -15,10 +17,12 @@ public class GlobalVariables {
     public static int launchId;
     public static String launchUUId;
     public static int debugLaunchId;
+    public static IterableLaunchResource resources;
+    public static OperationCompletionRS operationCompletionRS;
 
     public static ILogger logger = instance("JDI_DEMO_TESTS");
     public static RequestSpecification spec;
-    public static String testProject;
+    public static String testProject = "";
     public static Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").create();
 

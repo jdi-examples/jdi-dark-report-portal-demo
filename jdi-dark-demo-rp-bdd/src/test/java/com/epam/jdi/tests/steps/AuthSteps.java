@@ -15,10 +15,13 @@ public class AuthSteps extends GlobalVariables {
 
     @Given("get sut access token")
     public void authentication() {
+        if (!testProject.isEmpty()) {
+            return;
+        }
         Properties properties = PropertyReader.getProperties("test.properties");
         testProject = properties.getProperty("project");
-        String sutUserName = properties.getProperty("sut.username");
-        String sutPassword = properties.getProperty("sut.password");
+        String sutUserName = properties.getProperty("sut_username");
+        String sutPassword = properties.getProperty("sut_password");
         init(AuthTokenApi.class);
         BasicAuthScheme basicAuthScheme = new BasicAuthScheme();
         basicAuthScheme.setUserName("ui");

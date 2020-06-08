@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="com.epam.ta.reportportal.log4j.appender" status="WARN">
+    <Appenders>
+        <Console name="ColoredConsoleAppender" target="SYSTEM_OUT" follow="true">
+            <PatternLayout
+                    pattern="[%highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=green, DEBUG=green bold, TRACE=blue} %d{mm:ss.SSS}] : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%throwable}"/>
+        </Console>
+        <ReportPortalLog4j2Appender name="ReportPortalAppender">
+            <PatternLayout
+                    pattern="%d [%t] [%-5level] %logger{36} - %msg%n%throwable"/>
+        </ReportPortalLog4j2Appender>
+    </Appenders>
+
+    <Loggers>
+        <!-- Every configuration must have a root logger. If one is not configured the default root LoggerConfig is ERROR with Console appender attached. -->
+        <Root level="INFO">
+            <AppenderRef ref="ColoredConsoleAppender"/>
+            <AppenderRef ref="ReportPortalAppender"/>
+        </Root>
+        <!-- additivity means, that parent-logger (in every case the root-logger) will also get the chance to log this stuff -->
+        <Logger name="com.epam.reportportal.service" level="INFO" additivity="false">
+            <AppenderRef ref="ColoredConsoleAppender"/>
+            <AppenderRef ref="ReportPortalAppender"/>
+        </Logger>
+        <Logger name="com.epam.reportportal.utils" level="INFO" additivity="false">
+            <AppenderRef ref="ColoredConsoleAppender"/>
+            <AppenderRef ref="ReportPortalAppender"/>
+        </Logger>
+    </Loggers>
+
+</Configuration>

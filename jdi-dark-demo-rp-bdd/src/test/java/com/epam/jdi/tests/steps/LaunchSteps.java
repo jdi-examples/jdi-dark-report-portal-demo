@@ -60,7 +60,7 @@ public class LaunchSteps extends GlobalVariables {
 
     @Then("{} launch status is {}")
     public void launchStatusIs(String launchType, LaunchStatus launchStatus) {
-        checkLaunchStatus(testProject, launchType.equalsIgnoreCase("debug") ? debugLaunchId : launchId, launchStatus);
+        checkLaunchStatus(testProject, "debug".equalsIgnoreCase(launchType) ? debugLaunchId : launchId, launchStatus);
     }
 
     @When("get all launch names using filter:")
@@ -108,7 +108,7 @@ public class LaunchSteps extends GlobalVariables {
     public void checkCompletionMessage(String launchType, String msg) {
         Assertions.assertThat(operationCompletionRS.getMessage())
                 .describedAs("Wrong completion message")
-                .isEqualTo(String.format(msg, launchType.equals("debug") ? debugLaunchId : launchId));
+                .isEqualTo(String.format(msg, "debug".equals(launchType) ? debugLaunchId : launchId));
     }
 
     @When("delete launch by Id")

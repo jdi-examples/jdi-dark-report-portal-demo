@@ -16,6 +16,7 @@ import com.epam.http.response.RestResponse;
 import com.epam.jdi.InitTests;
 import com.epam.jdi.model.ChangePasswordRQ;
 import com.epam.jdi.model.CreateUserRQ;
+import com.epam.reportportal.annotations.Tags;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -28,6 +29,7 @@ import static org.hamcrest.Matchers.equalTo;
 /**
  * API tests for UserControllerApi
  */
+@Tags("user")
 public class UserControllerApiTest extends InitTests {
 
     @BeforeClass

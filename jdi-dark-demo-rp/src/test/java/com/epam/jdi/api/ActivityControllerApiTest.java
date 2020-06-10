@@ -14,16 +14,17 @@ package com.epam.jdi.api;
 
 import com.epam.http.response.RestResponse;
 import com.epam.jdi.InitTests;
+import com.epam.reportportal.annotations.Tags;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
-import org.testng.xml.dom.Tag;
 
 import static com.epam.http.requests.ServiceInit.init;
 
 /**
  * API tests for ActivityControllerApi
  */
+@Tags("activity")
 public class ActivityControllerApiTest extends InitTests {
 
     @BeforeClass

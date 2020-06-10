@@ -12,6 +12,7 @@ import com.epam.jdi.model.LaunchResource;
 import com.epam.jdi.model.OperationCompletionRS;
 import com.epam.jdi.model.StartLaunchRQ;
 import com.epam.jdi.model.StartLaunchRS;
+import com.epam.reportportal.annotations.Tags;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -22,6 +23,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 /**
  * API tests for UserControllerApi
  */
+@Tags("launch")
 public class LaunchApiTest extends InitTests {
 
     private int launchId;

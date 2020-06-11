@@ -186,9 +186,6 @@
                     <properties>
                         <allure.results.directory>target/allure-results</allure.results.directory>
                     </properties>
-                    <properties>
-                        <allure.link.issue.pattern>https://example.org/issue/{}</allure.link.issue.pattern>
-                    </properties>
                 </configuration>
             </plugin>
         </plugins>

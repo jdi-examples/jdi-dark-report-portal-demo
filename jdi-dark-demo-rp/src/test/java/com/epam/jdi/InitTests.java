@@ -25,7 +25,7 @@ public class InitTests {
     @BeforeClass(alwaysRun = true)
     public void authentication() {
         Properties properties = PropertyReader.getProperties("test.properties");
-        testProject = properties.getProperty("project");
+        testProject = properties.getProperty("sut.project");
         String sutUserName = properties.getProperty("sut.username");
         String sutPassword = properties.getProperty("sut.password");
         init(AuthTokenApi.class);

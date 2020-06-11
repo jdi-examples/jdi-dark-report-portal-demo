@@ -16,6 +16,7 @@ env:
     - JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
     - PATH="$JAVA_HOME/bin:$PATH"
     - HTTP_TESTS="com.epam.jdi.dark:jdi-dark-demo-rp"
+    - BDD_TESTS="com.epam.jdi.dark:jdi-dark-demo-rp-bdd"
     - SUT_LOGIN="test-user"
     - SUT_PASSWORD="Fqvq1s0S"
     - WITH_TESTS_PARAMS="-Dsut.username=$SUT_LOGIN -Dsut.password=$SUT_PASSWORD"
@@ -45,11 +46,27 @@ jobs:
         - mvn -ntp install -DskipTests
         - mvn verify -pl $HTTP_TESTS $WITH_TESTS_PARAMS
 
+    - stage: test
+      name: Run BDD tests
+      script:
+        - mvn -ntp install -DskipTests
+        - mvn verify -pl $BDD_TESTS $WITH_TESTS_PARAMS
+
+    - stage: reports
+      name: Deploy allure reports to netlify
+      script:
+        - npm install -g allure-commandline
+        - npm install -g netlify-cli
+        - allure --version
+        - source reports.sh
+        - deployAllureResults
 after_failure:
   - echo "Build was failed"
 after_success:
   - echo "Build was successful"
 after_script:
+  - source reports.sh
+  - grubAllureResults
   - du -d 1 -h ./
   - ls -la
 # extra time during long builds

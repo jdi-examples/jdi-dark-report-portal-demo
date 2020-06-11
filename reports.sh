@@ -102,9 +102,6 @@ function grubAllureResults() {
 
 function uploadFile() {
     file="$1"
-    # TODO : make an if depending of boolean variable to switch between transfer or between https://www.file.io/#one
-
-    #url=$(curl --upload-file "${file}" https://transfer.sh/${file})
     response="$(curl -F "file=@${file}" https://file.io/)"
     url="$(echo "${response}" |jq -j '.link')"
     urlKey="$(echo "${url}"| awk -F/ '{print $4}')"

@@ -65,7 +65,7 @@ public class UserControllerApiTest extends InitTests {
     /**
      * Register invitation for user who will be created
      */
-    @Test
+    @Test(description = "Check error message for create user")
     public void createUserBidUsingPOSTTest() {
         createUserBidUsingPOST.post(new CreateUserRQ()
                 .setDefaultProject("wrongProject")

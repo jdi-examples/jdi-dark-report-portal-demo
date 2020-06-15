@@ -41,7 +41,7 @@ public class UserControllerApiTest extends InitTests {
     /**
      * Change own password
      */
-    @Test
+    @Test(description = "Check error messages for change password")
     public void changePasswordUsingPOSTTest() {
         changePasswordUsingPOST
                 .post(new ChangePasswordRQ().setOldPassword("wrong")
@@ -65,7 +65,7 @@ public class UserControllerApiTest extends InitTests {
     /**
      * Register invitation for user who will be created
      */
-    @Test
+    @Test(description = "Check role error message for create user")
     public void createUserBidUsingPOSTTest() {
         createUserBidUsingPOST.post(new CreateUserRQ()
                 .setDefaultProject("wrongProject")

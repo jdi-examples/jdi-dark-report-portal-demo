@@ -148,10 +148,10 @@ function extractAllureResults() {
 function generateAllureReports() {
     reportDirList="";
     allureDirExistence=false
-    for report in $(ls -d1 jdi-dark*/target/)
+    for report in $(ls -d1 jdi-dark*/target/allure-results/)
     do
         allureDirExistence=true
-        allureDir="${report}allure-results"
+        allureDir="${report}"
         if [[ -d "$allureDir" ]] ; then
             echo "Results found for ${report}"
             reportDirList="${reportDirList} ${allureDir}"
@@ -164,7 +164,7 @@ function generateAllureReports() {
         exitWithError
     fi
     echo "${reportDirList}"
-    allure generate --clean "${reportDirList}"
+    allure generate --clean ${reportDirList}
 }
 
 function deployToNetlify() {

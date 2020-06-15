@@ -41,7 +41,7 @@ public class UserControllerApiTest extends InitTests {
     /**
      * Change own password
      */
-    @Test
+    @Test(description = "Check error messages for change password")
     public void changePasswordUsingPOSTTest() {
         changePasswordUsingPOST
                 .post(new ChangePasswordRQ().setOldPassword("wrong")

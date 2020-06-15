@@ -36,7 +36,7 @@ public class ActivityControllerApiTest extends InitTests {
     /**
      * Get activities for project
      */
-    @Test
+    @Test(description = "Check get activities endpoint")
     public void getActivitiesUsingGETTest() {
         // TODO: add call parameters and test validations
         RestResponse resp = ActivityControllerApi.getActivitiesUsingGET.pathParams(testProject).call();

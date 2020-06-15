@@ -55,7 +55,7 @@ public class LaunchApiTest extends InitTests {
         init(LaunchControllerApi.class, spec);
     }
 
-    @Test(priority = 0)
+    @Test(priority = 0, description = "Start launch and check status")
     public void startLaunchTest() {
         StartLaunchRQ startLaunchRQ = new StartLaunchRQ().setName(launchName).setStartTime(now());
         String json = gson.toJson(startLaunchRQ);
@@ -69,7 +69,7 @@ public class LaunchApiTest extends InitTests {
         checkLaunchStatus(testProject, launchId, LaunchStatus.IN_PROGRESS);
     }
 
-    @Test(priority = 10)
+    @Test(priority = 10, description = "Start debug launch and check status")
     public void startDebugLaunchTest() {
         StartLaunchRQ startLaunchRQ = new StartLaunchRQ()
                 .setName(launchName).setMode(StartLaunchRQ.ModeEnum.DEBUG).setStartTime(now());
@@ -84,7 +84,7 @@ public class LaunchApiTest extends InitTests {
         checkLaunchStatus(testProject, debugLaunchId, LaunchStatus.IN_PROGRESS);
     }
 
-    @Test(priority = 20)
+    @Test(priority = 20, description = "Get all launch names using filter by name and check")
     public void getAllLaunchNamesTest() {
         String[] names = LaunchControllerApi.getAllLaunchNames.pathParams(testProject)
                 .queryParams("filter.cnt.name=" + launchName).callAsData();
@@ -92,14 +92,14 @@ public class LaunchApiTest extends InitTests {
         Assertions.assertThat(names).describedAs("Wrong launch name").allMatch(n -> n.contains(launchName));
     }
 
-    @Test(priority = 30)
+    @Test(priority = 30, description = "Get debug launch and check mode")
     public void getDebugLaunchesTest() {
         IterableLaunchResource resource = LaunchControllerApi.getDebugLaunches.pathParams(testProject).callAsData();
         Assertions.assertThat(resource.getContent()).describedAs("Wrong debug launch mode")
                 .allMatch(l -> l.getMode().equals(LaunchResource.ModeEnum.DEBUG));
     }
 
-    @Test(priority = 40)
+    @Test(priority = 40, description = "Finish launch and check status")
     public void finishLaunchUsingPUT1Test() {
         FinishExecutionRQ finishExecutionRQ = new FinishExecutionRQ().setEndTime(now());
         String json = gson.toJson(finishExecutionRQ);
@@ -110,7 +110,7 @@ public class LaunchApiTest extends InitTests {
         checkLaunchStatus(testProject, launchId, LaunchStatus.PASSED);
     }
 
-    @Test(priority = 50)
+    @Test(priority = 50, description = "Force finish launch and check status")
     public void forceFinishLaunchUsingPUTTest() {
         FinishExecutionRQ finishExecutionRQ = new FinishExecutionRQ().setEndTime(now());
         String json = gson.toJson(finishExecutionRQ);
@@ -122,7 +122,7 @@ public class LaunchApiTest extends InitTests {
         checkLaunchStatus(testProject, debugLaunchId, LaunchStatus.STOPPED);
     }
 
-    @Test(priority = 60)
+    @Test(priority = 60, description = "Delete launch and check status")
     public void deleteLaunchUsingDELETETest() {
         OperationCompletionRS operationCompletionRS = LaunchControllerApi.deleteLaunchUsingDELETE
                 .pathParams(testProject, launchId).callAsData();
@@ -132,7 +132,7 @@ public class LaunchApiTest extends InitTests {
         checkLaunchStatus(testProject, launchId, LaunchStatus.DELETED);
     }
 
-    @Test(priority = 70)
+    @Test(priority = 70, description = "Delete list of launches and check status")
     public void deleteLaunchesUsingDELETETest() {
         int[] toDeleteIds = new int[]{debugLaunchId};
         DeleteBulkRQ deleteBulkRQ = new DeleteBulkRQ().setIds(toDeleteIds);

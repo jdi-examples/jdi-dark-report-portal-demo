@@ -22,6 +22,9 @@
         <rp.launch>JDI Dark Demo</rp.launch>
         <rp.enable>false</rp.enable>
         <log.level>INFO</log.level>
+        <drill.agentId>api-service</drill.agentId>
+        <drill.adminHost>drill.dev.reportportal.io</drill.adminHost>
+        <drill.adminPort>443</drill.adminPort>
     </properties>
 
     <dependencies>
@@ -150,6 +153,26 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.epam.drill.agent.runner</groupId>
+                <artifactId>maven</artifactId>
+                <version>0.1.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>autotest</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <drill>
+                        <version>0.1.4</version>
+                        <agentId>${drill.agentId}</agentId>
+                        <adminHost>${drill.adminHost}</adminHost>
+                        <adminPort>${drill.adminPort}</adminPort>
+                    </drill>
+                </configuration>
             </plugin>
         </plugins>
 

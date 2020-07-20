@@ -17,8 +17,6 @@ env:
     - PATH="$JAVA_HOME/bin:$PATH"
     - HTTP_TESTS="com.epam.jdi.dark:jdi-dark-demo-rp"
     - BDD_TESTS="com.epam.jdi.dark:jdi-dark-demo-rp-bdd"
-    - SUT_LOGIN="test-user"
-    - SUT_PASSWORD="Fqvq1s0S"
     - WITH_TESTS_PARAMS="-Dsut.username=$SUT_LOGIN -Dsut.password=$SUT_PASSWORD"
 
 

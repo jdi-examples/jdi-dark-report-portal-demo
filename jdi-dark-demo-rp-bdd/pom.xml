@@ -183,17 +183,6 @@
         </testResources>
     </build>
 
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-epam-reportportal</id>
-            <name>bintray</name>
-            <url>http://dl.bintray.com/epam/reportportal</url>
-        </repository>
-    </repositories>
-
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
@@ -217,7 +206,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <sut>api=https://dev.reportportal.io/api, uat=https://dev.reportportal.io/uat</sut>
+                <sut>api=https://dev.fleetframework.io/api, uat=https://dev.fleetframework.io/uat</sut>
                 <sut.project>jdi-tests</sut.project>
             </properties>
         </profile>

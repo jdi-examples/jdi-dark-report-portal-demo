@@ -95,12 +95,12 @@
         </dependency>
     </dependencies>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>drill</id>
-            <url>https://oss.jfrog.org/artifactory/list/oss-release-local</url>
-        </pluginRepository>
-    </pluginRepositories>
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>drill</id>-->
+<!--            <url>https://oss.jfrog.org/artifactory/list/oss-release-local</url>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
 
     <build>
         <plugins>
@@ -124,7 +124,7 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
-                    <testFailureIgnore>true</testFailureIgnore>
+<!--                    <testFailureIgnore>true</testFailureIgnore>-->
                     <properties>
                         <property>
                             <name>listener</name>
@@ -173,26 +173,26 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.epam.drill.agent.runner</groupId>
-                <artifactId>maven</artifactId>
-                <version>0.1.2</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>autotest</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <drill>
-                        <version>0.1.4</version>
-                        <agentId>${drill.agentId}</agentId>
-                        <adminHost>${drill.adminHost}</adminHost>
-                        <adminPort>${drill.adminPort}</adminPort>
-                    </drill>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.epam.drill.agent.runner</groupId>-->
+<!--                <artifactId>maven</artifactId>-->
+<!--                <version>0.1.2</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>autotest</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <drill>-->
+<!--                        <version>0.1.4</version>-->
+<!--                        <agentId>${drill.agentId}</agentId>-->
+<!--                        <adminHost>${drill.adminHost}</adminHost>-->
+<!--                        <adminPort>${drill.adminPort}</adminPort>-->
+<!--                    </drill>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
 
         <resources>
@@ -210,14 +210,14 @@
     </build>
 
     <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-epam-reportportal</id>
-            <name>bintray</name>
-            <url>http://dl.bintray.com/epam/reportportal</url>
-        </repository>
+<!--        <repository>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--            <id>bintray-epam-reportportal</id>-->
+<!--            <name>bintray</name>-->
+<!--            <url>http://dl.bintray.com/epam/reportportal</url>-->
+<!--        </repository>-->
     </repositories>
 
     <reporting>
@@ -245,6 +245,8 @@
             <properties>
                 <sut>api=https://dev.fleetframework.io/api, uat=https://dev.fleetframework.io/uat</sut>
                 <sut.project>jdi-tests</sut.project>
+                <sut.username>superadmin</sut.username>
+                <sut.password>erebus</sut.password>
             </properties>
         </profile>
         <profile>

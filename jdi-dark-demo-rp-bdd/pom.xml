@@ -124,7 +124,7 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
-                    <testFailureIgnore>true</testFailureIgnore>
+<!--                    <testFailureIgnore>true</testFailureIgnore>-->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         -Dcucumber.options="--plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
@@ -208,6 +208,8 @@
             <properties>
                 <sut>api=https://dev.fleetframework.io/api, uat=https://dev.fleetframework.io/uat</sut>
                 <sut.project>jdi-tests</sut.project>
+                <sut.username>superadmin</sut.username>
+                <sut.password>erebus</sut.password>
             </properties>
         </profile>
         <profile>
